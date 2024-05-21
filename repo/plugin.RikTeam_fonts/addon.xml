@@ -1,0 +1,31 @@
+<?xml version="2.0" encoding="UTF-8"?>
+<addon
+	id="plugin.RikTeam_fonts" version="1.2" name="[B][COLOR white]RikTeam_[COLOR aqua]fonts[/COLOR][/B]" provider-name="Rik Team">
+<requires> 
+    <import addon="script.module.requests" />
+    <import addon="script.module.resolveurl" />
+    <import addon="script.module.six" />
+  </requires>
+	<extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>video</provides>
+	</extension>	
+	<extension point="xbmc.addon.metadata">
+                <platform>all</platform>
+		<summary lang="en">RikTeam_fonts</summary>
+		<summary lang="es">RikTeam_fonts</summary>
+		<description lang="en">[B][COLOR white]Añadir fuentes a KODI con las fuentes más recientes.  [COLOR yellow] ** [COLOR violet] RikTeam [COLOR yellow] ** [/COLOR][/B]</description>
+		<website></website>
+		<license>GPL 2.0</license>
+		<platform>all</platform>
+<assets>
+        <icon>icon.png</icon>
+  <screenshot>resources/screenshots/screenshot1.jpg</screenshot>
+  <screenshot>resources/screenshots/screenshot2.jpg</screenshot>
+  <screenshot>resources/screenshots/screenshot3.jpg</screenshot>
+  <screenshot>resources/screenshots/screenshot4.jpg</screenshot>
+  <screenshot>resources/screenshots/screenshot5.jpg</screenshot>
+        <fanart>fanart.jpg</fanart>
+    </assets>        
+		<language>es</language>
+	</extension>
+</addon>

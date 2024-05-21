@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="repository.fontsvr" name="[COLOR azure]Repo [B][COLOR aqua]FONTS[COLOR azure]VR[/COLOR][/B][/COLOR]" version="2.0" provider-name="Rik Team">
+   <requires>
+        <import addon="xbmc.addon" version="12.0.0"/>
+   </requires>
+	<extension point="xbmc.addon.repository" name="Repo FONTSVR">
+        <dir>
+		<info compressed="false">https://raw.githubusercontent.com/fontsvr/omega/main/repo/zips/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/fontsvr/omega/main/repo/zips/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/fontsvr/omega/main/repo/zips/</datadir>
+		</dir>
+    </extension>
+	
+    <extension point="xbmc.addon.metadata">
+        <summary>Repo FONTSVR</summary>
+        <description>[COLOR azure]Repositorio de addons[/COLOR] [COLOR aqua]FONTS[/COLOR][COLOR azure]VR[/COLOR]
+Developers: Rik Team (fontsvr.github.io/omega/)</description>
+        <disclaimer>Repositorio de addons</disclaimer>
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>
