@@ -103,18 +103,18 @@
 		<label>Ajustes Iniciales [COLOR hotpink]RikTeam[/COLOR]</label>
 		<label2 />
 		<icon />
-		<action>ActivateWindow(5200)</action>
 		<action>Dialog.Close(all,true)</action>
+		<action>ActivateWindow(5200)</action>
 		<action>Skin.SetBool(FirstPagina,false)</action>
 		<action>Skin.SetBool(FirstRunSetup,false)</action>
 		<action>Skin.SetBool(3RunSetup,false)</action>
 	</shortcut>
     <shortcut>
-		<label>Instalar [COLOR goldenrod]Script RikTeam[/COLOR]!</label>
+		<label>Necesario [COLOR goldenrod]Script RikTeam[/COLOR]!</label>
 		<label2 />
 		<icon />
-		<action condition="!System.HasAddon(plugin://script.rikteam)">InstallAddon(script.rikteam)</action>
 		<action>Dialog.Close(all,true)</action>
+		<action condition="!System.HasAddon(plugin://script.rikteam)">InstallAddon(script.rikteam)</action>
 		<visible>!System.HasAddon(script.rikteam)</visible>
 	</shortcut>
 	<shortcut>
@@ -122,8 +122,16 @@
 		<label2 />
 		<icon />
 		<action>Dialog.Close(all,true)</action>
-		<action>ReplaceWindow(Programs,"plugin://script.rikteam/?mode=install&amp;action=build&amp;name=ajustes+pvr",return)</action>
+		<action>ReplaceWindow(Programs,"plugin://script.rikteam/?mode=install&amp;action=build&amp;name=ajustes+basic+v21",return)</action>
 		<action>Skin.SetBool(preguntado_ajustes,true)</action>
+		<visible>System.HasAddon(script.rikteam)</visible>
+	</shortcut>
+	<shortcut>
+		<label>[COLOR violet][B]Forzar Cierre Kodi[/B][/COLOR]</label>
+		<label2 />
+		<icon />
+		<action>Dialog.Close(all,true)</action>
+		<action>ActivateWindow(Programs,"plugin://script.rikteam/?mode=forceclose",return)</action>
 		<visible>System.HasAddon(script.rikteam)</visible>
 	</shortcut>
 </shortcuts>

@@ -67,9 +67,55 @@
 				<content>
 					<include>skinshortcuts-group-buttonmenu</include>
 					<item>
+		                <label>13012</label>
+						<onclick>Dialog.Close(all,true)</onclick>
+		                <onclick>Quit()</onclick>
+					</item>
+					<item>
+					 <label></label>
+		             <label>20183</label>
+		             <onclick>ReloadSkin()</onclick>
+					</item>
+					<item>
+		                <label>Ajustes Iniciales [COLOR hotpink]RikTeam[/COLOR]</label>
+						<onclick>Dialog.Close(all,true)</onclick>
+						<onclick>ActivateWindow(5200)</onclick>
+		                <onclick>Skin.SetBool(FirstPagina,false)</onclick>
+		                <onclick>Skin.SetBool(FirstRunSetup,false)</onclick>
+		                <onclick>Skin.SetBool(3RunSetup,false)</onclick>					
+					</item>
+					<item>
+		                <label>20077</label>
+						<onclick>Dialog.Close(all,true)</onclick>
+		                <onclick>ActivateWindow(skinsettings)</onclick>
+					</item>
+					<item>
 						<label>5</label>
 						<onclick>Dialog.Close(all,true)</onclick>
 						<onclick>ActivateWindow(settings)</onclick>
+					</item>
+					<item>
+		                <label>1036</label>
+						<onclick>Dialog.Close(all,true)</onclick>
+		                <onclick>ActivateWindow(favouritesbrowser)</onclick>
+					</item>
+					<item>
+		               <label>[COLOR pink]Necesario instalar [COLOR goldenrod]Script RikTeam[/COLOR]!</label>
+		               <onclick>Dialog.Close(all,true)</onclick>
+					   <onclick condition="!System.HasAddon(plugin://script.rikteam)">InstallAddon(script.rikteam)</onclick>
+		               <visible>!System.HasAddon(script.rikteam)</visible>
+					</item>
+					<item>
+		               <label>Restablecer ajuste [COLOR hotpink]$INFO[System.AddonTitle(skin.aeon.nox.silvo)] $INFO[System.AddonVersion(skin.aeon.nox.silvo),(,)][/COLOR]</label>
+                       <onclick>Dialog.Close(all,true)</onclick>
+		               <onclick>ReplaceWindow(Programs,"plugin://script.rikteam/?mode=install&amp;action=build&amp;name=ajustes+basic+v21",return)</onclick>
+		               <onclick>Skin.SetBool(preguntado_ajustes,true)</onclick>
+					</item>
+					<item>
+		               <label>Cierre rápido Kodi</label>
+                       <onclick>Dialog.Close(all,true)</onclick>
+		               <onclick>ActivateWindow(Programs,"plugin://script.rikteam/?mode=forceclose",return)</onclick>
+		               <visible>System.HasAddon(script.rikteam)</visible>
 					</item>
 				</content>
 			</control>

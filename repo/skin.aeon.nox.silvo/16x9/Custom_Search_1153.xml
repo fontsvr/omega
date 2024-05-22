@@ -52,16 +52,16 @@
 					<width>940</width>
 					<height>40</height>
 					<font>font15_title</font>
-					<label>$VAR[CustomSelectLabelVar] el buscador</label>
+					<label>$VAR[CustomSelectLabelVar] [COLORcc76ff003]buscador[/COLOR]</label>
 					<align>center</align>
 					<textcolor>dialogheader</textcolor>
 				</control>
 			
 			<control type="panel" id="90100">
 			<left>244</left><!--189-->
-				<top>128</top><!--88-->
+				<top>112</top><!--128-88-->
 				<width>680</width><!--628-->
-				<height>480</height><!--480-->
+				<height>455</height><!--480-->
 				<onup>90100</onup>
 				<ondown>90100</ondown>
 				<onleft>90100</onleft>
@@ -162,6 +162,13 @@
 					<onclick>Dialog.Close(all)</onclick>
 					<onclick condition="System.HasAddon(plugin.video.duffyou)">ActivateWindow(10025,&quot;plugin://plugin.video.duffyou/?eydhY3Rpb24nOiAnb2kwT28wMG9PJywgJ2ZhbmFydCc6ICcvc3RvcmFnZS9lbXVsYXRlZC8wL0FuZHJvaWQvZGF0YS90aGUudGVhbS5rZHZ0L2ZpbGVzLy5rb2RpL2FkZG9ucy9wbHVnaW4udmlkZW8uZHVmZnlvdS9mYW5hcnQuanBnJywgJ2ljb24nOiAnL3N0b3JhZ2UvZW11bGF0ZWQvMC9BbmRyb2lkL2RhdGEvdGhlLnRlYW0ua2R2dC9maWxlcy8ua29kaS9hZGRvbnMvcGx1Z2luLnZpZGVvLmR1ZmZ5b3UvcmVzb3VyY2VzL21lZGlhL3NlYXJjaC5wbmcnLCAnbGFiZWwnOiAnQnVzY2FyJywgJ3Bsb3QnOiAnW0JdQnVzY2FyWy9CXVtDUl1bQ1JdQnVzY2EgdW4gdmlkZW8sIHVuIGRpcmVjdG8sIHVuYSBwbGF5bGlzdCBvIHVuIGNhbmFsLid9&quot;,return)</onclick>
 					<onclick condition="!System.HasAddon(plugin.video.duffyou)">InstallAddon(plugin.video.duffyou)</onclick>
+				</item>
+				<item>
+					<thumb>special://skin/extras/buscadores/icons/youtube.png</thumb>
+					<label>Buscador YouTube</label>
+					<onclick>Dialog.Close(all)</onclick>
+					<onclick condition="System.HasAddon(plugin.video.youtube)">ActivateWindow(10025,&quot;plugin://plugin.video.youtube/kodion/search/list/?category_label=Buscar&quot;,return)</onclick>
+					<onclick condition="!System.HasAddon(plugin.video.youtube)">InstallAddon(plugin.video.youtube)</onclick>
 				</item>
 			</content>
 		</control>

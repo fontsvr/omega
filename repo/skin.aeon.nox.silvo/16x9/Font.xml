@@ -128,6 +128,90 @@
 			<style>bold</style>
 			<size>52</size>
 		</font>
+		<!--1f-->
+		<font>
+			<name>roboto22</name>
+			<filename>Roboto-Regular.ttf</filename>
+			<size>22</size>
+		</font>
+		<font>
+			<name>roboto22u</name>
+			<filename>Roboto-Regular.ttf</filename>
+			<size>22</size>
+			<style>uppercase</style>
+		</font>			
+		<font>
+			<name>roboto24</name>
+			<filename>Roboto-Regular.ttf</filename>
+			<size>24</size>
+		</font>
+		<font>
+			<name>roboto26</name>
+			<filename>Roboto-Regular.ttf</filename>
+			<size>26</size>
+		</font>
+		<font>
+			<name>roboto27</name>
+			<filename>Roboto-Regular.ttf</filename>
+			<size>27</size>
+		</font>		
+		<font>
+			<name>roboto26u</name>
+			<filename>Roboto-Regular.ttf</filename>
+			<size>26</size>
+			<style>uppercase</style>
+		</font>			
+		<font>
+			<name>roboto28</name>
+			<filename>Roboto-Regular.ttf</filename>
+			<size>28</size>
+		</font>
+		<font>
+			<name>roboto28u</name>
+			<filename>Roboto-Regular.ttf</filename>
+			<size>28</size>
+			<style>uppercase</style>
+		</font>				
+		<font>
+			<name>roboto30</name>
+			<filename>Roboto-Regular.ttf</filename>
+			<size>30</size>
+		</font>
+		<font>
+			<name>roboto32</name>
+			<filename>Roboto-Regular.ttf</filename>
+			<size>32</size>
+		</font>		
+		<font>
+			<name>roboto34</name>
+			<filename>Roboto-Regular.ttf</filename>
+			<size>34</size>
+		</font>		
+		<font>
+			<name>roboto36</name>
+			<filename>Roboto-Regular.ttf</filename>
+			<size>36</size>
+		</font>
+		<font>
+			<name>roboto38</name>
+			<filename>Roboto-Regular.ttf</filename>
+			<size>38</size>
+		</font>
+		<font>
+			<name>roboto40</name>
+			<filename>Roboto-Regular.ttf</filename>
+			<size>40</size>
+		</font>
+		<font>
+			<name>roboto45</name>
+			<filename>Roboto-Regular.ttf</filename>
+			<size>45</size>
+		</font>
+		<font>
+			<name>roboto75</name>
+			<filename>Roboto-Regular.ttf</filename>
+			<size>72</size>
+		</font>
 		<!-- LiveTV Fonts -->
 		<font>
 			<name>font60</name>
@@ -564,7 +648,7 @@
 		</font>
 		<font>
 			<name>font_MainMenu</name>
-			<filename>arial.ttf</filename>
+			<filename>Exo2-Bold.ttf</filename><!--arial.ttf-->
 			<linespacing>0</linespacing>
 			<style>uppercase</style>
 			<size>70</size>

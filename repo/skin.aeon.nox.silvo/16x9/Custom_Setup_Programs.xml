@@ -57,7 +57,7 @@
 			<shadowcolor>black</shadowcolor>
 			<font>font15_title</font>
 			<align>center</align>
-			<label>Personaliza el Skin</label>
+			<label>Personaliza el Skin [COLOR hotpink]$INFO[System.AddonTitle(skin.aeon.nox.silvo)] $INFO[System.AddonVersion(skin.aeon.nox.silvo),(,)][/COLOR]</label>
 			<textcolor>$VAR[ThemeHomeLabelColor]</textcolor>
 		</control>
 		<control type="group">

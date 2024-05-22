@@ -10,8 +10,8 @@
 			<property name="background">special://home/media/backgrounds/videoteca/</property>
 			<property name="backgroundName">special://home/media/backgrounds/videoteca/</property>
 			<onclick condition="String.IsEqual(ListItem.Property(path),ActivateWindow(1129))">SetProperty(CustomSelect,search,Home)</onclick>
-			<onclick>ActivateWindow(Favourites)</onclick>
-			<property name="path">ActivateWindow(Favourites)</property>
+			<onclick>ActivateWindow(FavouritesBrowser)</onclick>
+			<property name="path">ActivateWindow(FavouritesBrowser)</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">colorccff335c-favoritos-color</property>
 			<property name="hasSubmenu">True</property>
@@ -81,7 +81,7 @@
 			</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
-			<label>[COLOR ccd500f9]add-ons[/COLOR]</label>
+			<label>[COLOR goldenrod]add-ons[/COLOR]</label>
 			<label2>Elemento Personalizado</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb />
@@ -91,7 +91,7 @@
 			<onclick>ActivateWindow(AddonBrowser,addons://user/all,return)</onclick>
 			<property name="path">ActivateWindow(AddonBrowser,addons://user/all,return)</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
-			<property name="submenuVisibility">colorccd500f9-add-ons-color</property>
+			<property name="submenuVisibility">colorgoldenrod-add-ons-color</property>
 			<property name="hasSubmenu">True</property>
 			</item>
 		<item id="7">
@@ -144,23 +144,29 @@
 			</item>
 		<item id="10">
 			<property name="id">$NUMBER[10]</property>
-			<label>$LOCALIZE[33060]</label>
-			<label2>[COLOR ccff335c]apagado[/COLOR]</label2>
-			<icon>DefaultAddonNone.png</icon>
+			<label>apagado</label>
+			<label2>Custom item</label2>
+			<icon>special://skin/extras/icons/power.png</icon>
 			<thumb />
-			<property name="widgetStyle">Extended List</property>
-			<property name="widgetPanelInfo">true</property>
-			<property name="widgetPanelInfo.2">true</property>
-			<property name="background">special://home/media/backgrounds/apagado/</property>
-			<property name="backgroundName">special://home/media/backgrounds/apagado/</property>
-			<property name="translatedPath">ActivateWindow(shutdownmenu)</property>
-			<property name="widgetName">130</property>
-			<property name="widgetType">system</property>
 			<onclick condition="String.IsEqual(ListItem.Property(path),ActivateWindow(1129))">SetProperty(CustomSelect,search,Home)</onclick>
 			<onclick>ActivateWindow(shutdownmenu)</onclick>
 			<property name="path">ActivateWindow(shutdownmenu)</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
-			<property name="submenuVisibility">num-33060</property>
+			<property name="submenuVisibility">apagado</property>
+			<property name="hasSubmenu">True</property>
+			</item>
+		<item id="11">
+			<property name="id">$NUMBER[11]</property>
+			<label>$LOCALIZE[31958]</label>
+			<label2 />
+			<icon>special://skin/extras/icons/Disc.png</icon>
+			<thumb />
+			<visible>System.HasMediaDVD</visible>
+			<onclick condition="String.IsEqual(ListItem.Property(path),ActivateWindow(1129))">SetProperty(CustomSelect,search,Home)</onclick>
+			<onclick>PlayDisc</onclick>
+			<property name="path">PlayDisc</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">num-31958</property>
 			<property name="hasSubmenu">True</property>
 			</item>
 		</include>
@@ -183,6 +189,18 @@
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">1</property>
+			<label>[COLOR white]KODI[COLOR gold]verti[COLOR yellow]DO [COLOR white]Tv[/COLOR]</label>
+			<label2>Add-on de Vídeo</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://https%3a%2f%2fi.postimg.cc%2fm2tT1bYP%2fIMG-20230706-WA0006.jpg/</thumb>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.KODIvertiDO/?action=iptv_v&amp;title=%5BCOLOR+white%5D%5BB%5DKODIvertiDO+Tv%5B%2FB%5D%5B%2FCOLOR%5D&amp;url=&amp;thumbnail=https%3A%2F%2Fi.postimg.cc%2Fm2tT1bYP%2FIMG-20230706-WA0006.jpg&amp;plot=&amp;extra=0&amp;page=",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.KODIvertiDO/?action=iptv_v&amp;title=%5BCOLOR+white%5D%5BB%5DKODIvertiDO+Tv%5B%2FB%5D%5B%2FCOLOR%5D&amp;url=&amp;thumbnail=https%3A%2F%2Fi.postimg.cc%2Fm2tT1bYP%2FIMG-20230706-WA0006.jpg&amp;plot=&amp;extra=0&amp;page=",return)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorccff335c-favoritos-color)</visible>
+			<property name="isSubmenu">True</property>
+			</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">1</property>
 			<label>[COLOR gold]Palantir 3[/COLOR]</label>
 			<label2>Add-on de Vídeo</label2>
 			<icon>DefaultShortcut.png</icon>
@@ -193,10 +211,10 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorccff335c-favoritos-color)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="3">
-			<property name="id">$NUMBER[3]</property>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">1</property>
-			<label>[COLOR goldenrod][B]Alfa[/B][/COLOR]</label>
+			<label>[COLOR goldenrod]Alfa[/COLOR]</label>
 			<label2>Add-on de Vídeo</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb>thumb</thumb>
@@ -206,10 +224,10 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorccff335c-favoritos-color)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="4">
-			<property name="id">$NUMBER[4]</property>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">1</property>
-			<label>[COLOR violet]Balandro[/COLOR]</label>
+			<label>[COLORdeepskyblue]Balandro[/COLOR]</label>
 			<label2>Add-on de Vídeo</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb>thumb</thumb>
@@ -219,33 +237,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorccff335c-favoritos-color)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="5">
-			<property name="id">$NUMBER[5]</property>
-			<property name="mainmenuid">1</property>
-			<label>$LOCALIZE[1036]</label>
-			<label2>Favoritos</label2>
-			<icon>DefaultAddonsInstalled.png</icon>
-			<thumb />
-			<property name="translatedPath">ActivateWindow(favouritesbrowser)</property>
-			<onclick>ActivateWindow(favouritesbrowser)</onclick>
-			<property name="path">ActivateWindow(favouritesbrowser)</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorccff335c-favoritos-color)</visible>
-			<property name="isSubmenu">True</property>
-			</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
-			<property name="mainmenuid">1</property>
-			<label>ACTUALIZAR VIDEOTECA</label>
-			<label2>Ítem Personalizado</label2>
-			<icon>DefaultShortcut.png</icon>
-			<thumb>special://skin/extras/icons/infinity.png</thumb>
-			<onclick>UpdateLibrary(video,,true)</onclick>
-			<property name="path">UpdateLibrary(video,,true)</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorccff335c-favoritos-color)</visible>
-			<property name="isSubmenu">True</property>
-			</item>
-		<item id="7">
-			<property name="id">$NUMBER[7]</property>
 			<property name="mainmenuid">1</property>
 			<label>LIMPIAR VIDEOTECA</label>
 			<label2>Ítem Personalizado</label2>
@@ -253,6 +246,18 @@
 			<thumb>special://skin/extras/icons/wand.png</thumb>
 			<onclick>CleanLibrary(video,true)</onclick>
 			<property name="path">CleanLibrary(video,true)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorccff335c-favoritos-color)</visible>
+			<property name="isSubmenu">True</property>
+			</item>
+		<item id="7">
+			<property name="id">$NUMBER[7]</property>
+			<property name="mainmenuid">1</property>
+			<label>ACTUALIZAR VIDEOTECA</label>
+			<label2>Ítem Personalizado</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>special://skin/extras/icons/infinity.png</thumb>
+			<onclick>UpdateLibrary(video,,true)</onclick>
+			<property name="path">UpdateLibrary(video,,true)</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorccff335c-favoritos-color)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
@@ -271,19 +276,34 @@
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">2</property>
-			<label>[COLOR violet]BALANDRO[/COLOR]</label>
+			<label>[COLORdeepskyblue]BALANDRO[/COLOR]</label>
 			<label2>Add-on de Vídeo</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb>image://%2fstorage%2femulated%2f0%2fAndroid%2fdata%2fthe.team.rik%2ffiles%2f.kodi%2faddons%2fplugin.video.balandro%2fresources%2fmedia%2fthemes%2fdefault%2fclapboard.png/</thumb>
+			<visible>[System.HasAddon(plugin.video.balandro)+System.AddonIsEnabled(plugin.video.balandro)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colordeepskyblue-peliculas-color)</visible>
 			<onclick>ActivateWindow(Videos,"plugin://plugin.video.balandro/?ewogICAgImFjdGlvbiI6ICJjaGFubmVscyIsCiAgICAiY2F0ZWdvcnkiOiAiQmFsYW5kcm8iLAogICAgImNoYW5uZWwiOiAibWFpbm1lbnUiLAogICAgImV4dHJhIjogIm1vdmllcyIsCiAgICAiaW5mb0xhYmVscyI6IHt9LAogICAgInRodW1ibmFpbCI6ICIvc3RvcmFnZS9lbXVsYXRlZC8wL0FuZHJvaWQvZGF0YS90aGUudGVhbS5yaWsvZmlsZXMvLmtvZGkvYWRkb25zL3BsdWdpbi52aWRlby5iYWxhbmRyby9yZXNvdXJjZXMvbWVkaWEvdGhlbWVzL2RlZmF1bHQvY2xhcGJvYXJkLnBuZyIsCiAgICAidGl0bGUiOiAiW0NPTE9SIGRlZXBza3libHVlXSAtIFBlbMOtY3VsYXNbL0NPTE9SXSIKfQ%3D%3D",return)</onclick>
 			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.balandro/?ewogICAgImFjdGlvbiI6ICJjaGFubmVscyIsCiAgICAiY2F0ZWdvcnkiOiAiQmFsYW5kcm8iLAogICAgImNoYW5uZWwiOiAibWFpbm1lbnUiLAogICAgImV4dHJhIjogIm1vdmllcyIsCiAgICAiaW5mb0xhYmVscyI6IHt9LAogICAgInRodW1ibmFpbCI6ICIvc3RvcmFnZS9lbXVsYXRlZC8wL0FuZHJvaWQvZGF0YS90aGUudGVhbS5yaWsvZmlsZXMvLmtvZGkvYWRkb25zL3BsdWdpbi52aWRlby5iYWxhbmRyby9yZXNvdXJjZXMvbWVkaWEvdGhlbWVzL2RlZmF1bHQvY2xhcGJvYXJkLnBuZyIsCiAgICAidGl0bGUiOiAiW0NPTE9SIGRlZXBza3libHVlXSAtIFBlbMOtY3VsYXNbL0NPTE9SXSIKfQ%3D%3D",return)</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colordeepskyblue-peliculas-color)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">2</property>
-			<label>[COLOR goldenrod][B]ALFA[/B][/COLOR]</label>
+			<label>[COLORviolet][B]BALANDRO[/B][/COLOR]</label>
+			<label2>Add-on de Vídeo</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://%2fstorage%2femulated%2f0%2fAndroid%2fdata%2fthe.team.rik%2ffiles%2f.kodi%2faddons%2fplugin.video.balandro%2fresources%2fmedia%2fthemes%2fdefault%2fclapboard.png/</thumb>
+			<visible>[!System.HasAddon(plugin.video.balandro)|!System.AddonIsEnabled(plugin.video.balandro)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colordeepskyblue-peliculas-color)</visible>
+			<onclick condition="!System.HasAddon(plugin.video.balandro)">InstallAddon(plugin.video.balandro)</onclick>
+			<property name="path">InstallAddon(plugin.video.balandro)</property>
+			<onclick condition="System.HasAddon(plugin.video.balandro)+!System.AddonIsEnabled(plugin.video.balandro)">EnableAddon(plugin.video.balandro)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="isSubmenu">True</property>
+			</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">2</property>
+			<label>[COLOR goldenrod]ALFA[/COLOR]</label>
 			<label2>Add-on de Vídeo</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb>image://%2fstorage%2femulated%2f0%2fAndroid%2fdata%2fthe.team.rik%2ffiles%2f.kodi%2faddons%2fplugin.video.alfa%2fresources%2fmedia%2fthemes%2fdefault%2fthumb_news.png/</thumb>
@@ -292,21 +312,20 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colordeepskyblue-peliculas-color)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="4">
-			<property name="id">$NUMBER[4]</property>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">2</property>
-			<label>[B][COLOR white]KODI[COLOR gold]verti[COLOR yellow]DO[/COLOR][/B]</label>
+			<label>[COLOR white]KODI[COLOR gold]verti[COLOR yellow]DO[/COLOR]</label>
 			<label2>Elemento Personalizado</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb>thumb</thumb>
-			<property name="translatedPath">ActivateWindow(Videos,"plugin://plugin.video.KODIvertiDO",return)</property>
 			<onclick>ActivateWindow(Videos,"plugin://plugin.video.KODIvertiDO/?action=cine&amp;title=%5BCOLOR+white%5D%5BB%5DCine+y+series%2C+%5BI%5D%5B%2FB%5D....%5BCOLOR+aquamarine%5DElementum%5B%2FI%5D%5B%2FCOLOR%5D&amp;url=&amp;thumbnail=https%3A%2F%2Fi.imgur.com%2FiPMtAVo.jpg&amp;plot=&amp;extra=&amp;page=",return)</onclick>
 			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.KODIvertiDO/?action=cine&amp;title=%5BCOLOR+white%5D%5BB%5DCine+y+series%2C+%5BI%5D%5B%2FB%5D....%5BCOLOR+aquamarine%5DElementum%5B%2FI%5D%5B%2FCOLOR%5D&amp;url=&amp;thumbnail=https%3A%2F%2Fi.imgur.com%2FiPMtAVo.jpg&amp;plot=&amp;extra=&amp;page=",return)</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colordeepskyblue-peliculas-color)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="5">
-			<property name="id">$NUMBER[5]</property>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">2</property>
 			<label>[COLOR ffffd700]PALANTIR3[/COLOR]</label>
 			<label2>Add-on de Vídeo</label2>
@@ -318,10 +337,10 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colordeepskyblue-peliculas-color)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="6">
-			<property name="id">$NUMBER[6]</property>
+		<item id="7">
+			<property name="id">$NUMBER[7]</property>
 			<property name="mainmenuid">2</property>
-			<label>[COLOR ffb30101][B]TACONES [/B][/COLOR]</label>
+			<label>[COLOR ffb30101]TACONES[/COLOR]</label>
 			<label2>Elemento Personalizado</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb>special://skin/extras/icons/film.png</thumb>
@@ -330,8 +349,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colordeepskyblue-peliculas-color)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="7">
-			<property name="id">$NUMBER[7]</property>
+		<item id="8">
+			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">2</property>
 			<label>[COLOR red]homelander[/COLOR]</label>
 			<label2>Add-on de Vídeo</label2>
@@ -342,8 +361,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colordeepskyblue-peliculas-color)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="8">
-			<property name="id">$NUMBER[8]</property>
+		<item id="9">
+			<property name="id">$NUMBER[9]</property>
 			<property name="mainmenuid">2</property>
 			<label>[COLOR orange]Scrubs V2[/COLOR]</label>
 			<label2>Add-on de Vídeo</label2>
@@ -354,8 +373,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colordeepskyblue-peliculas-color)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="9">
-			<property name="id">$NUMBER[9]</property>
+		<item id="10">
+			<property name="id">$NUMBER[10]</property>
 			<property name="mainmenuid">2</property>
 			<label>[COLOR orchid]THE CREW[/COLOR]</label>
 			<label2>Add-on de Vídeo</label2>
@@ -366,8 +385,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colordeepskyblue-peliculas-color)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="10">
-			<property name="id">$NUMBER[10]</property>
+		<item id="11">
+			<property name="id">$NUMBER[11]</property>
 			<property name="mainmenuid">2</property>
 			<label>[COLOR moccasin]Netflix[/COLOR]</label>
 			<label2>Add-on de Vídeo</label2>
@@ -378,44 +397,47 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colordeepskyblue-peliculas-color)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="11">
-			<property name="id">$NUMBER[11]</property>
+		<item id="12">
+			<property name="id">$NUMBER[12]</property>
 			<property name="mainmenuid">2</property>
 			<label>[COLOR moccasin]Marvel[/COLOR]</label>
 			<label2>Add-on de Vídeo</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb>image://%2fstorage%2femulated%2f0%2fAndroid%2fdata%2fthe.team.rik%2ffiles%2f.kodi%2faddons%2fplugin.video.balandro%2fresources%2fmedia%2fchannels%2fthumb%2festrenoscinesaa.jpg/</thumb>
+			<visible>[System.AddonIsEnabled(plugin.video.balandro)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colordeepskyblue-peliculas-color)</visible>
 			<onclick>ActivateWindow(Videos,"plugin://plugin.video.balandro/?ewogICAgImFjdGlvbiI6ICJsaXN0X2FsbCIsCiAgICAiY2F0ZWdvcnkiOiAiRXN0cmVub3NDaW5lc2FhIiwKICAgICJjaGFubmVsIjogImVzdHJlbm9zY2luZXNhYSIsCiAgICAiaW5mb0xhYmVscyI6IHt9LAogICAgInBsb3QiOiAiW0Nhc3RlbGxhbm9dW0NSXVtDUl1QZWzDrWN1bGFzIGVuIENhc3RlbGxhbm8sIHBvciBnw6luZXJvcy4gUHVlZGUgcmVxdWVyaXIgZWwgdXNvIGRlIHByb3hpZXMgZW4gZnVuY2nDs24gZGVsIHBhw61zL29wZXJhZG9yYSBkZXNkZSBlbCBxdWUgc2UgYWNjZWRlLiIsCiAgICAic2VhcmNoX3R5cGUiOiAibW92aWUiLAogICAgInRodW1ibmFpbCI6ICIvc3RvcmFnZS9lbXVsYXRlZC8wL0FuZHJvaWQvZGF0YS90aGUudGVhbS5yaWsvZmlsZXMvLmtvZGkvYWRkb25zL3BsdWdpbi52aWRlby5iYWxhbmRyby9yZXNvdXJjZXMvbWVkaWEvY2hhbm5lbHMvdGh1bWIvZXN0cmVub3NjaW5lc2FhLmpwZyIsCiAgICAidGl0bGUiOiAiW0NPTE9SIG1vY2Nhc2luXU1hcnZlbFsvQ09MT1JdIiwKICAgICJ1cmwiOiAiaHR0cHM6Ly93d3cuZXN0cmVub3NjaW5lc2FhLmNvbS9nZW5yZS9tYXJ2ZWwvIgp9",return)</onclick>
 			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.balandro/?ewogICAgImFjdGlvbiI6ICJsaXN0X2FsbCIsCiAgICAiY2F0ZWdvcnkiOiAiRXN0cmVub3NDaW5lc2FhIiwKICAgICJjaGFubmVsIjogImVzdHJlbm9zY2luZXNhYSIsCiAgICAiaW5mb0xhYmVscyI6IHt9LAogICAgInBsb3QiOiAiW0Nhc3RlbGxhbm9dW0NSXVtDUl1QZWzDrWN1bGFzIGVuIENhc3RlbGxhbm8sIHBvciBnw6luZXJvcy4gUHVlZGUgcmVxdWVyaXIgZWwgdXNvIGRlIHByb3hpZXMgZW4gZnVuY2nDs24gZGVsIHBhw61zL29wZXJhZG9yYSBkZXNkZSBlbCBxdWUgc2UgYWNjZWRlLiIsCiAgICAic2VhcmNoX3R5cGUiOiAibW92aWUiLAogICAgInRodW1ibmFpbCI6ICIvc3RvcmFnZS9lbXVsYXRlZC8wL0FuZHJvaWQvZGF0YS90aGUudGVhbS5yaWsvZmlsZXMvLmtvZGkvYWRkb25zL3BsdWdpbi52aWRlby5iYWxhbmRyby9yZXNvdXJjZXMvbWVkaWEvY2hhbm5lbHMvdGh1bWIvZXN0cmVub3NjaW5lc2FhLmpwZyIsCiAgICAidGl0bGUiOiAiW0NPTE9SIG1vY2Nhc2luXU1hcnZlbFsvQ09MT1JdIiwKICAgICJ1cmwiOiAiaHR0cHM6Ly93d3cuZXN0cmVub3NjaW5lc2FhLmNvbS9nZW5yZS9tYXJ2ZWwvIgp9",return)</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colordeepskyblue-peliculas-color)</visible>
-			<property name="isSubmenu">True</property>
-			</item>
-		<item id="12">
-			<property name="id">$NUMBER[12]</property>
-			<property name="mainmenuid">2</property>
-			<label>[COLOR moccasin]D.C.[/COLOR]</label>
-			<label2>Add-on de Vídeo</label2>
-			<icon>DefaultShortcut.png</icon>
-			<thumb>image://%2fstorage%2femulated%2f0%2fAndroid%2fdata%2fthe.team.rik%2ffiles%2f.kodi%2faddons%2fplugin.video.balandro%2fresources%2fmedia%2fchannels%2fthumb%2festrenoscinesaa.jpg/</thumb>
-			<onclick>ActivateWindow(Videos,"plugin://plugin.video.balandro/?ewogICAgImFjdGlvbiI6ICJsaXN0X2FsbCIsCiAgICAiY2F0ZWdvcnkiOiAiRXN0cmVub3NDaW5lc2FhIiwKICAgICJjaGFubmVsIjogImVzdHJlbm9zY2luZXNhYSIsCiAgICAiaW5mb0xhYmVscyI6IHt9LAogICAgInBsb3QiOiAiW0Nhc3RlbGxhbm9dW0NSXVtDUl1QZWzDrWN1bGFzIGVuIENhc3RlbGxhbm8sIHBvciBnw6luZXJvcy4gUHVlZGUgcmVxdWVyaXIgZWwgdXNvIGRlIHByb3hpZXMgZW4gZnVuY2nDs24gZGVsIHBhw61zL29wZXJhZG9yYSBkZXNkZSBlbCBxdWUgc2UgYWNjZWRlLiIsCiAgICAic2VhcmNoX3R5cGUiOiAibW92aWUiLAogICAgInRodW1ibmFpbCI6ICIvc3RvcmFnZS9lbXVsYXRlZC8wL0FuZHJvaWQvZGF0YS90aGUudGVhbS5yaWsvZmlsZXMvLmtvZGkvYWRkb25zL3BsdWdpbi52aWRlby5iYWxhbmRyby9yZXNvdXJjZXMvbWVkaWEvY2hhbm5lbHMvdGh1bWIvZXN0cmVub3NjaW5lc2FhLmpwZyIsCiAgICAidGl0bGUiOiAiW0NPTE9SIG1vY2Nhc2luXUQuQy5bL0NPTE9SXSIsCiAgICAidXJsIjogImh0dHBzOi8vd3d3LmVzdHJlbm9zY2luZXNhYS5jb20vZ2VucmUvZC1jLyIKfQ%3D%3D",return)</onclick>
-			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.balandro/?ewogICAgImFjdGlvbiI6ICJsaXN0X2FsbCIsCiAgICAiY2F0ZWdvcnkiOiAiRXN0cmVub3NDaW5lc2FhIiwKICAgICJjaGFubmVsIjogImVzdHJlbm9zY2luZXNhYSIsCiAgICAiaW5mb0xhYmVscyI6IHt9LAogICAgInBsb3QiOiAiW0Nhc3RlbGxhbm9dW0NSXVtDUl1QZWzDrWN1bGFzIGVuIENhc3RlbGxhbm8sIHBvciBnw6luZXJvcy4gUHVlZGUgcmVxdWVyaXIgZWwgdXNvIGRlIHByb3hpZXMgZW4gZnVuY2nDs24gZGVsIHBhw61zL29wZXJhZG9yYSBkZXNkZSBlbCBxdWUgc2UgYWNjZWRlLiIsCiAgICAic2VhcmNoX3R5cGUiOiAibW92aWUiLAogICAgInRodW1ibmFpbCI6ICIvc3RvcmFnZS9lbXVsYXRlZC8wL0FuZHJvaWQvZGF0YS90aGUudGVhbS5yaWsvZmlsZXMvLmtvZGkvYWRkb25zL3BsdWdpbi52aWRlby5iYWxhbmRyby9yZXNvdXJjZXMvbWVkaWEvY2hhbm5lbHMvdGh1bWIvZXN0cmVub3NjaW5lc2FhLmpwZyIsCiAgICAidGl0bGUiOiAiW0NPTE9SIG1vY2Nhc2luXUQuQy5bL0NPTE9SXSIsCiAgICAidXJsIjogImh0dHBzOi8vd3d3LmVzdHJlbm9zY2luZXNhYS5jb20vZ2VucmUvZC1jLyIKfQ%3D%3D",return)</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colordeepskyblue-peliculas-color)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
 		<item id="13">
 			<property name="id">$NUMBER[13]</property>
 			<property name="mainmenuid">2</property>
-			<label>[COLOR moccasin]Star wars[/COLOR]</label>
+			<label>[COLOR moccasin]D.C.[/COLOR]</label>
 			<label2>Add-on de Vídeo</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb>image://%2fstorage%2femulated%2f0%2fAndroid%2fdata%2fthe.team.rik%2ffiles%2f.kodi%2faddons%2fplugin.video.balandro%2fresources%2fmedia%2fchannels%2fthumb%2festrenoscinesaa.jpg/</thumb>
-			<onclick>ActivateWindow(Videos,"plugin://plugin.video.balandro/?ewogICAgImFjdGlvbiI6ICJsaXN0X2FsbCIsCiAgICAiY2F0ZWdvcnkiOiAiRXN0cmVub3NDaW5lc2FhIiwKICAgICJjaGFubmVsIjogImVzdHJlbm9zY2luZXNhYSIsCiAgICAiaW5mb0xhYmVscyI6IHt9LAogICAgInBsb3QiOiAiW0Nhc3RlbGxhbm9dW0NSXVtDUl1QZWzDrWN1bGFzIGVuIENhc3RlbGxhbm8sIHBvciBnw6luZXJvcy4gUHVlZGUgcmVxdWVyaXIgZWwgdXNvIGRlIHByb3hpZXMgZW4gZnVuY2nDs24gZGVsIHBhw61zL29wZXJhZG9yYSBkZXNkZSBlbCBxdWUgc2UgYWNjZWRlLiIsCiAgICAic2VhcmNoX3R5cGUiOiAibW92aWUiLAogICAgInRodW1ibmFpbCI6ICIvc3RvcmFnZS9lbXVsYXRlZC8wL0FuZHJvaWQvZGF0YS90aGUudGVhbS5yaWsvZmlsZXMvLmtvZGkvYWRkb25zL3BsdWdpbi52aWRlby5iYWxhbmRyby9yZXNvdXJjZXMvbWVkaWEvY2hhbm5lbHMvdGh1bWIvZXN0cmVub3NjaW5lc2FhLmpwZyIsCiAgICAidGl0bGUiOiAiW0NPTE9SIG1vY2Nhc2luXVN0YXIgd2Fyc1svQ09MT1JdIiwKICAgICJ1cmwiOiAiaHR0cHM6Ly93d3cuZXN0cmVub3NjaW5lc2FhLmNvbS9nZW5yZS9zdGFyd2Fycy8iCn0%3D",return)</onclick>
-			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.balandro/?ewogICAgImFjdGlvbiI6ICJsaXN0X2FsbCIsCiAgICAiY2F0ZWdvcnkiOiAiRXN0cmVub3NDaW5lc2FhIiwKICAgICJjaGFubmVsIjogImVzdHJlbm9zY2luZXNhYSIsCiAgICAiaW5mb0xhYmVscyI6IHt9LAogICAgInBsb3QiOiAiW0Nhc3RlbGxhbm9dW0NSXVtDUl1QZWzDrWN1bGFzIGVuIENhc3RlbGxhbm8sIHBvciBnw6luZXJvcy4gUHVlZGUgcmVxdWVyaXIgZWwgdXNvIGRlIHByb3hpZXMgZW4gZnVuY2nDs24gZGVsIHBhw61zL29wZXJhZG9yYSBkZXNkZSBlbCBxdWUgc2UgYWNjZWRlLiIsCiAgICAic2VhcmNoX3R5cGUiOiAibW92aWUiLAogICAgInRodW1ibmFpbCI6ICIvc3RvcmFnZS9lbXVsYXRlZC8wL0FuZHJvaWQvZGF0YS90aGUudGVhbS5yaWsvZmlsZXMvLmtvZGkvYWRkb25zL3BsdWdpbi52aWRlby5iYWxhbmRyby9yZXNvdXJjZXMvbWVkaWEvY2hhbm5lbHMvdGh1bWIvZXN0cmVub3NjaW5lc2FhLmpwZyIsCiAgICAidGl0bGUiOiAiW0NPTE9SIG1vY2Nhc2luXVN0YXIgd2Fyc1svQ09MT1JdIiwKICAgICJ1cmwiOiAiaHR0cHM6Ly93d3cuZXN0cmVub3NjaW5lc2FhLmNvbS9nZW5yZS9zdGFyd2Fycy8iCn0%3D",return)</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colordeepskyblue-peliculas-color)</visible>
+			<visible>[System.AddonIsEnabled(plugin.video.balandro)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colordeepskyblue-peliculas-color)</visible>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.balandro/?ewogICAgImFjdGlvbiI6ICJsaXN0X2FsbCIsCiAgICAiY2F0ZWdvcnkiOiAiRXN0cmVub3NDaW5lc2FhIiwKICAgICJjaGFubmVsIjogImVzdHJlbm9zY2luZXNhYSIsCiAgICAiaW5mb0xhYmVscyI6IHt9LAogICAgInBsb3QiOiAiW0Nhc3RlbGxhbm9dW0NSXVtDUl1QZWzDrWN1bGFzIGVuIENhc3RlbGxhbm8sIHBvciBnw6luZXJvcy4gUHVlZGUgcmVxdWVyaXIgZWwgdXNvIGRlIHByb3hpZXMgZW4gZnVuY2nDs24gZGVsIHBhw61zL29wZXJhZG9yYSBkZXNkZSBlbCBxdWUgc2UgYWNjZWRlLiIsCiAgICAic2VhcmNoX3R5cGUiOiAibW92aWUiLAogICAgInRodW1ibmFpbCI6ICIvc3RvcmFnZS9lbXVsYXRlZC8wL0FuZHJvaWQvZGF0YS90aGUudGVhbS5yaWsvZmlsZXMvLmtvZGkvYWRkb25zL3BsdWdpbi52aWRlby5iYWxhbmRyby9yZXNvdXJjZXMvbWVkaWEvY2hhbm5lbHMvdGh1bWIvZXN0cmVub3NjaW5lc2FhLmpwZyIsCiAgICAidGl0bGUiOiAiW0NPTE9SIG1vY2Nhc2luXUQuQy5bL0NPTE9SXSIsCiAgICAidXJsIjogImh0dHBzOi8vd3d3LmVzdHJlbm9zY2luZXNhYS5jb20vZ2VucmUvZC1jLyIKfQ%3D%3D",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.balandro/?ewogICAgImFjdGlvbiI6ICJsaXN0X2FsbCIsCiAgICAiY2F0ZWdvcnkiOiAiRXN0cmVub3NDaW5lc2FhIiwKICAgICJjaGFubmVsIjogImVzdHJlbm9zY2luZXNhYSIsCiAgICAiaW5mb0xhYmVscyI6IHt9LAogICAgInBsb3QiOiAiW0Nhc3RlbGxhbm9dW0NSXVtDUl1QZWzDrWN1bGFzIGVuIENhc3RlbGxhbm8sIHBvciBnw6luZXJvcy4gUHVlZGUgcmVxdWVyaXIgZWwgdXNvIGRlIHByb3hpZXMgZW4gZnVuY2nDs24gZGVsIHBhw61zL29wZXJhZG9yYSBkZXNkZSBlbCBxdWUgc2UgYWNjZWRlLiIsCiAgICAic2VhcmNoX3R5cGUiOiAibW92aWUiLAogICAgInRodW1ibmFpbCI6ICIvc3RvcmFnZS9lbXVsYXRlZC8wL0FuZHJvaWQvZGF0YS90aGUudGVhbS5yaWsvZmlsZXMvLmtvZGkvYWRkb25zL3BsdWdpbi52aWRlby5iYWxhbmRyby9yZXNvdXJjZXMvbWVkaWEvY2hhbm5lbHMvdGh1bWIvZXN0cmVub3NjaW5lc2FhLmpwZyIsCiAgICAidGl0bGUiOiAiW0NPTE9SIG1vY2Nhc2luXUQuQy5bL0NPTE9SXSIsCiAgICAidXJsIjogImh0dHBzOi8vd3d3LmVzdHJlbm9zY2luZXNhYS5jb20vZ2VucmUvZC1jLyIKfQ%3D%3D",return)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
 		<item id="14">
 			<property name="id">$NUMBER[14]</property>
+			<property name="mainmenuid">2</property>
+			<label>[COLOR moccasin]Star wars[/COLOR]</label>
+			<label2>Add-on de Vídeo</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://%2fstorage%2femulated%2f0%2fAndroid%2fdata%2fthe.team.rik%2ffiles%2f.kodi%2faddons%2fplugin.video.balandro%2fresources%2fmedia%2fchannels%2fthumb%2festrenoscinesaa.jpg/</thumb>
+			<visible>[System.AddonIsEnabled(plugin.video.balandro)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colordeepskyblue-peliculas-color)</visible>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.balandro/?ewogICAgImFjdGlvbiI6ICJsaXN0X2FsbCIsCiAgICAiY2F0ZWdvcnkiOiAiRXN0cmVub3NDaW5lc2FhIiwKICAgICJjaGFubmVsIjogImVzdHJlbm9zY2luZXNhYSIsCiAgICAiaW5mb0xhYmVscyI6IHt9LAogICAgInBsb3QiOiAiW0Nhc3RlbGxhbm9dW0NSXVtDUl1QZWzDrWN1bGFzIGVuIENhc3RlbGxhbm8sIHBvciBnw6luZXJvcy4gUHVlZGUgcmVxdWVyaXIgZWwgdXNvIGRlIHByb3hpZXMgZW4gZnVuY2nDs24gZGVsIHBhw61zL29wZXJhZG9yYSBkZXNkZSBlbCBxdWUgc2UgYWNjZWRlLiIsCiAgICAic2VhcmNoX3R5cGUiOiAibW92aWUiLAogICAgInRodW1ibmFpbCI6ICIvc3RvcmFnZS9lbXVsYXRlZC8wL0FuZHJvaWQvZGF0YS90aGUudGVhbS5yaWsvZmlsZXMvLmtvZGkvYWRkb25zL3BsdWdpbi52aWRlby5iYWxhbmRyby9yZXNvdXJjZXMvbWVkaWEvY2hhbm5lbHMvdGh1bWIvZXN0cmVub3NjaW5lc2FhLmpwZyIsCiAgICAidGl0bGUiOiAiW0NPTE9SIG1vY2Nhc2luXVN0YXIgd2Fyc1svQ09MT1JdIiwKICAgICJ1cmwiOiAiaHR0cHM6Ly93d3cuZXN0cmVub3NjaW5lc2FhLmNvbS9nZW5yZS9zdGFyd2Fycy8iCn0%3D",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.balandro/?ewogICAgImFjdGlvbiI6ICJsaXN0X2FsbCIsCiAgICAiY2F0ZWdvcnkiOiAiRXN0cmVub3NDaW5lc2FhIiwKICAgICJjaGFubmVsIjogImVzdHJlbm9zY2luZXNhYSIsCiAgICAiaW5mb0xhYmVscyI6IHt9LAogICAgInBsb3QiOiAiW0Nhc3RlbGxhbm9dW0NSXVtDUl1QZWzDrWN1bGFzIGVuIENhc3RlbGxhbm8sIHBvciBnw6luZXJvcy4gUHVlZGUgcmVxdWVyaXIgZWwgdXNvIGRlIHByb3hpZXMgZW4gZnVuY2nDs24gZGVsIHBhw61zL29wZXJhZG9yYSBkZXNkZSBlbCBxdWUgc2UgYWNjZWRlLiIsCiAgICAic2VhcmNoX3R5cGUiOiAibW92aWUiLAogICAgInRodW1ibmFpbCI6ICIvc3RvcmFnZS9lbXVsYXRlZC8wL0FuZHJvaWQvZGF0YS90aGUudGVhbS5yaWsvZmlsZXMvLmtvZGkvYWRkb25zL3BsdWdpbi52aWRlby5iYWxhbmRyby9yZXNvdXJjZXMvbWVkaWEvY2hhbm5lbHMvdGh1bWIvZXN0cmVub3NjaW5lc2FhLmpwZyIsCiAgICAidGl0bGUiOiAiW0NPTE9SIG1vY2Nhc2luXVN0YXIgd2Fyc1svQ09MT1JdIiwKICAgICJ1cmwiOiAiaHR0cHM6Ly93d3cuZXN0cmVub3NjaW5lc2FhLmNvbS9nZW5yZS9zdGFyd2Fycy8iCn0%3D",return)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="isSubmenu">True</property>
+			</item>
+		<item id="15">
+			<property name="id">$NUMBER[15]</property>
 			<property name="mainmenuid">2</property>
 			<label>Info [COLOR green]TMDB[/COLOR]</label>
 			<label2>Add-on de Vídeo</label2>
@@ -426,8 +448,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colordeepskyblue-peliculas-color)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="15">
-			<property name="id">$NUMBER[15]</property>
+		<item id="16">
+			<property name="id">$NUMBER[16]</property>
 			<property name="mainmenuid">2</property>
 			<label>[COLOR red]Trakt[/COLOR]</label>
 			<label2>Add-on de Vídeo</label2>
@@ -438,8 +460,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colordeepskyblue-peliculas-color)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="16">
-			<property name="id">$NUMBER[16]</property>
+		<item id="17">
+			<property name="id">$NUMBER[17]</property>
 			<property name="mainmenuid">2</property>
 			<label>[COLOR violet]GÉNEROS[/COLOR]</label>
 			<label2>Add-on de Vídeo</label2>
@@ -465,7 +487,7 @@
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">3</property>
-			<label>[COLOR goldenrod][B]ALFA[/B][/COLOR]</label>
+			<label>[COLOR goldenrod]ALFA[/COLOR]</label>
 			<label2>Add-on de Vídeo</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb>image://%2fstorage%2femulated%2f0%2fAndroid%2fdata%2fthe.team.rik%2ffiles%2f.kodi%2faddons%2fplugin.video.alfa%2fresources%2fmedia%2fthemes%2fdefault%2fthumb_channels_tvshow.png/</thumb>
@@ -477,7 +499,7 @@
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">3</property>
-			<label>[COLOR ffb30101][B]TACONES [/B][/COLOR]</label>
+			<label>[COLOR ffb30101]TACONES[/COLOR]</label>
 			<label2>Elemento Personalizado</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb>special://skin/extras/icons/film.png</thumb>
@@ -489,7 +511,7 @@
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">3</property>
-			<label>[COLOR violet]BALANDRO[/COLOR]</label>
+			<label>[COLORdeepskyblue]BALANDRO[/COLOR]</label>
 			<label2>Add-on de Vídeo</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb>image://%2fstorage%2femulated%2f0%2fAndroid%2fdata%2fthe.team.rik%2ffiles%2f.kodi%2faddons%2fplugin.video.balandro%2fresources%2fmedia%2fthemes%2fdefault%2ftv.png/</thumb>
@@ -654,9 +676,10 @@
 			<label2>Elemento Personalizado</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb>special://skin/extras/icons/Deportes/Ciclismo.png</thumb>
+			<visible>[System.HasAddon(plugin.video.winner)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorcd00e600-deportes-color)</visible>
 			<onclick>ActivateWindow(Videos,"plugin://plugin.video.winner/?RHdodCI6ICdyFmbhZmIgwyJv12cpx2YpN0JgojIlRncvBXZkJCIscCMv92bP90Twk2bnAiOi42bpR3YhJye9dybtNXasNWaDdCI6ICblJWYsJCIscyZwpmLv12cpx2YpN2LhlGZl12Lx4COuIzLuFGdpR3LuFGdpRXY0xWYv02bj5CduVGdu92YyV2c1JWdoRXan5ydhJ3LvozcwRHdodCI6IibvNWaiACLncGcq5CdyFmbhZ2Xv12cpx2YpN2LhlGZl12Lx4COuIzLuFGdpR3LuFGdpRXY0xWYv02bj5CduVGdu92YyV2c1JWdoRXan5ydhJ3Lvozcw",return)</onclick>
 			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.winner/?RHdodCI6ICdyFmbhZmIgwyJv12cpx2YpN0JgojIlRncvBXZkJCIscCMv92bP90Twk2bnAiOi42bpR3YhJye9dybtNXasNWaDdCI6ICblJWYsJCIscyZwpmLv12cpx2YpN2LhlGZl12Lx4COuIzLuFGdpR3LuFGdpRXY0xWYv02bj5CduVGdu92YyV2c1JWdoRXan5ydhJ3LvozcwRHdodCI6IibvNWaiACLncGcq5CdyFmbhZ2Xv12cpx2YpN2LhlGZl12Lx4COuIzLuFGdpR3LuFGdpRXY0xWYv02bj5CduVGdu92YyV2c1JWdoRXan5ydhJ3Lvozcw",return)</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorcd00e600-deportes-color)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
 		<item id="10">
@@ -666,9 +689,10 @@
 			<label2>Elemento Personalizado</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb>special://skin/extras/icons/Deportes/tennis.png</thumb>
+			<visible>[System.HasAddon(plugin.video.winner)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorcd00e600-deportes-color)</visible>
 			<onclick>ActivateWindow(Videos,"plugin://plugin.video.winner/?RHdodCI6ICdyFmbhZmIgwyJzlmblR1JgojIlRncvBXZkJCIscCMv92bP90Twk2bnAiOi42bpR3YhJye9dycp5WZUdCI6ICblJWYsJCIscyZwpmLzlmblR3LhlGZl12Lx4COuIzLuFGdpR3LuFGdpRXY0xWYv02bj5CduVGdu92YyV2c1JWdoRXan5ydhJ3LvozcwRHdodCI6IibvNWaiACLncGcq5CdyFmbhZ2XzlmblR3LhlGZl12Lx4COuIzLuFGdpR3LuFGdpRXY0xWYv02bj5CduVGdu92YyV2c1JWdoRXan5ydhJ3Lvozcw",return)</onclick>
 			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.winner/?RHdodCI6ICdyFmbhZmIgwyJzlmblR1JgojIlRncvBXZkJCIscCMv92bP90Twk2bnAiOi42bpR3YhJye9dycp5WZUdCI6ICblJWYsJCIscyZwpmLzlmblR3LhlGZl12Lx4COuIzLuFGdpR3LuFGdpRXY0xWYv02bj5CduVGdu92YyV2c1JWdoRXan5ydhJ3LvozcwRHdodCI6IibvNWaiACLncGcq5CdyFmbhZ2XzlmblR3LhlGZl12Lx4COuIzLuFGdpR3LuFGdpRXY0xWYv02bj5CduVGdu92YyV2c1JWdoRXan5ydhJ3Lvozcw",return)</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorcd00e600-deportes-color)</visible>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
 		<item id="11">
@@ -678,8 +702,10 @@
 			<label2>Elemento Personalizado</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb>special://skin/extras/icons/Deportes/padel.png</thumb>
-			<visible>[False] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorcd00e600-deportes-color)</visible>
-			<onclick>noop</onclick>
+			<visible>[System.HasAddon(plugin.video.winner)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorcd00e600-deportes-color)</visible>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.winner/?iOzBHd0h2JgojI0JXYuFmZiACLnwWZkFIzhB1JgojIlRncvBXZkJCIscCMwADMvl2bnAiOi42bpR3YhJyeQfnwWZkFIzhB1JgojIsVmYhxmIgwyJnBnauwWZkFTQlMzQlA3LhlGZl12L14iMv4WY0lGdv4WY0lGdhRHbh9SbvNmL05WZ052bjJXZzVnY1hGdpdmL3Fmcv8iOzBHd0h2JgojIu92YpJCIscyZwpmL0JXYuFmZfxWZkFTQlMzQlA3LhlGZl12L14iMv4WY0lGdv4WY0lGdhRHbh9SbvNmL05WZ052bjJXZzVnY1hGdpdmL3Fmcv8",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.winner/?iOzBHd0h2JgojI0JXYuFmZiACLnwWZkFIzhB1JgojIlRncvBXZkJCIscCMwADMvl2bnAiOi42bpR3YhJyeQfnwWZkFIzhB1JgojIsVmYhxmIgwyJnBnauwWZkFTQlMzQlA3LhlGZl12L14iMv4WY0lGdv4WY0lGdhRHbh9SbvNmL05WZ052bjJXZzVnY1hGdpdmL3Fmcv8iOzBHd0h2JgojIu92YpJCIscyZwpmL0JXYuFmZfxWZkFTQlMzQlA3LhlGZl12L14iMv4WY0lGdv4WY0lGdhRHbh9SbvNmL05WZ052bjJXZzVnY1hGdpdmL3Fmcv8",return)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
 		<item id="12">
@@ -689,8 +715,10 @@
 			<label2>Add-on de Vídeo</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb>special://skin/extras/icons/Deportes/american football.png</thumb>
-			<visible>[False] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorcd00e600-deportes-color)</visible>
-			<onclick>noop</onclick>
+			<visible>[System.HasAddon(plugin.video.winner)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorcd00e600-deportes-color)</visible>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.winner/?HanAiOiQnch5WYmJCIscSeidWdSdCI6ISZ0J3bwVGZiACLnkWaJlUaxkUMp9WanAiOi42bpR3YhJye9dSeidWdSdCI6ICblJWYsJCIscyZwpmL5J2Z1J3LhlGZl12Lz4iMv4WY0lGdv4WY0lGdhRHbh9SbvNmL05WZ052bjJXZzVnY1hGdpdmL3Fmcv8iOzBHd0h2JgojIu92YpJCIscyZwpmL0JXYuFmZflnYnVncvEWakVWbvMjLy8ibhRXa09ibhRXa0FGdsF2Lt92YuQnblRnbvNmclNXdiVHa0l2ZucXYy9yL6MHc0R",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.winner/?HanAiOiQnch5WYmJCIscSeidWdSdCI6ISZ0J3bwVGZiACLnkWaJlUaxkUMp9WanAiOi42bpR3YhJye9dSeidWdSdCI6ICblJWYsJCIscyZwpmL5J2Z1J3LhlGZl12Lz4iMv4WY0lGdv4WY0lGdhRHbh9SbvNmL05WZ052bjJXZzVnY1hGdpdmL3Fmcv8iOzBHd0h2JgojIu92YpJCIscyZwpmL0JXYuFmZflnYnVncvEWakVWbvMjLy8ibhRXa09ibhRXa0FGdsF2Lt92YuQnblRnbvNmclNXdiVHa0l2ZucXYy9yL6MHc0R",return)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
 		<item id="13">
@@ -700,8 +728,10 @@
 			<label2>Elemento Personalizado</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb>special://skin/extras/icons/Deportes/boxing.png</thumb>
-			<visible>[False] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorcd00e600-deportes-color)</visible>
-			<onclick>noop</onclick>
+			<visible>[System.HasAddon(plugin.video.winner)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorcd00e600-deportes-color)</visible>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.winner/?HanAiOiQnch5WYmJCIscyblh3bCdCI6ISZ0J3bwVGZiACLnkWaJlUaxkUMp9WanAiOi42bpR3YhJye9dyblh3bCdCI6ICblJWYsJCIscyZwpmLvVGevJ2LhlGZl12Lz4iMv4WY0lGdv4WY0lGdhRHbh9SbvNmL05WZ052bjJXZzVnY1hGdpdmL3Fmcv8iOzBHd0h2JgojIu92YpJCIscyZwpmL0JXYuFmZf9WZ49mYvEWakVWbvMjLy8ibhRXa09ibhRXa0FGdsF2Lt92YuQnblRnbvNmclNXdiVHa0l2ZucXYy9yL6MHc0R",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.winner/?HanAiOiQnch5WYmJCIscyblh3bCdCI6ISZ0J3bwVGZiACLnkWaJlUaxkUMp9WanAiOi42bpR3YhJye9dyblh3bCdCI6ICblJWYsJCIscyZwpmLvVGevJ2LhlGZl12Lz4iMv4WY0lGdv4WY0lGdhRHbh9SbvNmL05WZ052bjJXZzVnY1hGdpdmL3Fmcv8iOzBHd0h2JgojIu92YpJCIscyZwpmL0JXYuFmZf9WZ49mYvEWakVWbvMjLy8ibhRXa09ibhRXa0FGdsF2Lt92YuQnblRnbvNmclNXdiVHa0l2ZucXYy9yL6MHc0R",return)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
 		<item id="14">
@@ -711,8 +741,10 @@
 			<label2>Add-on de Vídeo</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb>special://skin/extras/icons/Deportes/water_polo.png</thumb>
-			<visible>[False] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorcd00e600-deportes-color)</visible>
-			<onclick>noop</onclick>
+			<visible>[System.HasAddon(plugin.video.winner)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorcd00e600-deportes-color)</visible>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.winner/?0h2JgojI0JXYuFmZiACLn8GbvBnclRXYXdCI6ISZ0J3bwVGZiACLnkWaJlUaxkUMp9WanAiOi42bpR3YhJyeQfn8GbvBnclRXYXdCI6ICblJWYsJCIscyZwpmLvx2bwJXZ0F2dvEWakVWbvMjLy8ibhRXa09ibhRXa0FGdsF2Lt92YuQnblRnbvNmclNXdiVHa0l2ZucXYy9yL6MHc0RHanAiOi42bjlmIgwyJnBnauQnch5WYm91bs9GcyVGdhd3LhlGZl12Lz4iMv4WY0lGdv4WY0lGdhRHbh9SbvNmL05WZ052bjJXZzVnY1hGdpdmL3Fmcv8iOzBHd",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.winner/?0h2JgojI0JXYuFmZiACLn8GbvBnclRXYXdCI6ISZ0J3bwVGZiACLnkWaJlUaxkUMp9WanAiOi42bpR3YhJyeQfn8GbvBnclRXYXdCI6ICblJWYsJCIscyZwpmLvx2bwJXZ0F2dvEWakVWbvMjLy8ibhRXa09ibhRXa0FGdsF2Lt92YuQnblRnbvNmclNXdiVHa0l2ZucXYy9yL6MHc0RHanAiOi42bjlmIgwyJnBnauQnch5WYm91bs9GcyVGdhd3LhlGZl12Lz4iMv4WY0lGdv4WY0lGdhRHbh9SbvNmL05WZ052bjJXZzVnY1hGdpdmL3Fmcv8iOzBHd",return)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
 		<item id="1">
@@ -767,6 +799,18 @@
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">5</property>
+			<label>[COLOR white]KODI[COLOR gold]verti[COLOR yellow]DO [COLOR white]Tv[/COLOR]</label>
+			<label2>Add-on de Vídeo</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://https%3a%2f%2fi.postimg.cc%2fm2tT1bYP%2fIMG-20230706-WA0006.jpg/</thumb>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.KODIvertiDO/?action=iptv_v&amp;title=%5BCOLOR+white%5D%5BB%5DKODIvertiDO+Tv%5B%2FB%5D%5B%2FCOLOR%5D&amp;url=&amp;thumbnail=https%3A%2F%2Fi.postimg.cc%2Fm2tT1bYP%2FIMG-20230706-WA0006.jpg&amp;plot=&amp;extra=0&amp;page=",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.KODIvertiDO/?action=iptv_v&amp;title=%5BCOLOR+white%5D%5BB%5DKODIvertiDO+Tv%5B%2FB%5D%5B%2FCOLOR%5D&amp;url=&amp;thumbnail=https%3A%2F%2Fi.postimg.cc%2Fm2tT1bYP%2FIMG-20230706-WA0006.jpg&amp;plot=&amp;extra=0&amp;page=",return)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorff990000-tvpremium-color)</visible>
+			<property name="isSubmenu">True</property>
+			</item>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
+			<property name="mainmenuid">5</property>
 			<label>[COLOR red]Kodi[/COLOR][COLOR yellow]Spain[/COLOR][COLOR red]Tv[/COLOR]</label>
 			<label2>Add-on de Vídeo</label2>
 			<icon>DefaultShortcut.png</icon>
@@ -776,8 +820,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorff990000-tvpremium-color)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="6">
-			<property name="id">$NUMBER[6]</property>
+		<item id="7">
+			<property name="id">$NUMBER[7]</property>
 			<property name="mainmenuid">5</property>
 			<label>[COLOR fuchsia]PLUTO [COLOR white]TV[/COLOR]</label>
 			<label2>Elemento Personalizado</label2>
@@ -788,8 +832,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorff990000-tvpremium-color)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="7">
-			<property name="id">$NUMBER[7]</property>
+		<item id="8">
+			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">5</property>
 			<label>[COLOR slateblue]SAMSUNG [COLOR white]TV[/COLOR]</label>
 			<label2>Elemento Personalizado</label2>
@@ -800,8 +844,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorff990000-tvpremium-color)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="8">
-			<property name="id">$NUMBER[8]</property>
+		<item id="9">
+			<property name="id">$NUMBER[9]</property>
 			<property name="mainmenuid">5</property>
 			<label>[COLOR crimson]RED BULL [COLOR silver]TV[/COLOR]</label>
 			<label2>Elemento Personalizado</label2>
@@ -821,7 +865,7 @@
 			<thumb />
 			<onclick>ActivateWindow(Programs,Addons,return)</onclick>
 			<property name="path">ActivateWindow(Programs,Addons,return)</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorccd500f9-add-ons-color)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorgoldenrod-add-ons-color)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
 		<item id="2">
@@ -833,11 +877,25 @@
 			<thumb />
 			<onclick>ActivateWindow(Videos,Addons,return)</onclick>
 			<property name="path">ActivateWindow(Videos,Addons,return)</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorccd500f9-add-ons-color)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorgoldenrod-add-ons-color)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">6</property>
+			<label>[COLOR red]YouTube[/COLOR]</label>
+			<label2>Add-on de Vídeo</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>thumb</thumb>
+			<property name="translatedPath">ActivateWindow(Videos,"plugin://plugin.video.youtube",return)</property>
+			<visible>[System.HasAddon(plugin.video.youtube)+System.AddonIsEnabled(plugin.video.youtube)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorgoldenrod-add-ons-color)</visible>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.youtube",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.youtube",return)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="isSubmenu">True</property>
+			</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">6</property>
 			<label>Addons de música</label>
 			<label2>Elemento Personalizado</label2>
@@ -845,11 +903,11 @@
 			<thumb />
 			<onclick>ActivateWindow(Music,addons://sources/audio,return)</onclick>
 			<property name="path">ActivateWindow(Music,addons://sources/audio,return)</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorccd500f9-add-ons-color)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorgoldenrod-add-ons-color)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="4">
-			<property name="id">$NUMBER[4]</property>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">6</property>
 			<label>Addons de imágenes</label>
 			<label2>Elemento Personalizado</label2>
@@ -857,11 +915,11 @@
 			<thumb />
 			<onclick>ActivateWindow(Pictures,addons://sources/image,return)</onclick>
 			<property name="path">ActivateWindow(Pictures,addons://sources/image,return)</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorccd500f9-add-ons-color)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorgoldenrod-add-ons-color)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="5">
-			<property name="id">$NUMBER[5]</property>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">6</property>
 			<label>$LOCALIZE[8]</label>
 			<label2 />
@@ -870,7 +928,7 @@
 			<onclick condition="!String.IsEmpty(Weather.Plugin)">ActivateWindow(Weather)</onclick>
 			<property name="path">ActivateWindow(Weather)</property>
 			<onclick condition="![!String.IsEmpty(Weather.Plugin)]">ActivateWindow(servicesettings,weather)</onclick>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorccd500f9-add-ons-color)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),colorgoldenrod-add-ons-color)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
 		<item id="1">
@@ -892,8 +950,8 @@
 			<label2>Add-on de Vídeo</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb>image://https%3a%2f%2fforexseson.com%2fmychannel%2fpublic%2fcategoryImages%2f582563528.png/</thumb>
-			<onclick>ActivateWindow(Videos,"plugin://plugin.video.koditv/?action=tv_adictos2&amp;title=%5BB%5D%5BLOWERCASE%5D%5BCAPITALIZE%5D%5BCOLOR+white%5DTV+CINE+Y+SERIES%5B%2FCAPITALIZE%5D%5B%2FLOWERCASE%5D%5B%2FCOLOR%5D%5B%2FB%5D&amp;url=3&amp;thumbnail=https%3A%2F%2Fforexseson.com%2Fmychannel%2Fpublic%2FcategoryImages%2F582563528.png&amp;plot=&amp;extra=TV+CINE+Y+SERIES&amp;page=",return)</onclick>
-			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.koditv/?action=tv_adictos2&amp;title=%5BB%5D%5BLOWERCASE%5D%5BCAPITALIZE%5D%5BCOLOR+white%5DTV+CINE+Y+SERIES%5B%2FCAPITALIZE%5D%5B%2FLOWERCASE%5D%5B%2FCOLOR%5D%5B%2FB%5D&amp;url=3&amp;thumbnail=https%3A%2F%2Fforexseson.com%2Fmychannel%2Fpublic%2FcategoryImages%2F582563528.png&amp;plot=&amp;extra=TV+CINE+Y+SERIES&amp;page=",return)</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.KODIvertiDO/?action=iptv_v&amp;title=%5BCOLOR+white%5D%5BB%5DKODIvertiDO+Tv%5B%2FB%5D%5B%2FCOLOR%5D&amp;url=&amp;thumbnail=https%3A%2F%2Fi.postimg.cc%2Fm2tT1bYP%2FIMG-20230706-WA0006.jpg&amp;plot=&amp;extra=0&amp;page=",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.KODIvertiDO/?action=iptv_v&amp;title=%5BCOLOR+white%5D%5BB%5DKODIvertiDO+Tv%5B%2FB%5D%5B%2FCOLOR%5D&amp;url=&amp;thumbnail=https%3A%2F%2Fi.postimg.cc%2Fm2tT1bYP%2FIMG-20230706-WA0006.jpg&amp;plot=&amp;extra=0&amp;page=",return)</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),pvr-colorffb30101-t-colorcc76ff03-d-colordeepskyblue-t-coloraqua-m-color)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
@@ -989,7 +1047,7 @@
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
 			<property name="mainmenuid">8</property>
-			<label>[COLOR ffb30101][B]TACONES [/B][/COLOR]</label>
+			<label>[COLOR ffb30101]TACONES[/COLOR]</label>
 			<label2>Add-on de Vídeo</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb>special://skin/extras/icons/Addons/Tacones.png</thumb>
@@ -1001,7 +1059,7 @@
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">8</property>
-			<label>[COLOR goldenrod][B]ALFA[/B][/COLOR]</label>
+			<label>[COLOR goldenrod]ALFA[/COLOR]</label>
 			<label2>Complemento de Vídeo</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb>special://skin/extras/icons/Addons/Alfa.png</thumb>
@@ -1013,7 +1071,7 @@
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">8</property>
-			<label>[COLOR violet]BALANDRO[/COLOR]</label>
+			<label>[COLORdeepskyblue]BALANDRO[/COLOR]</label>
 			<label2>Complemento de Vídeo</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb>special://skin/extras/icons/Addons/Balandro.png</thumb>
@@ -1037,7 +1095,7 @@
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">8</property>
-			<label>[COLOR red]YOUTUBE[/COLOR]</label>
+			<label>[COLOR red]DUFFYOU[/COLOR]</label>
 			<label2>Elemento Personalizado</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb>special://skin/extras/icons/Addons/YouTube.png</thumb>
@@ -1133,7 +1191,7 @@
 		<item id="8">
 			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">9</property>
-			<label>Archivos - Log</label>
+			<label>[COLOR hotpink]Archivos Log[/COLOR]</label>
 			<label2>Elemento Personalizado</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb>special://skin/extras/icons/log.png</thumb>
@@ -1181,14 +1239,13 @@
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
 			<property name="mainmenuid">10</property>
-			<label>$LOCALIZE[13009]</label>
-			<label2>Comando Kodi</label2>
+			<label>$LOCALIZE[13012]</label>
+			<label2 />
 			<icon>DefaultShortcut.png</icon>
 			<thumb />
-			<property name="translatedPath">Quit</property>
-			<visible>[System.ShowExitButton] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-33060)</visible>
-			<onclick>Quit</onclick>
-			<property name="path">Quit</property>
+			<visible>[System.ShowExitButton] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),apagado)</visible>
+			<onclick>Quit()</onclick>
+			<property name="path">Quit()</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
@@ -1196,43 +1253,85 @@
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">10</property>
 			<label>$LOCALIZE[20077]</label>
-			<label2>Ajustes</label2>
+			<label2 />
 			<icon>DefaultShortcut.png</icon>
 			<thumb />
-			<property name="translatedPath">ActivateWindow(SkinSettings)</property>
-			<onclick>ActivateWindow(SkinSettings)</onclick>
-			<property name="path">ActivateWindow(SkinSettings)</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-33060)</visible>
+			<onclick>ActivateWindow(skinsettings)</onclick>
+			<property name="path">ActivateWindow(skinsettings)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),apagado)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">10</property>
-			<label>[COLOR violet][B]Forzar Cierre Kodi[/B][/COLOR]</label>
+			<label>[COLOR hotpink]Forzar Cierre Kodi[/COLOR]</label>
 			<label2>Elemento Personalizado</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb>image://%2fstorage%2femulated%2f0%2fAndroid%2fdata%2fthe.team.rik%2ffiles%2f.kodi%2faddons%2fplugin.program.RikTeam%2fresources%2fmedia%2fmaintenance.png/</thumb>
-			<property name="translatedPath">ActivateWindow(Programs,"plugin://plugin.program.RikTeam/?mode=forceclose",return)</property>
 			<onclick>ActivateWindow(Programs,"plugin://script.rikteam/?mode=forceclose",return)</onclick>
 			<property name="path">ActivateWindow(Programs,"plugin://script.rikteam/?mode=forceclose",return)</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-33060)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),apagado)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">10</property>
 			<label>$LOCALIZE[20183]</label>
-			<label2>Comando Kodi</label2>
+			<label2 />
 			<icon>DefaultShortcut.png</icon>
 			<thumb />
-			<property name="translatedPath">ReloadSkin()</property>
 			<onclick>ReloadSkin()</onclick>
 			<property name="path">ReloadSkin()</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-33060)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),apagado)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
+			<property name="mainmenuid">10</property>
+			<label>[COLOR pink]¡Falta [COLOR goldenrod]Script RikTeam[/COLOR]!</label>
+			<label2 />
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<visible>[!System.HasAddon(script.rikteam)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),apagado)</visible>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<property name="path">Dialog.Close(all,true)</property>
+			<onclick condition="!System.HasAddon(plugin://script.rikteam)">InstallAddon(script.rikteam)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="isSubmenu">True</property>
+			</item>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
+			<property name="mainmenuid">10</property>
+			<label>[COLOR hotpink]Ajustes Iniciales[/COLOR]</label>
+			<label2 />
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<onclick>Dialog.Close(all,true)</onclick>
+			<property name="path">Dialog.Close(all,true)</property>
+			<onclick>ActivateWindow(5200)</onclick>
+			<onclick>Skin.SetBool(FirstPagina,false)</onclick>
+			<onclick>Skin.SetBool(FirstRunSetup,false)</onclick>
+			<onclick>Skin.SetBool(3RunSetup,false)</onclick>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),apagado)</visible>
+			<property name="isSubmenu">True</property>
+			</item>
+		<item id="7">
+			<property name="id">$NUMBER[7]</property>
+			<property name="mainmenuid">10</property>
+			<label>[COLOR hotpink]Restablecer ajuste[/COLOR]</label>
+			<label2 />
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<visible>[System.HasAddon(script.rikteam)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),apagado)</visible>
+			<onclick>Dialog.Close(all,true)</onclick>
+			<property name="path">Dialog.Close(all,true)</property>
+			<onclick>ReplaceWindow(Programs,"plugin://script.rikteam/?mode=install&amp;action=build&amp;name=ajustes+basic+v21",return)</onclick>
+			<onclick>Skin.SetBool(preguntado_ajustes,true)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="isSubmenu">True</property>
+			</item>
+		<item id="8">
+			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">10</property>
 			<label>$LOCALIZE[14206]</label>
 			<label2>Ajustes</label2>
@@ -1240,7 +1339,32 @@
 			<thumb />
 			<onclick>ActivateWindow(InterfaceSettings)</onclick>
 			<property name="path">ActivateWindow(InterfaceSettings)</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-33060)</visible>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),apagado)</visible>
+			<property name="isSubmenu">True</property>
+			</item>
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">11</property>
+			<label>$LOCALIZE[31485]</label>
+			<label2 />
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<onclick>EjectTray()</onclick>
+			<property name="path">EjectTray()</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-31958)</visible>
+			<property name="isSubmenu">True</property>
+			</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">11</property>
+			<label>$LOCALIZE[600]</label>
+			<label2 />
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<visible>[System.HasMediaAudioCD] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-31958)</visible>
+			<onclick>RipCD</onclick>
+			<property name="path">RipCD</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
 		</include>
@@ -1248,648 +1372,4 @@
 	<include name="skinshortcuts-submenu-1" />
 	<include />
 	<include name="skinshortcuts-submenu-2" />
-	<include name="skinshortcuts-template-widget1">
-		<include condition="String.IsEqual(System.ProfileName,Master user)">skinshortcuts-template-widget1-Master user</include>
-		</include>
-	<include name="skinshortcuts-template-widget1-Master user">
-		<control type="group">
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-33060)</visible>
-			<top>449</top>
-			<left>40</left>
-			<control type="group">
-				<visible>Integer.IsGreater(Container(801110).NumItems,0)</visible>
-				<control type="group">
-					<visible>ControlGroup(90010).HasFocus</visible>
-					<animation effect="slide" end="-410,0" time="320" tween="cubic" easing="inout" condition="String.IsEqual(Skin.String(MainMenu.Layout),vertical) + String.Contains(Container(9000).ListItem.Property(widgetStyle),Extended) + ControlGroup(90010).HasFocus">Conditional</animation>
-					<control type="group">
-						<animation effect="fade" end="0">WindowClose</animation>
-						<control type="image">
-							<top>-40</top>
-							<width>1890</width>
-							<height>391</height>
-							<texture>homewidgets/list_shadow.png</texture>
-							</control>
-						<control type="group">
-							<include condition="!true">InfoPosterContent</include>
-							<include content="InfoTextContent" condition="!true">
-								<param name="left">226</param>
-								<param name="width">1289</param>
-								</include>
-							</control>
-						<control type="group">
-							<include condition="true">InfoSquareContent</include>
-							<include content="InfoTextContent" condition="true">
-								<param name="left">330</param>
-								<param name="width">1184</param>
-								</include>
-							</control>
-						</control>
-					</control>
-				<control type="group">
-					<left>1540</left>
-					<animation effect="slide" end="-410,0" condition="String.IsEqual(Skin.String(MainMenu.Layout),vertical) + String.Contains(Container(9000).ListItem.Property(widgetStyle),Extended)">Conditional</animation>
-					<control type="group">
-						<left>-21</left>
-						<top>-16</top>
-						<animation effect="rotatey" start="0" end="180" center="150" time="400" tween="sine" easing="inout" condition="Control.HasFocus(801110) + false">Conditional</animation>
-						<include condition="!String.IsEmpty(Skin.String(Widget.Trans))">HomeWidgetFade</include>
-						<control type="image">
-							<width>342</width>
-							<height>342</height>
-							<visible>Skin.HasSetting(Enable.GlobalWidgetBack)</visible>
-							<texture colordiffuse="$VAR[HomeWidgetBackColor]" border="40">$VAR[HomeWidgetBackgroundVar]</texture>
-							</control>
-						<control type="image">
-							<width>342</width>
-							<height>342</height>
-							<visible>!Skin.HasSetting(Enable.GlobalWidgetBack)</visible>
-							<texture colordiffuse="FF0B0B0B" border="40">None</texture>
-							</control>
-						</control>
-					<control type="group">
-						<width>300</width>
-						<height>300</height>
-						<animation type="Conditional" condition="Control.HasFocus(801110) + false">
-							<effect type="rotatey" start="0" end="180" center="150" time="400" tween="sine" easing="inout" />
-							<effect type="fade" start="100" end="0" time="300" tween="sine" easing="inout" />
-							</animation>
-						<visible>String.IsEmpty(Container(801110).ListItem.Property(isSystemInfo))</visible>
-						<control type="label">
-							<width>300</width>
-							<top>9</top>
-							<height>20</height>
-							<align>center</align>
-							<font>font12_title</font>
-							<textcolor>grey</textcolor>
-							<shadowcolor>shadow</shadowcolor>
-							<label>130</label>
-							</control>
-						<control type="label">
-							<width>300</width>
-							<top>254</top>
-							<height>40</height>
-							<align>center</align>
-							<font>font12_title</font>
-							<textcolor>grey</textcolor>
-							<shadowcolor>shadow</shadowcolor>
-							<wrapmultiline>true</wrapmultiline>
-							<label>$VAR[HomeWidget801110TitleVar]</label>
-							</control>
-						<include content="ListSquareArt">
-							<param name="id">801110</param>
-							<param name="Texture">$VAR[HomeWidget801110PosterVar]</param>
-							<param name="Title2">$VAR[HomeWidget801110Title2Var]</param>
-							<param name="leftArt">50</param>
-							<param name="topArt">40</param>
-							<param name="widthArt">200</param>
-							<param name="heightArt">200</param>
-							<param name="topFakeDiscArt">40</param>
-							<param name="leftCase">50</param>
-							<param name="topCase">40</param>
-							<param name="widthCase">200</param>
-							<param name="heightCase">200</param>
-							<param name="caseVisible">false</param>
-							<param name="labelHeight" />
-							<param name="fallbackFont">fontCDalbum</param>
-							<param name="fallbackVisible">false</param>
-							<param name="Aspect">scale</param>
-							<param name="Aligny">top</param>
-							<param name="Diffuse" />
-							<param name="Case" />
-							</include>
-						</control>
-					</control>
-				</control>
-			<control type="list" id="801110">
-				<top>5</top>
-				<left>1540</left>
-				<width>300</width>
-				<height>300</height>
-				<onleft condition="!String.IsEqual(Skin.String(MainMenu.Layout),vertical) + [System.HasMediaDVD | Control.IsVisible(9027)]">9020</onleft>
-				<onleft condition="!String.IsEqual(Skin.String(MainMenu.Layout),vertical) + ![System.HasMediaDVD | Control.IsVisible(9027)]">9000</onleft>
-				<onright condition="!String.IsEqual(Skin.String(MainMenu.Layout),vertical) + !Skin.HasSetting(centermainmenu) + Control.IsVisible(90020)">90020</onright>
-				<onright condition="!String.IsEqual(Skin.String(MainMenu.Layout),vertical) + !Skin.HasSetting(centermainmenu) + !Control.IsVisible(90020)">9000</onright>
-				<onright condition="!String.IsEqual(Skin.String(MainMenu.Layout),vertical) + Skin.HasSetting(centermainmenu) + Control.IsVisible(90020)">90020</onright>
-				<onright condition="!String.IsEqual(Skin.String(MainMenu.Layout),vertical) + Skin.HasSetting(centermainmenu) + !Control.IsVisible(90020)">9000</onright>
-				<onleft condition="String.IsEqual(Skin.String(MainMenu.Layout),vertical)">9000</onleft>
-				<onright condition="String.IsEqual(Skin.String(MainMenu.Layout),vertical) + Control.IsVisible(90020)">90020</onright>
-				<onright condition="String.IsEqual(Skin.String(MainMenu.Layout),vertical) + !Control.IsVisible(90020) + [System.HasMediaDVD | Control.IsVisible(9027)]">9020</onright>
-				<onright condition="String.IsEqual(Skin.String(MainMenu.Layout),vertical) + !Control.IsVisible(90020) + ![System.HasMediaDVD | Control.IsVisible(9027)]">9000</onright>
-				<onback>9000</onback>
-				<preloaditems>2</preloaditems>
-				<scrolltime tween="quadratic" easing="out">300</scrolltime>
-				<autoscroll time="10000" delay="10000" repeat="10000">Control.IsVisible(801110) + Skin.HasSetting(Enable.ListWidgetAutoscroll) + !Control.HasFocus(801110)</autoscroll>
-				<animation type="Conditional" condition="[!String.IsEqual(Skin.String(MainMenu.Layout),vertical) + !Control.HasFocus(801110) + false] | [String.IsEqual(Skin.String(MainMenu.Layout),vertical) + !String.Contains(Container(9000).ListItem.Property(widgetStyle),Extended) + !Control.HasFocus(801110) + false]">
-					<effect type="rotatey" start="0" end="-180" center="1690" time="400" tween="sine" easing="inout" />
-					<effect type="fade" start="100" end="0" time="300" tween="sine" easing="inout" />
-					</animation>
-				<animation type="Conditional" condition="String.IsEqual(Skin.String(MainMenu.Layout),vertical) + String.Contains(Container(9000).ListItem.Property(widgetStyle),Extended) + !Control.HasFocus(801110) + false">
-					<effect type="rotatey" start="0" end="-180" center="1280" time="400" tween="sine" easing="inout" />
-					<effect type="fade" start="100" end="0" time="300" tween="sine" easing="inout" />
-					</animation>
-				<animation effect="slide" end="-410,0" condition="String.IsEqual(Skin.String(MainMenu.Layout),vertical) + String.Contains(Container(9000).ListItem.Property(widgetStyle),Extended)">Conditional</animation>
-				<include content="ListSystem">
-					<param name="id">801110</param>
-					<param name="Texture">$VAR[HomeWidget801110PosterVar]</param>
-					<param name="leftArt">0</param>
-					<param name="topArt">2.5</param>
-					<param name="widthArt">300</param>
-					<param name="heightArt">56</param>
-					<param name="leftCase">0</param>
-					<param name="topCase">2.5</param>
-					<param name="widthCase">300</param>
-					<param name="heightCase">56</param>
-					<param name="fallbackFont">fontCDalbum</param>
-					<param name="Case" />
-					</include>
-				<content>
-					<item>
-						<label2>$LOCALIZE[19055]</label2>
-						<icon>NotAvailable.png</icon>
-						<thumb>NotAvailable.png</thumb>
-						<visible>!true + String.IsEmpty(Container(801110).ListItem(1).Label)</visible>
-						</item>
-					<item>
-						<label2>$LOCALIZE[19055]</label2>
-						<icon>DefaultAddonNone.png</icon>
-						<thumb>DefaultAddonNone.png</thumb>
-						<visible>true + String.IsEmpty(Container(801110).ListItem(1).Label)</visible>
-						</item>
-					</content>
-				<content target="" sortby="" sortorder="" limit="" browse="never">
-					<include>skinshortcuts-template-SystemContent</include>
-					</content>
-				</control>
-			</control>
-		</include>
-	<include name="skinshortcuts-template-WidgetPoster">
-		<include condition="String.IsEqual(System.ProfileName,Master user)">skinshortcuts-template-WidgetPoster-Master user</include>
-		</include>
-	<include name="skinshortcuts-template-WidgetPoster-Master user" />
-	<include name="skinshortcuts-template-WidgetTitle">
-		<include condition="String.IsEqual(System.ProfileName,Master user)">skinshortcuts-template-WidgetTitle-Master user</include>
-		</include>
-	<include name="skinshortcuts-template-WidgetTitle-Master user" />
-	<include name="skinshortcuts-template-WidgetTitle2">
-		<include condition="String.IsEqual(System.ProfileName,Master user)">skinshortcuts-template-WidgetTitle2-Master user</include>
-		</include>
-	<include name="skinshortcuts-template-WidgetTitle2-Master user" />
-	<include name="skinshortcuts-template-SystemContent">
-		<include condition="String.IsEqual(System.ProfileName,Master user)">skinshortcuts-template-SystemContent-Master user</include>
-		</include>
-	<include name="skinshortcuts-template-SystemContent-Master user">
-		<item>
-			<label>12395</label>
-			<label2>$INFO[System.BatteryLevel]</label2>
-			<icon>homewidgets/systeminfo/square/battery_100.png</icon>
-			<property name="Fanart">special://skin/backgrounds/widgets/systeminfo/fanart/battery_100.jpg</property>
-			<property name="Label3">Remaining</property>
-			<property name="isSystemInfo">true</property>
-			<visible>Integer.IsGreater(System.BatteryLevel,60)</visible>
-			<onclick>ActivateWindow(systeminfo)</onclick>
-			</item>
-		<item>
-			<label>12395</label>
-			<label2>$INFO[System.BatteryLevel]</label2>
-			<icon>homewidgets/systeminfo/square/battery_50.png</icon>
-			<property name="Fanart">special://skin/backgrounds/widgets/systeminfo/fanart/battery_50.jpg</property>
-			<property name="Label3">Remaining</property>
-			<property name="isSystemInfo">true</property>
-			<visible>Integer.IsGreater(System.BatteryLevel,20) + !Integer.IsGreater(System.BatteryLevel,60)</visible>
-			<onclick>ActivateWindow(systeminfo)</onclick>
-			</item>
-		<item>
-			<label>12395</label>
-			<label2>$INFO[System.BatteryLevel]</label2>
-			<icon>homewidgets/systeminfo/square/battery_10.png</icon>
-			<property name="Fanart">special://skin/backgrounds/widgets/systeminfo/fanart/battery_10.jpg</property>
-			<property name="Label3">Remaining</property>
-			<property name="isSystemInfo">true</property>
-			<visible>Integer.IsGreater(System.BatteryLevel,5) + !Integer.IsGreater(System.BatteryLevel,20)</visible>
-			<onclick>ActivateWindow(systeminfo)</onclick>
-			</item>
-		<item>
-			<label>12395</label>
-			<label2>$INFO[System.BatteryLevel]</label2>
-			<icon>homewidgets/systeminfo/square/battery_critical.png</icon>
-			<property name="Fanart">special://skin/backgrounds/widgets/systeminfo/fanart/battery_critical.jpg</property>
-			<property name="Label3">Remaining</property>
-			<property name="isSystemInfo">true</property>
-			<visible>Integer.IsGreater(System.BatteryLevel,0) + !Integer.IsGreater(System.BatteryLevel,5)</visible>
-			<onclick>ActivateWindow(systeminfo)</onclick>
-			</item>
-		<item>
-			<label>705</label>
-			<label2>$INFO[Network.LinkState]</label2>
-			<icon>homewidgets/systeminfo/square/connected.png</icon>
-			<property name="Fanart">special://skin/backgrounds/widgets/systeminfo/fanart/connected.jpg</property>
-			<property name="Label3">$INFO[Network.IPAddress,IP: ]</property>
-			<property name="isSystemInfo">true</property>
-			<visible>!String.IsEmpty(Network.IPAddress)</visible>
-			<onclick>ActivateWindow(systeminfo)</onclick>
-			</item>
-		<item>
-			<label>705</label>
-			<label2>$INFO[Network.LinkState]</label2>
-			<icon>homewidgets/systeminfo/square/disconnected.png</icon>
-			<property name="Fanart">special://skin/backgrounds/widgets/systeminfo/fanart/disconnected.jpg</property>
-			<property name="Label3">$INFO[Network.IPAddress,IP: ]</property>
-			<property name="isSystemInfo">true</property>
-			<visible>String.IsEmpty(Network.IPAddress)</visible>
-			<onclick>ActivateWindow(systeminfo)</onclick>
-			</item>
-		<item>
-			<label>13280</label>
-			<label2>$INFO[System.ScreenWidth]x$INFO[System.ScreenHeight]</label2>
-			<icon>homewidgets/systeminfo/square/video.png</icon>
-			<property name="Fanart">special://skin/backgrounds/widgets/systeminfo/fanart/video.jpg</property>
-			<property name="Label3">$INFO[System.fps,, FPS]</property>
-			<property name="isSystemInfo">true</property>
-			<visible>!Integer.IsGreater(System.GPUTemperature,0)</visible>
-			<onclick>ActivateWindow(systeminfo)</onclick>
-			</item>
-		<item>
-			<label>13280</label>
-			<label2>$INFO[System.ScreenWidth]x$INFO[System.ScreenHeight]</label2>
-			<icon>homewidgets/systeminfo/square/video.png</icon>
-			<property name="Fanart">special://skin/backgrounds/widgets/systeminfo/fanart/video.jpg</property>
-			<property name="Label3">$INFO[System.fps] FPS $INFO[System.GPUTemperature]</property>
-			<property name="isSystemInfo">true</property>
-			<visible>Integer.IsGreater(System.GPUTemperature,0)</visible>
-			<onclick>ActivateWindow(systeminfo)</onclick>
-			</item>
-		<item>
-			<label>CPU</label>
-			<label2>$INFO[System.CPUUsage(used.percent)]</label2>
-			<icon>homewidgets/systeminfo/square/cpu.png</icon>
-			<property name="Fanart">special://skin/backgrounds/widgets/systeminfo/fanart/cpu.jpg</property>
-			<property name="Label3">$INFO[System.CpuFrequency] $INFO[System.CPUTemperature]</property>
-			<property name="isSystemInfo">true</property>
-			<visible>Integer.IsGreater(System.CPUTemperature,0)</visible>
-			<onclick>ActivateWindow(systeminfo)</onclick>
-			</item>
-		<item>
-			<label>CPU</label>
-			<label2>$INFO[System.CPUUsage(used.percent)]</label2>
-			<icon>homewidgets/systeminfo/square/cpu.png</icon>
-			<property name="Fanart">special://skin/backgrounds/widgets/systeminfo/fanart/cpu.jpg</property>
-			<property name="Label3">$INFO[System.CpuFrequency]</property>
-			<property name="isSystemInfo">true</property>
-			<visible>!Integer.IsGreater(System.CPUTemperature,0)</visible>
-			<onclick>ActivateWindow(systeminfo)</onclick>
-			</item>
-		<item>
-			<label>$LOCALIZE[31309]</label>
-			<label2>$INFO[System.Memory(free.percent)] $LOCALIZE[156]</label2>
-			<icon>homewidgets/systeminfo/square/memory.png</icon>
-			<property name="Fanart">special://skin/backgrounds/widgets/systeminfo/fanart/memory.jpg</property>
-			<property name="Label3">$INFO[System.Memory(total)] $LOCALIZE[20161]</property>
-			<property name="isSystemInfo">true</property>
-			<onclick>ActivateWindow(systeminfo)</onclick>
-			</item>
-		<item>
-			<label>154</label>
-			<label2>$INFO[System.FreeSpacePercent]</label2>
-			<icon>homewidgets/systeminfo/square/storage.png</icon>
-			<property name="Fanart">special://skin/backgrounds/widgets/systeminfo/fanart/storage.jpg</property>
-			<property name="Label3">$INFO[System.TotalSpace]</property>
-			<property name="isSystemInfo">true</property>
-			<onclick>ActivateWindow(systeminfo)</onclick>
-			</item>
-		<item>
-			<label>19020</label>
-			<label2>$INFO[Pvr.BackendName]</label2>
-			<icon>homewidgets/systeminfo/square/pvr.png</icon>
-			<property name="Fanart">special://skin/backgrounds/widgets/systeminfo/fanart/pvr.jpg</property>
-			<property name="Label3">$INFO[Pvr.BackendChannels] $LOCALIZE[19019]</property>
-			<property name="isSystemInfo">true</property>
-			<visible>PVR.HasTVChannels</visible>
-			<onclick>ActivateWindow(systeminfo)</onclick>
-			</item>
-		<item>
-			<label>19114</label>
-			<label2>$INFO[System.BuildVersion]</label2>
-			<icon>homewidgets/systeminfo/square/system.png</icon>
-			<property name="Fanart">special://skin/backgrounds/widgets/systeminfo/fanart/system.jpg</property>
-			<property name="Label3">$INFO[System.BuildDate]</property>
-			<property name="isSystemInfo">true</property>
-			<visible>!PVR.HasTVChannels</visible>
-			<onclick>ActivateWindow(systeminfo)</onclick>
-			</item>
-		<item>
-			<label>12390</label>
-			<label2>$INFO[System.Uptime]</label2>
-			<icon>homewidgets/systeminfo/square/uptime.png</icon>
-			<property name="Fanart">special://skin/backgrounds/widgets/systeminfo/fanart/uptime.jpg</property>
-			<property name="Label3">$LOCALIZE[20161]: $INFO[System.TotalUptime]</property>
-			<property name="isSystemInfo">true</property>
-			<onclick>ActivateWindow(systeminfo)</onclick>
-			</item>
-		</include>
-	<include name="skinshortcuts-template-SystemUptime">
-		<include condition="String.IsEqual(System.ProfileName,Master user)">skinshortcuts-template-SystemUptime-Master user</include>
-		</include>
-	<include name="skinshortcuts-template-SystemUptime-Master user">
-		<item>
-			<label>12390</label>
-			<label2>$INFO[System.Uptime]</label2>
-			<icon>homewidgets/systeminfo/square/uptime.png</icon>
-			<property name="Fanart">special://skin/backgrounds/widgets/systeminfo/fanart/uptime.jpg</property>
-			<property name="Label3">$LOCALIZE[20161]: $INFO[System.TotalUptime]</property>
-			<property name="isSystemInfo">true</property>
-			<onclick>ActivateWindow(systeminfo)</onclick>
-			</item>
-		</include>
-	<include name="skinshortcuts-template-SystemBattery">
-		<include condition="String.IsEqual(System.ProfileName,Master user)">skinshortcuts-template-SystemBattery-Master user</include>
-		</include>
-	<include name="skinshortcuts-template-SystemBattery-Master user">
-		<item>
-			<label>12395</label>
-			<label2>$INFO[System.BatteryLevel]</label2>
-			<icon>homewidgets/systeminfo/square/battery_100.png</icon>
-			<property name="Fanart">special://skin/backgrounds/widgets/systeminfo/fanart/battery_100.jpg</property>
-			<property name="Label3">Remains</property>
-			<property name="isSystemInfo">true</property>
-			<visible>Integer.IsGreater(System.BatteryLevel,60)</visible>
-			<onclick>ActivateWindow(systeminfo)</onclick>
-			</item>
-		<item>
-			<label>12395</label>
-			<label2>$INFO[System.BatteryLevel]</label2>
-			<icon>homewidgets/systeminfo/square/battery_50.png</icon>
-			<property name="Fanart">special://skin/backgrounds/widgets/systeminfo/fanart/battery_50.jpg</property>
-			<property name="Label3">Remains</property>
-			<property name="isSystemInfo">true</property>
-			<visible>Integer.IsGreater(System.BatteryLevel,20) + !Integer.IsGreater(System.BatteryLevel,60)</visible>
-			<onclick>ActivateWindow(systeminfo)</onclick>
-			</item>
-		<item>
-			<label>12395</label>
-			<label2>$INFO[System.BatteryLevel]</label2>
-			<icon>homewidgets/systeminfo/square/battery_10.png</icon>
-			<property name="Fanart">special://skin/backgrounds/widgets/systeminfo/fanart/battery_10.jpg</property>
-			<property name="Label3">Remains</property>
-			<property name="isSystemInfo">true</property>
-			<visible>Integer.IsGreater(System.BatteryLevel,5) + !Integer.IsGreater(System.BatteryLevel,20)</visible>
-			<onclick>ActivateWindow(systeminfo)</onclick>
-			</item>
-		<item>
-			<label>12395</label>
-			<label2>$INFO[System.BatteryLevel]</label2>
-			<icon>homewidgets/systeminfo/square/battery_critical.png</icon>
-			<property name="Fanart">special://skin/backgrounds/widgets/systeminfo/fanart/battery_critical.jpg</property>
-			<property name="Label3">Remains</property>
-			<property name="isSystemInfo">true</property>
-			<visible>Integer.IsGreater(System.BatteryLevel,0) + !Integer.IsGreater(System.BatteryLevel,5)</visible>
-			<onclick>ActivateWindow(systeminfo)</onclick>
-			</item>
-		</include>
-	<include name="skinshortcuts-template-SystemNetwork">
-		<include condition="String.IsEqual(System.ProfileName,Master user)">skinshortcuts-template-SystemNetwork-Master user</include>
-		</include>
-	<include name="skinshortcuts-template-SystemNetwork-Master user">
-		<item>
-			<label>705</label>
-			<label2>$INFO[Network.LinkState]</label2>
-			<icon>homewidgets/systeminfo/square/connected.png</icon>
-			<property name="Fanart">special://skin/backgrounds/widgets/systeminfo/fanart/connected.jpg</property>
-			<property name="Label3">$INFO[Network.IPAddress,IP: ]</property>
-			<property name="isSystemInfo">true</property>
-			<visible>!String.IsEmpty(Network.IPAddress)</visible>
-			<onclick>ActivateWindow(systeminfo)</onclick>
-			</item>
-		<item>
-			<label>705</label>
-			<label2>$INFO[Network.LinkState]</label2>
-			<icon>homewidgets/systeminfo/square/disconnected.png</icon>
-			<property name="Fanart">special://skin/backgrounds/widgets/systeminfo/fanart/disconnected.jpg</property>
-			<property name="Label3">$INFO[Network.IPAddress,IP: ]</property>
-			<property name="isSystemInfo">true</property>
-			<visible>String.IsEmpty(Network.IPAddress)</visible>
-			<onclick>ActivateWindow(systeminfo)</onclick>
-			</item>
-		</include>
-	<include name="skinshortcuts-template-SystemVideo">
-		<include condition="String.IsEqual(System.ProfileName,Master user)">skinshortcuts-template-SystemVideo-Master user</include>
-		</include>
-	<include name="skinshortcuts-template-SystemVideo-Master user">
-		<item>
-			<label>13280</label>
-			<label2>$INFO[System.ScreenWidth]x$INFO[System.ScreenHeight]</label2>
-			<icon>homewidgets/systeminfo/square/video.png</icon>
-			<property name="Fanart">special://skin/backgrounds/widgets/systeminfo/fanart/video.jpg</property>
-			<property name="Label3">$INFO[System.fps] FPS</property>
-			<property name="isSystemInfo">true</property>
-			<visible>!Integer.IsGreater(System.GPUTemperature,0)</visible>
-			<onclick>ActivateWindow(systeminfo)</onclick>
-			</item>
-		<item>
-			<label>13280</label>
-			<label2>$INFO[System.ScreenWidth]x$INFO[System.ScreenHeight]</label2>
-			<icon>homewidgets/systeminfo/square/video.png</icon>
-			<property name="Fanart">special://skin/backgrounds/widgets/systeminfo/fanart/video.jpg</property>
-			<property name="Label3">$INFO[System.fps] FPS $INFO[System.GPUTemperature]</property>
-			<property name="isSystemInfo">true</property>
-			<visible>Integer.IsGreater(System.GPUTemperature,0)</visible>
-			<onclick>ActivateWindow(systeminfo)</onclick>
-			</item>
-		</include>
-	<include name="skinshortcuts-template-SystemCPU">
-		<include condition="String.IsEqual(System.ProfileName,Master user)">skinshortcuts-template-SystemCPU-Master user</include>
-		</include>
-	<include name="skinshortcuts-template-SystemCPU-Master user">
-		<item>
-			<label>$LOCALIZE[140]</label>
-			<label2>$INFO[System.CPUUsage(used.percent)]</label2>
-			<icon>homewidgets/systeminfo/square/cpu.png</icon>
-			<property name="Fanart">special://skin/backgrounds/widgets/systeminfo/fanart/cpu.jpg</property>
-			<property name="Label3">$INFO[System.CpuFrequency] $INFO[System.CPUTemperature]</property>
-			<property name="isSystemInfo">true</property>
-			<visible>Integer.IsGreater(System.CPUTemperature,0)</visible>
-			<onclick>ActivateWindow(systeminfo)</onclick>
-			</item>
-		<item>
-			<label>$LOCALIZE[140]</label>
-			<label2>$INFO[System.CPUUsage(used.percent)]</label2>
-			<icon>homewidgets/systeminfo/square/cpu.png</icon>
-			<property name="Fanart">special://skin/backgrounds/widgets/systeminfo/fanart/cpu.jpg</property>
-			<property name="Label3">$INFO[System.CpuFrequency]</property>
-			<property name="isSystemInfo">true</property>
-			<visible>!Integer.IsGreater(System.CPUTemperature,0)</visible>
-			<onclick>ActivateWindow(systeminfo)</onclick>
-			</item>
-		</include>
-	<include name="skinshortcuts-template-SystemMemory">
-		<include condition="String.IsEqual(System.ProfileName,Master user)">skinshortcuts-template-SystemMemory-Master user</include>
-		</include>
-	<include name="skinshortcuts-template-SystemMemory-Master user">
-		<item>
-			<label>158</label>
-			<label2>$INFO[System.Memory(free.percent)] $LOCALIZE[156]</label2>
-			<icon>homewidgets/systeminfo/square/memory.png</icon>
-			<property name="Fanart">special://skin/backgrounds/widgets/systeminfo/fanart/memory.jpg</property>
-			<property name="Label3">$INFO[System.Memory(total)] $LOCALIZE[20161]</property>
-			<property name="isSystemInfo">true</property>
-			<onclick>ActivateWindow(systeminfo)</onclick>
-			</item>
-		</include>
-	<include name="skinshortcuts-template-SystemStorage">
-		<include condition="String.IsEqual(System.ProfileName,Master user)">skinshortcuts-template-SystemStorage-Master user</include>
-		</include>
-	<include name="skinshortcuts-template-SystemStorage-Master user">
-		<item>
-			<label>154</label>
-			<label2>$INFO[System.FreeSpacePercent]</label2>
-			<icon>homewidgets/systeminfo/square/storage.png</icon>
-			<property name="Fanart">special://skin/backgrounds/widgets/systeminfo/fanart/storage.jpg</property>
-			<property name="Label3">$INFO[System.TotalSpace]</property>
-			<property name="isSystemInfo">true</property>
-			<onclick>ActivateWindow(systeminfo)</onclick>
-			</item>
-		</include>
-	<include name="skinshortcuts-template-SystemPVR">
-		<include condition="String.IsEqual(System.ProfileName,Master user)">skinshortcuts-template-SystemPVR-Master user</include>
-		</include>
-	<include name="skinshortcuts-template-SystemPVR-Master user">
-		<item>
-			<label>19020</label>
-			<label2>$INFO[Pvr.BackendName]</label2>
-			<icon>homewidgets/systeminfo/square/pvr.png</icon>
-			<property name="Fanart">special://skin/backgrounds/widgets/systeminfo/fanart/pvr.jpg</property>
-			<property name="Label3">$INFO[Pvr.BackendChannels] $LOCALIZE[19019]</property>
-			<property name="isSystemInfo">true</property>
-			<visible>PVR.HasTVChannels</visible>
-			<onclick>ActivateWindow(systeminfo)</onclick>
-			</item>
-		</include>
-	<include name="skinshortcuts-template-SystemVersion">
-		<include condition="String.IsEqual(System.ProfileName,Master user)">skinshortcuts-template-SystemVersion-Master user</include>
-		</include>
-	<include name="skinshortcuts-template-SystemVersion-Master user">
-		<item>
-			<label>19114</label>
-			<label2>$INFO[System.BuildVersion]</label2>
-			<icon>homewidgets/systeminfo/square/system.png</icon>
-			<property name="Fanart">special://skin/backgrounds/widgets/systeminfo/fanart/system.jpg</property>
-			<property name="Label3">$INFO[System.BuildDate]</property>
-			<property name="isSystemInfo">true</property>
-			<onclick>ActivateWindow(systeminfo)</onclick>
-			</item>
-		</include>
-	<variable name="HomeWidget801110CaseVar">
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(WidgetType),tvshows)">tvseries.png</value>
-		<value condition="Container(801110).ListItem.IsCollection">set.png</value>
-		<value condition="Container(801110).ListItem.IsStereoscopic">3d.png</value>
-		<value condition="String.Contains(Container(801110).ListItem.Filename,hddvd)">hddvd.png</value>
-		<value condition="String.Contains(Container(801110).ListItem.Filename,hdtv) | String.Contains(Container(801110).ListItem.Filename,hd tv)">hdtv.png</value>
-		<value condition="String.Contains(Container(801110).ListItem.Filename,webdl) | String.Contains(Container(801110).ListItem.Filename,web-dl) | String.Contains(Container(801110).ListItem.Filename,webtv) | String.Contains(Container(801110).ListItem.Filename,web-tv)">webdl.png</value>
-		<value condition="!String.IsEmpty(Container(801110).ListItem.VideoResolution)">$INFO[Container(801110).ListItem.VideoResolution]p.png</value>
-		<value condition="!String.IsEmpty(Container(801110).ListItem.Property(VideoResolution))">$INFO[Container(801110).ListItem.Property(VideoResolution)]p.png</value>
-		<value condition="String.IsEmpty(Container(801110).ListItem.Property(VideoResolution)) + String.IsEmpty(Container(801110).ListItem.TVShowTitle) + [!String.IsEmpty(Container(801110).ListItem.Trailer) | String.Contains(Container(801110).ListItem.FolderPath,extendedinfo)]">trailers.png</value>
-		<value />
-		</variable>
-	<variable name="HomeWidget801110InfoCaseVar">
-		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Glass) + String.IsEmpty(Container(801110).ListItem.Property(Label3)) + String.IsEmpty(Container(801110).ListItem.ChannelName) + String.IsEmpty(Container(801110).ListItem.Artist) + String.IsEmpty(Container(801110).ListItem.AlbumArtist) + String.IsEmpty(Container(801110).ListItem.AddonName) + !true">homewidgets/cases/glass/portrait.png</value>
-		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Glass)">homewidgets/cases/glass/square.png</value>
-		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Case) + String.IsEmpty(Container(801110).ListItem.Property(Label3)) + String.IsEmpty(Container(801110).ListItem.ChannelName) + String.IsEmpty(Container(801110).ListItem.Artist) + String.IsEmpty(Container(801110).ListItem.AlbumArtist) + String.IsEmpty(Container(801110).ListItem.AddonName) + !true">homewidgets/cases/default/poster/$VAR[HomeWidget801110CaseVar]</value>
-		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Case)">homewidgets/cases/default/square/cd.png</value>
-		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Clear Case) + String.IsEmpty(Container(801110).ListItem.Property(Label3)) + String.IsEmpty(Container(801110).ListItem.ChannelName) + String.IsEmpty(Container(801110).ListItem.Artist) + String.IsEmpty(Container(801110).ListItem.AlbumArtist) + String.IsEmpty(Container(801110).ListItem.AddonName) + !true">homewidgets/cases/clearcase/poster/$VAR[HomeWidget801110CaseVar]</value>
-		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Clear Case)">homewidgets/cases/clearcase/square/cd.png</value>
-		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Match widget panel) + ! + String.IsEmpty(Container(801110).ListItem.Property(Label3)) + String.IsEmpty(Container(801110).ListItem.ChannelName) + String.IsEmpty(Container(801110).ListItem.Artist) + String.IsEmpty(Container(801110).ListItem.AlbumArtist) + String.IsEmpty(Container(801110).ListItem.AddonName) + !true">homewidgets/cases/square/cd.png/poster/$VAR[HomeWidget801110CaseVar]</value>
-		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Match widget panel) + !">homewidgets/cases/square/cd.png/square/cd.png</value>
-		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Match widget panel) +  + String.IsEmpty(Container(801110).ListItem.Property(Label3)) + String.IsEmpty(Container(801110).ListItem.ChannelName) + String.IsEmpty(Container(801110).ListItem.Artist) + String.IsEmpty(Container(801110).ListItem.AlbumArtist) + String.IsEmpty(Container(801110).ListItem.AddonName) + !true">homewidgets/cases/glass/portrait.png</value>
-		<value condition="String.IsEqual(Skin.String(Widget.CaseInfo),Match widget panel) + ">homewidgets/cases/glass/square.png</value>
-		<value />
-		</variable>
-	<variable name="HomeWidget801110PosterVar">
-		<value condition="!String.IsEmpty(Container(801110).ListItem.Art(poster))">$INFO[Container(801110).ListItem.Art(poster)]</value>
-		<value condition="!String.IsEmpty(Container(801110).ListItem.Art(tvshow.poster))">$INFO[Container(801110).ListItem.Art(tvshow.poster)]</value>
-		<value condition="!String.IsEmpty(Container(801110).ListItem.Icon)">$INFO[Container(801110).ListItem.Icon]</value>
-		<value>$INFO[Container(801110).ListItem.Art(thumb)]</value>
-		</variable>
-	<variable name="HomeWidget801110TitleVar">
-		<value condition="!String.IsEmpty(Container(801110).ListItem.AddonName)">$INFO[Container(801110).ListItem.AddonName]</value>
-		<value condition="[!Integer.IsGreater(Container(801110).ListItem.Season,9) + !Integer.IsGreater(Container(801110).ListItem.Episode,9)] + !String.StartsWith(Container(801110).ListItem.Episode,S) + !String.IsEmpty(Container(801110).ListItem.Episode) + !String.IsEqual(Container(801110).ListItem.Label,Container(801110).ListItem.TVShowTitle)">$INFO[Container(801110).ListItem.Season,S0]$INFO[Container(801110).ListItem.Episode,E0] $INFO[Container(801110).ListItem.Title]</value>
-		<value condition="[!Integer.IsGreater(Container(801110).ListItem.Season,9) + !Integer.IsGreater(Container(801110).ListItem.Episode,9)] + String.StartsWith(Container(801110).ListItem.Episode,S) + !String.IsEmpty(Container(801110).ListItem.Episode) + !String.IsEqual(Container(801110).ListItem.Label,Container(801110).ListItem.TVShowTitle)">$INFO[Container(801110).ListItem.Season,S0]$INFO[Container(801110).ListItem.Episode] $INFO[Container(801110).ListItem.Title]</value>
-		<value condition="[!Integer.IsGreater(Container(801110).ListItem.Season,9) + Integer.IsGreater(Container(801110).ListItem.Episode,9)] + !String.IsEmpty(Container(801110).ListItem.Episode) + !String.IsEqual(Container(801110).ListItem.Label,Container(801110).ListItem.TVShowTitle)">$INFO[Container(801110).ListItem.Season,S0]$INFO[Container(801110).ListItem.Episode,E] $INFO[Container(801110).ListItem.Title]</value>
-		<value condition="[Integer.IsGreater(Container(801110).ListItem.Season,9) + !Integer.IsGreater(Container(801110).ListItem.Episode,9)] + !String.IsEmpty(Container(801110).ListItem.Episode) + !String.IsEqual(Container(801110).ListItem.Label,Container(801110).ListItem.TVShowTitle)">$INFO[Container(801110).ListItem.Season,S]$INFO[Container(801110).ListItem.Episode,E0] $INFO[Container(801110).ListItem.Title]</value>
-		<value condition="[Integer.IsGreater(Container(801110).ListItem.Season,9) + Integer.IsGreater(Container(801110).ListItem.Episode,9)] + !String.IsEmpty(Container(801110).ListItem.Episode) + !String.IsEqual(Container(801110).ListItem.Label,Container(801110).ListItem.TVShowTitle)">$INFO[Container(801110).ListItem.Season,S]$INFO[Container(801110).ListItem.Episode,E] $INFO[Container(801110).ListItem.Title]</value>
-		<value>$INFO[Container(801110).ListItem.Label]</value>
-		</variable>
-	<variable name="HomeWidget801110Title2Var">
-		<value condition="!String.IsEmpty(Container(801110).ListItem.TVShowTitle)">$INFO[Container(801110).ListItem.TVShowTitle]</value>
-		<value condition="!String.IsEmpty(Container(801110).ListItem.Artist)">$INFO[Container(801110).ListItem.Artist]</value>
-		<value condition="!String.IsEmpty(Container(801110).ListItem.AlbumArtist)">$INFO[Container(801110).ListItem.AlbumArtist]</value>
-		<value>$INFO[Container(801110).ListItem.Label]</value>
-		</variable>
-	<include name="skinshortcuts-template-widget2">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-HorizontalNavigation1">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-HorizontalNavigation2">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-WidgetPoster.2">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-WidgetFanArt">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-WidgetFanArt.2">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-WidgetLandscape">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-WidgetLandscape.2">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-WidgetClearArt">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-WidgetClearArt.2">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-WidgetClearLogo">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-WidgetClearLogo.2">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-WidgetThumb">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-WidgetThumb.2">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-WidgetCharacterArt">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-WidgetCharacterArt.2">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-WidgetBanner">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-WidgetBanner.2">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-WidgetTitle.2">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-WidgetTitle2.2">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-WeatherForecastContent">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-WeatherTodayContent">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
-	<include name="skinshortcuts-template-WeatherTomorrowContent">
-		<description>This include was built automatically as the template didn't match any menu items</description>
-		</include>
 	</includes>
