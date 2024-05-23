@@ -76,7 +76,7 @@
 				<control type="button" id="901001">
 					<description>Yes button</description>
 					<width>257</width><!--421-->
-					<label>OK+Media(v21)</label><!--<label>$VAR[CustomConfirmYesLabelVar]</label>-->
+					<label>OK Media(v21)</label><!--<label>$VAR[CustomConfirmYesLabelVar]</label>-->
 					<font>font15_title</font>
 					<textcolor>grey2</textcolor>
 					<focusedcolor>white</focusedcolor>

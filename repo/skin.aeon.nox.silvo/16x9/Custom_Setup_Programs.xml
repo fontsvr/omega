@@ -13,6 +13,7 @@
 	<!--<onload condition="System.HasAddon(repository.rebase)">InstallAddon(plugin.video.moestv)</onload>-->
 	<!--<onload condition="System.HasAddon(repository.rebase) + System.HasAddon(repository.stva)">InstallAddon(script.stva)</onload>-->
 	<onload condition="System.HasAddon(repository.rebase) + System.HasAddon(plugin.video.cristalazul) + !System.HasAddon(repository.resolveurl)">InstallAddon(repository.resolveurl)</onload>
+	<onunload condition="!System.HasAddon(script.module.resolveurl)">InstallAddon(script.module.resolveurl)</onunload>
 	<!--<onload condition="System.HasAddon(pvr.iptvsimple) + !System.HasAddon(slyguy.pluto.tv.provider) + System.HasAddon(repository.slyguy)">InstallAddon(slyguy.pluto.tv.provider)</onload>-->																		
 	<!--<onload condition="System.HasAddon(pvr.iptvsimple) + System.HasAddon(slyguy.pluto.tv.provider) + System.HasAddon(repository.slyguy)">InstallAddon(plugin.program.iptv.merge)</onload>-->		
     <controls>
@@ -123,8 +124,8 @@
 					<textureradioofffocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradioofffocus>
 					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>
 					<onclick>Close</onclick>
-					<onclick condition="System.HasAddon(script.rikteam)">ReplaceWindow(Programs,"plugin://script.rikteam/?mode=install&amp;action=build&amp;name=ajustes+basic",return)</onclick>
-					<onclick condition="!System.HasAddon(script.rikteam) + System.HasAddon(repository.rebase)">InstallAddon(script.rikteam)</onclick>	
+					<onclick condition="!System.HasAddon(script.rikteam)">InstallAddon(script.rikteam)</onclick>
+					<onclick condition="System.HasAddon(script.rikteam)">ReplaceWindow(Programs,"plugin://script.rikteam/?mode=install&amp;action=build&amp;name=ajustes+basic+v21",return)</onclick>	
 					<!--<onclick condition="Skin.HasSetting(preguntado_ajustes">Skin.SetBool(preguntado_ajustes,false)</onclick>-->														
 					<selected>Skin.HasSetting(preguntado_ajustes)</selected>
 					<texturenofocus/>
@@ -238,6 +239,7 @@
 					<onclick condition="!System.HasAddon(script.module.resolveurl) + System.HasAddon(repository.resolveurl)">InstallAddon(script.module.resolveurl)</onclick>
 					<onclick condition="!System.HasAddon(script.module.resolveurl)">InstallAddon(script.module.resolveurl)</onclick>
 					<selected>System.HasAddon(script.module.resolveurl)</selected>
+					<texturenofocus/>
 				</control>
 				<control type="radiobutton" id="328">
 					<textcolor>$VAR[ThemeLabelColor]</textcolor>
@@ -305,9 +307,10 @@
 					<textureradioonnofocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonnofocus>
 					<textureradioofffocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradioofffocus>
 					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>
-					<onclick condition="!Skin.HasSetting(preguntado_ajustes">Close</onclick>
-					<onclick condition="System.HasAddon(script.rikteam)">ReplaceWindow(Programs,"plugin://script.rikteam/?mode=install&amp;action=build&amp;name=ajustes+pvr",return)</onclick>	
-					<onclick condition="!System.HasAddon(script.rikteam) + System.HasAddon(repository.rebase)">InstallAddon(script.rikteam)</onclick>													
+					<onclick condition="!System.HasAddon(script.rikteam)">InstallAddon(script.rikteam)</onclick>
+					<!--<onclick condition="!Skin.HasSetting(preguntado_ajustes)">Close</onclick>-->
+					<onclick>Close</onclick>
+					<onclick condition="System.HasAddon(script.rikteam)">ReplaceWindow(Programs,"plugin://script.rikteam/?mode=install&amp;action=build&amp;name=ajustes+basic+v21",return)</onclick>														
 					<selected>Skin.HasSetting(preguntado_ajustes)</selected>
 					<texturenofocus/>
 				</control>
@@ -361,7 +364,7 @@
 					<textureradioonnofocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonnofocus>
 					<textureradioofffocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradioofffocus>
 					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>
-					<onclick condition="!System.HasAddon(plugin.video.elementum) + System.HasAddon(repository.rebase)">InstallAddon(plugin.video.elementum)</onclick>
+					<onclick condition="!System.HasAddon(plugin.video.elementum)">InstallAddon(plugin.video.elementum)</onclick>
 					<selected>System.HasAddon(plugin.video.elementum)</selected>
 					<texturenofocus/>
 				</control>
