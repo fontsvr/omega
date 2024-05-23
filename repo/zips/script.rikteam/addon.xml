@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="script.rikteam" name="[COLOR goldenrod]Script RikTeam[/COLOR]" version="1.6" provider-name="RikTeam">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0" />
+        <import addon="resource.language.es_es" />
+        <import addon="script.module.requests" />
+        <import addon="script.module.six" />
+    </requires>
+    
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>executable</provides>
+    </extension>
+	
+	<extension point="xbmc.addon.repository" name="nexus">		
+		<info>https://raw.githubusercontent.com/fontsvr/nexus/master/repo/zips/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/fontsvr/nexus/master/repo/zips/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/fontsvr/nexus/master/repo/zips/</datadir>
+    </extension>
+    
+    <extension point="xbmc.service" library="startup.py" start="startup" />
+    
+    <extension point="xbmc.addon.metadata">
+    <summary lang="en">Utilidades para Skins RikTeam</summary>
+    <description lang="en">Utilidades para Skins RikTeam. Ajustes y herramientas para addons.</description>
+        <platform>all</platform>
+        <reuselanguageinvoker>false</reuselanguageinvoker>
+		<assets>
+            <icon>icon.png</icon>
+        </assets>
+    </extension>
+</addon>
+
+
+

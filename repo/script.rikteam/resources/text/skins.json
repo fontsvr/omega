@@ -1,0 +1,49 @@
+{
+  "addons": [
+    {
+      "name": "VR20 Aeon w/o Repository",
+      "type": "addon",
+      "section": false,
+      "plugin": "skin.aeon.nox.silvo",
+      "url": "https://raw.githubusercontent.com/fontsvr/nexus/master/repo/skin.aeon.nox.silvo",
+      "repository": "repository.rebase",
+      "repositoryxml": "https://raw.githubusercontent.com/fontsvr/nexus/master/repo/zips/addons.xml",
+      "repositoryurl": "https://raw.githubusercontent.com/fontsvr/nexus/master/repo/zips/",
+      "icon": "https://res.cloudinary.com/dsmvomgrd/image/upload/v1683640927/build/fandrart.png",
+      "adult": false,
+      "description": "Skin Wizard. +info: fontsvr.github.io"
+    },
+    {
+      "name": "Cristal Touch w/o Repository",
+      "type": "addon",
+      "section": false,
+      "plugin": "skin.ctouch",
+      "url": "https://github.com/fontsvr/repo-fontsVR/raw/rel/skin.ctouch-9.3.4.3.zip",
+      "repository": "",
+      "repositoryxml": "",
+      "repositoryurl": "",
+      "icon": "https://res.cloudinary.com/dsmvomgrd/image/upload/v1683640927/build/fandrart.png",
+      "adult": false,
+      "description": "Skin Wizard+info: fontsvr.github.io"
+    },
+    {
+      "name": "Cristal Touch",
+      "type": "addon",
+      "section": false,
+      "plugin": "skin.ctouch",
+      "url": "https://github.com/fontsvr/nexus/master/repo/zips/skin.ctouch/skin.ctouch-9.3.4.2.zip?raw=true",
+      "repository": "repository.rebase",
+      "repositoryxml": "https://raw.githubusercontent.com/fontsvr/nexus/master/repo/zips/addons.xml",
+      "repositoryurl": "https://github.com/fontsvr/nexus/blob/master/repo/zips/repository.rebase/repository.rebase-1.0.zip?raw=true",
+      "icon": "https://res.cloudinary.com/dsmvomgrd/image/upload/v1683640927/build/fandrart.png",
+      "adult": false,
+      "description": "Skin Wizard. +info: fontsvr.github.io"
+    },
+    {
+      "name": "Example Section",
+      "section": true,
+      "url": "url.to.json",
+      "description": "An Example Section."
+    }
+  ]
+}
