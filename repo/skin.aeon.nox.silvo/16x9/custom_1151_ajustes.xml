@@ -46,8 +46,9 @@
 				<width>825</width>
 				<height>282</height>
 				<align>center</align>
-				<label>[CR]Debes aceptar cuando solicite si quieres descargar los ajustes necesarios para el skin.</label>
-				<textcolor>grey2</textcolor>
+				<textcolor>$VAR[ThemeHomeLabelColor]</textcolor>
+				<label>[CR]Debes aceptar ok en este y en el próximo mensaje cuando pida si quieres descargar un ajuste para el skin.[CR][CR][COLOR grey2]* Necesario para terminar de cargar todo en el Skin.[/COLOR]</label>
+				<!--<textcolor>grey2</textcolor>-->
 				<autoscroll time="3000" delay="4000" repeat="5000">true</autoscroll>
 			</control>
 			<control type="grouplist" id="90100">
@@ -75,11 +76,11 @@
 				</control>-->
 				<control type="button" id="901001">
 					<description>Yes button</description>
-					<width>257</width><!--421-->
+					<width>276</width><!--257-421-->
 					<label>OK Media(v21)</label><!--<label>$VAR[CustomConfirmYesLabelVar]</label>-->
 					<font>font15_title</font>
-					<textcolor>grey2</textcolor>
-					<focusedcolor>white</focusedcolor>
+					<textcolor>cd00e600</textcolor>
+					<focusedcolor>cd00e600</focusedcolor>
 					<align>center</align>
 					<onleft>noop</onleft>
 					<onright>noop</onright>
@@ -116,17 +117,19 @@
 					<description>No button</description>
 					<left>465</left>
 					<top>402</top>
-					<width>257</width>
+					<width>276</width><!--257-->
 					<label>Cancelar</label>
 					<font>font15_title</font>
-					<textcolor>grey2</textcolor>
-					<focusedcolor>white</focusedcolor>
+					<textcolor>red</textcolor>
+					<focusedcolor>red</focusedcolor>
 					<align>center</align>
 					<onleft>noop</onleft>
 					<onright>noop</onright>
 					<onup>noop</onup>
 					<ondown>noop</ondown>
 					<onclick>Dialog.Close(1151)</onclick>
+					<!--<onclick>Dialog.Close(1152)</onclick>-->
+					<!--<onclick>ReloadSkin()</onclick>-->
 					<onclick>Skin.SetBool(preguntado_ajustes,false)</onclick>
 					<texturefocus colordiffuse="$VAR[HighlightBarColor]" border="5">listselect_fo.png</texturefocus>
 					<visible>String.IsEmpty(Window(Home).Property(Notify))</visible>

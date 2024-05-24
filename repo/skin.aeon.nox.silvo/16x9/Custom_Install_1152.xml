@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="dialog" id="1152">
+	<!--<include file="Includes.xml" />-->
 	<defaultcontrol>655</defaultcontrol>
-	<onload condition="System.HasAddon(script.skinshortcuts) + System.HasAddon(script.rikteam) + System.HasAddon(repository.slyguy) + System.HasAddon(pvr.iptvsimple) + System.HasAddon(plugin.program.iptv.merge)">ReplaceWindow(1151)</onload>
 
 	<!--<onload condition="!System.HasAddon(script.skinshortcuts)">SetProperty(RunSkinShortcutsAfterInstall,True,Home)</onload>-->
-    <onload condition="!System.HasAddon(script.skinshortcuts)">InstallAddon(script.skinshortcuts)</onload>
+    <!--imprescindibles o no-->
+	<onload condition="System.HasAddon(script.skinshortcuts) + System.HasAddon(script.rikteam) + System.HasAddon(repository.slyguy) + System.HasAddon(plugin.program.iptv.merge) + System.HasAddon(pvr.iptvsimple)">ReplaceWindow(1151)</onload>
+	<onload condition="!System.HasAddon(script.skinshortcuts)">InstallAddon(script.skinshortcuts)</onload>
+	<onload condition="!System.AddonIsEnabled(script.skinshortcuts) + System.HasAddon(script.skinshortcuts)">EnableAddon(script.skinshortcuts)</onload>
+	<onload condition="!System.HasAddon(repository.rebase)">InstallAddon(repository.rebase)</onload>
 	<onload condition="!System.HasAddon(script.rikteam)">InstallAddon(script.rikteam)</onload>
 	<onload condition="!System.HasAddon(repository.slyguy)">InstallAddon(repository.slyguy)</onload>
 	<onload condition="!System.HasAddon(plugin.program.iptv.merge)">InstallAddon(plugin.program.iptv.merge)</onload>
 	<onload condition="!System.HasAddon(pvr.iptvsimple)">InstallAddon(pvr.iptvsimple)</onload>
-	<onload condition="!System.HasAddon(repository.rebase)">InstallAddon(repository.rebase)</onload>
+	
+	
 	<!--<onload condition="!System.HasAddon(slyguy.pluto.tv.provider)">InstallAddon(slyguy.pluto.tv.provider)</onload>-->
-	
-	
+	<!--si todos los requeridos estan instalados posar a dalt de tot-->
+
 	<!--<onunload>ClearProperty(MissingDependency,Home)</onunload>-->
 	<!--<onload condition="!Skin.HasSetting(preguntado_ajustes)">Dialog.Close(1152)</onload>-->
 <!--<onload condition="!Skin.HasSetting(preguntado_ajustes)">ReplaceWindow(1151)</onload>-->
@@ -62,44 +67,65 @@
 			<width>192</width>
 			<height>56</height>
 			<texture background="true">special://xbmc/media/vendor_logo.png</texture>
-		</control>	
-		<control type="image">
-			<!-- Dialog background image -->
-			<centerleft>50%</centerleft>
-			<top>180</top><!--200-275-->
-			<width>1400</width>
-			<height>840</height><!--840-800-790-765-->
-			<texture border="14" colordiffuse="grey">backtransparent.png</texture>
 		</control>
+		<!-- Dialog background image -->
+		<!--<control type="image">
+			<centerleft>50%</centerleft>
+			<top>180</top>
+			<width>1400</width>
+			<height>840</height>
+			<texture border="14" colordiffuse="grey">backtransparent.png</texture>
+		</control>-->
 		
 		<control type="group">
 			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
 				<control type="image">
 					<centerleft>50%</centerleft>
-					<top>380</top>
-					<height>455</height>
-					<width>850</width>
+					<centertop>50%</centertop>
+					<!--<top>280</top>--><!--380-->
+					<height>500</height>
+					<width>850</width><!--850-->
 					<aligny>center</aligny>
 					<align>center</align>
 					<texture colordiffuse="66FFFFFF">colors/black.png</texture>
-				<visible>System.HasAddon(script.skinshortcuts) + System.HasAddon(script.rikteam) + System.HasAddon(repository.slyguy) + System.HasAddon(plugin.program.iptv.merge) + System.HasAddon(pvr.iptvsimple)</visible>
 				</control>
-				<control type="textbox">
+				<control type="textbox"><!--repository.slyguy para obtener iptv.merge-->
 					<centerleft>50%</centerleft>
-					<top>380</top><!--550-->
-					<height>455</height>
-					<width>850</width><!--640-->
+					<top>280</top><!--550-->
+					<height>500</height>
+					<width>850</width><!--640-850-->
 					<aligny>center</aligny>
 					<align>center</align>
-					<font>font15</font>
-					<label>[COLOR lime]intalados ok![/COLOR] script.skinshortcuts, script.rikteam, repository.slyguy, plugin.program.iptv.merge, pvr.iptvsimple  [COLOR snow][CR][B]Finaliza descargando los ajustes para el skin. Tambien disponibles en el menú Apagado/Restablecer Ajustes y en Apagado/Ajustes Iniciales (3r.paso-Instalación de Programas-Ajustes)[/B][/COLOR]</label>
+					<!--<font>font15</font>-->
+					<font>roboto30</font>
+					<textcolor>$VAR[ThemeHomeLabelColor]</textcolor>
+					<label>Addons intalados:[CR][COLOR snow]$VAR[Instalado-script.skinshortcuts][CR]$VAR[Instalado-script.rikteam][CR]$VAR[Instalado-repository.slyguy][CR]$VAR[Instalado-iptvmerge][CR]$VAR[Instalado-pvr.iptvsimple][/COLOR][CR]Finaliza instalando los ajustes para el skin.[CR][COLOR grey2]Tambien en el menú Apagado/Restablecer Ajustes y en Apagado/Ajustes Iniciales (3r.paso)[/COLOR]</label>
 				    <texture colordiffuse="66FFFFFF">colors/black.png</texture>
 					<visible>System.HasAddon(script.skinshortcuts) + System.HasAddon(script.rikteam) + System.HasAddon(repository.slyguy) + System.HasAddon(plugin.program.iptv.merge) + System.HasAddon(pvr.iptvsimple)</visible>
 				</control>
+				<!--alguno de los requeridos falta-->
+				<control type="textbox">
+					<centerleft>50%</centerleft>
+					<top>280</top><!--550-->
+					<height>500</height><!--455-->
+					<width>850</width><!--640-850-->
+					<aligny>center</aligny>
+					<align>center</align>
+					<!--<font>font15</font>-->
+					<font>roboto30</font>
+					<textcolor>$VAR[ThemeHomeLabelColor]</textcolor>
+					<!--<label>[COLOR blue]falta instalar alguno de estos addons![/COLOR] script.skinshortcuts, script.rikteam, plugin.program.iptv.merge, pvr.iptvsimple  [COLOR snow][CR][B]Igualmente puedes descargar los ajustes para el skin.[CR]Tambien disponibles en el menú Apagado/Restablecer Ajustes[/B][/COLOR][CR]</label>
+					-->
+					<label>Falta instalar algun addon:[CR][COLOR snow]$VAR[Instalado-script.skinshortcuts][CR]$VAR[Instalado-script.rikteam][CR]$VAR[Instalado-repository.slyguy][CR]$VAR[Instalado-iptvmerge][CR]$VAR[Instalado-pvr.iptvsimple][/COLOR][CR]Igualmente puedes descargar los ajustes para el skin.[CR][COLOR grey2]* Los 2 primeros són necesarios. Los demás los puedes descargar en otro momento.[/COLOR]</label>
+					<texture colordiffuse="66FFFFFF">colors/black.png</texture>
+					<visible>!System.HasAddon(script.skinshortcuts) | !System.HasAddon(script.rikteam) | !System.HasAddon(repository.slyguy) | !System.HasAddon(plugin.program.iptv.merge) | !System.HasAddon(pvr.iptvsimple)</visible>
+				</control>
+				
+				<!--boton para instalar ajustes aunque no todos los addons necesarios esten instalados-->
 				<control type="button" id="655">
 					<onleft>700</onleft>
 					<onright>800</onright>
-					<onup>800</onup>
+					<onup>658</onup>
 					<ondown>700</ondown>
 					<centerleft>50%</centerleft>
 					<top>880</top>
@@ -109,17 +135,42 @@
 					<align>center</align>
 					<font>font14_title</font>
 					<label>INSTALACIÓN DE AJUSTES</label>
-					<onclick condition="!Skin.HasSetting(preguntado_ajustes) + System.HasAddon(script.skinshortcuts) + System.HasAddon(script.rikteam) + System.HasAddon(plugin.program.iptv.merge) + System.HasAddon(pvr.iptvsimple)">ReplaceWindow(1151)</onclick>
-					<onclick condition="Skin.HasSetting(preguntado_ajustes) + System.HasAddon(script.skinshortcuts) + System.HasAddon(script.rikteam) + System.HasAddon(plugin.program.iptv.merge) + System.HasAddon(pvr.iptvsimple)">ReplaceWindow(1151)</onclick>
-					<onclick condition="!System.HasAddon(script.skinshortcuts)">InstallAddon(script.skinshortcuts)</onclick>
+                    <onclick condition="!System.HasAddon(script.rikteam)">InstallAddon(script.rikteam)</onclick>
+					<!--<onclick>Dialog.Close(1152)</onclick>-->
+					<onclick condition="System.HasAddon(script.rikteam)">ReplaceWindow(1151)</onclick>
+					<!--<onclick condition="Skin.HasSetting(preguntado_ajustes) + System.HasAddon(script.skinshortcuts) + System.HasAddon(script.rikteam) + System.HasAddon(plugin.program.iptv.merge) + System.HasAddon(pvr.iptvsimple)">ReplaceWindow(1151)</onclick>
+					-->
+				    <!--<onclick condition="!System.HasAddon(slyguy.pluto.tv.provider)">InstallAddon(slyguy.pluto.tv.provider)</onclick>-->
+				   <!--<onclick condition="!Skin.HasSetting(preguntado_ajustes)">ReplaceWindow(1151)</onclick> -->
+					<visible>!System.HasAddon(script.rikteam) | !System.HasAddon(script.skinshortcuts) | !System.HasAddon(repository.slyguy) | !System.HasAddon(plugin.program.iptv.merge) | !System.HasAddon(pvr.iptvsimple)</visible>
+				</control>
+				
+				<!--todo instalado. solo falta el ajuste-->
+				<control type="button" id="655">
+					<onleft>700</onleft>
+					<onright>800</onright>
+					<onup>658</onup>
+					<ondown>700</ondown>
+					<centerleft>50%</centerleft>
+					<top>880</top>
+					<height>95</height>
+					<width>640</width>
+					<aligny>center</aligny>
+					<align>center</align>
+					<font>font14_title</font>
+					<label>INSTALACIÓN DE AJUSTES</label>
+					<!--<onclick condition="!Skin.HasSetting(preguntado_ajustes) + System.HasAddon(script.skinshortcuts) + System.HasAddon(script.rikteam) + System.HasAddon(plugin.program.iptv.merge) + System.HasAddon(pvr.iptvsimple)">ReplaceWindow(1151)</onclick>
+					-->
+					<onclick condition="System.HasAddon(script.skinshortcuts) + System.HasAddon(script.rikteam) + System.HasAddon(plugin.program.iptv.merge) + System.HasAddon(pvr.iptvsimple)">ReplaceWindow(1151)</onclick>
+					<!--<onclick condition="!System.HasAddon(script.skinshortcuts)">InstallAddon(script.skinshortcuts)</onclick>
 					<onclick condition="!System.HasAddon(script.rikteam)">InstallAddon(script.rikteam)</onclick>
 					<onclick condition="!System.HasAddon(repository.slyguy)">InstallAddon(repository.slyguy)</onclick>
 					<onclick condition="!System.HasAddon(plugin.program.iptv.merge)">InstallAddon(plugin.program.iptv.merge)</onclick>
-				    <onclick condition="!System.HasAddon(pvr.iptvsimple)">InstallAddon(pvr.iptvsimple)</onclick>
+				    <onclick condition="!System.HasAddon(pvr.iptvsimple)">InstallAddon(pvr.iptvsimple)</onclick>-->
 				    <!--<onclick condition="!System.HasAddon(slyguy.pluto.tv.provider)">InstallAddon(slyguy.pluto.tv.provider)</onclick>-->
 				   <!--<onclick condition="!Skin.HasSetting(preguntado_ajustes)">ReplaceWindow(1151)</onclick> -->
+					<visible>System.HasAddon(script.skinshortcuts) + System.HasAddon(script.rikteam) + System.HasAddon(plugin.program.iptv.merge) + System.HasAddon(pvr.iptvsimple)</visible>
 				</control>
-				
 				<control type="button" id="700">
 					<orientation>horizontal</orientation>
 					<left>0</left>
@@ -161,7 +212,9 @@
 					<onleft>700</onleft>
 					<texturefocus colordiffuse="$VAR[HighlightBarColor]">listselect_fo.png</texturefocus>
 					<texturenofocus />
-					<onclick>Dialog.Close(1152)</onclick>
+					<!--<onclick>Dialog.Close(1152)</onclick>-->
+					<onclick>Dialog.Close(all,true)</onclick>
+					<onclick>ActivateWindow(Programs,"plugin://script.rikteam/?mode=forceclose",return)</onclick>
 				</control>
 				<control type="image">
 					<right>0</right>
@@ -175,6 +228,30 @@
 					<onleft>700</onleft>
 					<texture background="true">special://skin/extras/icons/power.png</texture>
 				</control>
+				
+				<control type="button" id="658">
+					<onleft>700</onleft>
+					<onright>800</onright>
+					<onup>655</onup>
+					<ondown>655</ondown>
+					<centerleft>50%</centerleft>
+					<top>120</top><!--200-->
+					<height>50</height><!--95-->
+					<width>88%</width><!--880-640-->
+					<aligny>center</aligny>
+					<align>center</align>
+					<font>roboto30</font>
+					<label>Si ves este mensaje y no es la primera instalación pincha aquí para solucionarlo y cerrar. Después vuelve a abrir Kodi. </label>
+					<!--<onclick>Dialog.Close(1152)</onclick>-->
+					<texturefocus colordiffuse="$VAR[HighlightBarColor]">listselect_fo.png</texturefocus>
+					<texturenofocus />
+					<onclick>Dialog.Close(all,true)</onclick>
+					<onclick>Skin.SetBool(preguntado_ajustes)</onclick>
+					<!--<onclick>Skin.SetBool(pagina_permiso_run,true)</onclick>-->
+				    <onclick>ActivateWindow(Programs,"plugin://script.rikteam/?mode=forceclose",return)</onclick>
+				    <visible>!Skin.HasSetting(preguntado_ajustes) + System.HasAddon(script.skinshortcuts) + System.HasAddon(script.rikteam)</visible>
+                </control>
+				
 			<control type="group">
 				<depth>DepthBars</depth>
 				<animation effect="slide" end="0,-90" time="300" tween="sine" easing="inout" condition="$EXP[infodialog_active]">conditional</animation>

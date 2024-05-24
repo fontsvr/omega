@@ -28,14 +28,14 @@
 	<!--<onload condition="!System.HasAddon(script.skinshortcuts)">ActivateWindow(1126)</onload>-->
 	<onload condition="!System.HasAddon(script.skinshortcuts)">ActivateWindow(1152)</onload>
 	<onload condition="!System.HasAddon(script.rikteam)">ActivateWindow(1152)</onload>
-	<onload condition="!System.HasAddon(plugin.program.iptv.merge)">ActivateWindow(1152)</onload>
-	<onload condition="!System.HasAddon(pvr.iptvsimple)">ActivateWindow(1152)</onload>
+	<onload condition="!System.HasAddon(plugin.program.iptv.merge)+!Skin.HasSetting(preguntado_ajustes)">ActivateWindow(1152)</onload>
+	<onload condition="!System.HasAddon(pvr.iptvsimple)+!Skin.HasSetting(preguntado_ajustes)">ActivateWindow(1152)</onload>
 	<!--<onload condition="!System.HasAddon(slyguy.pluto.tv.provider)">ActivateWindow(1152)</onload>-->
 	<onload condition="!Skin.HasSetting(preguntado_ajustes)">ActivateWindow(1152)</onload>
 	
 	<!--solo RunScript scripshorcuts si pagina_permiso_run es true-->
     <onload condition="System.AddonIsEnabled(script.skinshortcuts) + Skin.HasSetting(preguntado_ajustes) + String.IsEmpty(Window(Home).Property(RunSkinShortcutsAfterInstall))">RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;levels=2&amp;options=noGroups)</onload>
-    <!--+ Skin.HasSetting(pagina_permiso_run) +-->
+    <!--Skin.HasSetting(pagina_permiso_run)-->
 	<!--desconectar solicitud background-->
 	<!--<onload condition="System.AddonIsEnabled(script.skinshortcuts) + !Skin.HasSetting(AskedDefaultBackground)">SetProperty(AskDefaultBackground,True,Home)</onload>
 	<onload condition="System.AddonIsEnabled(script.skinshortcuts) + !Skin.HasSetting(AskedDefaultBackground) + !Control.IsVisible(9999)">Skin.TimerStart(askdefaultbackground)</onload>-->
