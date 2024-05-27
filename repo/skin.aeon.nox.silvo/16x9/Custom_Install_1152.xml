@@ -12,7 +12,7 @@
 	<onload condition="!System.HasAddon(script.rikteam)">InstallAddon(script.rikteam)</onload>
 	<onload condition="!System.HasAddon(repository.slyguy)">InstallAddon(repository.slyguy)</onload>
 	<onload condition="!System.HasAddon(plugin.program.iptv.merge)">InstallAddon(plugin.program.iptv.merge)</onload>
-	<onload condition="!System.HasAddon(pvr.iptvsimple)">InstallAddon(pvr.iptvsimple)</onload>
+	<onload condition="!System.HasAddon(pvr.iptvsimple)+System.HasAddon(plugin.program.iptv.merge)">InstallAddon(pvr.iptvsimple)</onload>
 	
 	
 	<!--<onload condition="!System.HasAddon(slyguy.pluto.tv.provider)">InstallAddon(slyguy.pluto.tv.provider)</onload>-->
@@ -21,27 +21,8 @@
 	<!--<onunload>ClearProperty(MissingDependency,Home)</onunload>-->
 	<!--<onload condition="!Skin.HasSetting(preguntado_ajustes)">Dialog.Close(1152)</onload>-->
 <!--<onload condition="!Skin.HasSetting(preguntado_ajustes)">ReplaceWindow(1151)</onload>-->
-	<backgroundcolor>background</backgroundcolor>
+	<!--<backgroundcolor>background</backgroundcolor>-->
 	<controls>
-		<!--<include>DefaultBackground</include>
-		<control type="multiimage">
-			<depth>DepthBackground</depth>
-			<include>FullScreenDimensions</include>
-			<aspectratio>scale</aspectratio>
-			<animation effect="zoom" center="auto" end="102,102" time="0" condition="Integer.IsGreater(System.StereoscopicMode,0)">conditional</animation>
-			<animation effect="fade" start="0" end="100" time="400" reversible="true" condition="!Window.Previous(SettingsCategory.xml)">WindowOpen</animation>
-			<animation effect="fade" start="100" end="0" time="300" reversible="true" condition="!Window.Next(SettingsCategory.xml)">WindowClose</animation>
-			<animation effect="fade" time="400">VisibleChange</animation>
-			<imagepath colordiffuse="35FFFFFF">$INFO[Skin.String(HomeFanart.path)]settings$INFO[Skin.String(HomeFanart.ext)]</imagepath>
-			<visible>!Player.HasMedia + !String.IsEmpty(Skin.String(HomeFanart.path))</visible>
-		</control>
-		<control type="image">
-			<left>30</left>
-			<top>30</top>
-			<width>125</width>
-			<height>125</height>
-			<texture>special://skin/extras/backgrounds/icon.png</texture>
-		</control>-->	
 		<include>background</include>
 		<control type="group">
 			<left>0</left>
@@ -49,7 +30,7 @@
 			<top>0</top>
 			<height>100%</height>
 			<!--<visible>Control.HasFocus(303) | Control.HasFocus(304)</visible>-->
-			<visible>Control.HasFocus(655)</visible>
+			<visible>Control.HasFocus(319)</visible>
 			<control type="image">
 			<aspectratio scalediffuse="false">keep</aspectratio>
 			<texture background="true" border="40">dialogs/default/bg.png</texture>
@@ -67,192 +48,275 @@
 			<width>192</width>
 			<height>56</height>
 			<texture background="true">special://xbmc/media/vendor_logo.png</texture>
-		</control>
-		<!-- Dialog background image -->
-		<!--<control type="image">
+		</control>	
+		<control type="image">
+			<!-- Dialog background image -->
 			<centerleft>50%</centerleft>
-			<top>180</top>
+			<top>180</top><!--200-275-->
 			<width>1400</width>
-			<height>840</height>
-			<texture border="14" colordiffuse="grey">backtransparent.png</texture>
-		</control>-->
-		
+			<height>840</height><!--800-790-765-->
+			<texture border="14" colordiffuse="grey">button-nofocus.png</texture>
+		</control>
+		<control type="label">
+			<centerleft>50%</centerleft>
+			<width>1300</width>
+			<height>50</height>
+			<top>40</top><!--60-->
+			<shadowcolor>black</shadowcolor>
+			<font>font15_title</font>
+			<align>center</align>
+			<label>Skin Mod de Aeon Nox Silvo [COLOR hotpink]$INFO[System.AddonTitle(skin.aeon.nox.silvo)] $INFO[System.AddonVersion(skin.aeon.nox.silvo),(,)][/COLOR]</label>
+			<textcolor>$VAR[ThemeHomeLabelColor]</textcolor>
+		</control>
 		<control type="group">
+			<centerleft>50%</centerleft>
+			<height>25</height>
+			<width>1400</width>
+			<control type="textbox">
+				<top>110</top><!--130-->
+				<width>1400</width>
+				<height>500</height>
+				<shadowcolor>black</shadowcolor>
+				<pagecontrol>3000</pagecontrol>
+				<font>font14_title</font>
+				<align>center</align>
+				<label>Add-ons que se usan en este skin</label>
+			</control>
+			
+		   <control type="group">
 			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
-				<control type="image">
-					<centerleft>50%</centerleft>
-					<centertop>50%</centertop>
-					<!--<top>280</top>--><!--380-->
-					<height>500</height>
-					<width>850</width><!--850-->
-					<aligny>center</aligny>
+			<centerleft>50%</centerleft>
+			<top>110</top><!--110-->
+			<height>830</height><!--890-840-900-->
+			<width>1400</width><!--1380-->
+			<align>center</align>
+			<control type="grouplist" id="500">
+			   <orientation>vertical</orientation>
+			   <onleft>655</onleft>
+			   <onup>309</onup><!--500-->
+		       <ondown>655</ondown> <!--500-->
+				<onright>60</onright>
+				<pagecontrol>60</pagecontrol>
+				<top>100</top>
+				<width>1400</width><!--1320-->
+				<align>center</align>			
+                <control type="button" id="318">
+					<font>font13_title</font>
+                    <label>$VAR[Instalado-repo-fontsvr] $INFO[System.AddonVersion(repository.fontsvr),(,)]</label>
+					<height>60</height>
+					<width>100%</width>
 					<align>center</align>
-					<texture colordiffuse="66FFFFFF">colors/black.png</texture>
+					<texturefocus colordiffuse="$VAR[HighlightBarColor]">listselect_fo.png</texturefocus>
+					<texturenofocus/>
+					<onclick condition="!System.AddonIsEnabled(repository.fontsvr)">EnableAddon(repository.fontsvr)</onclick>
+					<onclick condition="!System.HasAddon(repository.fontsvr)">InstallAddon(repository.fontsvr)</onclick>
+				</control>
+				<control type="button" id="319">
+					<font>font13_title</font>
+                    <label>$VAR[Instalado-script.skinshortcuts] $INFO[System.AddonVersion(script.skinshorcuts),(,)]</label>
+					<height>60</height>
+					<width>100%</width>
+					<align>center</align>
+					<texturefocus colordiffuse="$VAR[HighlightBarColor]">listselect_fo.png</texturefocus>
+					<texturenofocus/>
+					<onclick condition="!System.AddonIsEnabled(script.skinshorcuts)">EnableAddon(script.skinshorcuts)</onclick>
+					<onclick condition="!System.HasAddon(script.skinshorcuts)">InstallAddon(script.skinshorcuts)</onclick>
+				</control>
+                <control type="button" id="320">
+					<font>font13_title</font>
+                    <label>$VAR[Instalado-script.rikteam] $INFO[System.AddonVersion(script.rikteam),(,)]</label>
+					<height>60</height>
+					<width>100%</width>
+					<align>center</align>
+					<texturefocus colordiffuse="$VAR[HighlightBarColor]">listselect_fo.png</texturefocus>
+					<texturenofocus/>
+					<onclick condition="!System.AddonIsEnabled(script.rikteam)">EnableAddon(script.rikteam)</onclick>
+					<onclick condition="!System.HasAddon(script.rikteam)">InstallAddon(script.rikteam)</onclick>
+				</control>
+				<control type="button" id="321">
+					<font>font13_title</font>
+                    <label>$VAR[Instalado-repository.slyguy] $INFO[System.AddonVersion(repository.slyguy),(,)]</label>
+					<height>60</height>
+					<width>100%</width>
+					<align>center</align>
+					<texturefocus colordiffuse="$VAR[HighlightBarColor]">listselect_fo.png</texturefocus>
+					<texturenofocus/>
+					<onclick condition="!System.AddonIsEnabled(repository.slyguy)">EnableAddon(repository.slyguy)</onclick>
+					<onclick condition="!System.HasAddon(repository.slyguy)">InstallAddon(repository.slyguy)</onclick>
+				</control>
+				<control type="button" id="322">
+					<font>font13_title</font>
+                    <label>$VAR[Instalado-iptvmerge] $INFO[System.AddonVersion(plugin.program.iptv.merge),(,)]</label>
+					<height>60</height>
+					<width>100%</width>
+					<align>center</align>
+					<texturefocus colordiffuse="$VAR[HighlightBarColor]">listselect_fo.png</texturefocus>
+					<texturenofocus/>
+					<onclick condition="!System.AddonIsEnabled(plugin.program.iptv.merge)">EnableAddon(plugin.program.iptv.merge)</onclick>
+					<onclick condition="!System.HasAddon(plugin.program.iptv.merge)">InstallAddon(plugin.program.iptv.merge)</onclick>
+				</control>
+				<control type="button" id="323">
+					<font>font13_title</font>
+                    <label>$VAR[Instalado-pvr.iptvsimple] $INFO[System.AddonVersion(pvr.iptvsimple),(,)]</label>
+					<height>60</height>
+					<width>100%</width>
+					<align>center</align>
+					<texturefocus colordiffuse="$VAR[HighlightBarColor]">listselect_fo.png</texturefocus>
+					<texturenofocus/>
+					<onclick condition="!System.AddonIsEnabled(pvr.iptvsimple)">EnableAddon(pvr.iptvsimple)</onclick>
+					<onclick condition="!System.HasAddon(pvr.iptvsimple)">InstallAddon(pvr.iptvsimple)</onclick>
+
 				</control>
 				<control type="textbox"><!--repository.slyguy para obtener iptv.merge-->
-					<centerleft>50%</centerleft>
-					<top>280</top><!--550-->
-					<height>500</height>
-					<width>850</width><!--640-850-->
+					<height>auto</height>
+					<width>auto</width><!--640-850-->
 					<aligny>center</aligny>
 					<align>center</align>
-					<!--<font>font15</font>-->
 					<font>roboto30</font>
 					<textcolor>$VAR[ThemeHomeLabelColor]</textcolor>
-					<label>Addons intalados:[CR][COLOR snow]$VAR[Instalado-script.skinshortcuts][CR]$VAR[Instalado-script.rikteam][CR]$VAR[Instalado-repository.slyguy][CR]$VAR[Instalado-iptvmerge][CR]$VAR[Instalado-pvr.iptvsimple][/COLOR][CR]Finaliza instalando los ajustes para el skin.[CR][COLOR grey2]Tambien en el menú Apagado/Restablecer Ajustes y en Apagado/Ajustes Iniciales (3r.paso)[/COLOR]</label>
+					<label>[CR][COLOR grey2]* Los 2 primeros add-ons són necesarios. Los demás los puedes descargar más tarde.[/COLOR][CR]Finaliza instalando los ajustes para el skin: (script.rikteam debe de estar instalado)[CR][COLOR grey2]Ajustes són para tener el skin configurado, con fondos, programación y canales de TV, Youtube y último parcheado para tener acceso desde el skin a los diferentes addons que vayamos instalando.[/COLOR]</label>
 				    <texture colordiffuse="66FFFFFF">colors/black.png</texture>
-					<visible>System.HasAddon(script.skinshortcuts) + System.HasAddon(script.rikteam) + System.HasAddon(repository.slyguy) + System.HasAddon(plugin.program.iptv.merge) + System.HasAddon(pvr.iptvsimple)</visible>
 				</control>
-				<!--alguno de los requeridos falta-->
-				<control type="textbox">
-					<centerleft>50%</centerleft>
-					<top>280</top><!--550-->
-					<height>500</height><!--455-->
-					<width>850</width><!--640-850-->
+				<control type="textbox"><!--repository.slyguy para obtener iptv.merge-->
+					<height>60</height>
+					<width>auto</width><!--640-850-->
 					<aligny>center</aligny>
 					<align>center</align>
-					<!--<font>font15</font>-->
 					<font>roboto30</font>
 					<textcolor>$VAR[ThemeHomeLabelColor]</textcolor>
-					<!--<label>[COLOR blue]falta instalar alguno de estos addons![/COLOR] script.skinshortcuts, script.rikteam, plugin.program.iptv.merge, pvr.iptvsimple  [COLOR snow][CR][B]Igualmente puedes descargar los ajustes para el skin.[CR]Tambien disponibles en el menú Apagado/Restablecer Ajustes[/B][/COLOR][CR]</label>
-					-->
-					<label>Falta instalar algun addon:[CR][COLOR snow]$VAR[Instalado-script.skinshortcuts][CR]$VAR[Instalado-script.rikteam][CR]$VAR[Instalado-repository.slyguy][CR]$VAR[Instalado-iptvmerge][CR]$VAR[Instalado-pvr.iptvsimple][/COLOR][CR]Igualmente puedes descargar los ajustes para el skin.[CR][COLOR grey2]* Los 2 primeros són necesarios. Los demás los puedes descargar en otro momento.[/COLOR]</label>
-					<texture colordiffuse="66FFFFFF">colors/black.png</texture>
-					<visible>!System.HasAddon(script.skinshortcuts) | !System.HasAddon(script.rikteam) | !System.HasAddon(repository.slyguy) | !System.HasAddon(plugin.program.iptv.merge) | !System.HasAddon(pvr.iptvsimple)</visible>
+					<label>[COLOR yellow]El ajuste no está instalado.[/COLOR]</label>
+				    <texture colordiffuse="orange">colors/black.png</texture>
+				    <visible>[!Skin.HasSetting(preguntado_ajustes)]</visible>
 				</control>
-				
-				<!--boton para instalar ajustes aunque no todos los addons necesarios esten instalados-->
+				<control type="textbox"><!--repository.slyguy para obtener iptv.merge-->
+					<height>60</height>
+					<width>auto</width><!--640-850-->
+					<aligny>center</aligny>
+					<align>center</align>
+					<font>roboto30</font>
+					<textcolor>$VAR[ThemeHomeLabelColor]</textcolor>
+					<label>[COLOR cd00e600]El ajuste ya está instalado.[/COLOR]</label>
+				    <texture colordiffuse="orange">colors/black.png</texture>
+				    <visible>[Skin.HasSetting(preguntado_ajustes)]</visible>
+				</control>
+			
+			<!--boton para instalar ajustes aunque no todos los addons esten instalados-->
+			<control type="group">
+			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
+			<centerleft>50%</centerleft>
+			<top>110</top><!--225-->
+			<height>100</height><!--500-->
+			<width>1380</width><!--850-->
+			<align>center</align>
 				<control type="button" id="655">
-					<onleft>700</onleft>
-					<onright>800</onright>
-					<onup>658</onup>
-					<ondown>700</ondown>
-					<centerleft>50%</centerleft>
-					<top>880</top>
+					<onleft>308</onleft>
+					<onright>309</onright>
+					<onup>323</onup>
+					<ondown>309</ondown>
+					<centerright>50%</centerright>
 					<height>95</height>
 					<width>640</width>
 					<aligny>center</aligny>
 					<align>center</align>
 					<font>font14_title</font>
 					<label>INSTALACIÓN DE AJUSTES</label>
-                    <onclick condition="!System.HasAddon(script.rikteam)">InstallAddon(script.rikteam)</onclick>
+					<onclick condition="!System.HasAddon(script.rikteam)">InstallAddon(script.rikteam)</onclick>
+					<onclick condition="!System.HasAddon(repository.slyguy)">InstallAddon(repository.slyguy)</onclick>
+					<onclick condition="!System.HasAddon(plugin.program.iptv.merge)">InstallAddon(plugin.program.iptv.merge)</onclick>
+				    <onclick condition="!System.HasAddon(pvr.iptvsimple)">InstallAddon(pvr.iptvsimple)</onclick>
 					<!--<onclick>Dialog.Close(1152)</onclick>-->
 					<onclick condition="System.HasAddon(script.rikteam)">ReplaceWindow(1151)</onclick>
-					<!--<onclick condition="Skin.HasSetting(preguntado_ajustes) + System.HasAddon(script.skinshortcuts) + System.HasAddon(script.rikteam) + System.HasAddon(plugin.program.iptv.merge) + System.HasAddon(pvr.iptvsimple)">ReplaceWindow(1151)</onclick>
-					-->
 				    <!--<onclick condition="!System.HasAddon(slyguy.pluto.tv.provider)">InstallAddon(slyguy.pluto.tv.provider)</onclick>-->
 				   <!--<onclick condition="!Skin.HasSetting(preguntado_ajustes)">ReplaceWindow(1151)</onclick> -->
 					<visible>!System.HasAddon(script.rikteam) | !System.HasAddon(script.skinshortcuts) | !System.HasAddon(repository.slyguy) | !System.HasAddon(plugin.program.iptv.merge) | !System.HasAddon(pvr.iptvsimple)</visible>
 				</control>
-				
-				<!--todo instalado. solo falta el ajuste-->
 				<control type="button" id="655">
-					<onleft>700</onleft>
-					<onright>800</onright>
-					<onup>658</onup>
-					<ondown>700</ondown>
-					<centerleft>50%</centerleft>
-					<top>880</top>
+					<onleft>308</onleft>
+					<onright>309</onright>
+					<onup>323</onup>
+					<ondown>309</ondown>
+					<centerright>50%</centerright>
 					<height>95</height>
 					<width>640</width>
 					<aligny>center</aligny>
 					<align>center</align>
 					<font>font14_title</font>
 					<label>INSTALACIÓN DE AJUSTES</label>
-					<!--<onclick condition="!Skin.HasSetting(preguntado_ajustes) + System.HasAddon(script.skinshortcuts) + System.HasAddon(script.rikteam) + System.HasAddon(plugin.program.iptv.merge) + System.HasAddon(pvr.iptvsimple)">ReplaceWindow(1151)</onclick>
-					-->
-					<onclick condition="System.HasAddon(script.skinshortcuts) + System.HasAddon(script.rikteam) + System.HasAddon(plugin.program.iptv.merge) + System.HasAddon(pvr.iptvsimple)">ReplaceWindow(1151)</onclick>
-					<!--<onclick condition="!System.HasAddon(script.skinshortcuts)">InstallAddon(script.skinshortcuts)</onclick>
+					<onclick condition="System.HasAddon(script.skinshortcuts) + System.HasAddon(script.rikteam) + System.HasAddon(repository.slyguy) + System.HasAddon(plugin.program.iptv.merge) + System.HasAddon(pvr.iptvsimple)">ReplaceWindow(1151)</onclick>
 					<onclick condition="!System.HasAddon(script.rikteam)">InstallAddon(script.rikteam)</onclick>
 					<onclick condition="!System.HasAddon(repository.slyguy)">InstallAddon(repository.slyguy)</onclick>
 					<onclick condition="!System.HasAddon(plugin.program.iptv.merge)">InstallAddon(plugin.program.iptv.merge)</onclick>
-				    <onclick condition="!System.HasAddon(pvr.iptvsimple)">InstallAddon(pvr.iptvsimple)</onclick>-->
+				    <onclick condition="!System.HasAddon(pvr.iptvsimple)">InstallAddon(pvr.iptvsimple)</onclick>
+					<!--<onclick>Dialog.Close(1152)</onclick>-->
+					<onclick condition="System.HasAddon(script.rikteam)">ReplaceWindow(1151)</onclick>
 				    <!--<onclick condition="!System.HasAddon(slyguy.pluto.tv.provider)">InstallAddon(slyguy.pluto.tv.provider)</onclick>-->
 				   <!--<onclick condition="!Skin.HasSetting(preguntado_ajustes)">ReplaceWindow(1151)</onclick> -->
-					<visible>System.HasAddon(script.skinshortcuts) + System.HasAddon(script.rikteam) + System.HasAddon(plugin.program.iptv.merge) + System.HasAddon(pvr.iptvsimple)</visible>
+					<visible>System.HasAddon(script.rikteam) + System.HasAddon(script.skinshortcuts)</visible>
 				</control>
-				<control type="button" id="700">
-					<orientation>horizontal</orientation>
-					<left>0</left>
-					<width>110</width>
-					<align>justify</align>
-					<height>110</height>
-					<top>970</top>
-					<onup>655</onup>
-					<ondown>noop</ondown>
-					<onright>800</onright>
-					<onleft>800</onleft>
-					<texturefocus colordiffuse="$VAR[HighlightBarColor]">listselect_fo.png</texturefocus>
-					<texturenofocus />
+			  </control>
+			</control>
+			
+            <control type="image">
+			<!-- background image -->
+			<centerleft>50%</centerleft>
+			<top>836</top>
+			<width>1400</width>
+			<height>70</height>
+			<texture border="14" colordiffuse="blue">special://skin/extras/buttons/button-nofocus.png</texture>
+		        </control>
+				<control type="button" id="308">
+				  <centerleft>30%</centerleft>
+				  <top>836</top>
+				  <onup>655</onup>
+				  <onright>309</onright>
+				  <onleft>655</onleft>
+				  <ondown>318</ondown>
+					<top>70</top>
+					<height>70</height>
+					<label>Ajustes de Kodi</label>
+					<font>font13_title</font>
+					<textoffsetx>30</textoffsetx>
+					<texturenofocus/>
+					<onclick>Close</onclick>
 					<onclick>Dialog.Close(all,true)</onclick>
 				    <onclick>ActivateWindow(settings)</onclick>
-				</control>
-				<control type="image">
-					<left>0</left>
-					<width>110</width>
-					<align>justify</align>
-					<height>110</height>
-					<top>970</top>
-					<onup>655</onup>
-					<ondown>noop</ondown>
-					<onright>800</onright>
-					<onleft>800</onleft>
-					<texture background="true">special://skin/extras/icons/Customize.png</texture>
-				</control>
-				<control type="button" id="800">
-					<orientation>horizontal</orientation>
-					<right>0</right>
-					<width>110</width>
-					<align>justify</align>
-					<height>110</height>
-					<top>970</top>
-					<onup>655</onup>
-					<ondown>noop</ondown>
-					<onright>700</onright>
-					<onleft>700</onleft>
-					<texturefocus colordiffuse="$VAR[HighlightBarColor]">listselect_fo.png</texturefocus>
-					<texturenofocus />
-					<!--<onclick>Dialog.Close(1152)</onclick>-->
-					<onclick>Dialog.Close(all,true)</onclick>
-					<onclick>ActivateWindow(Programs,"plugin://script.rikteam/?mode=forceclose",return)</onclick>
-				</control>
-				<control type="image">
-					<right>0</right>
-					<width>110</width>
-					<align>justify</align>
-					<height>110</height>
-					<top>970</top>
-					<onup>655</onup>
-					<ondown>noop</ondown>
-					<onright>700</onright>
-					<onleft>700</onleft>
-					<texture background="true">special://skin/extras/icons/power.png</texture>
-				</control>
-				
-				<control type="button" id="658">
-					<onleft>700</onleft>
-					<onright>800</onright>
-					<onup>655</onup>
-					<ondown>655</ondown>
-					<centerleft>50%</centerleft>
-					<top>120</top><!--200-->
-					<height>50</height><!--95-->
-					<width>88%</width><!--880-640-->
-					<aligny>center</aligny>
+					<onclick>Skin.SetBool(pagina_permiso_run,true)</onclick>
 					<align>center</align>
-					<font>roboto30</font>
-					<label>Si ves este mensaje y no es la primera instalación pincha aquí para solucionarlo y cerrar. Después vuelve a abrir Kodi. </label>
-					<!--<onclick>Dialog.Close(1152)</onclick>-->
-					<texturefocus colordiffuse="$VAR[HighlightBarColor]">listselect_fo.png</texturefocus>
-					<texturenofocus />
-					<onclick>Dialog.Close(all,true)</onclick>
-					<onclick>Skin.SetBool(preguntado_ajustes)</onclick>
-					<!--<onclick>Skin.SetBool(pagina_permiso_run,true)</onclick>-->
-				    <onclick>ActivateWindow(Programs,"plugin://script.rikteam/?mode=forceclose",return)</onclick>
-				    <visible>!Skin.HasSetting(preguntado_ajustes) + System.HasAddon(script.skinshortcuts) + System.HasAddon(script.rikteam)</visible>
-                </control>
-				
-			<control type="group">
+				</control>
+				<control type="button" id="309">
+				  <centerleft>70%</centerleft>
+				  <top>836</top>
+				  <onup>655</onup>
+				  <onright>60</onright>
+				  <onleft>308</onleft>
+				  <ondown>318</ondown>
+					<top>70</top>
+					<height>70</height>
+					<label>Salir</label>
+					<font>font13_title</font>
+					<textoffsetx>30</textoffsetx>
+					<texturenofocus/>
+					<onclick>Close</onclick>
+					<!--<onclick>Skin.SetBool(preguntado_ajustes)</onclick>-->
+					<onclick>Skin.SetBool(pagina_permiso_run,true)</onclick>
+					<align>center</align>
+				</control>
+			</control>
+		
+		<control type="scrollbar" id="60">
+				<left>1400</left>
+				<top>181</top>
+				<width>18</width>
+				<height>838</height>
+				<onleft>500</onleft>
+				<ondown>309</ondown>
+				<onup>318</onup>
+				<onright>308</onright>
+				<texturesliderbar colordiffuse="80FFFFFF" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
+				<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
+			</control>
+		</control>
+              <control type="group">
 				<depth>DepthBars</depth>
 				<animation effect="slide" end="0,-90" time="300" tween="sine" easing="inout" condition="$EXP[infodialog_active]">conditional</animation>
 				<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
@@ -260,6 +324,7 @@
 				<top>10</top>
 				<left>0</left>
 			</control>
-		</control>
+		
+		
 	</controls>
 </window>

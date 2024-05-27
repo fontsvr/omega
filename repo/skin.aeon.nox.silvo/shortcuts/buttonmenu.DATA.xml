@@ -100,7 +100,7 @@
 		<action>ActivateWindow(skinsettings)</action>
 	</shortcut>
     <shortcut>
-		<label>Ajustes Iniciales [COLOR hotpink]RikTeam[/COLOR]</label>
+		<label>Ajustes Iniciales del Skin [COLOR hotpink]$INFO[System.AddonTitle(skin.aeon.nox.silvo)][/COLOR]</label>
 		<label2 />
 		<icon />
 		<action>Dialog.Close(all,true)</action>
@@ -118,20 +118,28 @@
 		<visible>!System.HasAddon(script.rikteam)</visible>
 	</shortcut>
 	<shortcut>
-		<label>Restablecer ajuste [COLOR hotpink]$INFO[System.AddonTitle(skin.aeon.nox.silvo)] $INFO[System.AddonVersion(skin.aeon.nox.silvo),,][/COLOR]</label>
+		<label>Estado ajuste [COLOR hotpink]$INFO[System.AddonTitle(skin.aeon.nox.silvo)] $INFO[System.AddonVersion(skin.aeon.nox.silvo),(,)] [COLOR cd00e600]√[/COLOR]</label>
 		<label2 />
 		<icon />
 		<action>Dialog.Close(all,true)</action>
-		<action>ReplaceWindow(Programs,"plugin://script.rikteam/?mode=install&amp;action=build&amp;name=ajustes+basic+v21",return)</action>
-		<action>Skin.SetBool(preguntado_ajustes,true)</action>
-		<visible>System.HasAddon(script.rikteam)</visible>
+		<action>ActivateWindow(1152)</action>
+		<visible>[Skin.HasSetting(preguntado_ajustes)]</visible>
 	</shortcut>
 	<shortcut>
-		<label>[COLOR violet][B]Forzar Cierre Kodi[/B][/COLOR]</label>
+		<label>[COLOR yellow]Actualizar ajuste[/COLOR] [COLOR hotpink]$INFO[System.AddonTitle(skin.aeon.nox.silvo)] $INFO[System.AddonVersion(skin.aeon.nox.silvo),(,)][/COLOR]</label>
+		<label2 />
+		<icon />
+		<action>Dialog.Close(all,true)</action>
+		<action>ActivateWindow(1152)</action>
+		<visible>[!Skin.HasSetting(preguntado_ajustes)]</visible>
+	</shortcut>
+	<shortcut>
+		<label>[COLOR hotpink]Forzar Cierre Kodi[/COLOR]</label>
 		<label2 />
 		<icon />
 		<action>Dialog.Close(all,true)</action>
 		<action>ActivateWindow(Programs,"plugin://script.rikteam/?mode=forceclose",return)</action>
 		<visible>System.HasAddon(script.rikteam)</visible>
 	</shortcut>
+
 </shortcuts>

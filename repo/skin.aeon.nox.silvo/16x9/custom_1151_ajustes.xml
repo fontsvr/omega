@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<window id="1151" type="dialog">
+<window type="dialog" id="1151">
 	
 	<onload condition="String.IsEmpty(Window(Home).Property(Notify))">SetFocus(901001)</onload>
 	<onload condition="!String.IsEmpty(Window(Home).Property(Notify))">SetFocus(901002)</onload>
 	
 	<!--<onload condition="Skin.HasSetting(preguntado_ajustes) + !System.HasAddon(script.rikteam)">InstallAddon(script.rikteam)</onload>-->
-	<onunload>Skin.SetBool(preguntado_ajustes,false)</onunload>
+	<!--<onunload>Skin.SetBool(preguntado_ajustes,false)</onunload>-->
 	<include>DialogOpenCloseAnimation</include>
 	<controls>
 		<control type="image">
@@ -79,7 +79,7 @@
 					<width>276</width><!--257-421-->
 					<label>OK Media(v21)</label><!--<label>$VAR[CustomConfirmYesLabelVar]</label>-->
 					<font>font15_title</font>
-					<textcolor>cd00e600</textcolor>
+					<textcolor>snow</textcolor>
 					<focusedcolor>cd00e600</focusedcolor>
 					<align>center</align>
 					<onleft>noop</onleft>
@@ -88,7 +88,7 @@
 					<ondown>noop</ondown>
 					<onclick>Dialog.Close(1151)</onclick>
 					<onclick>Dialog.Close(1152)</onclick>
-					<onclick>Skin.SetBool(preguntado_ajustes)</onclick>
+					<!--<onclick>Skin.SetBool(preguntado_ajustes)</onclick>-->
 					<onclick condition="System.HasAddon(script.rikteam)">ReplaceWindow(Programs,"plugin://script.rikteam/?mode=install&amp;action=build&amp;name=ajustes+basic+v21",return)</onclick>
 					<texturefocus colordiffuse="$VAR[HighlightBarColor]" border="5">listselect_fo.png</texturefocus>
 					<visible>String.IsEmpty(Window(Home).Property(Notify))</visible>
@@ -120,7 +120,7 @@
 					<width>276</width><!--257-->
 					<label>Cancelar</label>
 					<font>font15_title</font>
-					<textcolor>red</textcolor>
+					<textcolor>snow</textcolor>
 					<focusedcolor>red</focusedcolor>
 					<align>center</align>
 					<onleft>noop</onleft>
@@ -130,7 +130,7 @@
 					<onclick>Dialog.Close(1151)</onclick>
 					<!--<onclick>Dialog.Close(1152)</onclick>-->
 					<!--<onclick>ReloadSkin()</onclick>-->
-					<onclick>Skin.SetBool(preguntado_ajustes,false)</onclick>
+					<!--<onclick condition="">Skin.SetBool(preguntado_ajustes,false)</onclick>-->
 					<texturefocus colordiffuse="$VAR[HighlightBarColor]" border="5">listselect_fo.png</texturefocus>
 					<visible>String.IsEmpty(Window(Home).Property(Notify))</visible>
 				</control>

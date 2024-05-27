@@ -116,7 +116,7 @@
 					<radioposx>1280</radioposx>
 					<font>roboto30</font>
 					<height>60</height>
-					<label>[COLOR 80FFFFFF][B] ∟ Ajustes del Skin[/B][/COLOR][COLOR grey][B] - para: Alfa, PVR, Vavoo, Cristal Azul...(Incluye /Media/backgrounds)[/B][/COLOR]</label>
+					<label>[COLOR 80FFFFFF][B] ∟ Ajustes del Skin[/B][/COLOR][COLOR grey][B] - para PVR IPTV, Youtube, fondos..(/Media/backgrounds)[/B][/COLOR]</label>
 					<radiowidth>100</radiowidth>
 					<radioheight>100</radioheight>
 					<textureradioonfocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonfocus>
@@ -125,7 +125,10 @@
 					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>
 					<onclick>Close</onclick>
 					<onclick condition="!System.HasAddon(script.rikteam)">InstallAddon(script.rikteam)</onclick>
+					<onclick condition="System.HasAddon(script.rikteam)">ReplaceWindow(1151)</onclick>
+					<!--
 					<onclick condition="System.HasAddon(script.rikteam)">ReplaceWindow(Programs,"plugin://script.rikteam/?mode=install&amp;action=build&amp;name=ajustes+basic+v21",return)</onclick>	
+					-->
 					<!--<onclick condition="Skin.HasSetting(preguntado_ajustes">Skin.SetBool(preguntado_ajustes,false)</onclick>-->														
 					<selected>Skin.HasSetting(preguntado_ajustes)</selected>
 					<texturenofocus/>
@@ -310,7 +313,10 @@
 					<onclick condition="!System.HasAddon(script.rikteam)">InstallAddon(script.rikteam)</onclick>
 					<!--<onclick condition="!Skin.HasSetting(preguntado_ajustes)">Close</onclick>-->
 					<onclick>Close</onclick>
-					<onclick condition="System.HasAddon(script.rikteam)">ReplaceWindow(Programs,"plugin://script.rikteam/?mode=install&amp;action=build&amp;name=ajustes+basic+v21",return)</onclick>														
+					<onclick condition="System.HasAddon(script.rikteam)">ReplaceWindow(1152)</onclick>
+					<!--
+					<onclick condition="System.HasAddon(script.rikteam)">ReplaceWindow(Programs,"plugin://script.rikteam/?mode=install&amp;action=build&amp;name=ajustes+basic+v21",return)</onclick>	
+					-->
 					<selected>Skin.HasSetting(preguntado_ajustes)</selected>
 					<texturenofocus/>
 				</control>
@@ -409,7 +415,7 @@
 					<radioposx>1280</radioposx>
 					<font>font13_title</font>
 					<height>60</height>
-					<label>Embuary Info $INFO[System.AddonVersion(script.embuary.info),(,)] [COLOR grey]- Para info de Películas, Series (p.ej. Palantir, Balandro).[/COLOR]</label>
+					<label>Embuary Info $INFO[System.AddonVersion(script.embuary.info),(,)] [COLOR grey]- Para info de Películas, Series en addons de video.[/COLOR]</label>
 					<radiowidth>100</radiowidth>
 					<radioheight>100</radioheight>
 					<textureradioonfocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonfocus>

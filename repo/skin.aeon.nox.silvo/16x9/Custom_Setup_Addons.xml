@@ -57,7 +57,7 @@
 			<shadowcolor>black</shadowcolor>
 			<font>font15_title</font>
 			<align>center</align>
-			<label>Personaliza el Skin [COLOR hotpink]$INFO[System.AddonTitle(skin.aeon.nox.silvo)] $INFO[System.AddonVersion(skin.aeon.nox.silvo),(,)][/COLOR]</label>
+			<label>Personaliza el Skin</label>
 			<textcolor>$VAR[ThemeHomeLabelColor]</textcolor>
 		</control>
 		<control type="group">
@@ -314,26 +314,6 @@
 					<onclick condition="System.HasAddon(script.module.horus)">ActivateWindow(Videos,&quot;plugin://script.module.horus/&quot;,return)</onclick>
 					<texturenofocus/>
 					<selected>System.HasAddon(plugin.video.winner)</selected>
-				</control>
-				<control type="radiobutton" id="330">
-					<textcolor>$VAR[ThemeLabelColor]</textcolor>
-					<width>100%</width>
-					<font>font13_title</font>
-					<radioposx>1280</radioposx>
-					<height>60</height>
-					<label>The Blackgost $INFO[System.AddonVersion(plugin.video.blackghost),(,)] [COLOR grey]- Cine y Series[/COLOR]</label>
-					<radiowidth>100</radiowidth>
-					<radioheight>100</radioheight>
-					<textureradioonfocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonfocus>
-					<textureradioonnofocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonnofocus>
-					<textureradioofffocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradioofffocus>
-					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>
-					<onclick condition="!System.HasAddon(repository.theblackghost)">InstallAddon(repository.theblackghost)</onclick>
-					<onclick condition="!System.HasAddon(plugin.video.blackghost) + System.HasAddon(repository.theblackghost)">InstallAddon(plugin.video.blackghost)</onclick>																		
-					<onclick condition="System.HasAddon(plugin.video.blackghost)+System.AddonIsEnabled(plugin.video.blackghost)">Dialog.Close(5202)</onclick>
-					<onclick condition="System.HasAddon(plugin.video.blackghost)+System.AddonIsEnabled(plugin.video.blackghost)">ActivateWindow(Videos,&quot;plugin://plugin.video.blackghost/&quot;,return)</onclick>
-					<selected>System.HasAddon(plugin.video.blackghost)</selected>
-					<texturenofocus/>	
 				</control>
 				<control type="radiobutton" id="331">
 					<textcolor>$VAR[ThemeLabelColor]</textcolor>

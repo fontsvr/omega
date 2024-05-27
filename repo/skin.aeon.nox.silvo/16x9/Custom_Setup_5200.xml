@@ -7,10 +7,10 @@
 	<!--<include>DialogOpenCloseAnimation</include>-->
 	<defaultcontrol always="true">500</defaultcontrol>
     <defaultcontrol>319</defaultcontrol>
-	<onunload>Skin.SetBool(pagina_permiso_run)</onunload>
+	<!--<onunload>Skin.SetBool(pagina_permiso_run)</onunload>-->
 	<!--<onunload>Skin.SetBool(FirstPagina)</onunload>-->
-	<onload condition="!System.HasAddon(repository.reeebase)">InstallAddon(repository.rebase)</onload>
-	<onload condition="!System.HasAddon(plugin.program.rikteamwiz)">InstallAddon(plugin.program.rikteamwiz)</onload>
+	<onload condition="!System.HasAddon(repository.rebase)">InstallAddon(repository.rebase)</onload>
+	<!--< onload condition="!System.HasAddon(plugin.program.rikteamwiz)">InstallAddon(plugin.program.rikteamwiz)</onload>-->
 	
 	<!--
 	<onload condition="System.HasAddon(repository.rebase)">InstallAddon(repository.alfa-addon)</onload>
@@ -19,13 +19,13 @@
 	<onload condition="System.HasAddon(repository.rebase)">InstallAddon(repository.magellan)</onload>
 	<onload condition="System.HasAddon(repository.rebase)">InstallAddon(repository.michaz)</onload>
 	<onload condition="System.HasAddon(repository.rebase)">InstallAddon(repository.luar)</onload>
-	<onload condition="System.HasAddon(repository.rebase)">InstallAddon(repository.theblackghost)</onload>
 	<onload condition="System.HasAddon(repository.rebase)">InstallAddon(repository.resolveurl)</onload>
 	<onload condition="System.HasAddon(repository.rebase)">InstallAddon(repository.stva)</onload>
 	<onload condition="System.HasAddon(repository.rebase)">InstallAddon(repository.KODIvertiDO_TEAM)</onload>
 	<onload condition="System.HasAddon(repository.rebase)">InstallAddon(repository.thecrew)</onload>
 	<onload condition="System.HasAddon(repository.rebase)">InstallAddon(repository.jewrepo)</onload>
-	<onload condition="System.HasAddon(repository.rebase)">InstallAddon(repository.fontsvr)</onload>-->
+	<onload condition="System.HasAddon(repository.rebase)">InstallAddon(repository.fontsvr)</onload>
+	-->
 	
 	<!--<onclick condition="!System.HasAddon(pvr.iptvsimple)">InstallAddon(pvr.iptvsimple)</onclick>-->
 
@@ -38,16 +38,7 @@
 	
 	<!--<onload condition="System.HasAddon(repository.rebase)">Close</onload>
 	<onload condition="System.HasAddon(repository.rebase)">ReplaceWindow(Custom_Setup_addons)</onload>-->
-	
-	<!--
-	<onload condition="System.HasAddon(plugin.video.alfa)">Skin.SetBool(widgets-alfa)</onload>
-	<onload condition="System.HasAddon(plugin.video.cristalazul)">Skin.SetBool(widgets-cristal)</onload>
-	<onload condition="System.HasAddon(plugin.video.palantir2)">Skin.SetBool(widgets-palantir)</onload>-->
-	
-	<!--<onload>Skin.SetBool(homemenu-widgets)</onload>-->
-    <!--<onload>Skin.SetBool(etiquetas-visibles)</onload>
-	<onload>Skin.SetBool(homemenu-icon)</onload>
-	<onload>Skin.SetBool(background-visibiltyhigh)</onload>-->
+
 	<controls>
 		<include>background</include>
 		<control type="group">
@@ -331,24 +322,6 @@
 					<texturenofocus/>
 					<include>DefaultSettingButton</include>
 				</control>
-				<control type="radiobutton" id="331">
-					<textcolor>$VAR[ThemeLabelColor]</textcolor>
-					<width>100%</width>
-					<radioposx>1280</radioposx>
-					<font>font13_title</font>
-					<height>60</height>
-					<label>Repositorio Theblackghost $INFO[System.AddonVersion(repository.theblackghost),(,)][COLOR lightgrey] - Pelis y Series[/COLOR]</label>
-					<radiowidth>100</radiowidth>
-					<radioheight>100</radioheight>
-					<textureradioonfocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonfocus>
-					<textureradioonnofocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonnofocus>
-					<textureradioofffocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradioofffocus>
-					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>
-					<onclick condition="!System.HasAddon(repository.theblackghost)">InstallAddon(repository.theblackghost)</onclick>																		
-					<texturenofocus/>
-					<selected>System.HasAddon(repository.theblackghost)</selected>
-					<include>DefaultSettingButton</include>
-				</control>
 				<control type="radiobutton" id="332">
 					<textcolor>$VAR[ThemeLabelColor]</textcolor>
 					<width>100%</width>
@@ -433,11 +406,29 @@
 						<textureradioonnofocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonnofocus>
 						<textureradioofffocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradioofffocus>
 						<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>
-						<onclick condition="!System.HasAddon(repository.slyguy) + System.HasAddon(repository.rebase)">InstallAddon(repository.slyguy)</onclick>																		
+						<onclick condition="!System.HasAddon(repository.slyguy)">InstallAddon(repository.slyguy)</onclick>																		
 						<selected>System.HasAddon(repository.slyguy)</selected>
 						<include>DefaultSettingButton</include>
 				</control>
-				<control type="button" id="337">
+				<control type="radiobutton" id="337">
+						<textcolor>$VAR[ThemeLabelColor]</textcolor>
+						<width>100%</width>
+						<radioposx>1280</radioposx>
+					    <font>font13_title</font>
+						<label>Repositorio Slyguy InputStreamHelper $INFO[System.AddonVersion(repository.slyguy.inputstreamhelper),(,)] [COLOR grey]- Repositorio para InputStreamHelper[/COLOR]</label>
+						<height>60</height>
+					    <radiowidth>100</radiowidth>
+					    <radioheight>100</radioheight>
+						<textureradioonfocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonfocus>
+						<textureradioonnofocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonnofocus>
+						<textureradioofffocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradioofffocus>
+						<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>
+						<onclick condition="!System.HasAddon(repository.slyguy)">InstallAddon(repository.slyguy)</onclick>
+                        <onclick condition="System.HasAddon(repository.slyguy)">InstallAddon(repository.slyguy.inputstreamhelper)</onclick>						
+						<selected>System.HasAddon(repository.slyguy.inputstreamhelper)</selected>
+						<include>DefaultSettingButton</include>
+				</control>
+				<control type="button" id="338">
 					<textcolor>$VAR[ThemeLabelColor]</textcolor>
 					<width>100%</width>
 					<radioposx>1280</radioposx>
@@ -490,9 +481,9 @@
 				<control type="button" id="308">
 				  <centerleft>35%</centerleft>
 				  <top>836</top>
-				  <onup>337</onup>
+				  <onup>338</onup>
 				  <onright>309</onright>
-				  <onleft>337</onleft>
+				  <onleft>338</onleft>
 				  <ondown>319</ondown>
 					<top>70</top>
 					<height>70</height>
@@ -501,7 +492,9 @@
 					<textoffsetx>30</textoffsetx>
 					<texturenofocus/>
 					<onclick>Close</onclick>
-	                <onclick>Skin.SetBool(3RunSetup,true)</onclick>
+					<onclick>Skin.SetBool(FirstPagina,true)</onclick>
+	                <onclick>Skin.SetBool(FirstRunSetup,true)</onclick>
+					<onclick>Skin.SetBool(3RunSetup,true)</onclick>
 					<onclick>Skin.SetBool(pagina_permiso_run,true)</onclick>
 					<onclick>ReplaceWindow(Home)</onclick>
 					<align>center</align>
@@ -509,7 +502,7 @@
 				<control type="button" id="309">
 				  <centerleft>65%</centerleft>
 				  <top>836</top>
-				   <onup>337</onup>
+				   <onup>338</onup>
 				  <onright>60</onright>
 				  <onleft>308</onleft>
 				  <ondown>319</ondown>
@@ -519,12 +512,12 @@
 					<font>font13_title</font>
 					<textoffsetx>30</textoffsetx>
 					<texturenofocus/>
-					<onclick>Close</onclick>
-	               <onclick>Skin.SetBool(FirstPagina,true)</onclick>
-				   <onclick>Skin.SetBool(pagina_permiso_run,true)</onclick>
-					<onclick>ReplaceWindow(5202)</onclick>	
 					<align>center</align>
-					<aligny>center</aligny>
+					<onclick>Close</onclick>
+                    <!--<onclick>Dialog.Close(5200)</onclick>-->
+	               <onclick>ReplaceWindow(5202)</onclick>
+				   <onclick>Skin.SetBool(FirstPagina,true)</onclick>
+				   <onclick>Skin.SetBool(pagina_permiso_run)</onclick>	
 				</control>
 			
 		</control>
