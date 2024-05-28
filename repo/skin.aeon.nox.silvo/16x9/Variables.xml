@@ -3,37 +3,37 @@
 	<variable name="Instalado-repo-fontsvr">
 	   <value condition="!System.AddonIsEnabled(repository.fontsvr)+System.HasAddon(repository.fontsvr)">• repository.fontsvr [COLOR pink]!![/COLOR]</value>
 	   <value condition="!System.HasAddon(repository.fontsvr)">• repository.fontsvr [COLOR invalid]×[/COLOR] </value>
-	   <value condition="System.AddonIsEnabled(repository.fontsvr)+System.HasAddon(repository.fontsvr)">• [COLOR=snow]repository.fontsvr[/COLOR] [COLOR=cd00e600]√[/COLOR]</value>
+	   <value condition="System.AddonIsEnabled(repository.fontsvr)+System.HasAddon(repository.fontsvr)">• [COLOR=snow]repository.fontsvr[/COLOR] [COLOR=FF00991F]√[/COLOR]</value>
     </variable>
 	<variable name="Instalado-repo-rebase">
 	   <value condition="!System.AddonIsEnabled(repository.rebase)+System.HasAddon(repository.rebase)">• repository.rebase [COLOR pink]!![/COLOR]</value>
 	   <value condition="!System.HasAddon(repository.rebase)">• repository.rebase [COLOR invalid]×[/COLOR] </value>
-	   <value condition="System.AddonIsEnabled(repository.rebase)+System.HasAddon(repository.rebase)">• [COLOR=snow]repository.rebase[/COLOR] [COLOR=cd00e600]√[/COLOR]</value>
+	   <value condition="System.AddonIsEnabled(repository.rebase)+System.HasAddon(repository.rebase)">• [COLOR=snow]repository.rebase[/COLOR] [COLOR=FF00991F]√[/COLOR]</value>
     </variable>
 	<variable name="Instalado-script.skinshortcuts">
 	   <value condition="!System.AddonIsEnabled(script.skinshortcuts)+System.HasAddon(script.skinshortcuts)">• script.skinshorcuts [COLOR pink]!![/COLOR]</value>
 	   <value condition="!System.HasAddon(script.skinshortcuts)">• script.skinshorcuts [COLOR invalid]×[/COLOR] </value>
-	   <value condition="System.AddonIsEnabled(script.skinshortcuts)+System.HasAddon(script.skinshortcuts)">• [COLOR=snow]script.skinshorcuts[/COLOR] [COLOR cd00e600]√[/COLOR]</value>
+	   <value condition="System.AddonIsEnabled(script.skinshortcuts) + System.HasAddon(script.skinshortcuts)">• [COLOR=snow]script.skinshorcuts[/COLOR] [COLOR=FF00991F]√[/COLOR]</value>
     </variable>
 	<variable name="Instalado-script.rikteam">
        <value condition="!System.AddonIsEnabled(script.rikteam)+System.HasAddon(script.rikteam)">• script.rikteam [COLOR pink]!![/COLOR]</value>
 	   <value condition="!System.HasAddon(script.rikteam)">• script.rikteam [COLOR invalid]×[/COLOR] </value>
-	   <value condition="System.AddonIsEnabled(script.rikteam)+System.HasAddon(script.rikteam)">• [COLOR=snow]script.rikteam[/COLOR] [COLOR=cd00e600]√[/COLOR]</value>
+	   <value condition="System.AddonIsEnabled(script.rikteam)+System.HasAddon(script.rikteam)">• [COLOR=snow]script.rikteam[/COLOR] [COLOR=FF00991F]√[/COLOR]</value>
 	</variable>
     <variable name="Instalado-repository.slyguy">
        <value condition="!System.AddonIsEnabled(repository.slyguy)+System.HasAddon(repository.slyguy)">• repository.slyguy [COLOR pink]!![/COLOR]</value>
 	   <value condition="!System.HasAddon(repository.slyguy)">• repository.slyguy [COLOR invalid]×[/COLOR] </value>
-	   <value condition="System.AddonIsEnabled(repository.slyguy)+System.HasAddon(repository.slyguy)">• [COLOR=snow]repository.slyguy[/COLOR] [COLOR=cd00e600]√[/COLOR]</value>
+	   <value condition="System.AddonIsEnabled(repository.slyguy)+System.HasAddon(repository.slyguy)">• [COLOR=snow]repository.slyguy[/COLOR] [COLOR=FF00991F]√[/COLOR]</value>
 	</variable>
     <variable name="Instalado-iptvmerge">
        <value condition="!System.AddonIsEnabled(plugin.program.iptv.merge)+System.HasAddon(plugin.program.iptv.merge)">• iptv.merge [COLOR pink]!![/COLOR]</value>
 	   <value condition="!System.HasAddon(plugin.program.iptv.merge)">• iptv.merge [COLOR invalid]×[/COLOR] </value>
-	   <value condition="System.AddonIsEnabled(plugin.program.iptv.merge)+System.HasAddon(plugin.program.iptv.merge)">• [COLOR=snow]iptv.merge[/COLOR] [COLOR=cd00e600]√[/COLOR]</value>
+	   <value condition="System.AddonIsEnabled(plugin.program.iptv.merge)+System.HasAddon(plugin.program.iptv.merge)">• [COLOR=snow]iptv.merge[/COLOR] [COLOR=FF00991F]√[/COLOR]</value>
 	</variable>
 	<variable name="Instalado-pvr.iptvsimple">
 	   <value condition="!System.AddonIsEnabled(pvr.iptvsimple)+System.HasAddon(pvr.iptvsimple)">• pvr.iptvsimple [COLOR pink]!![/COLOR]</value>
 	   <value condition="!System.HasAddon(pvr.iptvsimple)">• pvr.iptvsimple [COLOR invalid]×[/COLOR] </value>
-	   <value condition="System.AddonIsEnabled(pvr.iptvsimple)+System.HasAddon(pvr.iptvsimple)">• [COLOR snow]pvr.iptvsimple[/COLOR] [COLOR cd00e600]√[/COLOR]</value>
+	   <value condition="System.AddonIsEnabled(pvr.iptvsimple)+System.HasAddon(pvr.iptvsimple)">• [COLOR snow]pvr.iptvsimple[/COLOR] [COLOR=FF00991F]√[/COLOR]</value>
     </variable>
 
 	<variable name="SkinVariablesContentVar">

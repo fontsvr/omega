@@ -148,7 +148,7 @@
 					</item>
 					<item><!--builds-->
 						<label>Builds RikTeam</label>
-						<property name="description">Builds</property>
+						<property name="description">Builds/Compilaciones</property>
 						<onclick>ReplaceWindow(Programs,"plugin://plugin.program.rikteamwiz/?mode=builds",return)</onclick>
 						<icon>views/settings/addons.png</icon>
 					</item>

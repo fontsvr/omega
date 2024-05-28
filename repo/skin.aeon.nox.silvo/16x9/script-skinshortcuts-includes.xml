@@ -920,8 +920,8 @@
 			<label2>Elemento Personalizado</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb />
-			<onclick>ActivateWindow(10702,\"pvr://channels/tv/Premium%20Latino/\",return)</onclick>
-			<property name="path">ActivateWindow(10702,\"pvr://channels/tv/Premium%20Latino/\",return)</property>
+			<onclick>ActivateWindow(10702,"pvr://channels/tv/Premium%20Latino@1555775160/",return)</onclick>
+			<property name="path">ActivateWindow(10702,"pvr://channels/tv/Premium%20Latino@1555775160/",return)</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),pvr-colorffb30101-t-colorcc76ff03-d-colordeepskyblue-t-coloraqua-m-color)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
@@ -944,8 +944,8 @@
 			<label2>Elemento Personalizado</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb />
-			<onclick>ActivateWindow(10702,\"pvr://channels/tv/M%20Plus/\",return)</onclick>
-			<property name="path">ActivateWindow(10702,\"pvr://channels/tv/M%20Plus/\",return)</property>
+			<onclick>ActivateWindow(10702,"pvr://channels/tv/M%20Plus@1016426970/",return)</onclick>
+			<property name="path">ActivateWindow(10702,"pvr://channels/tv/M%20Plus@1016426970/",return)</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),pvr-colorffb30101-t-colorcc76ff03-d-colordeepskyblue-t-coloraqua-m-color)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
@@ -968,8 +968,8 @@
 			<label2>Elemento Personalizado</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb />
-			<onclick>ActivateWindow(10702,\"pvr://channels/tv/TDT/\",return)</onclick>
-			<property name="path">ActivateWindow(10702,\"pvr://channels/tv/TDT/\",return)</property>
+			<onclick>ActivateWindow(10702,"pvr://channels/tv/TDT@1016426970/",return)</onclick>
+			<property name="path">ActivateWindow(10702,"pvr://channels/tv/TDT@1016426970/",return)</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),pvr-colorffb30101-t-colorcc76ff03-d-colordeepskyblue-t-coloraqua-m-color)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
@@ -3209,8 +3209,8 @@
 			<label2>Elemento Personalizado</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb />
-			<onclick>ActivateWindow(10702,\"pvr://channels/tv/Premium%20Latino/\",return)</onclick>
-			<property name="path">ActivateWindow(10702,\"pvr://channels/tv/Premium%20Latino/\",return)</property>
+			<onclick>ActivateWindow(10702,"pvr://channels/tv/Premium%20Latino@1555775160/",return)</onclick>
+			<property name="path">ActivateWindow(10702,"pvr://channels/tv/Premium%20Latino@1555775160/",return)</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
@@ -3233,8 +3233,8 @@
 			<label2>Elemento Personalizado</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb />
-			<onclick>ActivateWindow(10702,\"pvr://channels/tv/M%20Plus/\",return)</onclick>
-			<property name="path">ActivateWindow(10702,\"pvr://channels/tv/M%20Plus/\",return)</property>
+			<onclick>ActivateWindow(10702,"pvr://channels/tv/M%20Plus@1016426970/",return)</onclick>
+			<property name="path">ActivateWindow(10702,"pvr://channels/tv/M%20Plus@1016426970/",return)</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
@@ -3257,8 +3257,8 @@
 			<label2>Elemento Personalizado</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb />
-			<onclick>ActivateWindow(10702,\"pvr://channels/tv/TDT/\",return)</onclick>
-			<property name="path">ActivateWindow(10702,\"pvr://channels/tv/TDT/\",return)</property>
+			<onclick>ActivateWindow(10702,"pvr://channels/tv/TDT@1016426970/",return)</onclick>
+			<property name="path">ActivateWindow(10702,"pvr://channels/tv/TDT@1016426970/",return)</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
@@ -3323,8 +3323,8 @@
 			<label2>Elemento Personalizado</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb />
-			<onclick>ActivateWindow(10702,\"pvr://channels/tv/Premium%20Latino/\",return)</onclick>
-			<property name="path">ActivateWindow(10702,\"pvr://channels/tv/Premium%20Latino/\",return)</property>
+			<onclick>ActivateWindow(10702,"pvr://channels/tv/Premium%20Latino@1555775160/",return)</onclick>
+			<property name="path">ActivateWindow(10702,"pvr://channels/tv/Premium%20Latino@1555775160/",return)</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),pvr-colorffb30101-t-colorcc76ff03-d-colordeepskyblue-t-coloraqua-m-color)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
@@ -3347,8 +3347,8 @@
 			<label2>Elemento Personalizado</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb />
-			<onclick>ActivateWindow(10702,\"pvr://channels/tv/M%20Plus/\",return)</onclick>
-			<property name="path">ActivateWindow(10702,\"pvr://channels/tv/M%20Plus/\",return)</property>
+			<onclick>ActivateWindow(10702,"pvr://channels/tv/M%20Plus@1016426970/",return)</onclick>
+			<property name="path">ActivateWindow(10702,"pvr://channels/tv/M%20Plus@1016426970/",return)</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),pvr-colorffb30101-t-colorcc76ff03-d-colordeepskyblue-t-coloraqua-m-color)</visible>
 			<property name="isSubmenu">True</property>
 			</item>
@@ -3371,8 +3371,8 @@
 			<label2>Elemento Personalizado</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb />
-			<onclick>ActivateWindow(10702,\"pvr://channels/tv/TDT/\",return)</onclick>
-			<property name="path">ActivateWindow(10702,\"pvr://channels/tv/TDT/\",return)</property>
+			<onclick>ActivateWindow(10702,"pvr://channels/tv/TDT@1016426970/",return)</onclick>
+			<property name="path">ActivateWindow(10702,"pvr://channels/tv/TDT@1016426970/",return)</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),pvr-colorffb30101-t-colorcc76ff03-d-colordeepskyblue-t-coloraqua-m-color)</visible>
 			<property name="isSubmenu">True</property>
 			</item>

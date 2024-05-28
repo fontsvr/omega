@@ -1,18 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window type="dialog" id="5202">
     <defaultcontrol>319</defaultcontrol>
-    <onload condition="!System.HasAddon(repository.reeebase)">InstallAddon(repository.rebase)</onload>
-	<!--<onload condition="System.HasAddon(repository.rebase) + !System.HasAddon(plugin.RikTeam_fonts)">InstallAddon(plugin.RikTeam_fonts)</onload>
-	<onload condition="System.HasAddon(repository.rebase) + !System.HasAddon(plugin.video.cristalazul)">InstallAddon(plugin.video.cristalazul)</onload>
-	<onload condition="System.HasAddon(repository.rebase) + System.HasAddon(repository.palantir2)+ !System.HasAddon(plugin.video.palantir2)">InstallAddon(plugin.video.palantir2)</onload>
-	<onload condition="System.HasAddon(repository.rebase) + System.HasAddon(repository.alfa-addon)+ !System.HasAddon(plugin.video.alfa)">InstallAddon(plugin.video.alfa)</onload>
-	<onload condition="System.HasAddon(repository.rebase) + System.HasAddon(repository.balandro)+ !System.HasAddon(plugin.video.balandro)">InstallAddon(plugin.video.balandro)</onload>
-	<onload condition="System.HasAddon(repository.rebase) + System.HasAddon(repository.michaz)+ !System.HasAddon(plugin.video.vavooto)">InstallAddon(plugin.video.vavooto)</onload>
-	<onload condition="System.HasAddon(repository.rebase) + System.HasAddon(repository.magellan)+ !System.HasAddon(plugin.video.Magellan_Matrix)">InstallAddon(plugin.video.Magellan_Matrix)</onload>
-	<onload condition="System.HasAddon(repository.rebase) + System.HasAddon(repository.KODIvertiDO_TEAM)+ !System.HasAddon(plugin.video.KovertidoTeamTvCine">InstallAddon(plugin.video.KovertidoTeamTvCine)</onload>-->
-	<!--<onload condition="System.HasAddon(repository.rebase)">InstallAddon(plugin.video.winner)</onload>-->
-	<!--<onload condition="System.HasAddon(repository.rebase)">InstallAddon(plugin.video.moestv)</onload>-->
-	<!--<onload condition="System.HasAddon(repository.rebase) + System.HasAddon(plugin.video.cristalazul) + !System.HasAddon(repository.resolveurl)">InstallAddon(repository.resolveurl)</onload>-->
+    <onload condition="!System.HasAddon(repository.rebase)">InstallAddon(repository.rebase)</onload>
+    <onload condition="System.HasAddon(repository.rebase) + System.HasAddon(plugin.video.cristalazul) + !System.HasAddon(repository.resolveurl)">InstallAddon(repository.resolveurl)</onload>-->
 	
     <controls>
 		<include>background</include>
@@ -106,7 +96,7 @@
 					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>
 					<texturenofocus/>
 					<radioposx>1280</radioposx><!--1220-->
-					<onclick condition="!System.HasAddon(plugin.video.palantir3) + System.HasAddon(repository.rebase)">InstallAddon(plugin.video.palantir3)</onclick>
+					<onclick condition="!System.HasAddon(plugin.video.palantir3)">InstallAddon(plugin.video.palantir3)</onclick>
 					<onclick condition="System.HasAddon(plugin.video.palantir3)">Dialog.Close(5202)</onclick>
 					<onclick condition="System.HasAddon(plugin.video.palantir3)">ActivateWindow(Videos,&quot;plugin://plugin.video.palantir3/&quot;,return)</onclick>
 					<selected>System.HasAddon(plugin.video.palantir3)</selected>
@@ -126,7 +116,7 @@
 					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>
 					<texturenofocus/>
 					<radioposx>1280</radioposx><!--1220-->
-					<onclick condition="!System.HasAddon(plugin.video.cristalazul) + System.HasAddon(repository.rebase)">InstallAddon(plugin.video.cristalazul)</onclick>
+					<onclick condition="!System.HasAddon(plugin.video.cristalazul)">InstallAddon(plugin.video.cristalazul)</onclick>
 					<onclick condition="System.HasAddon(plugin.video.cristalazul)">Dialog.Close(5202)</onclick>
 					<onclick condition="System.HasAddon(plugin.video.cristalazul)">ActivateWindow(Videos,&quot;plugin://plugin.video.cristalazul/&quot;,return)</onclick>
 					<selected>System.HasAddon(plugin.video.cristalazul)</selected>
@@ -147,8 +137,8 @@
 					<textureradioofffocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradioofffocus>
 					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>
 					<radioposx>1280</radioposx>
-				    <onclick condition="!System.HasAddon(repository.resolveurl)">InstallAddon(repository.resolveurl)</onclick>
 					<onclick condition="!System.HasAddon(script.module.resolveurl) + System.HasAddon(repository.resolveurl)">InstallAddon(script.module.resolveurl)</onclick>																		
+				    <onclick condition="!System.HasAddon(repository.resolveurl)">InstallAddon(repository.resolveurl)</onclick>
 					<selected>System.HasAddon(script.module.resolveurl)</selected>
 					<texturenofocus/>
 					
@@ -190,6 +180,7 @@
 					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>																		
 					<onclick condition="!System.HasAddon(repository.alfa-addon)">InstallAddon(repository.alfa-addon)</onclick>																
 					<onclick condition="!System.HasAddon(plugin.video.alfa) + System.HasAddon(repository.alfa-addon)">InstallAddon(plugin.video.alfa)</onclick>																		
+					<onclick condition="!System.HasAddon(plugin.video.alfa)">InstallAddon(plugin.video.alfa)</onclick>	
 					<onclick condition="System.HasAddon(plugin.video.alfa)">Dialog.Close(5202)</onclick>
 					<onclick condition="System.HasAddon(plugin.video.alfa)">ActivateWindow(Videos,&quot;plugin://plugin.video.alfa/&quot;,return)</onclick>
 					<texturenofocus/>
@@ -251,7 +242,7 @@
 					<textureradioonnofocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonnofocus>
 					<textureradioofffocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradioofffocus>
 					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>
-					<onclick condition="!System.HasAddon(plugin.video.tacones) + System.HasAddon(repository.rebase)">InstallAddon(plugin.video.tacones)</onclick>																		
+					<onclick condition="!System.HasAddon(plugin.video.tacones)">InstallAddon(plugin.video.tacones)</onclick>																		
 					<onclick condition="System.HasAddon(plugin.video.tacones)+System.AddonIsEnabled(plugin.video.tacones)">Dialog.Close(5202)</onclick>
 					<onclick condition="System.HasAddon(plugin.video.tacones)+System.AddonIsEnabled(plugin.video.tacones)">ActivateWindow(Videos,&quot;plugin://plugin.video.tacones/?url=%24doregex%5Bindex%5D&amp;mode=17&amp;regexs=%7B%27index%27%3A%20%7B%27name%27%3A%20%27index%27%2C%20%27listrepeat%27%3A%20%27%5Cn%3Ctitle%3E%5BB%5D%5BCOLOR%20red%5D%E2%80%A2%5B/COLOR%5D%20%5BCOLOR%20white%5D%5Bindex.param1%5D%5B/COLOR%5D%5BCOLOR%20red%5D%20%28%5Bindex.param8%5D%20%7C%20%5Bindex.param9%5D%29%5B/COLOR%5D%5B/B%5D%3C/title%3E%5Cn%3Clink%3E%24doregex%5Bgestor%5D%3C/link%3E%5Cn%3Cyear%3E%5Bindex.param8%5D%3C/year%3E%5Cn%3Cgenre%3E%5Bindex.param9%5D%3C/genre%3E%5Cn%3Cinfo%3E%5Bindex.param11%5D%3C/info%3E%5Cn%3Cthumbnail%3E%5Bindex.param6%5D%3C/thumbnail%3E%5Cn%3Cfanart%3E%5Bindex.param7%5D%3C/fanart%3E%5Cn%27%2C%20%27expres%27%3A%20%27title.%28.%2A%29..title.%5C%5Cs%2A.microhd.%28%5B%5ENA%5D%2B%29..microhd.%5C%5Cs%2A.fullhd.%28.%2A%29..fullhd.%5C%5Cs%2A.tresd.%28.%2A%29..tresd.%5C%5Cs%2A.cuatrok.%28.%2A%29..cuatrok.%5C%5Cs%2A.thumbnail.%28.%2A%29..thumbnail.%5C%5Cs%2A.fanart.%28.%2A%29..fanart.%5C%5Cs%2A.date.%28.%2A%29..date.%5C%5Cs%2A.genre.%28.%2A%29..genre.%5C%5Cs%2A.extra.%28.%2A%29..extra.%5C%5Cs%2A.info.%28.%2A%29..info.%27%2C%20%27page%27%3A%20%27https%3A//gitlab.com/stiletto1/s/-/raw/main/c%27%2C%20%27cookiejar%27%3A%20%27%27%7D%2C%20%27gestor%27%3A%20%7B%27name%27%3A%20%27gestor%27%2C%20%27expres%27%3A%20%22%23%24pyFunction%5Cndef%20GetLSProData%28page_data%2CCookie_Jar%2Cm%29%3A%5Cn%20calidad%20%3D%20%27%5Bindex.param2%5D%27%2C%20%27%5Bindex.param3%5D%27%2C%20%27%5Bindex.param4%5D%27%2C%20%27%5Bindex.param5%5D%27%5Cn%20for%20x%20in%20calidad%3A%5Cn%20%20%20%20if%20x%20%21%3D%20%27NA%27%3A%5Cn%20%20%20%20%20%20%20%20calidad%20%3D%3D%20x%5Cn%20%20%20%20%20%20%20%20break%5Cn%20%20%20%20else%3A%5Cn%20%20%20%20%20%20%20%20x%20%3D%20%27%27%5Cn%20return%20%27plugin%3A//plugin.video.elementum/play%3Furi%3Dmagnet%3A%3Fxt%3Durn%3Abtih%3A%5Bindex.param2%5D%27%5Cn%22%2C%20%27page%27%3A%20None%2C%20%27cookiejar%27%3A%20%27%27%7D%7D&amp;iconimage=https%3A%2F%2Fi.imgur.com%2FgdMxN0J.png&quot;,return)</onclick>
                     <selected>System.HasAddon(plugin.video.tacones)</selected>
@@ -270,7 +261,7 @@
 					<textureradioonnofocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonnofocus>
 					<textureradioofffocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradioofffocus>
 					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>
-					<onclick condition="!System.HasAddon(plugin.video.kodispaintv) + System.HasAddon(repository.rebase)">InstallAddon(plugin.video.kodispaintv)</onclick>																		
+					<onclick condition="!System.HasAddon(plugin.video.kodispaintv)">InstallAddon(plugin.video.kodispaintv)</onclick>																		
 					<onclick condition="System.HasAddon(plugin.video.kodispaintv)+System.AddonIsEnabled(plugin.video.kodispaintv)">Dialog.Close(5202)</onclick>
 					<onclick condition="System.HasAddon(plugin.video.kodispaintv)+System.AddonIsEnabled(plugin.video.kodispaintv)">ActivateWindow(Videos,&quot;plugin://plugin.video.kodispaintv/&quot;,return)</onclick>
 					<selected>System.HasAddon(plugin.video.kodispaintv)</selected>
@@ -289,8 +280,7 @@
 					<textureradioonnofocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonnofocus>
 					<textureradioofffocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradioofffocus>
 					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>
-					<onclick condition="!System.HasAddon(plugin.video.moestv) + System.HasAddon(repository.rebase)">InstallAddon(plugin.video.moestv)</onclick>																		
-					<onclick condition="!System.HasAddon(plugin.video.moestv)">InstallAddon(plugin.video.moestv)</onclick>
+					<onclick condition="!System.HasAddon(plugin.video.moestv)">InstallAddon(plugin.video.moestv)</onclick>																		
 					<onclick condition="System.HasAddon(plugin.video.moestv)+System.AddonIsEnabled(plugin.video.moestv)">Dialog.Close(5202)</onclick>
 					<onclick condition="System.HasAddon(plugin.video.moestv)+System.AddonIsEnabled(plugin.video.moestv)">ActivateWindow(Videos,&quot;plugin://plugin.video.moestv/&quot;,return)</onclick>
 					<texturenofocus/>
@@ -309,7 +299,7 @@
 					<textureradioonnofocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonnofocus>
 					<textureradioofffocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradioofffocus>
 					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>
-					<onclick condition="!System.HasAddon(plugin.video.winner) + System.HasAddon(repository.rebase)">InstallAddon(plugin.video.winner)</onclick>																		
+					<onclick condition="!System.HasAddon(plugin.video.winner)">InstallAddon(plugin.video.winner)</onclick>																		
 					<onclick condition="System.HasAddon(script.module.horus)">Dialog.Close(5202)</onclick>
 					<onclick condition="System.HasAddon(script.module.horus)">ActivateWindow(Videos,&quot;plugin://script.module.horus/&quot;,return)</onclick>
 					<texturenofocus/>
@@ -370,8 +360,8 @@
 					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>
 					<!--<onclick condition="!System.HasAddon(repository.magellan)">InstallAddon(repository.magellan)</onclick>-->
 					<!--<onclick condition="!System.HasAddon(plugin.video.Magellan_Matrix) + System.HasAddon(repository.magellan)">InstallAddon(plugin.video.Magellan_Matrix)</onclick>-->
-				    <onclick condition="!System.HasAddon(plugin.video.Magellan_Matrix)">InstallAddon(plugin.video.Magellan_Matrix)</onclick>
 					<onclick condition="!System.HasAddon(repository.magellan)">InstallAddon(repository.magellan)</onclick>
+					<onclick condition="!System.HasAddon(plugin.video.Magellan_Matrix)">InstallAddon(plugin.video.Magellan_Matrix)</onclick>
 					<onclick condition="System.HasAddon(plugin.video.Magellan_Matrix)">Dialog.Close(5202)</onclick>
 					<onclick condition="System.HasAddon(plugin.video.Magellan_Matrix)">ActivateWindow(Videos,&quot;plugin://plugin.video.Magellan_Matrix/&quot;,return)</onclick>
 					<texturenofocus/>
@@ -391,9 +381,13 @@
 					<textureradioofffocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradioofffocus>
 					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>
                     <onclick condition="!System.HasAddon(repository.KODIvertiDO_TEAM)">InstallAddon(repository.KODIvertiDO_TEAM)</onclick>
-					<onclick condition="!System.HasAddon(plugin.video.KODIvertiDO)">InstallAddon(plugin.video.KODIvertiDO)</onclick>							
-					<onclick condition="System.HasAddon(plugin.video.KODIvertiDO)">Dialog.Close(5202)</onclick>
-					<onclick condition="System.HasAddon(plugin.video.KODIvertiDO)">ActivateWindow(Videos,&quot;plugin://plugin.video.KODIvertiDO/&quot;,return)</onclick>
+					<onclick>Dialog.Close(5202)</onclick>
+					<onclick>ActivateWindow(Videos,"plugin://plugin.video.KODIvertiDO/",return)</onclick>
+                    <!--<onclick>Dialog.Close(5202)</onclick>-->
+					<!--<onclick condition="System.HasAddon(script.luar)">ActivateWindow(10001,"plugin://script.luar/?eydpY29uJzogJ2h0dHBzOi8vZ2l0aHViLmNvbS9jaWxpbmRyYS9tb3RoL3Jhdy9tYXN0ZXIvSU1HL3BsdWdpbi52aWRlby5LT0RJdmVydGlETy5naWYnLCAncGxvdCc6ICdDb21wbGVtZW50byBncmF0dWl0byBxdWUgbm8gYWxvamEgbmluZ3VuIGNvbnRlbmlkby4gICAgICAgICAgICAgICBUb2RvIGVsIGNvbnRlbmlkbyBzZSBlbmN1ZW50cmEgZW4gaW50ZXJuZXQuTm8gc2UgYWNlcHRhIG5pbmd1bmEgcmVzcG9uc2FiaWxpZGFkIHBvciBlbCB1c28gZGUgZXN0ZSBhZGRvbi4nLCAnYWN0aW9uJzogJ2lvMTExMTExMUknLCAnbGFiZWwnOiAnW0NPTE9SIGxpbWVdS09ESXZlcnRpRE8gKHZlcnNpw7NuIGFjdHVhbGl6YWRhOiAxLjg1KVsvQ09MT1JdJywgJ2FkZG9uJzogeydjYXRlZ29yaWVzJzogWydQcm9ncmFtYXMgeSBIZXJyYW1pZW50YXMnLCAnRGVwb3J0aXZvcycsICdWYXJpYWRvcycsICdSZWNvbWVuZGFkb3MnXSwgJ2Rlc2NyaXB0aW9uJzogJ0NvbXBsZW1lbnRvIGdyYXR1aXRvIHF1ZSBubyBhbG9qYSBuaW5ndW4gY29udGVuaWRvLiAgICAgICAgICAgICAgIFRvZG8gZWwgY29udGVuaWRvIHNlIGVuY3VlbnRyYSBlbiBpbnRlcm5ldC5ObyBzZSBhY2VwdGEgbmluZ3VuYSByZXNwb25zYWJpbGlkYWQgcG9yIGVsIHVzbyBkZSBlc3RlIGFkZG9uLicsICdpY29uJzogJ2h0dHBzOi8vZ2l0aHViLmNvbS9jaWxpbmRyYS9tb3RoL3Jhdy9tYXN0ZXIvSU1HL3BsdWdpbi52aWRlby5LT0RJdmVydGlETy5naWYnLCAnaWQnOiAncGx1Z2luLnZpZGVvLktPREl2ZXJ0aURPJywgJ21hdHJpeCc6IDEsICduYW1lJzogJ0tPREl2ZXJ0aURPJywgJ3Byb3ZpZGVyLW5hbWUnOiAnZXF1aXBvIEtPREl2ZXJ0aURPIFRFQU0nLCAncmVsb2FkR1VJJzogRmFsc2UsICdyZXBvc2l0b3Jpb19pbnRlcm5vJzogeydjaGVja3N1bSc6ICdodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vbWVuZGVsdXgvS09ESXZlcnRpRE9fVEVBTS9tYXN0ZXIvX3JlcG8vYWRkb25zLnhtbC5tZDUnLCAnZGF0YWRpcic6ICdodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vbWVuZGVsdXgvS09ESXZlcnRpRE9fVEVBTS9tYXN0ZXIvX3JlcG8vJywgJ2luZm8nOiAnaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL21lbmRlbHV4L0tPREl2ZXJ0aURPX1RFQU0vbWFzdGVyL19yZXBvL2FkZG9ucy54bWwnfSwgJ3JlcG9zaXRvcmlvcyc6IHsncmVwb3NpdG9yeS5LT0RJdmVydGlET19URUFNJzogJzEuODUnfSwgJ3JlcXVpcmVzJzogW3snYWRkb24nOiAnc2NyaXB0Lm1vZHVsZS5yZXF1ZXN0cycsICdvcHRpb25hbCc6ICd0cnVlJ30sIHsnYWRkb24nOiAnc2NyaXB0Lm1vZHVsZS5yZXNvbHZldXJsJywgJ29wdGlvbmFsJzogJ3RydWUnfSwgeydhZGRvbic6ICdzY3JpcHQubW9kdWxlLnNpeCcsICdvcHRpb25hbCc6ICd0cnVlJ31dLCAncmVzZXRBZGRvbic6IEZhbHNlLCAncmVzZXRLb2RpJzogRmFsc2UsICd1cmwnOiAnRVJJUDJTNFNYVk1FTDJNSFhZTkozWktIV0JPQVhVSlBPSk5RRFhFR05aVElVVVJPU0xaTVgzJywgJ3ZlcnNpb24nOiAnMS44NScsICd6aXBfbmFtZSc6ICdwbHVnaW4udmlkZW8uS09ESXZlcnRpRE8tMS44NS56aXAnLCAnc3RhdGUnOiAnW0NPTE9SIGxpbWVdQWN0dWFsaXphZG9bL0NPTE9SXSd9LCAnY29udGV4dCc6IFt7J2xhYmVsJzogJ0FicmlyJywgJ2FjdGlvbic6ICdvaTAwT08wb29PJywgJ2FkZG9uSWQnOiAncGx1Z2luLnZpZGVvLktPREl2ZXJ0aURPJ30sIHsnbGFiZWwnOiAnRGVzaW5zdGFsYXInLCAnYWN0aW9uJzogJ29pMDAwT29vb08nLCAnYWRkb25JZCc6ICdwbHVnaW4udmlkZW8uS09ESXZlcnRpRE8nfSwgeydsYWJlbCc6ICdEZXNhY3RpdmFyJywgJ2FjdGlvbic6ICdvaW8wb29PTzBvJywgJ2FkZG9uX2VuYWJsZWQnOiBGYWxzZX1dLCAnZmFuYXJ0JzogJ0M6XFxQcm9ncmFtIEZpbGVzXFxLb2RpXFxwb3J0YWJsZV9kYXRhXFxhZGRvbnNcXHNjcmlwdC5sdWFyXFxmYW5hcnQuanBnJ30%3d",return)</onclick>					
+					-->
+					<!--<onclick condition="System.HasAddon(plugin.video.KODIvertiDO)">ActivateWindow(Videos,&quot;plugin://plugin.video.KODIvertiDO/&quot;,return)</onclick>
+					-->
 					<selected>System.HasAddon(plugin.video.KODIvertiDO)</selected>			
 				</control>		
 				</control>
@@ -442,8 +436,7 @@
 					<align>center</align>
 				</control>
 		
-		</control>
-		
+		</control>	
 
 		<control type="scrollbar" id="60">
 				<left>1400</left>
@@ -458,8 +451,6 @@
 				<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 			</control>
 		</control>
-		
-		
 		
 	</controls>
 </window>

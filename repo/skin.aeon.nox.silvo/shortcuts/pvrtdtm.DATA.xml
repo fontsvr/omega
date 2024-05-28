@@ -6,7 +6,7 @@
 		<label2>Elemento Personalizado</label2>
 		<icon>DefaultShortcut.png</icon>
 		<thumb />
-		<action>ActivateWindow(10702,\"pvr://channels/tv/Premium%20Latino/\",return)</action>
+		<action>ActivateWindow(10702,"pvr://channels/tv/Premium%20Latino@1555775160/",return)</action>
 		</shortcut>
 	<shortcut>
 		<defaultID />
@@ -22,7 +22,7 @@
 		<label2>Elemento Personalizado</label2>
 		<icon>DefaultShortcut.png</icon>
 		<thumb />
-		<action>ActivateWindow(10702,\"pvr://channels/tv/M%20Plus/\",return)</action>
+		<action>ActivateWindow(10702,"pvr://channels/tv/M%20Plus@1016426970/",return)</action>
 		</shortcut>
 	<shortcut>
 		<defaultID />
@@ -38,7 +38,7 @@
 		<label2>Elemento Personalizado</label2>
 		<icon>DefaultShortcut.png</icon>
 		<thumb />
-		<action>ActivateWindow(10702,\"pvr://channels/tv/TDT/\",return)</action>
+		<action>ActivateWindow(10702,"pvr://channels/tv/TDT@1016426970/",return)</action>
 		</shortcut>
 	<shortcut>
 		<defaultID>19019</defaultID>

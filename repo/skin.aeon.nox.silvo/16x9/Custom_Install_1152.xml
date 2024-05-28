@@ -242,7 +242,6 @@
 					<align>center</align>
 					<font>font14_title</font>
 					<label>INSTALACIÓN DE AJUSTES</label>
-					<onclick condition="System.HasAddon(script.skinshortcuts) + System.HasAddon(script.rikteam) + System.HasAddon(repository.slyguy) + System.HasAddon(plugin.program.iptv.merge) + System.HasAddon(pvr.iptvsimple)">ReplaceWindow(1151)</onclick>
 					<onclick condition="!System.HasAddon(script.rikteam)">InstallAddon(script.rikteam)</onclick>
 					<onclick condition="!System.HasAddon(repository.slyguy)">InstallAddon(repository.slyguy)</onclick>
 					<onclick condition="!System.HasAddon(plugin.program.iptv.merge)">InstallAddon(plugin.program.iptv.merge)</onclick>

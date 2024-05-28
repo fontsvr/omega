@@ -2,20 +2,10 @@
 <window type="dialog" id="5203">
     <defaultcontrol>320</defaultcontrol>
     <onload condition="!System.HasAddon(repository.reeebase)">InstallAddon(repository.rebase)</onload>
-	<!--<onload condition="System.HasAddon(repository.rebase) + !System.HasAddon(plugin.video.cristalazul)">InstallAddon(plugin.video.cristalazul)</onload>
-	<onload condition="System.HasAddon(repository.rebase) + System.HasAddon(repository.palantir2)+ !System.HasAddon(plugin.video.palantir2)">InstallAddon(plugin.video.palantir2)</onload>
-	<onload condition="System.HasAddon(repository.rebase) + System.HasAddon(repository.alfa-addon)+ !System.HasAddon(plugin.video.alfa)">InstallAddon(plugin.video.alfa)</onload>
-	<onload condition="System.HasAddon(repository.rebase) + System.HasAddon(repository.balandro)+ !System.HasAddon(plugin.video.balandro)">InstallAddon(plugin.video.balandro)</onload>
-	<onload condition="System.HasAddon(repository.rebase) + System.HasAddon(repository.michaz)+ !System.HasAddon(plugin.video.vavooto)">InstallAddon(plugin.video.vavooto)</onload>
-	<onload condition="System.HasAddon(repository.rebase) + System.HasAddon(repository.magellan)+ !System.HasAddon(plugin.video.Magellan_Matrix)">InstallAddon(plugin.video.Magellan_Matrix)</onload>
-	<onload condition="System.HasAddon(repository.rebase) + System.HasAddon(repository.KODIvertiDO_TEAM)+ !System.HasAddon(plugin.video.KovertidoTeamTvCine">InstallAddon(plugin.video.KovertidoTeamTvCine)</onload>-->
-	<!--<onload condition="System.HasAddon(repository.rebase)">InstallAddon(plugin.video.winner)</onload>-->
-	<!--<onload condition="System.HasAddon(repository.rebase)">InstallAddon(plugin.video.moestv)</onload>-->
-	<!--<onload condition="System.HasAddon(repository.rebase) + System.HasAddon(repository.stva)">InstallAddon(script.stva)</onload>-->
-	<onload condition="System.HasAddon(repository.rebase) + System.HasAddon(plugin.video.cristalazul) + !System.HasAddon(repository.resolveurl)">InstallAddon(repository.resolveurl)</onload>
+	<onload condition="System.HasAddon(plugin.video.cristalazul) + !System.HasAddon(repository.resolveurl)">InstallAddon(repository.resolveurl)</onload>
 	<onunload condition="!System.HasAddon(script.module.resolveurl)">InstallAddon(script.module.resolveurl)</onunload>
 	<!--<onload condition="System.HasAddon(pvr.iptvsimple) + !System.HasAddon(slyguy.pluto.tv.provider) + System.HasAddon(repository.slyguy)">InstallAddon(slyguy.pluto.tv.provider)</onload>-->																		
-	<!--<onload condition="System.HasAddon(pvr.iptvsimple) + System.HasAddon(slyguy.pluto.tv.provider) + System.HasAddon(repository.slyguy)">InstallAddon(plugin.program.iptv.merge)</onload>-->		
+	<!--<onload condition="System.HasAddon(pvr.iptvsimple) + System.HasAddon(repository.slyguy)">InstallAddon(plugin.program.iptv.merge)</onload>-->		
     <controls>
 		<include>background</include>
 		<control type="group">
@@ -78,7 +68,7 @@
 			<control type="group">
 			<centerleft>50%</centerleft>
 			<top>110</top><!--225-->
-			<height>830</height><!--890-840-900-->
+			<height>830</height><!--900-->
 			<width>1380</width><!--1380-->
 			<control type="grouplist" id="500">
 				<orientation>vertical</orientation>
@@ -92,6 +82,24 @@
 				<top>100</top>
 				<width>1380</width><!--1320-->
 				<align>center</align>
+				<control type="button" id="319">
+					<textcolor>$VAR[ThemeLabelColor]</textcolor>
+					<width>100%</width>
+					<radioposx>1280</radioposx>
+					<font>font13_title</font>
+					<height>60</height>
+					<label>$INFO[System.AddonTitle(script.skinshortcuts)] $VAR[Instalado-script.skinshortcuts] $INFO[System.AddonVersion(script.skinshorcuts),(,)] [COLOR grey]- Para el propio Skin[/COLOR]</label>
+					<radiowidth>100</radiowidth>
+					<radioheight>100</radioheight>
+					<textureradioonfocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonfocus>
+					<textureradioonnofocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonnofocus>
+					<textureradioofffocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradioofffocus>
+					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>
+					<onclick condition="!System.HasAddon(script.skinshorcuts)">InstallAddon(script.skinshorcuts)</onclick>																		
+					<selected>System.HasAddon(script.skinshorcuts) | $VAR[Instalado-script.skinshortcuts]</selected>
+					<texturenofocus/>
+					<visible>System.HasAddon(script.skinshortcuts) + System.AddonIsEnabled(script.skinshortcuts)</visible>
+				</control>
 				<control type="radiobutton" id="320">
 					<textcolor>$VAR[ThemeLabelColor]</textcolor>
 					<width>100%</width>
@@ -105,8 +113,7 @@
 					<textureradioonnofocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonnofocus>
 					<textureradioofffocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradioofffocus>
 					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>
-					<onclick condition="!System.HasAddon(repository.rebase)">InstallAddon(repository.rebase)</onclick>
-					<onclick condition="!System.HasAddon(script.rikteam) + System.HasAddon(repository.rebase)">InstallAddon(script.rikteam)</onclick>																		
+					<onclick condition="!System.HasAddon(script.rikteam)">InstallAddon(script.rikteam)</onclick>																		
 					<selected>System.HasAddon(script.rikteam)</selected>
 					<texturenofocus/>
 				</control>
@@ -123,31 +130,28 @@
 					<textureradioonnofocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonnofocus>
 					<textureradioofffocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradioofffocus>
 					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>
-					<onclick>Close</onclick>
 					<onclick condition="!System.HasAddon(script.rikteam)">InstallAddon(script.rikteam)</onclick>
-					<onclick condition="System.HasAddon(script.rikteam)">ReplaceWindow(1151)</onclick>
-					<!--
-					<onclick condition="System.HasAddon(script.rikteam)">ReplaceWindow(Programs,"plugin://script.rikteam/?mode=install&amp;action=build&amp;name=ajustes+basic+v21",return)</onclick>	
-					-->
-					<!--<onclick condition="Skin.HasSetting(preguntado_ajustes">Skin.SetBool(preguntado_ajustes,false)</onclick>-->														
+					<onclick>Close</onclick>
+					<onclick condition="System.HasAddon(script.rikteam)">ReplaceWindow(1151)</onclick>													
 					<selected>Skin.HasSetting(preguntado_ajustes)</selected>
 					<texturenofocus/>
 				</control>
-				<control type="radiobutton" id="322">
+				<control type="button" id="322">
 					<textcolor>$VAR[ThemeLabelColor]</textcolor>
 					<width>100%</width>
 					<radioposx>1280</radioposx>
 					<font>font13_title</font>
 					<height>60</height>
-					<label>RikTeam_fonts $INFO[System.AddonVersion(plugin.RikTeam_fonts),(,)][COLOR grey] - * Para añadir las fuentes más actuales a Kodi[/COLOR]</label>
+					<label>RikTeam_fonts $INFO[System.AddonVersion(plugin.RikTeam_fonts),(,)][COLOR grey] - Para añadir las fuentes más actuales a Kodi[/COLOR]</label>
 					<radiowidth>100</radiowidth>
 					<radioheight>100</radioheight>
 					<textureradioonfocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonfocus>
 					<textureradioonnofocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonnofocus>
 					<textureradioofffocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradioofffocus>
 					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>
-                    <onclick condition="!System.HasAddon(repository.rebase)">InstallAddon(repository.rebase)</onclick>
 					<onclick condition="!System.HasAddon(plugin.RikTeam_fonts)">InstallAddon(plugin.RikTeam_fonts)</onclick>							
+					<onclick>Dialog.Close(5203)</onclick>
+					<onclick>ActivateWindow(Videos,"plugin://plugin.RikTeam_fonts/",return)</onclick>
 					<selected>System.HasAddon(plugin.video.plugin.RikTeam_fonts)</selected>
 					<texturenofocus/>
 				</control>	
@@ -163,9 +167,8 @@
 					<textureradioonfocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonfocus>
 					<textureradioonnofocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonnofocus>
 					<textureradioofffocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradioofffocus>
-					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>
-					<onclick condition="!System.HasAddon(repository.rebase)">InstallAddon(repository.rebase)</onclick>																	
-					<onclick condition="!System.HasAddon(plugin.program.rikteamwiz) + System.HasAddon(repository.rebase)">InstallAddon(plugin.program.rikteamwiz)</onclick>																		
+					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>																	
+					<onclick condition="!System.HasAddon(plugin.program.rikteamwiz)">InstallAddon(plugin.program.rikteamwiz)</onclick>																		
 					<texturenofocus/>
 					<selected>System.HasAddon(plugin.program.rikteamwiz)</selected>
 				</control>
@@ -183,7 +186,7 @@
 					<textureradioofffocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradioofffocus>
 					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>
 					<onclick condition="!System.HasAddon(repository.luar)">InstallAddon(repository.luar)</onclick>
-					<onclick condition="!System.HasAddon(script.luar) + System.HasAddon(repository.luar)">InstallAddon(script.luar)</onclick>																		
+					<onclick condition="!System.HasAddon(script.luar) + System.HasAddon(repository.luar)">InstallAddon(script.luar)</onclick>					
 					<selected>System.HasAddon(script.luar)</selected>
 					<texturenofocus/>
 				</control>
@@ -200,8 +203,7 @@
 					<textureradioonnofocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonnofocus>
 					<textureradioofffocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradioofffocus>
 					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>
-					<onclick condition="!System.HasAddon(repository.rebase)">InstallAddon(repository.rebase)</onclick>
-					<onclick condition="!System.HasAddon(script.kelebek) + System.HasAddon(repository.rebase)">InstallAddon(script.kelebek)</onclick>																		
+					<onclick condition="!System.HasAddon(script.kelebek)">InstallAddon(script.kelebek)</onclick>																		
 					<selected>System.HasAddon(script.kelebek)</selected>
 					<include>DefaultSettingButton</include>
 					<texturenofocus/>
@@ -219,7 +221,7 @@
 					<textureradioonnofocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonnofocus>
 					<textureradioofffocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradioofffocus>
 					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>
-					<onclick condition="!System.HasAddon(script.module.horus) + System.HasAddon(repository.rebase)">InstallAddon(script.module.horus)</onclick>
+					<onclick condition="!System.HasAddon(script.module.horus)">InstallAddon(script.module.horus)</onclick>
 					<!--<onclick condition="System.HasAddon(script.module.horus)">Dialog.Close(5203)</onclick>-->
 					<!--<onclick condition="System.HasAddon(script.module.horus)">ActivateWindow(Programs,&quot;plugin://script.module.horus/&quot;,return)</onclick>-->
 					<onclick condition="System.HasAddon(script.module.horus)">RunAddon(script.module.horus)</onclick>
@@ -311,7 +313,6 @@
 					<textureradioofffocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradioofffocus>
 					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>
 					<onclick condition="!System.HasAddon(script.rikteam)">InstallAddon(script.rikteam)</onclick>
-					<!--<onclick condition="!Skin.HasSetting(preguntado_ajustes)">Close</onclick>-->
 					<onclick>Close</onclick>
 					<onclick condition="System.HasAddon(script.rikteam)">ReplaceWindow(1152)</onclick>
 					<!--
@@ -441,7 +442,7 @@
 				  <onup>337</onup>
 				  <onright>309</onright>
 				  <onleft>337</onleft>
-				  <ondown>320</ondown>
+				  <ondown>319</ondown>
 					<top>70</top>
 					<height>70</height>
 					<label>Volver</label>
@@ -458,7 +459,7 @@
 				  <onup>337</onup>
 				  <onright>60</onright>
 				  <onleft>308</onleft>
-				  <ondown>320</ondown>
+				  <ondown>319</ondown>
 					<top>70</top>
 					<height>70</height>
 					<label>Continuar</label>
@@ -479,7 +480,7 @@
 				<height>838</height>
 				<onleft>500</onleft>
 				<ondown>309</ondown>
-				<onup>320</onup>
+				<onup>319</onup>
 				<onright>308</onright>
 				<texturesliderbar colordiffuse="80FFFFFF" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 				<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
