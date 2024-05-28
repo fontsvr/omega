@@ -7,12 +7,12 @@ from core.item import Item
 from core import httptools, scrapertools, servertools, tmdb
 
 
-host = 'https://w-ww.series24.cc/'
+host = 'https://ww-w.series24.cc/'
 
 
 # ~ por si viene de enlaces guardados
 ant_hosts = ['https://www.series24.cc/', 'https://www1.series24.cc/', 'https://ww3.series24.cc/',
-            'https://ww2.series24.cc/', 'https://www11.series24.cc/']
+            'https://ww2.series24.cc/', 'https://www11.series24.cc/', 'https://w-ww.series24.cc/']
 
 
 domain = config.get_setting('dominio', 'series24', default='')
@@ -59,6 +59,8 @@ def do_downloadpage(url, post=None, headers=None, raise_weberror=True):
     # ~ por si viene de enlaces guardados
     for ant in ant_hosts:
         url = url.replace(ant, host)
+
+    if '/series-de/' in url: raise_weberror = False
 
     if not headers: headers = {'Referer': host}
 
@@ -253,7 +255,9 @@ def list_all(item):
         if year: title = title.replace('(' + year + ')', '').strip()
         else: year = '-'
 
-        title = title.replace('&#038;', '').replace('&#8211;', '').replace("&#8217;", "'")
+        if '/series-de/' in item.url: year = scrapertools.find_single_match(item.url, "/series-de/(.*?)/")
+
+        title = title.replace('&#8230;', '').replace('&#8211;', '').replace('&#038;', '').replace('&#8217;s', "'s")
 
         titulo = title
 

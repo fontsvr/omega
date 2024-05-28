@@ -7,7 +7,7 @@ from core.item import Item
 from core import httptools, scrapertools, servertools, tmdb
 
 
-host = 'https://www.1gnula.top/'
+host = 'https://w-ww.1gnula.top/'
 
 
 def item_configurar_proxies(item):
@@ -43,6 +43,12 @@ def configurar_proxies(item):
 
 
 def do_downloadpage(url, post=None, headers=None, raise_weberror=True):
+    # ~ por si viene de enlaces guardados
+    ant_hosts = ['https://www.1gnula.top/']
+
+    for ant in ant_hosts:
+        url = url.replace(ant, host)
+
     if '/release/' in url: raise_weberror = False
 
     if not headers: headers = {'Referer': host}
@@ -262,7 +268,9 @@ def list_all(item):
         if year: title = title.replace('(' + year + ')', '').strip()
         else: year = '-'
 
-        title = title.replace('&#8230;', '').replace('&#8211;', '')
+        if '/release/' in item.url: year = scrapertools.find_single_match(item.url, "/release/(.*?)/")
+
+        title = title.replace('&#8230;', '').replace('&#8211;', '').replace('&#038;', '').replace('&#8217;s', "'s")
 
         langs = []
         if '/flags/es.png' in match: langs.append('Esp')

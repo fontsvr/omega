@@ -7,11 +7,11 @@ from core.item import Item
 from core import httptools, scrapertools, servertools, tmdb
 
 
-host = 'https://www.pelispedia2.top/'
+host = 'https://w-ww.pelispedia2.top/'
 
 
 # ~ por si viene de enlaces guardados
-ant_hosts = ['https://www.pelispedia2.me/', 'https://www11.pelispedia2.me/']
+ant_hosts = ['https://www.pelispedia2.me/', 'https://www11.pelispedia2.me/', 'https://www.pelispedia2.top/']
 
 
 domain = config.get_setting('dominio', 'pelispedia2me', default='')
@@ -159,6 +159,8 @@ def list_all(item):
         if not year: year = '-'
         else:
            if '(' + year + ')' in title: title = title.replace('(' + year + ')', '').strip()
+
+        if '/lanzamiento/' in item.url: year = scrapertools.find_single_match(item.url, "/lanzamiento/(.*?)/")
 
         title = title.replace('&#8211;', '').replace('&#8217;', '').replace('&#038;', '&')
 
