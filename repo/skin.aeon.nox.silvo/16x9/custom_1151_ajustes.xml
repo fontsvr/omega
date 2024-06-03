@@ -134,7 +134,6 @@
 					<texturefocus colordiffuse="$VAR[HighlightBarColor]" border="5">listselect_fo.png</texturefocus>
 					<visible>String.IsEmpty(Window(Home).Property(Notify))</visible>
 				</control>
-				
 			</control>
 		</control>
 	</controls>

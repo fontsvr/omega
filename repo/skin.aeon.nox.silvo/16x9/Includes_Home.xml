@@ -144,8 +144,7 @@
 					<font>font12</font>
 					<textcolor>$VAR[UnfocusedMainMenuColor]</textcolor><!--<textcolor>grey3-snow</textcolor>-->
 					<shadowcolor>shadow</shadowcolor>
-					<onclick condition="System.HasAddon(plugin.program.rikteamwiz) + !System.AddonIsEnabled(plugin.program.rikteamwiz)">EnableAddon(plugin.program.rikteamwiz)</onclick>
-					<onclick condition="!System.AddonIsEnabled(plugin.program.rikteamwiz)">InstallAddon(plugin.program.rikteamwiz)</onclick>
+					<onclick condition="!System.AddonIsEnabled(plugin.program.rikteamwiz)">EnableAddon(plugin.program.rikteamwiz)</onclick>
 					<texturefocus />
 					<texturenofocus />
 					<visible>!System.AddonIsEnabled(plugin.program.rikteamwiz)</visible>

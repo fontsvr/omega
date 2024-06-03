@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
 	<defaultcontrol always="true">9000</defaultcontrol>
-	<!--<onload condition="String.IsEmpty(Window(Home).Property(customdefaultbackground))">Skin.SetString(customdefaultbackground.path,special://skin/extras/backgrounds/default_bg.jpg)</onload>-->
+	<onload condition="!Skin.HasSetting(pagina_permiso_run) + !Skin.HasSetting(preguntado_ajustes)">ReplaceWindow(1152)</onload>
+	<!--<onload condition="String.IsEmpty(Window(Home).Property(customdefaultbackground))">Skin.SetString(customdefaultbackground.path,special://skin/extras/backgrounds/default_013.jpg)</onload>-->
+	<onload condition="String.IsEmpty(Window(Home).Property(customdefaultbackground))+ Skin.HasSetting(skinshortcuts-background-special:special://skin/extras/backgrounds/)">Skin.SetString(customdefaultbackground.path,special://skin/extras/backgrounds/)</onload>
+	<onload condition="String.IsEmpty(Window(Home).Property(customdefaultbackground))">Skin.SetBool(skinshortcuts-background-special:special://skin/extras/backgrounds/,true)</onload>
 	<onload condition="!String.IsEmpty(Window(Home).Property(askeddefaultbackground))">Skin.SetBool(askeddefaultbackground,true)</onload>
 	<onload>Skin.SetBool(askeddefaultbackground,true)</onload>
 	<!--<onload>Skin.SetBool(systembarontop,true)</onload>
@@ -52,7 +55,7 @@
     <!--<onload condition="System.HasAddon(script.rikteam) + !System.AddonIsEnabled(script.rikteam)">EnableAddon(script.rikteam)</onload>
 	<onload condition="!System.HasAddon(script.rikteam)">InstallAddon(script.rikteam)</onload>-->
 	
-	<onload condition="!Skin.HasSetting(FirstPagina)">ReplaceWindow(5200)</onload>
+	<onload condition="!Skin.HasSetting(FirstPagina) + System.HasAddon(script.skinshortcuts) + System.HasAddon(script.rikteam) + System.HasAddon(repository.slyguy) + System.HasAddon(plugin.program.iptv.merge) + System.HasAddon(pvr.iptvsimple)">AlarmClock(FirstPagina,ReplaceWindow(5200),00:05,silent)</onload>
 	<onload condition="!Skin.HasSetting(FirstRunSetup) + Skin.HasSetting(FirstPagina)">AlarmClock(FirstRunSetup,ReplaceWindow(5202),00:01,silent)</onload>
 	<onload condition="!Skin.HasSetting(3RunSetup) + Skin.HasSetting(FirstRunSetup) + Skin.HasSetting(FirstPagina)">AlarmClock(3RunSetup,ReplaceWindow(5203),00:01,silent)</onload>
 
