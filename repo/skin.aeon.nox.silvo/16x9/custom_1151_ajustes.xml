@@ -96,8 +96,8 @@
 					<onclick condition="System.HasAddon(script.rikteam)">ReplaceWindow(Programs,"plugin://script.rikteam/?mode=install&amp;action=build&amp;name=ajustes+pvr+v21",return)</onclick>
 					<texturefocus colordiffuse="$VAR[HighlightBarColor]" border="5">listselect_fo.png</texturefocus>
 					<visible>String.IsEmpty(Window(Home).Property(Notify))</visible>
-				</control>-->
-				<control type="button" id="901002">
+				</control>
+				<control type="button" id="901003">
 					<description>No button</description>
 					<left>465</left>
 					<top>402</top>
@@ -112,7 +112,7 @@
 					<onup>noop</onup>
 					<ondown>noop</ondown>
 					<onclick>Dialog.Close(1151)</onclick>
-					<!--<onclick>Dialog.Close(1152)</onclick>-->
+					<onclick>Dialog.Close(1152)</onclick>
 					<!--<onclick>ReloadSkin()</onclick>-->
 					<!--<onclick condition="">Skin.SetBool(preguntado_ajustes,false)</onclick>-->
 					<texturefocus colordiffuse="$VAR[HighlightBarColor]" border="5">listselect_fo.png</texturefocus>

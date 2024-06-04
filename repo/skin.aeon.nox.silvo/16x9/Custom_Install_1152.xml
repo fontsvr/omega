@@ -277,9 +277,9 @@
 					<textoffsetx>30</textoffsetx>
 					<texturenofocus/>
 					<onclick>Close</onclick>
-					<onclick>Dialog.Close(all,true)</onclick>
-				    <onclick>ActivateWindow(settings)</onclick>
-					<!--<onclick>Skin.SetBool(pagina_permiso_run,true)</onclick>-->
+					<!--<onclick>Dialog.Close(all,true)</onclick>-->
+					<onclick>ActivateWindow(settings)</onclick>
+					<onclick>Reload.Skin()</onclick>
 					<align>center</align>
 				</control>
 				<control type="button" id="309">

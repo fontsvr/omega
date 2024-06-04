@@ -264,6 +264,7 @@
 							<onclick>Skin.SetBool(preguntado_ajustes, false)</onclick>
 							<onclick>Skin.SetBool(pagina_permiso_run, false)</onclick>
 							<onclick>Skin.SetString(customdefaultbackground.path,)</onclick>
+							<onclick>Skin.SetString(customdefaultbackground.path,special://skin/extras/backgrounds/)</onclick>
 							<!--<onclick>Skin.SetString(customdefaultbackground.path,special://skin/extras/backgrounds/fallback_movies.jpg)</onclick>-->
 							<onclick>Skin.SetString(StartupIntro,special://skin/extras/intro.mp4)</onclick>
 							<onclick>Skin.SetString(StartupIntroTrue,yes)</onclick>
@@ -291,8 +292,10 @@
 							<onclick>Skin.SetBool(Disable.SearchButton,false)</onclick>
 							<onclick>Skin.SetBool(systembarontop,true)</onclick>
 							<onclick>Skin.SetBool(enable.visiblesubmenu,true)</onclick>
-							<onclick>Skin.SetString(customdefaultbackground.path,)</onclick>
+							<!--<onclick>Skin.SetString(customdefaultbackground.path,)</onclick>-->
 							<!--<onclick>Skin.SetBool(skinshortcuts-background-special:special://skin/extras/backgrounds/,true)</onclick>-->
+							<onclick>Skin.SetString(customdefaultbackground.path,special://skin/extras/backgrounds/)</onclick>
+							<onclick>Skin.SetBool(askeddefaultbackground,false)</onclick>
 							<onclick>Skin.SetString(StartupIntro,special://skin/extras/intro.mp4)</onclick>
 							<onclick>Skin.SetString(StartupIntroTrue,yes)</onclick>
 						</control>
@@ -317,7 +320,9 @@
 							<onclick>Skin.SetBool(Disable.SearchButton,false)</onclick>
 							<onclick>Skin.SetBool(systembarontop,true)</onclick>
 							<onclick>Skin.SetBool(enable.visiblesubmenu,true)</onclick>
+							<!--<onclick>Skin.SetString(customdefaultbackground.path,)</onclick>-->
 							<onclick>Skin.SetString(customdefaultbackground.path,special://skin/extras/backgrounds/default_bg.jpg)</onclick>
+							
 							<!--<onclick>Skin.SetBool(skinshortcuts-background-special:special://skin/extras/backgrounds/,false)</onclick>-->
 							<!--<onclick>Skin.SetString(StartupIntro,special://skin/extras/intro.mp4)</onclick>-->
 							<!--<onclick>Skin.SetString(StartupIntroTrue,yes)</onclick>-->
