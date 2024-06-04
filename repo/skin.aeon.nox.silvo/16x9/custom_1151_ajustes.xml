@@ -57,23 +57,7 @@
 				<width>856</width>
 				<align>center</align>
 				<orientation>horizontal</orientation><!--horizontal-->
-				<!--<control type="button" id="3">
-					<label>Si. Ajustes Basic</label>
-					<font>font15_title</font>
-					<textcolor>grey2</textcolor>
-					<focusedcolor>white</focusedcolor>
-					<align>center</align>
-					<onleft>noop</onleft>
-					<onright>noop</onright>
-					<onup>noop</onup>
-					<ondown>noop</ondown>
-					<onclick>Dialog.Close(1151)</onclick>
-					<onclick>Dialog.Close(1152)</onclick>
-					<onclick>Skin.SetBool(preguntado_ajustes)</onclick>
-					<onclick condition="System.HasAddon(script.rikteam)">ReplaceWindow(Programs,"plugin://script.rikteam/?mode=install&amp;action=build&amp;name=ajustesbasic",return)</onclick>
-					<texturefocus colordiffuse="$VAR[HighlightBarColor]" border="5">listselect_fo.png</texturefocus>
-					<visible>String.IsEmpty(Window(Home).Property(Notify))</visible>
-				</control>-->
+		
 				<control type="button" id="901001">
 					<description>Yes button</description>
 					<width>276</width><!--257-421-->
@@ -93,14 +77,14 @@
 					<texturefocus colordiffuse="$VAR[HighlightBarColor]" border="5">listselect_fo.png</texturefocus>
 					<visible>String.IsEmpty(Window(Home).Property(Notify))</visible>
 				</control>
-				     <!--421--><!--<label>$VAR[CustomConfirmYesLabelVar]</label>-->
-				<!--<control type="button" id="901002">
+				<!--421--><!--<label>$VAR[CustomConfirmYesLabelVar]</label>-->
+                <control type="button" id="901002">
 					<description>Yes2 button</description>
 					<width>257</width>
-					<label>OK +Pvr(v20)</label>
+					<label>OK Pvr(v21)</label>
 					<font>font15_title</font>
-					<textcolor>grey2</textcolor>
-					<focusedcolor>white</focusedcolor>
+					<textcolor>snow</textcolor>
+					<focusedcolor>cd00e600</focusedcolor>
 					<align>center</align>
 					<onleft>noop</onleft>
 					<onright>noop</onright>
@@ -108,8 +92,8 @@
 					<ondown>noop</ondown>
 					<onclick>Dialog.Close(1151)</onclick>
 					<onclick>Dialog.Close(1152)</onclick>
-					<onclick>Skin.SetBool(preguntado_ajustes)</onclick>
-					<onclick condition="System.HasAddon(script.rikteam)">ReplaceWindow(Programs,"plugin://script.rikteam/?mode=install&amp;action=build&amp;name=ajustes+basic",return)</onclick>
+					<!--<onclick>Skin.SetBool(preguntado_ajustes)</onclick>-->
+					<onclick condition="System.HasAddon(script.rikteam)">ReplaceWindow(Programs,"plugin://script.rikteam/?mode=install&amp;action=build&amp;name=ajustes+pvr+v21",return)</onclick>
 					<texturefocus colordiffuse="$VAR[HighlightBarColor]" border="5">listselect_fo.png</texturefocus>
 					<visible>String.IsEmpty(Window(Home).Property(Notify))</visible>
 				</control>-->

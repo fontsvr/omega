@@ -12,7 +12,7 @@
 	<onload condition="!System.HasAddon(script.rikteam)">InstallAddon(script.rikteam)</onload>
 	<onload condition="!System.HasAddon(repository.slyguy)">InstallAddon(repository.slyguy)</onload>
 	<onload condition="!System.HasAddon(plugin.program.iptv.merge)">InstallAddon(plugin.program.iptv.merge)</onload>
-	<onload condition="!System.HasAddon(pvr.iptvsimple)+System.HasAddon(plugin.program.iptv.merge)">InstallAddon(pvr.iptvsimple)</onload>
+	<onload condition="!System.HasAddon(pvr.iptvsimple)">InstallAddon(pvr.iptvsimple)</onload>
 	
 	
 	<!--<onload condition="!System.HasAddon(slyguy.pluto.tv.provider)">InstallAddon(slyguy.pluto.tv.provider)</onload>-->
@@ -174,10 +174,10 @@
 					<align>center</align>
 					<font>roboto30</font>
 					<textcolor>$VAR[ThemeHomeLabelColor]</textcolor>
-					<label>[CR][COLOR grey2]* Los 2 primeros add-ons són necesarios. Los demás los puedes descargar más tarde.[/COLOR][CR]Finaliza instalando los ajustes para el skin: (script.rikteam debe de estar instalado)[CR][COLOR grey2]Ajustes són para tener el skin configurado, con fondos, programación y canales de TV, Youtube y último parcheado para tener acceso desde el skin a los diferentes addons que vayamos instalando.[/COLOR]</label>
+					<label>[CR]Finaliza instalando los ajustes para el skin:[CR][COLOR grey2](script.rikteam debe de estar instalado)[/COLOR][CR][COLOR grey2]Ajustes són para tener el skin configurado, con fondos, programación y canales de TV, Youtube y último parcheado para tener acceso desde el skin a los diferentes addons que vayamos instalando.[/COLOR]</label>
 				    <texture colordiffuse="66FFFFFF">colors/black.png</texture>
 				</control>
-				<control type="textbox"><!--repository.slyguy para obtener iptv.merge-->
+				<control type="textbox">
 					<height>60</height>
 					<width>auto</width><!--640-850-->
 					<aligny>center</aligny>
@@ -188,7 +188,7 @@
 				    <texture colordiffuse="orange">colors/black.png</texture>
 				    <visible>[!Skin.HasSetting(preguntado_ajustes)]</visible>
 				</control>
-				<control type="textbox"><!--repository.slyguy para obtener iptv.merge-->
+				<control type="textbox">
 					<height>60</height>
 					<width>auto</width><!--640-850-->
 					<aligny>center</aligny>
@@ -279,7 +279,7 @@
 					<onclick>Close</onclick>
 					<onclick>Dialog.Close(all,true)</onclick>
 				    <onclick>ActivateWindow(settings)</onclick>
-					<onclick>Skin.SetBool(pagina_permiso_run,true)</onclick>
+					<!--<onclick>Skin.SetBool(pagina_permiso_run,true)</onclick>-->
 					<align>center</align>
 				</control>
 				<control type="button" id="309">

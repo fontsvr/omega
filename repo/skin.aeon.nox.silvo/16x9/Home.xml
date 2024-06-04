@@ -3,10 +3,14 @@
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<onload condition="!Skin.HasSetting(pagina_permiso_run) + !Skin.HasSetting(preguntado_ajustes)">ReplaceWindow(1152)</onload>
 	<!--<onload condition="String.IsEmpty(Window(Home).Property(customdefaultbackground))">Skin.SetString(customdefaultbackground.path,special://skin/extras/backgrounds/default_013.jpg)</onload>-->
-	<onload condition="String.IsEmpty(Window(Home).Property(customdefaultbackground))+ Skin.HasSetting(skinshortcuts-background-special:special://skin/extras/backgrounds/)">Skin.SetString(customdefaultbackground.path,special://skin/extras/backgrounds/)</onload>
-	<onload condition="String.IsEmpty(Window(Home).Property(customdefaultbackground))">Skin.SetBool(skinshortcuts-background-special:special://skin/extras/backgrounds/,true)</onload>
-	<onload condition="!String.IsEmpty(Window(Home).Property(askeddefaultbackground))">Skin.SetBool(askeddefaultbackground,true)</onload>
-	<onload>Skin.SetBool(askeddefaultbackground,true)</onload>
+	<onload condition="String.IsEmpty(Window(Home).Property(customdefaultbackground))">Skin.SetString(customdefaultbackground.path,special://skin/extras/backgrounds/)</onload>
+	<!--<onload condition="String.IsEmpty(Window(Home).Property(customdefaultbackground))">Skin.SetBool(skinshortcuts-background-special:special://skin/extras/backgrounds/,true)</onload>-->
+	<!--<onload condition="!Skin.HasSetting(AskedDefaultBackground)">Skin.SetBool(askeddefaultbackground,true)</onload>-->
+	<!--<onload>Skin.SetBool(askeddefaultbackground,true)</onload>-->
+	<!--<onload condition="!Skin.HasSetting(systembarontop)">Skin.SetBool(systembarontop)</onload>-->
+	<onload condition="!Skin.HasSetting(AskedDefaultBackground)">SetProperty(AskDefaultBackground,True,Home)</onload>
+	<onload condition="!Skin.HasSetting(AskedDefaultBackground) + !Control.IsVisible(9999)">Skin.TimerStart(askdefaultbackground)</onload>
+    <!--<onload>ActivateWindow(1126)</onload>-->
 	<!--<onload>Skin.SetBool(systembarontop,true)</onload>
 	<onload condition="!Skin.HasSetting(preguntado_ajustes)">Skin.SetBool(hidesystembars,true)</onload>-->
 	<!--<onload>Skin.SetBool(enable.visiblesubmenu,true)</onload>-->
@@ -28,6 +32,7 @@
 	<onload>ClearProperty(RunSkinShortcutsAfterInstall,Home)</onload>
 	<!--<onload condition="!System.HasAddon(script.rikteam)">InstallAddon(script.rikteam)</onload>-->
 	<onload condition="!System.HasAddon(script.skinshortcuts)">SetProperty(MissingDependency,True,Home)</onload>
+	<onload condition="!System.HasAddon(script.rikteam)">SetProperty(MissingDependency,True,Home)</onload>
 	<!--<onload condition="!System.HasAddon(script.skinshortcuts)">ActivateWindow(1126)</onload>-->
 	<onload condition="!System.HasAddon(script.skinshortcuts)">ActivateWindow(1152)</onload>
 	<onload condition="!System.HasAddon(script.rikteam)+!Skin.HasSetting(pagina_permiso_run)">ActivateWindow(1152)</onload>
