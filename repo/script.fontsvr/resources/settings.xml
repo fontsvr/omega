@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+    <category label="Pack">
+        <setting type="lsep" label="Info del Pack: "/>
+        <setting id="buildname" type="text" label="Pack instalado: " enable="false" default=""/>
+        <setting id="buildversion" type="text" label="Versión: " enable="false" default=""/>
+        <setting id="latestversion" type="text" label="Ultima versión: " enable="false" default=""/>
+        <setting id="disableupdate" type="bool" label="Deshabilitar la notificación de actualización" default="false"/>
+    </category>
+
+    <category label="Mantenimiento">
+        <setting type="lsep" label="Menu de Mantenimiento: "/>
+        <setting id="path" type="folder" label="Cambiar ruta para la Copia de Seguridad" default="special://home/"/>
+        <setting type="lsep" label="Opciones de Limpieza:"/>
+        <setting id="autoclean" type="bool" label="Habilitar Auto-Limpieza" default="false"/>
+        <setting id="clearcache" type="bool" label="Eliminar Caché en el Inicio" default="false" enable="!eq(-1,false)"/>
+        <setting id="clearpackages" type="bool" label="Eliminar Paquetes en el inicio" default="false" enable="!eq(-2,false)"/>
+        <setting id="clearthumbs" type="bool" label="Eliminar mini imágenes en el inicio" default="false" enable="!eq(-3,false)"/>
+        <setting id="autocleanfreq" type="enum" label="Cada cuanto tiempo quiere que se realice la Auto-Limpieza?" values="Siempre|Diario|3 Dias|Semanal|Mensual" default="3" enable="!eq(-4,false)"/>
+        <setting id="nextautocleanup" type="text" label="Siguiente limpieza automática: " enable="false" visible="false" default="2019/01/01 00:00:00" />
+        <setting id="show19" type="bool" label="Ver Packs" default="true"/>
+
+        <!-- Default settings for Save Data entries -->
+        <setting id="tmdbhelper" type="text" default="" visible="false"/>
+        <setting id="trakt" type="text" default="" visible="false"/>
+        <setting id="alfa" type="text" default="" visible="false"/>
+
+        <setting id="login-youtube" type="text" default="" visible="false"/>
+    </category>
+
+    <category label="Proteger Datos">
+        <setting type="lsep" label="No sobreescribir datos al instalar el Pack Ajustes:"/>
+        <setting id="keeptrakt" type="bool" label="Mantener Datos de Trakt.tv" default="false"/>
+        <setting id="keepalfa" type="bool" label="Mantener Datos de Alfa (incluida la Videoteca)" default="false"/>
+        <setting id="keepmyvideos" type="bool" label="Mantener Videoteca de la Aplicación" default="false"/>
+        <setting id="keepfavourites" type="bool" label="Mantener Mis Favoritos" default="false"/>
+        <setting id="keepsources" type="bool" label="Mantener Mis Fuentes" default="false"/>
+        <setting id="keepprofiles" type="bool" label="Mantener Mis Perfiles" default="false"/>
+        <setting id="keepplayercore" type="bool" label="Mantener Mis Reproductores 'playercorefactory.xml'" default="false"/>
+        <setting id="keepguisettings" type="bool" label="Mantener Configuración de la aplicación 'guisettings.xml'" default="false"/>
+        <setting id="keepadvanced" type="bool" label="Mantener mi Buffer 'AdvancedSettings.xml'" default="false"/>
+    </category>
+
+    <category label="Configuración de Visualización">
+        <setting type="lsep" label="Vista:"/>
+        <setting id="auto-view" type="bool" label="Activar Fijar tipo de Vista" default="false"/>
+        <setting id="viewType" type="number" label="Tipo de Vista" default="50" visible="!eq(-1, false)" enable="!eq(-1,false)"/>
+        <setting type="lsep" label="Ventana de notificación al inicio:"/>
+        <setting id="notify" type="bool" label="Deshabilitar la notificación al iniciar" default="false" />
+        <setting id="noteid" type="number" label="Última notificación" visible="false" default="0" />
+        <setting id="notedismiss" type="bool" label="Descartar o recordarme más tarde" visible="false" />
+    </category>
+
+</settings>

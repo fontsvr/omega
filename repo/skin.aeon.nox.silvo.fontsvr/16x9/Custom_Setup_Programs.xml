@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window type="dialog" id="5203">
+    <defaultcontrol>320</defaultcontrol>
+    <onload condition="!System.HasAddon(repository.reeebase)">InstallAddon(repository.rebase)</onload>
+	<onload condition="System.HasAddon(plugin.video.cristalazul) + !System.HasAddon(repository.resolveurl)">InstallAddon(repository.resolveurl)</onload>
+	<onunload condition="!System.HasAddon(script.module.resolveurl)">InstallAddon(script.module.resolveurl)</onunload>
+	<!--<onload condition="System.HasAddon(pvr.iptvsimple) + !System.HasAddon(slyguy.pluto.tv.provider) + System.HasAddon(repository.slyguy)">InstallAddon(slyguy.pluto.tv.provider)</onload>-->																		
+	<!--<onload condition="System.HasAddon(pvr.iptvsimple) + System.HasAddon(repository.slyguy)">InstallAddon(plugin.program.iptv.merge)</onload>-->		
+    <controls>
+		<include>background</include>
+		<control type="group">
+			<left>0</left>
+			<width>100%</width>
+			<top>0</top>
+			<height>100%</height>
+			<visible>Control.HasFocus(320)</visible>
+			<control type="image">
+			<aspectratio scalediffuse="false">keep</aspectratio>
+			<texture background="true" border="40">dialogs/default/bg.png</texture>
+		</control>
+		</control>
+		<control type="image">
+			<include>fullscreenimage</include>
+			<texture colordiffuse="mask-background-black">dialogs/embuary_info/bg.jpg</texture>
+			<aspectratio>scale</aspectratio>
+		</control>
+		<control type="image">
+			<right>30</right>
+			<top>30</top>
+			<aspectratio>keep</aspectratio>
+			<width>192</width>
+			<height>56</height>
+			<texture background="true">special://xbmc/media/vendor_logo.png</texture>
+		</control>	
+		<control type="image">
+			<!-- Dialog background image -->
+			<centerleft>50%</centerleft>
+			<top>180</top><!--200-275-->
+			<width>1400</width>
+			<height>840</height><!--800-790-765-->
+			<texture border="14" colordiffuse="grey">button-nofocus.png</texture>
+		</control>
+		<control type="label">
+			<centerleft>50%</centerleft>
+			<width>1300</width>
+			<height>50</height>
+			<top>40</top><!--60-->
+			<shadowcolor>black</shadowcolor>
+			<font>font15_title</font>
+			<align>center</align>
+			<label>Personaliza el Skin [COLOR hotpink]$INFO[System.AddonTitle(skin.aeon.nox.silvo.fontsvr)] $INFO[System.AddonVersion(skin.aeon.nox.silvo.fontsvr),(,)][/COLOR]</label>
+			<textcolor>$VAR[ThemeHomeLabelColor]</textcolor>
+		</control>
+		<control type="group">
+			<centerleft>50%</centerleft>
+			<height>25</height>
+			<width>1400</width>
+			<control type="textbox">
+				<top>110</top><!--130-->
+				<width>1400</width>
+				<height>500</height>
+				<shadowcolor>black</shadowcolor>
+				<pagecontrol>3000</pagecontrol>
+				<font>font14_title</font>
+				<align>center</align>
+				<label>Ajustes Iniciales • Instala Addons de Programa y Scripts (paso final)</label>
+			</control>
+			<control type="group">
+			<centerleft>50%</centerleft>
+			<top>110</top><!--225-->
+			<height>830</height><!--900-->
+			<width>1380</width><!--1380-->
+			<control type="grouplist" id="500">
+				<orientation>vertical</orientation>
+			   <onleft>308</onleft>
+			   <onup>308</onup><!--500-->
+		       <ondown>308</ondown> <!--500-->
+				<onright>60</onright>
+			    <!--<onleft>60</onleft>-->
+				<!--<left>0</left>-->
+				<pagecontrol>60</pagecontrol>
+				<top>100</top>
+				<width>1380</width><!--1320-->
+				<align>center</align>
+				<control type="button" id="319">
+					<textcolor>$VAR[ThemeLabelColor]</textcolor>
+					<width>100%</width>
+					<radioposx>1280</radioposx>
+					<font>font13_title</font>
+					<height>60</height>
+					<label>$INFO[System.AddonTitle(script.skinshortcuts)] $VAR[Instalado-script.skinshortcuts] $INFO[System.AddonVersion(script.skinshorcuts),(,)] [COLOR grey]- Para el propio Skin[/COLOR]</label>
+					<radiowidth>100</radiowidth>
+					<radioheight>100</radioheight>
+					<textureradioonfocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonfocus>
+					<textureradioonnofocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonnofocus>
+					<textureradioofffocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradioofffocus>
+					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>
+					<onclick condition="!System.HasAddon(script.skinshorcuts)">InstallAddon(script.skinshorcuts)</onclick>																		
+					<selected>System.HasAddon(script.skinshorcuts) | $VAR[Instalado-script.skinshortcuts]</selected>
+					<texturenofocus/>
+					<visible>System.HasAddon(script.skinshortcuts) + System.AddonIsEnabled(script.skinshortcuts)</visible>
+				</control>
+				<control type="radiobutton" id="320">
+					<textcolor>$VAR[ThemeLabelColor]</textcolor>
+					<width>100%</width>
+					<radioposx>1280</radioposx>
+					<font>font13_title</font>
+					<height>60</height>
+					<label>Script fontsvr $INFO[System.AddonVersion(script.fontsvr),(,)] [COLOR grey]- Instalador de Ajustes para Skins[/COLOR]</label>
+					<radiowidth>100</radiowidth>
+					<radioheight>100</radioheight>
+					<textureradioonfocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonfocus>
+					<textureradioonnofocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonnofocus>
+					<textureradioofffocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradioofffocus>
+					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>
+					<onclick condition="!System.HasAddon(script.fontsvr)">InstallAddon(script.fontsvr)</onclick>																		
+					<selected>System.HasAddon(script.fontsvr)</selected>
+					<texturenofocus/>
+				</control>
+				<control type="radiobutton" id="321">
+					<textcolor>$VAR[ThemeLabelColor]</textcolor>
+					<width>100%</width>
+					<radioposx>1280</radioposx>
+					<font>roboto30</font>
+					<height>60</height>
+					<label>[COLOR 80FFFFFF][B] ∟ Ajustes del Skin[/B][/COLOR][COLOR grey][B] - para PVR IPTV, Youtube, fondos..(/Media/backgrounds)[/B][/COLOR]</label>
+					<radiowidth>100</radiowidth>
+					<radioheight>100</radioheight>
+					<textureradioonfocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonfocus>
+					<textureradioonnofocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonnofocus>
+					<textureradioofffocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradioofffocus>
+					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>
+					<onclick condition="!System.HasAddon(script.fontsvr)">InstallAddon(script.fontsvr)</onclick>
+					<onclick>Close</onclick>
+					<onclick condition="System.HasAddon(script.fontsvr)">ReplaceWindow(1151)</onclick>													
+					<selected>Skin.HasSetting(preguntado_ajustes)</selected>
+					<texturenofocus/>
+				</control>
+				<control type="button" id="322">
+					<textcolor>$VAR[ThemeLabelColor]</textcolor>
+					<width>100%</width>
+					<radioposx>1280</radioposx>
+					<font>font13_title</font>
+					<height>60</height>
+					<label>fontsvr_fonts $INFO[System.AddonVersion(plugin.fontsvr_fonts),(,)][COLOR grey] - Para añadir las fuentes más actuales a Kodi[/COLOR]</label>
+					<radiowidth>100</radiowidth>
+					<radioheight>100</radioheight>
+					<textureradioonfocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonfocus>
+					<textureradioonnofocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonnofocus>
+					<textureradioofffocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradioofffocus>
+					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>
+					<onclick condition="!System.HasAddon(plugin.fontsvr_fonts)">InstallAddon(plugin.fontsvr_fonts)</onclick>							
+					<onclick>Dialog.Close(5203)</onclick>
+					<onclick>ActivateWindow(Videos,"plugin://plugin.fontsvr_fonts/",return)</onclick>
+					<selected>System.HasAddon(plugin.video.plugin.fontsvr_fonts)</selected>
+					<texturenofocus/>
+				</control>	
+				<control type="radiobutton" id="323">
+					<textcolor>$VAR[ThemeLabelColor]</textcolor>
+					<width>100%</width>
+					<font>font13_title</font>
+					<label>Builds fontsvrWiz $INFO[System.AddonVersion(plugin.program.fontsvrwiz),(,)][COLOR grey] - * Ajustes, parches, herramientas y Builds[/COLOR]</label>
+                    <radioposx>1280</radioposx>
+					<height>60</height>
+					<radiowidth>100</radiowidth>
+					<radioheight>100</radioheight>
+					<textureradioonfocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonfocus>
+					<textureradioonnofocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonnofocus>
+					<textureradioofffocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradioofffocus>
+					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>																	
+					<onclick condition="!System.HasAddon(plugin.program.fontsvrwiz)">InstallAddon(plugin.program.fontsvrwiz)</onclick>																		
+					<texturenofocus/>
+					<selected>System.HasAddon(plugin.program.fontsvrwiz)</selected>
+				</control>
+				<control type="radiobutton" id="324">
+					<textcolor>$VAR[ThemeLabelColor]</textcolor>
+					<width>100%</width>
+					<radioposx>1280</radioposx>
+					<font>font13_title</font>
+					<height>60</height>
+					<label>Luar $INFO[System.AddonVersion(script.luar),(,)] [COLOR grey]- Instalador de Addons[/COLOR]</label>
+					<radiowidth>100</radiowidth>
+					<radioheight>100</radioheight>
+					<textureradioonfocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonfocus>
+					<textureradioonnofocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonnofocus>
+					<textureradioofffocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradioofffocus>
+					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>
+					<onclick condition="!System.HasAddon(repository.luar)">InstallAddon(repository.luar)</onclick>
+					<onclick condition="!System.HasAddon(script.luar) + System.HasAddon(repository.luar)">InstallAddon(script.luar)</onclick>					
+					<selected>System.HasAddon(script.luar)</selected>
+					<texturenofocus/>
+				</control>
+				<control type="radiobutton" id="325">
+					<textcolor>$VAR[ThemeLabelColor]</textcolor>
+					<width>100%</width>
+					<font>font13_title</font>
+					<label>Kelebek $INFO[System.AddonVersion(script.kelebek),(,)] [COLOR grey]- Instalador de Addons[/COLOR]</label>
+					<radioposx>1280</radioposx>
+					<height>60</height>
+					<radiowidth>100</radiowidth>
+					<radioheight>100</radioheight>
+					<textureradioonfocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonfocus>
+					<textureradioonnofocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonnofocus>
+					<textureradioofffocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradioofffocus>
+					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>
+					<onclick condition="!System.HasAddon(script.kelebek)">InstallAddon(script.kelebek)</onclick>																		
+					<selected>System.HasAddon(script.kelebek)</selected>
+					<include>DefaultSettingButton</include>
+					<texturenofocus/>
+				</control>
+				<control type="radiobutton" id="326">
+					<textcolor>$VAR[ThemeLabelColor]</textcolor>
+					<width>100%</width>
+					<font>font13_title</font>
+					<label>Horus $INFO[System.AddonVersion(script.module.horus),(,)] [COLOR grey]- Requerido para ver Deportes[/COLOR]</label>
+					<radioposx>1280</radioposx>
+					<height>60</height>
+					<radiowidth>100</radiowidth>
+					<radioheight>100</radioheight>
+					<textureradioonfocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonfocus>
+					<textureradioonnofocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonnofocus>
+					<textureradioofffocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradioofffocus>
+					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>
+					<onclick condition="!System.HasAddon(script.module.horus)">InstallAddon(script.module.horus)</onclick>
+					<!--<onclick condition="System.HasAddon(script.module.horus)">Dialog.Close(5203)</onclick>-->
+					<!--<onclick condition="System.HasAddon(script.module.horus)">ActivateWindow(Programs,&quot;plugin://script.module.horus/&quot;,return)</onclick>-->
+					<onclick condition="System.HasAddon(script.module.horus)">RunAddon(script.module.horus)</onclick>
+					<selected>System.HasAddon(script.module.horus)</selected>
+					<texturenofocus/>
+				</control>
+				<control type="radiobutton" id="327">
+					<textcolor>$VAR[ThemeLabelColor]</textcolor>
+					<width>100%</width>
+					<radioposx>1280</radioposx>
+					<font>font13_title</font>
+					<height>60</height>
+					<label>ResolveURL $INFO[System.AddonVersion(script.module.resolveurl),(,)] [COLOR grey]- Necesario para Cristal Azul[/COLOR]</label>
+					<radiowidth>100</radiowidth>
+					<radioheight>100</radioheight>
+					<textureradioonfocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonfocus>
+					<textureradioonnofocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonnofocus>
+					<textureradioofffocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradioofffocus>
+					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>
+					<onclick condition="!System.HasAddon(script.module.resolveurl) + System.HasAddon(repository.resolveurl)">InstallAddon(script.module.resolveurl)</onclick>
+					<onclick condition="!System.HasAddon(script.module.resolveurl)">InstallAddon(script.module.resolveurl)</onclick>
+					<selected>System.HasAddon(script.module.resolveurl)</selected>
+					<texturenofocus/>
+				</control>
+				<control type="radiobutton" id="328">
+					<textcolor>$VAR[ThemeLabelColor]</textcolor>
+					<width>100%</width>
+					<font>font13_title</font>
+					<label>Iptv Merge $INFO[System.AddonVersion(plugin.program.iptv.merge),(,)] [COLOR grey]- Enlazar varias listas iptv en una (TDTChannels y Pluto TV)[/COLOR]</label>
+					<radioposx>1280</radioposx>
+					<height>60</height>
+					<radiowidth>100</radiowidth>
+					<radioheight>100</radioheight>
+					<textureradioonfocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonfocus>
+					<textureradioonnofocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonnofocus>
+					<textureradioofffocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradioofffocus>
+					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>
+					<onclick condition="!System.HasAddon(plugin.program.iptv.merge)">InstallAddon(plugin.program.iptv.merge)</onclick>																		
+					<selected>System.HasAddon(plugin.program.iptv.merge)</selected>
+					<texturenofocus/>
+				</control>
+				
+				<control type="radiobutton" id="329">
+					<textcolor>$VAR[ThemeLabelColor]</textcolor>
+					<width>100%</width>
+					<font>font13_title</font>
+					<label>PVR IPTV Simple Client $INFO[System.AddonVersion(pvr.iptvsimple),(,)] [COLOR grey]- Cliente IPTV para TDTChannels y Pluto TV[/COLOR]</label>
+					<radioposx>1280</radioposx>
+					<height>60</height>
+					<radiowidth>100</radiowidth>
+					<radioheight>100</radioheight>
+					<textureradioonfocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonfocus>
+					<textureradioonnofocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonnofocus>
+					<textureradioofffocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradioofffocus>
+					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>
+					<onclick condition="!System.HasAddon(pvr.iptvsimple)">InstallAddon(pvr.iptvsimple)</onclick>																		
+					<selected>System.HasAddon(pvr.iptvsimple)</selected>
+					<texturenofocus/>
+				</control>
+				<control type="radiobutton" id="330">
+					<textcolor>$VAR[ThemeLabelColor]</textcolor>
+					<font>roboto30</font>
+					<label>[COLOR 80FFFFFF][B] ∟ Pluto TV $INFO[System.AddonVersion(slyguy.pluto.tv.provider),(,)][/B][/COLOR][COLOR grey][B] - Televisión para PVR IPTV Simple Client[/B][/COLOR]</label>
+					<width>100%</width>
+					<height>60</height>
+					<radiowidth>100</radiowidth>
+					<radioheight>100</radioheight>
+					<textureradioonfocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonfocus>
+					<textureradioonnofocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonnofocus>
+					<textureradioofffocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradioofffocus>
+					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>
+					<radioposx>1280</radioposx><!--1220-->
+				    <onclick condition="!System.HasAddon(repository.slyguy)">InstallAddon(repository.slyguy)</onclick>
+					<onclick condition="!System.HasAddon(slyguy.pluto.tv.provider) + System.HasAddon(repository.slyguy)">InstallAddon(slyguy.pluto.tv.provider)</onclick>																		
+					<selected>System.HasAddon(slyguy.pluto.tv.provider)</selected>
+					<texturenofocus/>					
+				</control>
+				<control type="radiobutton" id="331">
+					<textcolor>$VAR[ThemeLabelColor]</textcolor>
+					<width>100%</width>
+					<radioposx>1280</radioposx>
+					<font>roboto30</font>
+					<height>60</height>
+					<label>[COLOR 80FFFFFF][B] ∟ TDT y M+[/B][/COLOR][COLOR grey][B] - Ajuste establecido de canales para PVR IPTV Simple Client[/B][/COLOR]</label>
+					<radiowidth>100</radiowidth>
+					<radioheight>100</radioheight>
+					<textureradioonfocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonfocus>
+					<textureradioonnofocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonnofocus>
+					<textureradioofffocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradioofffocus>
+					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>
+					<onclick condition="!System.HasAddon(script.fontsvr)">InstallAddon(script.fontsvr)</onclick>
+					<onclick>Close</onclick>
+					<onclick condition="System.HasAddon(script.fontsvr)">ReplaceWindow(1152)</onclick>
+					<!--
+					<onclick condition="System.HasAddon(script.fontsvr)">ReplaceWindow(Programs,"plugin://script.fontsvr/?mode=install&amp;action=build&amp;name=ajustes+basic+v21",return)</onclick>	
+					-->
+					<selected>Skin.HasSetting(preguntado_ajustes)</selected>
+					<texturenofocus/>
+				</control>
+				<control type="radiobutton" id="332">
+					<textcolor>$VAR[ThemeLabelColor]</textcolor>
+					<width>100%</width>
+					<radioposx>1280</radioposx>
+					<font>font13_title</font>
+					<height>60</height>
+					<label>Autocompletion $INFO[System.AddonVersion(plugin.program.autocompletion),(,)] [COLOR grey]- Autocompletar texto[/COLOR]</label>
+					<radiowidth>100</radiowidth>
+					<radioheight>100</radioheight>
+					<textureradioonfocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonfocus>
+					<textureradioonnofocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonnofocus>
+					<textureradioofffocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradioofffocus>
+					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>																	
+					<onclick condition="!System.HasAddon(plugin.program.autocompletion)">InstallAddon(plugin.program.autocompletion)</onclick>
+					<selected>System.HasAddon(plugin.program.autocompletion)</selected>
+					<include>DefaultSettingButton</include>
+					<texturenofocus/>
+				</control>
+				<control type="radiobutton" id="333">
+					<textcolor>$VAR[ThemeLabelColor]</textcolor>
+					<width>100%</width>
+					<font>font13_title</font>
+					<label>Torrest $INFO[System.AddonVersion(plugin.video.torrest),(,)] [COLOR grey]- Cliente Torrent[/COLOR]</label>
+					<radioposx>1280</radioposx>
+					<height>60</height>
+					<radiowidth>100</radiowidth>
+					<radioheight>100</radioheight>
+					<textureradioonfocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonfocus>
+					<textureradioonnofocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonnofocus>
+					<textureradioofffocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradioofffocus>
+					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>
+					<onclick condition="!System.HasAddon(repository.github)">InstallAddon(repository.github)</onclick>
+					<onclick condition="!System.HasAddon(plugin.video.torrest) + System.HasAddon(repository.github)">InstallAddon(plugin.video.torrest)</onclick>
+					<selected>System.HasAddon(plugin.video.torrest)</selected>
+					<include>DefaultSettingButton</include>
+					<texturenofocus/>
+				</control>
+					<control type="radiobutton" id="334">
+					<textcolor>$VAR[ThemeLabelColor]</textcolor>
+					<width>100%</width>
+					<font>font13_title</font>
+					<label>Elementum $INFO[System.AddonVersion(plugin.video.elementum),(,)] [COLOR grey]- Cliente Torrent (Para Android ARM y Windows x64)[/COLOR]</label>
+					<radioposx>1280</radioposx>
+					<height>60</height>
+					<radiowidth>100</radiowidth>
+					<radioheight>100</radioheight>
+					<textureradioonfocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonfocus>
+					<textureradioonnofocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonnofocus>
+					<textureradioofffocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradioofffocus>
+					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>
+					<onclick condition="!System.HasAddon(plugin.video.elementum)">InstallAddon(plugin.video.elementum)</onclick>
+					<selected>System.HasAddon(plugin.video.elementum)</selected>
+					<texturenofocus/>
+				</control>
+				<control type="radiobutton" id="335">
+					<textcolor>$VAR[ThemeLabelColor]</textcolor>
+					<width>100%</width>
+					<radioposx>1280</radioposx>
+					<font>font13_title</font>
+					<height>60</height>
+					<label>Limpia tu Kodi $INFO[System.AddonVersion(script.limpiarkodi),(,)] [COLOR grey]- Limpieza de Kodi[/COLOR]</label>
+					<radiowidth>100</radiowidth>
+					<radioheight>100</radioheight>
+					<textureradioonfocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonfocus>
+					<textureradioonnofocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonnofocus>
+					<textureradioofffocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradioofffocus>
+					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>																	
+					<onclick condition="!System.HasAddon(script.limpiarkodi)">InstallAddon(script.limpiarkodi)</onclick>																		
+					<selected>System.HasAddon(script.limpiarkodi)</selected>
+					<texturenofocus/>
+				</control>
+				<control type="radiobutton" id="336">
+					<textcolor>$VAR[ThemeLabelColor]</textcolor>
+					<width>100%</width>
+					<radioposx>1280</radioposx>
+					<font>font13_title</font>
+					<height>60</height>
+					<label>Image Studio Icons $INFO[System.AddonVersion(resource.images.studios.coloured),(,)][COLOR lightgrey] - Iconos de Estudios y Plataformas[/COLOR]</label>
+					<radiowidth>100</radiowidth>
+					<radioheight>100</radioheight>
+					<textureradioonfocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonfocus>
+					<textureradioonnofocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonnofocus>
+					<textureradioofffocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradioofffocus>
+					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>
+					<onclick condition="!System.HasAddon(resource.images.studios.coloured)">InstallAddon(resource.images.studios.coloured)</onclick>																		
+					<texturenofocus/>
+					<selected>System.HasAddon(resource.images.studios.coloured)</selected>
+				</control>
+				
+				<control type="radiobutton" id="337">
+					<textcolor>$VAR[ThemeLabelColor]</textcolor>
+					<width>100%</width>
+					<radioposx>1280</radioposx>
+					<font>font13_title</font>
+					<height>60</height>
+					<label>Embuary Info $INFO[System.AddonVersion(script.embuary.info),(,)] [COLOR grey]- Para info de Películas, Series en addons de video.[/COLOR]</label>
+					<radiowidth>100</radiowidth>
+					<radioheight>100</radioheight>
+					<textureradioonfocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonfocus>
+					<textureradioonnofocus colordiffuse="CC76FF03">special://skin/extras/buttons/status-on.png</textureradioonnofocus>
+					<textureradioofffocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradioofffocus>
+					<textureradiooffnofocus colordiffuse="fff02222">special://skin/extras/buttons/status-off.png</textureradiooffnofocus>
+					<onclick condition="!System.HasAddon(script.embuary.info)">InstallAddon(script.embuary.info)</onclick>
+					<selected>System.HasAddon(script.embuary.info)</selected>
+					<texturenofocus/>
+				</control>
+			</control>
+				<control type="image">
+			<!-- background image -->
+			<centerleft>50%</centerleft>
+			<top>836</top>
+			<width>1400</width>
+			<height>70</height>
+			<texture border="14" colordiffuse="blue">special://skin/extras/buttons/button-nofocus.png</texture>
+		        </control>
+				<control type="button" id="308">
+				  <centerleft>35%</centerleft>
+				  <top>836</top>
+				  <onup>337</onup>
+				  <onright>309</onright>
+				  <onleft>337</onleft>
+				  <ondown>319</ondown>
+					<top>70</top>
+					<height>70</height>
+					<label>Volver</label>
+					<font>font13_title</font>
+					<textoffsetx>30</textoffsetx>
+					<texturenofocus/>
+					<onclick>Close</onclick>
+					<onclick>ReplaceWindow(5202)</onclick>
+					<align>center</align>
+				</control>
+				<control type="button" id="309">
+				  <centerleft>65%</centerleft>
+				  <top>836</top>
+				  <onup>337</onup>
+				  <onright>60</onright>
+				  <onleft>308</onleft>
+				  <ondown>319</ondown>
+					<top>70</top>
+					<height>70</height>
+					<label>Continuar</label>
+					<font>font13_title</font>
+					<textoffsetx>30</textoffsetx>
+					<texturenofocus/>
+					<onclick>Close</onclick>
+	                <onclick>Skin.SetBool(3RunSetup,true)</onclick>
+					 <onclick>Skin.SetBool(pagina_permiso_run,true)</onclick>
+					<onclick>ReplaceWindow(Home)</onclick>
+					<align>center</align>
+				</control>
+		</control>
+		<control type="scrollbar" id="60">
+				<left>1400</left>
+				<top>181</top>
+				<width>18</width>
+				<height>838</height>
+				<onleft>500</onleft>
+				<ondown>309</ondown>
+				<onup>319</onup>
+				<onright>308</onright>
+				<texturesliderbar colordiffuse="80FFFFFF" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
+				<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
+			</control>
+		</control>
+		
+	</controls>
+</window>

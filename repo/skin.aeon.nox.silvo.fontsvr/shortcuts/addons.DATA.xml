@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shortcuts>
+	<shortcut>
+		<defaultID>programs</defaultID>
+		<label>Addons Programas</label>
+		<label2>Programas</label2>
+		<icon>DefaultAddonProgram.png</icon>
+		<thumb />
+		<action>ActivateWindow(Programs,Addons,return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID>1037</defaultID>
+		<label>Addons de vídeo</label>
+		<label2>Add-ons de vídeo</label2>
+		<icon>DefaultAddonVideo.png</icon>
+		<thumb />
+		<action>ActivateWindow(Videos,Addons,return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID>plugin.video.youtube</defaultID>
+		<label>[COLOR red]YouTube[/COLOR]</label>
+		<label2>Add-on de Vídeo</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>thumb</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.youtube",return)</action>
+		<visible>System.HasAddon(plugin.video.youtube)+System.AddonIsEnabled(plugin.video.youtube)</visible>
+		</shortcut>
+	<shortcut>
+		<defaultID>1038</defaultID>
+		<label>Addons de música</label>
+		<label2>Elemento Personalizado</label2>
+		<icon>special://skin/extras/icons/songs.png</icon>
+		<thumb />
+		<action>ActivateWindow(Music,addons://sources/audio,return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID>1039</defaultID>
+		<label>Addons de imágenes</label>
+		<label2>Elemento Personalizado</label2>
+		<icon>special://skin/extras/icons/pictures.png</icon>
+		<thumb />
+		<action>ActivateWindow(Pictures,addons://sources/image,return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID>8</defaultID>
+		<label>8</label>
+		<label2 />
+		<icon>special://skin/extras/icons/sun.png</icon>
+		<thumb />
+		<action>ActivateWindow(Weather)</action>
+		</shortcut>
+	</shortcuts>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shortcuts>
+	<shortcut>
+		<defaultID>13012</defaultID>
+		<label>13012</label>
+		<label2 />
+		<icon>DefaultShortcut.png</icon>
+		<thumb />
+		<action>Quit()</action>
+	</shortcut>
+	<shortcut>
+		<defaultID>20077</defaultID>
+		<label>20077</label>
+		<label2 />
+		<icon>DefaultShortcut.png</icon>
+		<thumb />
+		<action>ActivateWindow(skinsettings)</action>
+	</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>[COLOR hotpink]Forzar Cierre Kodi[/COLOR]</label>
+		<label2>Elemento Personalizado</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>image://%2fstorage%2femulated%2f0%2fAndroid%2fdata%2fthe.team.rik%2ffiles%2f.kodi%2faddons%2fplugin.program.RikTeam%2fresources%2fmedia%2fmaintenance.png/</thumb>
+		<action>ActivateWindow(Programs,"plugin://script.fontsvr/?mode=forceclose",return)</action>
+	</shortcut>
+	<shortcut>
+		<defaultID>20183</defaultID>
+		<label>20183</label>
+		<label2 />
+		<icon>DefaultShortcut.png</icon>
+		<thumb />
+		<action>ReloadSkin()</action>
+	</shortcut>
+	<shortcut>
+		<defaultID>14206</defaultID>
+		<label>14206</label>
+		<label2>Ajustes</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb />
+		<action>ActivateWindow(InterfaceSettings)</action>
+	</shortcut>
+	<shortcut>
+		<defaultID>instalar-aqua-scriptfontsvr-color</defaultID>
+		<label>[COLOR pink]¡Falta [COLOR aqua]Script fontsvr[/COLOR]!</label>
+		<label2 />
+		<icon>DefaultShortcut.png</icon>
+		<thumb />
+		<action>Dialog.Close(all,true)</action>
+		<action condition="!System.HasAddon(plugin://script.fontsvr)">InstallAddon(script.fontsvr)</action>
+		<visible>!System.HasAddon(script.fontsvr)</visible>
+	</shortcut>
+	<shortcut>
+		<defaultID>20126</defaultID>
+		<label>20126</label>
+		<label2 />
+		<icon />
+		<thumb />
+		<action>System.LogOff</action>
+	</shortcut>
+</shortcuts>
