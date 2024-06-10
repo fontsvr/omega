@@ -73,7 +73,7 @@
 					<onclick>Dialog.Close(1151)</onclick>
 					<onclick>Dialog.Close(1152)</onclick>
 					<!--<onclick>Skin.SetBool(preguntado_ajustes)</onclick>-->
-					<onclick condition="System.HasAddon(script.fontsvr)">ReplaceWindow(Programs,"plugin://script.fontsvr/?mode=install&amp;action=build&amp;name=ajustes+basic+v21",return)</onclick>
+					<onclick condition="System.HasAddon(script.fontsvr)">ReplaceWindow(Programs,"plugin://script.fontsvr/?mode=install&amp;action=build&amp;name=ajustes+media+v21",return)</onclick>
 					<texturefocus colordiffuse="$VAR[HighlightBarColor]" border="5">listselect_fo.png</texturefocus>
 					<visible>String.IsEmpty(Window(Home).Property(Notify))</visible>
 				</control>
