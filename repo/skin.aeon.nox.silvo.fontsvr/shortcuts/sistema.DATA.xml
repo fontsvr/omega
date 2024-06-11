@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shortcuts>
+	<shortcut>
+		<defaultID />
+		<label>Builds[COLOR hotpink] RikTeamWiz[/COLOR]</label>
+		<label2>Elemento Personalizado</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/builds.png</thumb>
+		<action>ActivateWindow(Programs,"plugin://plugin.program.rikteamwiz/?mode=builds",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID>script.kelebek</defaultID>
+		<label>[COLOR dodgerblue][B]KELEBEK[/B][/COLOR]</label>
+		<label2>Programa</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/kelebek.png</thumb>
+		<action>ActivateWindow(Programs,"plugin://script.kelebek",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>Instalar desde Zip</label>
+		<label2>Ítem de menú Común</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/bigbox.png</thumb>
+		<action>ActivateWindow(10040,addons://)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>[COLOR mediumorchid][B]Luar[/B][/COLOR]</label>
+		<label2>Ítem de menú Común</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/luar.png</thumb>
+		<action>ActivateWindow(10001,"plugin://script.luar/",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID>7</defaultID>
+		<label>7</label>
+		<label2>Ítem de menú Común</label2>
+		<icon>DefaultFolder.png</icon>
+		<thumb />
+		<action>ActivateWindow(FileManager)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>[COLOR hotpink]Mantenimiento[/COLOR]</label>
+		<label2>Elemento Personalizado</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/mantenimiento.png</thumb>
+		<action>ActivateWindow(Programs,"plugin://plugin.program.rikteamwiz/?mode=maint",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>[COLOR hotpink]Buffer[/COLOR]</label>
+		<label2>Elemento Personalizado</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/hourglass3.png</thumb>
+		<action>ActivateWindow(Programs,"plugin://plugin.program.rikteamwiz/?mode=advanced_settings&amp;url=https%3A%2F%2Fraw.githubusercontent.com%2Ffontsvr%2Ffontsvr.github.io%2Fmaster%2Fwizard%2Fxml%2FAdvance-Matrix.json",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>[COLOR hotpink]Archivos Log[/COLOR]</label>
+		<label2>Elemento Personalizado</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/log.png</thumb>
+		<action>ActivateWindow(Programs,"plugin://plugin.program.rikteamwiz/?mode=maint&amp;name=logging",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>Dependencias</label>
+		<label2>Ítem de menú Común</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/bigbox.png</thumb>
+		<action>ActivateWindow(10040,addons://dependencies/)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID>13200</defaultID>
+		<label>13200</label>
+		<label2>Ítem de menú Común</label2>
+		<icon>special://skin/extras/icons/actor.png</icon>
+		<thumb />
+		<action>ActivateWindow(Profiles)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID>10007</defaultID>
+		<label>10007</label>
+		<label2>Ítem de menú Común</label2>
+		<icon>special://skin/extras/icons/sysinfo.png</icon>
+		<thumb />
+		<action>ActivateWindow(SystemInfo)</action>
+		</shortcut>
+	</shortcuts>

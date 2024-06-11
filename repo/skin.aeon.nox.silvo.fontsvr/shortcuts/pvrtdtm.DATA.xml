@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shortcuts>
+	<shortcut>
+		<defaultID />
+		<label>[B][CAPITALIZE][LOWERCASE]Guía [COLOR ff990000]Premium [COLOR=darkorange]Latino[/COLOR][/LOWERCASE][/CAPITALIZE][/B]</label>
+		<label2>Elemento Personalizado</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb />
+		<action>ActivateWindow(TVGuide)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>[B][LOWERCASE][CAPITALIZE]TV [COLOR=aqua]CINE Y SERIES[/CAPITALIZE][/LOWERCASE][/COLOR][/B]</label>
+		<label2>Add-on de Vídeo</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb />
+		<action>ActivateWindow(Videos,"plugin://plugin.video.KODIvertiDO/?action=iptv_v&amp;title=%5BCOLOR+white%5D%5BB%5DKODIvertiDO+Tv%5B%2FB%5D%5B%2FCOLOR%5D&amp;url=&amp;thumbnail=https%3A%2F%2Fi.postimg.cc%2Fm2tT1bYP%2FIMG-20230706-WA0006.jpg&amp;plot=&amp;extra=0&amp;page=",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>[B]Programacion [CAPITALIZE][COLORaqua]M+[/COLOR][/CAPITALIZE][/B]</label>
+		<label2>Elemento Personalizado</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb />
+		<action>ActivateWindow(TVGuide)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>[B][LOWERCASE][CAPITALIZE]TV [COLORaqua]ESPAñA[/CAPITALIZE][/LOWERCASE][/COLOR][/B]</label>
+		<label2>Add-on de Vídeo</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb />
+		<action>ActivateWindow(Videos,"plugin://plugin.video.koditv/?action=tv_adictos2&amp;title=%5BB%5D%5BLOWERCASE%5D%5BCAPITALIZE%5D%5BCOLOR+white%5DTV+ESPA%C3%B1A%5B%2FCAPITALIZE%5D%5B%2FLOWERCASE%5D%5B%2FCOLOR%5D%5B%2FB%5D&amp;url=1&amp;thumbnail=https%3A%2F%2Fforexseson.com%2Fmychannel%2Fpublic%2FcategoryImages%2F1507202820.png&amp;plot=&amp;extra=TV+ESPA%C3%B1A&amp;page=",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID>14202</defaultID>
+		<label>[B][CAPITALIZE][LOWERCASE]Guía[/LOWERCASE] [COLOR ffb30101]T[COLOR cc76ff03]D[COLOR deepskyblue]T[/COLOR][/CAPITALIZE][/B]</label>
+		<label2>Elemento Personalizado</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb />
+		<action>ActivateWindow(TVGuide)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID>19019</defaultID>
+		<label>[B][CAPITALIZE]CANALES TV[/CAPITALIZE][/B]</label>
+		<label2>TV En Vivo</label2>
+		<icon>special://skin/extras/icons/tv.png</icon>
+		<thumb />
+		<action>ActivateWindow(TVChannels)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID>19023</defaultID>
+		<label>[B][CAPITALIZE]CANALES RADIO[/CAPITALIZE][/B]</label>
+		<label2>Elemento Personalizado</label2>
+		<icon>DefaultAddonTvInfo.png</icon>
+		<thumb />
+		<action>ActivateWindow(RadioChannels)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID>22020</defaultID>
+		<label>[B][CAPITALIZE][LOWERCASE]Guía[/LOWERCASE] Radio[/CAPITALIZE][/B]</label>
+		<label2>Radio</label2>
+		<icon>special://skin/extras/icons/songs.png</icon>
+		<thumb />
+		<action>ActivateWindow(RadioGuide)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID>137</defaultID>
+		<label>[B][CAPITALIZE]Buscar[/CAPITALIZE][/B]</label>
+		<label2>[B][CAPITALIZE][LOWERCASE]Buscar[/LOWERCASE][/CAPITALIZE][/B]</label2>
+		<icon>DefaultTVShows.png</icon>
+		<thumb />
+		<action>ActivateWindow(TVSearch)</action>
+		</shortcut>
+	</shortcuts>

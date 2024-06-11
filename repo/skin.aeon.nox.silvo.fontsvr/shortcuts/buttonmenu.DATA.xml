@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shortcuts>
+	<shortcut>
+		<label>13012</label>
+		<label2 />
+		<icon />
+		<action>Quit()</action>
+	</shortcut>
+	<shortcut>
+		<label>13016</label>
+		<label2 />
+		<icon />
+		<action>Powerdown()</action>
+	</shortcut>
+	<shortcut>
+		<label>20150</label>
+		<label2 />
+		<icon />
+		<action>AlarmClock(shutdowntimer,Shutdown())</action>
+	</shortcut>
+	<shortcut>
+		<label>20151</label>
+		<label2>$INFO[System.Alarmpos, (,)]</label2>
+		<icon />
+		<action>CancelAlarm(shutdowntimer)</action>
+	</shortcut>
+	<shortcut>
+		<label>13011</label>
+		<label2 />
+		<icon />
+		<action>Suspend()</action>
+	</shortcut>
+	<shortcut>
+		<label>13010</label>
+		<label2 />
+		<icon />
+		<action>Hibernate()</action>
+	</shortcut>
+	<shortcut>
+		<label>31576</label>
+		<label2 />
+		<icon />
+		<action>RebootFromNand</action>
+		<visible>System.Platform.Linux</visible>
+	</shortcut>
+	<shortcut>
+		<label>13013</label>
+		<label2 />
+		<icon />
+		<action>Reset()</action>
+	</shortcut>
+	<shortcut>
+		<label>20126</label>
+		<label2>$INFO[system.profilename]</label2>
+		<icon />
+		<action>System.LogOff</action>
+	</shortcut>
+	<shortcut>
+		<label>20046</label>
+		<label2 />
+		<icon />
+		<action>Mastermode</action>
+		<visible>System.IsMaster</visible>
+	</shortcut>
+	<shortcut>
+		<label>20045</label>
+		<label2 />
+		<icon />
+		<action>Mastermode</action>
+		<visible>!System.IsMaster</visible>
+	</shortcut>
+	<shortcut>
+		<label>13017</label>
+		<label2 />
+		<icon />
+		<action>InhibitIdleShutdown(true)</action>
+	</shortcut>
+	<shortcut>
+		<label>13018</label>
+		<label2 />
+		<icon />
+		<action>InhibitIdleShutdown(false)</action>
+	</shortcut>
+	<shortcut>
+		<label>1036</label>
+		<label2 />
+		<icon />
+		<action>ActivateWindow(favouritesbrowser)</action>
+	</shortcut>
+	<shortcut>
+		<label>20183</label>
+		<label2 />
+		<icon />
+		<action>ReloadSkin()</action>
+	</shortcut>
+	<shortcut>
+		<label>20077</label>
+		<label2 />
+		<icon />
+		<action>ActivateWindow(skinsettings)</action>
+	</shortcut>
+    <shortcut>
+		<label>Ajustes Iniciales de [COLOR hotpink]$INFO[System.AddonTitle(skin.aeon.nox.silvo.fontsvr)][/COLOR]</label>
+		<label2 />
+		<icon />
+		<action>Dialog.Close(all,true)</action>
+		<action>ActivateWindow(5200)</action>
+		<action>Skin.SetBool(FirstPagina,false)</action>
+		<action>Skin.SetBool(FirstRunSetup,false)</action>
+		<action>Skin.SetBool(3RunSetup,false)</action>
+	</shortcut>
+    <shortcut>
+		<label>Necesario [COLOR aqua]Script fontsvr[/COLOR]!</label>
+		<label2 />
+		<icon />
+		<action>Dialog.Close(all,true)</action>
+		<action condition="!System.HasAddon(plugin://script.fontsvr)">InstallAddon(script.fontsvr)</action>
+		<visible>!System.HasAddon(script.fontsvr)</visible>
+	</shortcut>
+	<shortcut>
+		<label>Estado ajuste [COLOR hotpink]$INFO[System.AddonTitle(skin.aeon.nox.silvo.fontsvr)] [COLOR cd00e600]√[/COLOR]</label>
+		<label2 />
+		<icon />
+		<action>Dialog.Close(all,true)</action>
+		<action>ActivateWindow(1152)</action>
+		<visible>[Skin.HasSetting(preguntado_ajustes)]</visible>
+	</shortcut>
+	<shortcut>
+		<label>[COLOR yellow]Actualizar ajuste[/COLOR] [COLOR hotpink]$INFO[System.AddonTitle(skin.aeon.nox.silvo.fontsvr)] [/COLOR]</label>
+		<label2 />
+		<icon />
+		<action>Dialog.Close(all,true)</action>
+		<action>ActivateWindow(1152)</action>
+		<visible>[!Skin.HasSetting(preguntado_ajustes)]</visible>
+	</shortcut>
+	<shortcut>
+		<label>[COLOR hotpink]Forzar Cierre Kodi[/COLOR]</label>
+		<label2 />
+		<icon />
+		<action>Dialog.Close(all,true)</action>
+		<action>ActivateWindow(Programs,"plugin://script.fontsvr/?mode=forceclose",return)</action>
+		<visible>System.HasAddon(script.fontsvr)</visible>
+	</shortcut>
+</shortcuts>
