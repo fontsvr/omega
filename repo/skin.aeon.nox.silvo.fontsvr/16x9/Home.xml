@@ -9,8 +9,8 @@
 	<!--<onload>Skin.SetBool(systembarontop,true)</onload>
 	<onload condition="!Skin.HasSetting(preguntado_ajustes)">Skin.SetBool(hidesystembars,true)</onload>-->
 	<!--<onload>Skin.SetBool(enable.visiblesubmenu,true)</onload>-->
-	<onload condition="!Skin.HasSetting(AskedDefaultBackground)">SetProperty(AskDefaultBackground,True,Home)</onload>
-	<onload condition="!Skin.HasSetting(AskedDefaultBackground) + !Control.IsVisible(9999)">Skin.TimerStart(askdefaultbackground)</onload>
+	<!--<onload condition="!Skin.HasSetting(AskedDefaultBackground)">SetProperty(AskDefaultBackground,True,Home)</onload>
+	<onload condition="!Skin.HasSetting(AskedDefaultBackground) + !Control.IsVisible(9999)">Skin.TimerStart(askdefaultbackground)</onload>-->
 	<!--<onload>Skin.SetBool(askeddefaultbackground,true)</onload>-->
 	<!--<onload>ClearProperty(RunSkinShortcutsAfterInstall,Home)</onload>
 	<onload condition="!System.HasAddon(script.skinshortcuts)">SetProperty(MissingDependency,True,Home)</onload>
@@ -39,7 +39,7 @@
 	<!--<onload condition="!System.HasAddon(slyguy.pluto.tv.provider)">ActivateWindow(1152)</onload>-->
 	<!--solo RunScript scripshorcuts si pagina_permiso_run es true-->
     <onload condition="System.AddonIsEnabled(script.skinshortcuts) + Skin.HasSetting(preguntado_ajustes) + String.IsEmpty(Window(Home).Property(RunSkinShortcutsAfterInstall))">RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;levels=2&amp;group=mainmenu|buttonmenu)</onload>
-    <onload condition="Skin.HasSetting(pagina_permiso_run)+System.AddonIsEnabled(script.skinshortcuts) + String.IsEmpty(Window(Home).Property(RunSkinShortcutsAfterInstall))">RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;levels=2&amp;group=mainmenu|buttonmenu)</onload>
+    <onload condition="Skin.HasSetting(pagina_permiso_run) + System.AddonIsEnabled(script.skinshortcuts) + String.IsEmpty(Window(Home).Property(RunSkinShortcutsAfterInstall))">RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;levels=2&amp;group=mainmenu|buttonmenu)</onload>
 
 	<onload condition="Skin.HasSetting(preguntado_ajustes) + String.IsEqual(Skin.String(MainMenu.Layout),vertical)">Control.SetHidden(9010)</onload>
 	<onload condition="Skin.HasSetting(preguntado_ajustes) + System.AddonIsEnabled(script.skinvariables)">RunScript(script.skinvariables,action=buildviews)</onload>
@@ -56,7 +56,7 @@
     <!--<onload condition="System.HasAddon(script.fontsvr) + !System.AddonIsEnabled(script.fontsvr)">EnableAddon(script.fontsvr)</onload>
 	<onload condition="!System.HasAddon(script.fontsvr)">InstallAddon(script.fontsvr)</onload>-->
 	
-	<onload condition="!Skin.HasSetting(FirstPagina) + Skin.HasSetting(preguntado_ajustes) + System.HasAddon(script.skinshortcuts) + System.HasAddon(script.fontsvr) + System.HasAddon(repository.slyguy) + System.HasAddon(plugin.program.iptv.merge) + System.HasAddon(pvr.iptvsimple)">AlarmClock(FirstPagina,ReplaceWindow(5200),00:10,silent)</onload>
+	<onload condition="!Skin.HasSetting(FirstPagina) + Skin.HasSetting(preguntado_ajustes) + System.HasAddon(script.skinshortcuts) + System.HasAddon(script.fontsvr) + System.HasAddon(repository.slyguy) + System.HasAddon(plugin.program.iptv.merge) + System.HasAddon(pvr.iptvsimple) + String.IsEmpty(Skin.String(StartupIntro)) + String.IsEmpty(Window(Home).Property(Playing.StartupIntro)) + !String.IsEmpty(Skin.String(StartupIntroTrue))">AlarmClock(FirstPagina,ReplaceWindow(5200),00:10,silent)</onload>
 	<onload condition="!Skin.HasSetting(FirstRunSetup) + Skin.HasSetting(FirstPagina)">AlarmClock(FirstRunSetup,ReplaceWindow(5202),00:01,silent)</onload>
 	<onload condition="!Skin.HasSetting(3RunSetup) + Skin.HasSetting(FirstRunSetup) + Skin.HasSetting(FirstPagina)">AlarmClock(3RunSetup,ReplaceWindow(5203),00:01,silent)</onload>
 

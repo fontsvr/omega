@@ -100,7 +100,7 @@
 		<action>ActivateWindow(skinsettings)</action>
 	</shortcut>
     <shortcut>
-		<label>Ajustes Iniciales del Skin [COLOR hotpink]$INFO[System.AddonTitle(skin.aeon.nox.silvo.fontsvr)][/COLOR]</label>
+		<label>Ajustes Iniciales de [COLOR hotpink]$INFO[System.AddonTitle(skin.aeon.nox.silvo.fontsvr)][/COLOR]</label>
 		<label2 />
 		<icon />
 		<action>Dialog.Close(all,true)</action>
@@ -118,7 +118,7 @@
 		<visible>!System.HasAddon(script.fontsvr)</visible>
 	</shortcut>
 	<shortcut>
-		<label>Estado ajuste [COLOR hotpink]$INFO[System.AddonTitle(skin.aeon.nox.silvo.fontsvr)] $INFO[System.AddonVersion(skin.aeon.nox.silvo.fontsvr),(,)] [COLOR cd00e600]√[/COLOR]</label>
+		<label>Estado ajuste [COLOR hotpink]$INFO[System.AddonTitle(skin.aeon.nox.silvo.fontsvr)] [COLOR cd00e600]√[/COLOR]</label>
 		<label2 />
 		<icon />
 		<action>Dialog.Close(all,true)</action>
@@ -126,7 +126,7 @@
 		<visible>[Skin.HasSetting(preguntado_ajustes)]</visible>
 	</shortcut>
 	<shortcut>
-		<label>[COLOR yellow]Actualizar ajuste[/COLOR] [COLOR hotpink]$INFO[System.AddonTitle(skin.aeon.nox.silvo.fontsvr)] $INFO[System.AddonVersion(skin.aeon.nox.silvo.fontsvr),(,)][/COLOR]</label>
+		<label>[COLOR yellow]Actualizar ajuste[/COLOR] [COLOR hotpink]$INFO[System.AddonTitle(skin.aeon.nox.silvo.fontsvr)] [/COLOR]</label>
 		<label2 />
 		<icon />
 		<action>Dialog.Close(all,true)</action>
