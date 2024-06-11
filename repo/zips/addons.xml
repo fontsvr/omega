@@ -468,7 +468,7 @@ Developers: Rik Team (fontsvr.github.io/omega/)</description>
 		<news>[I][COLOR FFFF9800]v10.0.1[/COLOR][/I][CR]- Vertical menu mouse fix[CR]- Fix playlist statistics infoline being empty[CR][TABS]1[/TABS][LIGHT](still needs Embuary Helper installed and enabled)[/LIGHT][CR][I][COLOR FFFF9800]v10.0.0[/COLOR][/I][CR]- Fix navigation issue in Music OSD settings[CR]- Add SceneMarkers, Cuts, &amp; Editlist markers to seekbar[CR]- Add trakt comments to recommendations dialog[CR]- Add music video icon to default List view for music and a button to play "Video links" in DialogMusicInfo[CR]- Tweaks to channel Wall for PVR[CR]- Some Live Background fixes thx davewuk[CR][CR][B]All updates may contain various changes and/or improvements[/B][CR]For a more complete list visit:[CR][I][COLOR FFFF9800]https://github.com/MikeSiLVO/skin.aeon.nox.silvo/commits/master[/COLOR][/I]</news>
 	</extension>
 	<extension point="xbmc.service" library="extras/libreria.py" start="login|startup" />
-</addon><addon id="skin.aeon.nox.silvo.fontsvr" version="21.0.1" name="VR21" provider-name="SiLVO">
+</addon><addon id="skin.aeon.nox.silvo.fontsvr" version="21.0.1" name="VR21 fontsvr" provider-name="fontsvr, SiLVO">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0" />
 		<import addon="script.skinshortcuts" version="2.0.1" />

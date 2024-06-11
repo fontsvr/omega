@@ -3,7 +3,7 @@
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<onload condition="!Skin.HasSetting(pagina_permiso_run) + !Skin.HasSetting(preguntado_ajustes)">ReplaceWindow(1152)</onload>
 	<!--<onload condition="!Skin.HasSetting(AskedDefaultBackground)">Skin.SetBool(askeddefaultbackground,true)</onload>-->
-	<!--<onload>Skin.SetBool(askeddefaultbackground,true)</onload>-->
+	<onload>Skin.SetBool(askeddefaultbackground,true)</onload>
 	<onload condition="!Skin.HasSetting(systembarontop)">Skin.SetBool(systembarontop)</onload>
     <!--<onload>ActivateWindow(1126)</onload>-->
 	<!--<onload>Skin.SetBool(systembarontop,true)</onload>
@@ -29,10 +29,9 @@
 	<onload>ClearProperty(RunSkinShortcutsAfterInstall,Home)</onload>
 	<!--<onload condition="!System.HasAddon(script.fontsvr)">InstallAddon(script.fontsvr)</onload>-->
 	<onload condition="!System.HasAddon(script.skinshortcuts)">SetProperty(MissingDependency,True,Home)</onload>
-	<onload condition="!System.HasAddon(script.fontsvr)">SetProperty(MissingDependency,True,Home)</onload>
 	<!--<onload condition="!System.HasAddon(script.skinshortcuts)">ActivateWindow(1126)</onload>-->
 	<onload condition="!System.HasAddon(script.skinshortcuts)">ActivateWindow(1152)</onload>
-	<onload condition="!System.HasAddon(script.fontsvr)+!Skin.HasSetting(pagina_permiso_run)">ActivateWindow(1152)</onload>
+	<onload condition="!System.HasAddon(script.fontsvr) + !Skin.HasSetting(pagina_permiso_run)">ActivateWindow(1152)</onload>
 	<!--<onload condition="!System.HasAddon(plugin.program.iptv.merge)+!Skin.HasSetting(preguntado_ajustes)">ActivateWindow(1152)</onload>
 	<onload condition="!System.HasAddon(pvr.iptvsimple)+!Skin.HasSetting(preguntado_ajustes)">ActivateWindow(1152)</onload>
 	<onload condition="!Skin.HasSetting(preguntado_ajustes)">ActivateWindow(1152)</onload>--->
@@ -57,7 +56,7 @@
     <!--<onload condition="System.HasAddon(script.fontsvr) + !System.AddonIsEnabled(script.fontsvr)">EnableAddon(script.fontsvr)</onload>
 	<onload condition="!System.HasAddon(script.fontsvr)">InstallAddon(script.fontsvr)</onload>-->
 	
-	<onload condition="!Skin.HasSetting(FirstPagina) + System.HasAddon(script.skinshortcuts) + System.HasAddon(script.fontsvr) + System.HasAddon(repository.slyguy) + System.HasAddon(plugin.program.iptv.merge) + System.HasAddon(pvr.iptvsimple)">AlarmClock(FirstPagina,ReplaceWindow(5200),00:05,silent)</onload>
+	<onload condition="!Skin.HasSetting(FirstPagina) + Skin.HasSetting(preguntado_ajustes) + System.HasAddon(script.skinshortcuts) + System.HasAddon(script.fontsvr) + System.HasAddon(repository.slyguy) + System.HasAddon(plugin.program.iptv.merge) + System.HasAddon(pvr.iptvsimple)">AlarmClock(FirstPagina,ReplaceWindow(5200),00:10,silent)</onload>
 	<onload condition="!Skin.HasSetting(FirstRunSetup) + Skin.HasSetting(FirstPagina)">AlarmClock(FirstRunSetup,ReplaceWindow(5202),00:01,silent)</onload>
 	<onload condition="!Skin.HasSetting(3RunSetup) + Skin.HasSetting(FirstRunSetup) + Skin.HasSetting(FirstPagina)">AlarmClock(3RunSetup,ReplaceWindow(5203),00:01,silent)</onload>
 

@@ -110,7 +110,7 @@
 		<action>Skin.SetBool(3RunSetup,false)</action>
 	</shortcut>
     <shortcut>
-		<label>Necesario [COLOR goldenrod]Script fontsvr[/COLOR]!</label>
+		<label>Necesario [COLOR aqua]Script fontsvr[/COLOR]!</label>
 		<label2 />
 		<icon />
 		<action>Dialog.Close(all,true)</action>
@@ -141,5 +141,4 @@
 		<action>ActivateWindow(Programs,"plugin://script.fontsvr/?mode=forceclose",return)</action>
 		<visible>System.HasAddon(script.fontsvr)</visible>
 	</shortcut>
-
 </shortcuts>
