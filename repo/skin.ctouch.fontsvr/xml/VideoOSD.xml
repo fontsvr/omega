@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+	<defaultcontrol>655</defaultcontrol>
+	<controls>
+		<visible>Player.HasMedia</visible>
+		<control type="group">
+			<control type="group">
+				<!-- Player info labels -->
+				<control type="group" id="1">
+					<visible>!VideoPlayer.Content(LiveTV)</visible>
+					<control type="label" id="1">
+						<left>30</left>
+						<top>905</top>
+						<width>345</width>
+						<height>30</height>
+						<font>ctouch19</font>
+						<label>Acaba a las $INFO[Player.FinishTime]</label>
+						<align>left</align>
+					</control>
+					<control type="label" id="1">
+						<left>1545</left>
+						<top>905</top>
+						<width>345</width>
+						<height>30</height>
+						<font>ctouch19</font>
+						<label>$INFO[VideoPlayer.Time] | $INFO[Player.Duration]</label>
+						<align>right</align>
+					</control>
+				</control>
+				<control type="group" id="1">
+					<visible>VideoPlayer.Content(LiveTV)</visible>
+					<control type="label" id="1">
+						<left>1545</left>
+						<top>905</top>
+						<width>345</width>
+						<height>30</height>
+						<font>ctouch19</font>
+						<label>$INFO[PVR.EpgEventElapsedTime] | $INFO[PVR.EpgEventDuration]</label>
+						<align>right</align>
+					</control>
+					<control type="label" id="1">
+						<left>30</left>
+						<top>905</top>
+						<width>345</width>
+						<height>30</height>
+						<font>ctouch19</font>
+						<label>Acaba a las $INFO[PVR.EpgEventFinishTime]</label>
+						<align>left</align>
+					</control>
+				</control>
+				<control type="group">
+					<visible>![Window.IsVisible(seekbar)]</visible>
+					<control type="group" id="1">
+						<visible>!VideoPlayer.Content(LiveTV)</visible>
+						<control type="progress" id="1">
+							<left>25</left>
+							<top>950</top>
+							<width>1870</width>
+							<height>22</height>
+							<info>Player.ProgressCache</info>
+							<colordiffuse>CacheBarColor</colordiffuse>
+						</control>
+						<control type="progress" id="1">
+							<left>25</left>
+							<top>950</top>
+							<width>1870</width>
+							<height>22</height>
+							<info>Player.Progress</info>
+						</control>
+						<control type="slider" id="690">
+							<!-- Seek Slider -->
+							<left>25</left>
+							<top>950</top>
+							<width>1870</width>
+							<height>25</height>
+							<action>seek</action>
+							<onup>650</onup>
+							<ondown>650</ondown>
+							<textureslidernibfocus>progress-bar-focus.png</textureslidernibfocus>
+						</control>
+					</control>
+					<control type="progress" id="1">
+						<left>25</left>
+						<top>950</top>
+						<width>1870</width>
+						<height>22</height>
+						<info>PVR.EpgEventProgress</info>
+						<visible>VideoPlayer.Content(LiveTV)</visible>
+					</control>
+					<control type="slider" id="691">
+						<!-- Seek Slider -->
+						<left>25</left>
+						<top>950</top>
+						<width>1870</width>
+						<height>25</height>
+						<info>PVR.TimeshiftProgressPlayPos</info>
+						<action>pvr.seek</action>
+						<onup>650</onup>
+						<ondown>650</ondown>
+						<textureslidernibfocus>progress-bar-focus.png</textureslidernibfocus>
+						<visible>VideoPlayer.Content(LiveTV)</visible>
+					</control>
+				</control>
+			</control>
+			<control type="grouplist" id="650">
+				<!-- Default group OSD buttons -->
+				<centerleft>50%</centerleft>
+				<top>990</top>
+				<width>600</width>
+				<height>72</height>
+				<itemgap>20</itemgap>
+				<orientation>horizontal</orientation>
+				<align>center</align>
+				<ondown condition="!VideoPlayer.Content(LiveTV)">690</ondown>
+				<onup condition="!VideoPlayer.Content(LiveTV)">690</onup>
+				<onleft>621</onleft>
+				<control type="button" id="642">
+					<!-- Skip Bwd -->
+					<width>72</width>
+					<height>72</height>
+					<texturefocus>osd-btn-skipback-focus.png</texturefocus>
+					<texturenofocus>osd-btn-skipback.png</texturenofocus>
+					<onclick>PlayerControl(Previous)</onclick>
+					<include>focus-zoom</include>
+					<visible>!VideoPlayer.Content(LiveTV)</visible>
+				</control>				
+				<control type="button" id="654">
+					<!-- Rewind -->
+					<width>72</width>
+					<height>72</height>
+					<texturefocus>osd-btn-rewind-focus.png</texturefocus>
+					<texturenofocus>osd-btn-rewind.png</texturenofocus>
+					<onclick>PlayerControl(Rewind)</onclick>
+					<include>focus-zoom</include>
+					<visible>!VideoPlayer.Content(LiveTV)</visible>
+				</control>
+				<control type="togglebutton" id="655">
+					<!-- Play -->
+					<width>72</width>
+					<height>72</height>
+					<texturefocus>osd-btn-pause-focus.png</texturefocus>
+					<texturenofocus>osd-btn-pause.png</texturenofocus>
+					<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
+					<alttexturefocus>osd-btn-play-focus.png</alttexturefocus>
+					<alttexturenofocus>osd-btn-play.png</alttexturenofocus>
+					<onclick>PlayerControl(Play)</onclick>
+					<include>focus-zoom</include>
+					<visible>!VideoPlayer.Content(LiveTV)</visible>
+				</control>
+				<control type="button" id="656">
+					<!-- Stop -->
+					<width>72</width>
+					<height>72</height>
+					<texturefocus>osd-btn-stop-focus.png</texturefocus>
+					<texturenofocus>osd-btn-stop.png</texturenofocus>
+					<onclick>PlayerControl(Stop)</onclick>
+					<include>focus-zoom</include>
+				</control>
+				<control type="button" id="657">
+					<!-- Fast Forward -->
+					<width>72</width>
+					<height>72</height>
+					<texturefocus>osd-btn-fastfwd-focus.png</texturefocus>
+					<texturenofocus>osd-btn-fastfwd.png</texturenofocus>
+					<onclick>PlayerControl(Forward)</onclick>
+					<include>focus-zoom</include>
+					<visible>!VideoPlayer.Content(LiveTV)</visible>
+				</control>
+				<control type="button" id="662">
+					<!-- Skip Fwd -->
+					<width>72</width>
+					<height>72</height>
+					<texturefocus>osd-btn-skipfwd-focus.png</texturefocus>
+					<texturenofocus>osd-btn-skipfwd.png</texturenofocus>
+					<onclick>PlayerControl(Next)</onclick>
+					<include>focus-zoom</include>
+					<visible>!VideoPlayer.Content(LiveTV)</visible>
+				</control>	
+				<control type="button" id="655">
+					<!-- EPG Menu -->
+					<width>72</width>
+					<height>72</height>
+					<texturefocus>osd-btn-guide-focus.png</texturefocus>
+					<texturenofocus>osd-btn-guide.png</texturenofocus>
+					<onclick>Dialog.Close(VideoOSD)</onclick>
+					<onclick>ActivateWindow(PVROSDChannels)</onclick>
+					<include>focus-zoom</include>
+					<visible>VideoPlayer.Content(livetv) + VideoPlayer.HasEPG</visible>
+				</control>
+				<!--2experimental button epg -(guide)info channel
+				aquí se muestra el png en los botones y muestra guia al click-->
+			<control type="button" id="983">
+				<!-- EPG Menu -->
+				<width>72</width>
+				<height>72</height>
+				<texturefocus>osdchannelguidefo.png</texturefocus>
+				<texturenofocus>osdchannelguidenf.png</texturenofocus>
+				<onclick>Dialog.Close(VideoOSD)</onclick>
+				<!--<onclick>ActivateWindow(tvguide)</onclick>-->
+				<onclick>ActivateWindow(pvrchannelguide)</onclick>
+			<!--<include>PVRChannelNumberInput</include>-->
+				<include>focus-zoom</include>
+				<visible>VideoPlayer.Content(livetv)</visible>
+			</control>
+			<!-- -->
+			<control type="button" id="984">
+				<!-- EPG Menu -->
+				<width>72</width>
+				<height>72</height>
+				<texturefocus>osdguidefo.png</texturefocus>
+				<texturenofocus>osdguidenf.png</texturenofocus>
+				<onclick>Dialog.Close(VideoOSD)</onclick>
+				<!--<onclick>ActivateWindow(tvguide)</onclick>-->
+				<onclick>ActivateWindow(tvguide)</onclick>
+			<!--<include>PVRChannelNumberInput</include>-->
+				<include>focus-zoom</include>
+				<visible>VideoPlayer.Content(livetv)</visible>
+			</control>
+			<!-- -->
+				<control type="button" id="675">
+					<!-- Channel Up -->
+					<width>72</width>
+					<height>72</height>
+					<texturefocus flipx="true">osd-btn-channelup-focus.png</texturefocus>
+					<texturenofocus flipx="true">osd-btn-channelup.png</texturenofocus>
+					<onclick>ChannelUp</onclick>
+					<include>focus-zoom</include>
+					<visible>VideoPlayer.Content(LiveTV)</visible>
+				</control>
+				<control type="button" id="676">
+					<!-- Channel Down -->
+					<width>72</width>
+					<height>72</height>
+					<texturefocus>osd-btn-channeldown-focus.png</texturefocus>
+					<texturenofocus>osd-btn-channeldown.png</texturenofocus>
+					<onclick>ChannelDown</onclick>
+					<include>focus-zoom</include>
+					<visible>VideoPlayer.Content(LiveTV)</visible>
+				</control>
+			</control>	
+			<control type="grouplist" id="621">
+				<left>30</left>
+				<top>990</top>
+				<width>600</width>
+				<height>72</height>
+				<itemgap>15</itemgap>
+				<orientation>horizontal</orientation>
+				<align>left</align>
+				<ondown condition="!VideoPlayer.Content(LiveTV)">690</ondown>
+				<ondown condition="VideoPlayer.Content(LiveTV)">691</ondown>
+				<onright>650</onright>
+				<control type="button" id="633">
+					<!-- Subtitles Menu -->
+					<width>72</width>
+					<height>72</height>
+					<texturenofocus>osd-btn-subtitle.png</texturenofocus>
+					<texturefocus>osd-btn-subtitle-focus.png</texturefocus>
+					<onclick>ActivateWindow(osdsubtitlesettings)</onclick>
+					<include>focus-zoom</include>
+					<visible>Player.HasVideo</visible>
+				</control>
+				<control type="button" id="634">
+					<!-- Audio Menu -->
+					<width>72</width>
+					<height>72</height>
+					<texturefocus>osd-btn-audio-focus.png</texturefocus>
+					<texturenofocus>osd-btn-audio.png</texturenofocus>
+					<onclick>ActivateWindow(osdaudiosettings)</onclick>
+					<include>focus-zoom</include>
+				</control>
+				<control type="button" id="635">
+					<!-- Video Menu -->
+					<width>72</width>
+					<height>72</height>
+					<texturefocus>osd-btn-video-focus.png</texturefocus>
+					<texturenofocus>osd-btn-video.png</texturenofocus>
+					<onclick>ActivateWindow(osdvideosettings)</onclick>
+					<include>focus-zoom</include>
+					<visible>Player.HasVideo</visible>
+				</control>
+				<control type="button" id="636">
+					<!-- Info -->
+					<width>72</width>
+					<height>72</height>
+					<texturefocus>osd-btn-processinfo-focus.png</texturefocus>
+					<texturenofocus>osd-btn-proceesinfo.png</texturenofocus>
+					<onclick>ActivateWindow(playerprocessinfo)</onclick>
+					<include>focus-zoom</include>
+				</control>
+				<control type="button" id="637">
+					<!-- Fullscreen -->
+					<width>72</width>
+					<height>72</height>
+					<texturefocus>osd-btn-zoom-focus.png</texturefocus>
+					<texturenofocus>osd-btn-zoom.png</texturenofocus>
+					<onclick>Close</onclick>
+					<onclick>FullScreen</onclick>
+					<include>focus-zoom</include>
+				</control>
+				<control type="button" id="638">
+					<!-- Close -->
+					<width>72</width>
+					<height>72</height>
+					<texturefocus>osd-btn-close-focus.png</texturefocus>
+					<texturenofocus>osd-btn-close.png</texturenofocus>
+					<onclick>Close</onclick>
+					<include>focus-zoom</include>
+					<visible>Skin.HasSetting(menulittle)</visible>
+				</control>
+				<control type="button" id="639">
+					<!-- Teletext -->
+					<width>72</width>
+					<height>72</height>
+					<texturenofocus>osd-btn-teletext.png</texturenofocus>
+					<texturefocus>osd-btn-teletext-focus.png</texturefocus>
+					<onclick>Dialog.Close(VideoOSD)</onclick>
+					<onclick>ActivateWindow(Teletext)</onclick>
+					<include>focus-zoom</include>
+					<visible>VideoPlayer.HasTeletext</visible>
+				</control>				
+			</control>
+		</control>
+	</controls>
+</window>

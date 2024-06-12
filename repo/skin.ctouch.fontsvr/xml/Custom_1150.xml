@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window type="dialog" id="1150">
+	<!--<coordinates>
+		<left>0</left>
+		<top>0</top>
+	</coordinates>-->
+	<onload condition="Skin.HasSetting(custominfo)">AlarmClock(custominfo,Dialog.Close(1150),00:20,silent)</onload>
+	<!--<onunload>Skin.SetBool(custominfo)</onunload>-->
+	<controls>
+		<control type="group">
+			<left>0</left>
+			<width>100%</width>
+			<top>0</top>
+			<height>100%</height>
+			<visible>Control.HasFocus(1) | Control.HasFocus(2)</visible>
+		</control>
+		<control type="image">
+			<animation effect="fade" delay="5000" start="0" end="100" time="1000" condition="true">Conditional</animation>
+			<include>fullscreenimage</include>
+			<texture>background-mask-set.png</texture>
+			<aspectratio>scale</aspectratio>
+		</control>
+		<control type="button" id="2">
+			<!-- Touch mouse close button -->
+			<onup>1</onup>
+			<ondown>1</ondown>
+			<onright>1</onright>
+			<onleft>1</onleft>
+			<right>15</right>
+			<bottom>15</bottom>
+			<width>180</width>
+			<height>75</height>
+			<!--<texturefocus colordiffuse="$VAR[AccentColor]">backtransparent.png</texturefocus>
+			<texturenofocus colordiffuse="midgrey">backtransparent.png</texturenofocus>-->
+			<texturefocus colordiffuse="$VAR[AccentColor]">button-default-focus_back.png</texturefocus>
+			<texturenofocus colordiffuse="midgrey">backtransparent.png</texturenofocus>
+			<onclick>Dialog.Close(1150)</onclick>
+			<align>center</align>
+			<aligny>center</aligny>
+			<label>CERRAR</label>
+			<font>ctouch19</font>
+			<!--<visible>Skin.HasSetting(menulittle)</visible>-->
+		</control>
+		<control type="group">
+			<centerleft>50%</centerleft>
+			<align>center</align>
+			<aligny>center</aligny>
+			<width>1000</width><!--1050-800-->
+			<top>300</top>
+			<height>650</height>
+			<control type="group">
+				<onright>2</onright>
+				<onleft>2</onleft>
+				<onup>2</onup>
+				<ondown>2</ondown>
+				<onclick>Dialog.Close(1150)</onclick>
+				<!--<control type="image">mando
+					<width>152</width>
+					<height>500</height>
+					<texture>ok.png</texture>
+				</control>-->
+				<!--button cerrar grande encima texto-->
+				<control type="button" id="1">
+				<onup>2</onup>
+			    <ondown>2</ondown>
+				<onright>2</onright>
+				<onleft>2</onleft>
+				<width>1000</width>
+			    <height>600</height>
+				<texturefocus border="14" colordiffuse="$VAR[AccentColor]">backtransparent.png</texturefocus>
+			  <texturenofocus border="14" colordiffuse="midgrey">backtransparent.png</texturenofocus>
+			  <onclick>Dialog.Close(1150)</onclick>
+			  <align>center</align>
+			  <aligny>center</aligny>
+			  <label></label>
+			  <font>ctouch19</font>
+				</control>
+				<control type="textbox">
+				<centerleft>50%</centerleft>
+					<!--<left>30</left>-->
+					<width>900</width>
+					<height>600</height>
+					<scroll>true</scroll>
+					<autoscroll>true</autoscroll>
+				   <align>center</align>
+			       <aligny>center</aligny>
+					<font>font14</font>
+					<label>Instala los siguientes addons que nutrirán de contenido y otras funciones al Skin.
+Al instalar algunos addons primero pedirá instalar su repositorio y después el addon.[CR]
+[B][COLOR magenta]Si tu dispositivo es Windows[/B][/COLOR], después de instalar Winner, pulsa de nuevo para que descargue los módulos Acestream para poder ver los enlaces deportivos.
+[B][COLOR green]Si tu dispositivo es Android[/B][/COLOR], descarga Acestream desde stva.es[CR]</label>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

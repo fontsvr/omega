@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window id="5111">
+    <defaultcontrol>303</defaultcontrol>
+	<onload condition="System.HasAddon(plugin.video.palantir2)">Skin.SetBool(widgets-palantir-myseries)</onload>
+	<onload condition="System.HasAddon(plugin.video.palantir2)">Skin.SetBool(widgets-palantir-pelis1)</onload>
+	<onload condition="System.HasAddon(plugin.video.palantir2)">Skin.SetBool(widgets-palantir-pelis2)</onload>
+	<onload condition="System.HasAddon(plugin.video.palantir2)">Skin.SetBool(widgets-palantir-series1)</onload>
+	<onload condition="System.HasAddon(plugin.video.palantir2)">Skin.SetBool(widgets-palantir-series2)</onload>
+	<onload condition="System.HasAddon(plugin.video.alfa)">Skin.SetBool(widgets-alfa-pelis1)</onload>
+	<onload condition="System.HasAddon(plugin.video.alfa)">Skin.SetBool(widgets-alfa-pelis2)</onload>
+	<onload condition="System.HasAddon(plugin.video.alfa)">Skin.SetBool(widgets-alfa-series1)</onload>
+	<onload condition="System.HasAddon(plugin.video.alfa)">Skin.SetBool(widgets-alfa-series2)</onload>
+	<onload condition="System.HasAddon(plugin.video.cristalazul)">Skin.SetBool(widgets-cristal-pelis1)</onload>
+	<onload condition="System.HasAddon(plugin.video.cristalazul)">Skin.SetBool(widgets-cristal-pelis2)</onload>
+	<onload condition="System.HasAddon(plugin.video.cristalazul)">Skin.SetBool(widgets-cristal-series1)</onload>
+	<onload condition="System.HasAddon(plugin.video.cristalazul)">Skin.SetBool(widgets-cristal-pelis2)</onload>
+<onload condition="System.HasAddon(plugin.video.cristalazul)">Skin.SetBool(cristalazul-items)</onload>
+	<onload condition="System.HasAddon(plugin.video.alfa)">Skin.SetBool(alfa-items)</onload>
+	<onload condition="System.HasAddon(plugin.video.balandro)">Skin.SetBool(balandro-items)</onload>
+	<onload condition="System.HasAddon(plugin.video.vavooto)">Skin.SetBool(vavoo-items)</onload>
+	<onload condition="System.HasAddon(plugin.video.Magellan_Matrix)">Skin.SetBool(vavoo-items)</onload>
+	<onload condition="System.HasAddon(plugin.video.tacones)">Skin.SetBool(tacones-items)</onload>
+	<onload condition="System.HasAddon(plugin.video.kodispaintv)">Skin.SetBool(tacones-items)</onload>
+	<onload condition="System.HasAddon(plugin.video.KovertidoTeamTvCine)">Skin.SetBool(kodivertido-items)</onload>
+	<onload condition="System.HasAddon(plugin.video.blackghost)">Skin.SetBool(blackghost-items)</onload>
+	<onload condition="System.HasAddon(plugin.video.palantir2)">Skin.SetBool(palantir-items)</onload>
+	<onload condition="System.HasAddon(plugin.video.winner)">Skin.SetBool(sportv-items)</onload>
+	<onload condition="System.HasAddon(plugin.video.moestv)">Skin.SetBool(sportv-items)</onload>
+	<onload condition="!System.HasAddon(plugin.video.cristalazul)">Skin.SetBool(buscador-cristal)</onload>
+	<onload condition="!System.HasAddon(plugin.video.palantir2)">Skin.SetBool(buscador-palantir)</onload>
+	<onload condition="!System.HasAddon(plugin.video.alfa)">Skin.SetBool(buscador-alfa)</onload>
+	<onload condition="!System.HasAddon(plugin.video.balandro)">Skin.SetBool(buscador-balandro)</onload>
+	<onload condition="!System.HasAddon(plugin.video.tacones)">Skin.SetBool(buscador-tacones)</onload>
+	<onload condition="!System.HasAddon(plugin.video.duffyou)">Skin.SetBool(buscador-duffyou)</onload>
+	<onload condition="!System.HasAddon(plugin.video.blackghost)">Skin.SetBool(buscador-blackghost)</onload>
+	<!--<onload condition="System.HasAddon(plugin.video.cristalazul)">Skin.SetBool(cristal-items)</onload>-->
+	<!--
+	<onload condition="System.HasAddon(plugin.video.alfa)">Skin.SetBool(widgets-alfa)</onload>
+	<onload condition="System.HasAddon(plugin.video.cristalazul)">Skin.SetBool(widgets-cristal)</onload>
+	<onload condition="System.HasAddon(plugin.video.palantir2)">Skin.SetBool(widgets-palantir)</onload>-->
+	
+	<!--<onload>Skin.SetBool(homemenu-widgets)</onload>-->
+
+	<onload>Skin.SetBool(homemenu-icon)</onload>
+	<onload>Skin.SetBool(background-visibiltyhigh)</onload>
+	<controls>
+		<include>background</include>
+		<control type="group">
+			<left>0</left>
+			<width>100%</width>
+			<top>0</top>
+			<height>100%</height>
+			<!--<visible>Control.HasFocus(303) | Control.HasFocus(304)</visible>-->
+			<visible>Control.HasFocus(303) | Control.HasFocus(304)</visible>
+			<control type="image">
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<texture background="true" fallback="special://skin/fanart.jpg" diffuse="diffuse/landscape.png">$INFO[Window.Property(Image_Preview)]</texture>
+			</control>
+		</control>
+		<control type="image">
+			<include>fullscreenimage</include>
+			<texture colordiffuse="mask-background-black">background-mask.png</texture>
+			<aspectratio>scale</aspectratio>
+		</control>
+		<control type="image">
+			<right>30</right>
+			<top>10</top>
+			<width>150</width>
+			<height>150</height>
+			<texture background="true">special://skin/resources/icon.png</texture>
+		</control>	
+		<control type="image">
+			<!-- Dialog background image -->
+			<centerleft>50%</centerleft>
+			<top>275</top>
+			<width>1400</width>
+			<height>765</height><!--765-->
+			<texture border="14" colordiffuse="midgrey">backtransparent.png</texture>
+		</control>
+		<control type="label">
+			<centerleft>50%</centerleft>
+			<width>1300</width>
+			<height>50</height>
+			<top>60</top>
+			<shadowcolor>black</shadowcolor>
+			<font>ctouch25w</font>
+			<align>center</align>
+			<label>Personaliza el Skin</label>
+			<textcolor>$VAR[AccentColor]</textcolor>
+		</control>
+		<control type="group">
+			<centerleft>50%</centerleft>
+			<height>25</height>
+			<width>1400</width>
+			<control type="textbox">
+				<top>130</top>
+				<width>1400</width>
+				<height>500</height>
+				<shadowcolor>black</shadowcolor>
+				<pagecontrol>3000</pagecontrol>
+				<font>font14</font>
+				<align>center</align>
+				<label>Personaliza tu Inicio. Después podrás cambiarlo si quieres, desde Ajustes de skin.
+Activa los items de Cristal, Alfa o Palantir para ver los accesos a estos addons en el Inicio</label>
+			</control>
+			<control type="grouplist" id="9000">
+				<orientation>vertical</orientation>
+				<left>50</left>
+				<onright>9001</onright><!--9001-->
+				<itemgap>10</itemgap>
+				<top>290</top><!--250-->
+				<height>680</height><!--715-->
+				<ondown>317</ondown><!--317-->
+				<width>600</width>
+				<align>center</align>
+					<control type="label" id="302"><!--302-->
+						<left>70</left>
+						<height>50</height>
+						<width>600</width>
+						<label>Tipo de Inicio</label>
+						<textcolor>$VAR[AccentColor]</textcolor>
+						<font>ctouch19</font>
+					</control>
+					<control type="radiobutton" id="303">
+						<width>600</width>
+						<height>70</height>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Inicio Iconos</label>
+						<font>font14</font>
+						<textwidth>500</textwidth>
+						<onclick>Skin.SetBool(homemenu-icon)</onclick>
+						<onclick>Skin.Reset(homemenu-widgets)</onclick>
+						<onclick>Skin.Reset(widgets-palantir)</onclick>
+						<onclick>Skin.Reset(widgets-alfa)</onclick>
+						<onclick>Skin.Reset(widgets-cristal)</onclick>
+					<onclick>Skin.Reset(widgets-balandro)</onclick>
+						<selected>Skin.HasSetting(homemenu-icon)</selected>
+						<radioposx>550</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+						<onfocus>SetProperty(Image_Preview,special://skin/resources/screenshot001.jpg)</onfocus>
+					</control>
+					<control type="radiobutton" id="304">
+						<width>600</width>
+						<height>70</height>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Inicio Widgets</label>
+						<textwidth>500</textwidth>
+						<onclick>Skin.SetBool(homemenu-widgets)</onclick>
+						<font>font14</font>
+						<onclick>Skin.Reset(homemenu-icon)</onclick>
+						<onclick>Skin.SetBool(widgets-palantir)</onclick>
+						<onclick>Skin.SetBool(widgets-alfa)</onclick>
+						<!--balandro-->
+						<onclick>Skin.SetBool(widgets-balandro)</onclick>
+						<onclick>Skin.SetBool(widgets-cristal)</onclick>
+						<selected>Skin.HasSetting(homemenu-widgets)</selected>
+						<radioposx>550</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+						<onfocus>SetProperty(Image_Preview,special://skin/resources/screenshot002.jpg)</onfocus>
+					</control>
+					<control type="label" id="305">
+						<left>70</left>
+						<height>50</height>
+						<width>600</width>
+						<label>Grupos de Items del Skin</label>
+						<textcolor>$VAR[AccentColor]</textcolor>
+						<font>ctouch19</font>
+					</control>
+					<control type="radiobutton" id="306">
+						<width>600</width>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Activar Items de Cristal Azul</label>
+						<textwidth>500</textwidth>
+						<onclick>Skin.ToggleSetting(cristalazul-items)</onclick><!--<onclick>Skin.ToggleSetting(cristal-items)</onclick>-->
+						<selected>Skin.HasSetting(cristalazul-items)</selected><!--<selected>Skin.HasSetting(cristal-items)</selected>-->
+						<font>font14</font>
+						<radioposx>550</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+						<height>70</height>
+					</control>
+					<control type="radiobutton" id="307">
+						<width>600</width>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Activar Items de Alfa</label>
+						<textwidth>500</textwidth>
+						<font>font14</font>
+						<onclick>Skin.ToggleSetting(alfa-items)</onclick>
+						<selected>Skin.HasSetting(alfa-items)</selected>
+						<radioposx>550</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+						<height>70</height>
+					</control><!--balandro; activar icons-->
+					<control type="radiobutton" id="319">
+						<width>600</width>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Activar Items de Balandro</label>
+						<textwidth>500</textwidth>
+						<font>font14</font>
+						<onclick>Skin.ToggleSetting(balandro-items)</onclick>
+						<selected>Skin.HasSetting(balandro-items)</selected>
+						<radioposx>550</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+						<height>70</height>
+					</control>
+					<control type="radiobutton" id="308">
+						<width>600</width>
+						<height>70</height>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Activar Items de Palantir</label>
+						<textwidth>500</textwidth>
+						<onclick>Skin.ToggleSetting(palantir-items)</onclick>
+						<font>font14</font>
+						<selected>Skin.HasSetting(palantir-items)</selected>
+						<radioposx>550</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+					</control>
+					<control type="radiobutton" id="309">
+						<width>600</width>
+						<height>70</height>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Activar Items de TV/Deportes</label>
+						<textwidth>500</textwidth>
+						<onclick>Skin.ToggleSetting(sportv-items)</onclick>
+						<font>font14</font>
+						<selected>Skin.HasSetting(sportv-items)</selected>
+						<radioposx>550</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+					</control>
+					<control type="radiobutton" id="320"><!--vavoo-->
+						<width>600</width>
+						<height>70</height>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Activar Vavoo y Magellan</label>
+						<textwidth>500</textwidth>
+						<onclick>Skin.ToggleSetting(vavoo-items)</onclick>
+						<font>font14</font>
+						<selected>Skin.HasSetting(vavoo-items)</selected>
+						<radioposx>550</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+					</control>
+					<control type="radiobutton" id="321"><!--tacones y kodispaintv-->
+						<width>600</width>
+						<height>70</height>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Activar Tacones y KodispainTV</label>
+						<textwidth>500</textwidth>
+						<onclick>Skin.ToggleSetting(tacones-items)</onclick>
+						<font>font14</font>
+						<selected>Skin.HasSetting(tacones-items)</selected>
+						<radioposx>550</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+					</control>
+					<control type="radiobutton" id="322"><!--kodivertidoteamTVCine-->
+						<width>600</width>
+						<height>70</height>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Activar KodivertidoteamTVCine</label>
+						<textwidth>500</textwidth>
+						<onclick>Skin.ToggleSetting(kodivertido-items)</onclick>
+						<font>font14</font>
+						<selected>Skin.HasSetting(kodivertido-items)</selected>
+						<radioposx>550</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+					</control>
+					<control type="radiobutton" id="323"><!--The Blackghost-->
+						<width>600</width>
+						<height>70</height>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Activar The Blackghost</label>
+						<textwidth>500</textwidth>
+						<onclick>Skin.ToggleSetting(blackghost-items)</onclick>
+						<font>font14</font>
+						<selected>Skin.HasSetting(blackghost-items)</selected>
+						<radioposx>550</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+					</control>
+			</control>
+			<control type="grouplist" id="9001">
+				<orientation>vertical</orientation>
+				<left>750</left>
+				<itemgap>10</itemgap>
+				<top>250</top>
+				<height>715</height>
+				<width>600</width>
+				<ondown>318</ondown><!--317-->
+				<onleft>9000</onleft>
+				<onup>318</onup>
+				<align>center</align>
+					<control type="label" id="310">
+						<left>70</left>
+						<height>70</height>
+						<width>600</width>
+						<label>Menú</label>
+						<textcolor>$VAR[AccentColor]</textcolor>
+						<font>ctouch19</font>
+					</control>
+					<control type="radiobutton" id="311">
+						<font>font14</font>
+						<width>600</width>
+						<height>70</height>
+						<texturenofocus/>
+						<include>settings-submenu-common</include>
+						<label>Botones Táctiles</label>
+						<textwidth>500</textwidth>
+						<onclick>Skin.ToggleSetting(menulittle)</onclick>
+						<selected>Skin.HasSetting(menulittle)</selected>
+						<radioposx>550</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+					</control>
+					<control type="radiobutton" id="312">
+						<font>font14</font>
+						<width>600</width>
+						<height>70</height>
+						<texturenofocus/>
+						<include>settings-submenu-common</include>
+						<label>Ocultar menú</label>
+						<textwidth>500</textwidth>
+						<onclick>Skin.ToggleSetting(menuoculto)</onclick>
+						<selected>Skin.HasSetting(menuoculto)</selected>
+						<radioposx>550</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+					</control>
+					<control type="radiobutton" id="313">
+						<font>font14</font>
+						<width>600</width>
+						<height>70</height>
+						<texturenofocus/>
+						<include>settings-submenu-common</include>
+						<label>Ocultar Icono del Addon</label>
+						<textwidth>500</textwidth>
+						<onclick>Skin.ToggleSetting(ocultar-addonicon)</onclick>
+						<selected>Skin.HasSetting(ocultar-addonicon)</selected>
+						<radioposx>550</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+					</control>
+					<control type="label" id="329">
+						<left>70</left>
+						<height>70</height>
+						<width>600</width>
+						<label>Grupos de Widgets del Skin</label>
+						<textcolor>$VAR[AccentColor]</textcolor>
+						<font>ctouch19</font>
+					</control>
+					<control type="radiobutton" id="314">
+						<width>600</width>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Activar Widgets de Cristal Azul</label>
+						<textwidth>500</textwidth>
+						<onclick>Skin.ToggleSetting(widgets-cristal)</onclick>
+						<selected>Skin.HasSetting(widgets-cristal)</selected>
+						<font>font14</font>
+						<radioposx>550</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+						<height>70</height>
+					</control>
+					<control type="radiobutton" id="315">
+						<width>600</width>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Activar Widgets de Alfa</label>
+						<textwidth>500</textwidth>
+						<font>font14</font>
+						<onclick>Skin.ToggleSetting(widgets-alfa)</onclick>
+						<selected>Skin.HasSetting(widgets-alfa)</selected>
+						<radioposx>550</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+						<height>70</height>
+					</control>
+					<control type="radiobutton" id="316">
+						<width>600</width>
+						<height>70</height>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Activar Widgets de Palantir</label>
+						<textwidth>500</textwidth>
+						<onclick>Skin.ToggleSetting(widgets-palantir)</onclick>
+						<font>font14</font>
+						<selected>Skin.HasSetting(widgets-palantir)</selected>
+						<radioposx>550</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+					</control>
+			</control>
+				<control type="button" id="317">
+					<centerleft>35%</centerleft>
+					<top>970</top>
+					<height>60</height>
+					<label>Volver</label>
+					<font>font14</font>
+					<textoffsetx>30</textoffsetx>
+					<onclick>Close</onclick>
+					<onclick>ActivateWindow(1130)</onclick>
+					<width>300</width>
+					<texturenofocus/>
+					<align>center</align>
+					<onright>318</onright>
+					<onleft>318</onleft>
+					<onup>323</onup><!--309-->
+					<ondown>303</ondown>
+				</control>
+				<control type="button" id="318">
+					<centerleft>65%</centerleft>
+					<top>970</top>
+					<height>60</height>
+					<label>Continuar</label>
+					<font>font14</font>
+					<textoffsetx>30</textoffsetx>
+					<onclick>Skin.SetBool(SetupInicio)</onclick>
+					<onclick>Close</onclick>
+					<onclick>ReplaceWindow(Home)</onclick>
+					<width>300</width>
+					<texturenofocus/>
+					<align>center</align>
+					<onright>317</onright>
+					<onleft>317</onleft>
+					<onup>316</onup>
+					<ondown>311</ondown>
+				</control>
+		</control>
+	</controls>
+</window>

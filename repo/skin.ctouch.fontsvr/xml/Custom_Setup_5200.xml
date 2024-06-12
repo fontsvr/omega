@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window type="dialog" id="5200">
+<coordinates>
+		<left>0</left>
+		<top>0</top>
+	</coordinates>
+	<onunload>Skin.SetBool(FirstPagina)</onunload>
+    <defaultcontrol>321</defaultcontrol>
+	<onload condition="!System.HasAddon(repository.reeebase)">InstallAddon(repository.rebase)</onload>
+	<onload condition="System.HasAddon(repository.rebase)">InstallAddon(repository.alfa-addon)</onload>
+	<onload condition="System.HasAddon(repository.rebase)">InstallAddon(repository.palantir2)</onload>
+	<onload condition="System.HasAddon(repository.rebase)">InstallAddon(repository.balandro)</onload>
+	<onload condition="System.HasAddon(repository.rebase)">InstallAddon(repository.magellan)</onload>
+	<onload condition="System.HasAddon(repository.rebase)">InstallAddon(repository.michaz)</onload>
+	<onload condition="System.HasAddon(repository.rebase)">InstallAddon(repository.luar)</onload>
+	<onload condition="System.HasAddon(repository.rebase)">InstallAddon(repository.theblackghost)</onload>
+	<onload condition="System.HasAddon(repository.rebase)">InstallAddon(repository.resolveurl)</onload>
+	<onload condition="System.HasAddon(repository.rebase)">InstallAddon(repository.stva)</onload>
+	<onload condition="System.HasAddon(repository.rebase)">InstallAddon(repository.KODIvertiDO_TEAM)</onload>
+	<!--<onload condition="System.HasAddon(repository.rebase)">InstallAddon(repository.fontsvr)</onload>-->
+	
+
+	<!--Al terminar de instalar addons o ultimo addon cierra-->
+	<!--<onload condition="!System.HasAddon(repository.stva)">InstallAddon(repository.stva)</onload>
+	<!--<onload condition="System.HasAddon(repository.stva)">Skin.SetBool(FirstPagina)</onload>-->
+	
+	<!--<onload condition="!System.HasAddon(repository.stva)">Skin.SetBool(SetupInicio)</onload>
+	<onload condition="!System.HasAddon(repository.stva)">ReplaceWindow(Home)</onload>-->
+	
+	<!--<onload condition="System.HasAddon(repository.rebase)">Close</onload>
+	<onload condition="System.HasAddon(repository.rebase)">ReplaceWindow(Custom_Setup_addons)</onload>-->
+	
+	<!--
+	<onload condition="System.HasAddon(plugin.video.alfa)">Skin.SetBool(widgets-alfa)</onload>
+	<onload condition="System.HasAddon(plugin.video.cristalazul)">Skin.SetBool(widgets-cristal)</onload>
+	<onload condition="System.HasAddon(plugin.video.palantir2)">Skin.SetBool(widgets-palantir)</onload>-->
+	
+	<!--<onload>Skin.SetBool(homemenu-widgets)</onload>-->
+    <onload>Skin.SetBool(etiquetas-visibles)</onload>
+	<onload>Skin.SetBool(homemenu-icon)</onload>
+	<onload>Skin.SetBool(background-visibiltyhigh)</onload>
+	<controls>
+		<include>background</include>
+		<control type="group">
+			<left>0</left>
+			<width>100%</width>
+			<top>0</top>
+			<height>100%</height>
+			<!--<visible>Control.HasFocus(303) | Control.HasFocus(304)</visible>-->
+			<visible>Control.HasFocus(321)</visible>
+			<control type="image">
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<texture background="true" fallback="special://skin/fanart.jpg" diffuse="diffuse/landscape.png">$INFO[Window.Property(Image_Preview)]</texture>
+			</control>
+		</control>
+		<control type="image">
+			<include>fullscreenimage</include>
+			<texture colordiffuse="mask-background-black">background-mask.png</texture>
+			<aspectratio>scale</aspectratio>
+		</control>
+		<control type="image">
+			<right>30</right>
+			<top>10</top>
+			<width>150</width>
+			<height>150</height>
+			<texture background="true">special://skin/resources/icon.png</texture>
+		</control>	
+		<control type="image">
+			<!-- Dialog background image -->
+			<centerleft>50%</centerleft>
+			<top>200</top><!--275-->
+			<width>1400</width>
+			<height>800</height><!--790-765-->
+			<texture border="14" colordiffuse="midgrey">backtransparent.png</texture>
+		</control>
+		<control type="label">
+			<centerleft>50%</centerleft>
+			<width>1300</width>
+			<height>50</height>
+			<top>60</top>
+			<shadowcolor>black</shadowcolor>
+			<font>ctouch25w</font>
+			<align>center</align>
+			<label>Personaliza el Skin</label>
+			<textcolor>$VAR[AccentColor]</textcolor>
+		</control>
+		<control type="group">
+			<centerleft>50%</centerleft>
+			<height>25</height>
+			<width>1400</width>
+			<control type="textbox">
+				<top>130</top>
+				<width>1400</width>
+				<height>500</height>
+				<shadowcolor>black</shadowcolor>
+				<pagecontrol>3000</pagecontrol>
+				<font>font14</font>
+				<align>center</align>
+				<label>Instala Repositorios (paso 1)</label>
+			</control>
+			
+			<control type="group">
+			<centerleft>50%</centerleft>
+			<top>130</top><!--225-->
+			<height>840</height><!--840-900-->
+			<width>1380</width>
+			<control type="grouplist" id="9000">
+				<orientation>vertical</orientation>
+			<onright>007</onright>
+			<onleft>007</onleft>
+				<left>0</left>
+				<itemgap>7</itemgap>
+				<top>100</top>
+				<width>1320</width>
+				<align>center</align>
+				<font>font14</font>
+				<control type="radiobutton" id="321">
+					<font>font14</font>
+					<label>Repositorio Rebase $INFO[System.AddonVersion(repository.rebase),(,)][COLOR midgrey] - Addons[/COLOR]</label>
+					<height>60</height>
+					<radiowidth>100</radiowidth>
+					<radioheight>100</radioheight>
+					<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+					<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+					<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+					<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+					<texturenofocus/>
+					<radioposx>1220</radioposx>
+					<onclick condition="!System.HasAddon(repository.rebase)">InstallAddon(repository.rebase)</onclick>
+					<selected>System.HasAddon(repository.rebase)</selected>
+					<include>DefaultSettingButton</include>
+				</control>
+				<control type="radiobutton" id="322">
+					<radioposx>1220</radioposx>
+					<font>font14</font>
+					<height>60</height>
+					<label>Repositorio Alfa $INFO[System.AddonVersion(repository.alfa-addon),(,)][COLOR midgrey] - Películas, Series, Documentales, Dibujos y Novelas[/COLOR]</label>
+					<radiowidth>100</radiowidth>
+					<radioheight>100</radioheight>
+					<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+					<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+					<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+					<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>																		
+					<onclick condition="!System.HasAddon(repository.alfa-addon)">InstallAddon(repository.alfa-addon)</onclick>																		
+					<texturenofocus/>
+					<selected>System.HasAddon(repository.alfa-addon)</selected>
+					<include>DefaultSettingButton</include>
+				</control>
+				<control type="radiobutton" id="324">
+					<radioposx>1220</radioposx>
+					<font>font14</font>
+					<label>Repositorio Palantir 2 $INFO[System.AddonVersion(repository.palantir2),(,)][COLOR midgrey] - Pelis, Series, Documentales[/COLOR]</label>
+					<height>60</height>
+					<radiowidth>100</radiowidth>
+					<radioheight>100</radioheight>
+					<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+					<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+					<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+					<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>																		
+					<onclick condition="!System.HasAddon(repository.palantir2)">InstallAddon(repository.palantir2)</onclick>																		
+					<texturenofocus/>
+					<selected>System.HasAddon(repository.palantir2)</selected>
+					<include>DefaultSettingButton</include>
+				</control>
+				<!--Balandro-->
+				<control type="radiobutton" id="330">
+					<radioposx>1220</radioposx>
+					<font>font14</font>
+					<label>Repositorio Balandro $INFO[System.AddonVersion(repository.balandro),(,)][COLOR midgrey] - Pelis, Series, Documentales[/COLOR]</label>
+					<height>60</height>
+					<radiowidth>100</radiowidth>
+					<radioheight>100</radioheight>
+					<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+					<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+					<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+					<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+					<onclick condition="!System.HasAddon(repository.balandro)">InstallAddon(repository.balandro)</onclick>																																			
+					<texturenofocus/>
+					<selected>System.HasAddon(repository.balandro)</selected>
+					<include>DefaultSettingButton</include>
+				</control>
+				<!--<control type="radiobutton" id="331">
+					<radioposx>1220</radioposx>
+					<font>font14</font>
+					<label>Repositorio fontsVR $INFO[System.AddonVersion(repository.fontsvr),(,)][COLOR midgrey] - Addons[/COLOR]</label>
+					<height>60</height>
+					<radiowidth>100</radiowidth>
+					<radioheight>100</radioheight>
+					<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+					<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+					<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+					<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+					<onclick condition="!System.HasAddon(repository.fontsvr)">InstallAddon(repository.fontsvr)</onclick>																																			
+					<texturenofocus/>
+					<selected>System.HasAddon(repository.fontsvr)</selected>
+					<include>DefaultSettingButton</include>
+				</control>-->
+				
+				<control type="radiobutton" id="325">
+					<radioposx>1220</radioposx>
+					<font>font14</font>
+					<height>60</height>
+					<label>Repositorio Magellan $INFO[System.AddonVersion(repository.magellan),(,)][COLOR grey] - TV Premium[/COLOR]</label>
+					<radiowidth>100</radiowidth>
+					<radioheight>100</radioheight>
+					<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+					<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+					<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+					<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+					<onclick condition="!System.HasAddon(repository.magellan)">InstallAddon(repository.magellan)</onclick>																		
+					<texturenofocus/>
+					<selected>System.HasAddon(repository.magellan)</selected>
+					<include>DefaultSettingButton</include>
+				</control>
+				<control type="radiobutton" id="326">
+					<font>font14</font>
+					<radioposx>1220</radioposx>
+					<height>60</height>
+					<label>Repositorio Michaz $INFO[System.AddonVersion(repository.michaz),(,)][COLOR midgrey] - TV Premium VAVOO[/COLOR]</label>
+					<radiowidth>100</radiowidth>
+					<radioheight>100</radioheight>
+					<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+					<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+					<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+					<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+					<onclick condition="!System.HasAddon(repository.michaz)">InstallAddon(repository.michaz)</onclick>																																	
+					<texturenofocus/>
+					<selected>System.HasAddon(repository.michaz)</selected>
+					<include>DefaultSettingButton</include>
+				  <ondown>308</ondown>
+				  <onright>984</onright>
+				</control>
+				<control type="radiobutton" id="327">
+					<font>font14</font>
+					<label>Repositorio Luar $INFO[System.AddonVersion(repository.luar),(,)][COLOR grey] - Addons de todo tipo[/COLOR]</label>
+					<radioposx>1220</radioposx>
+					<height>60</height>
+					<radiowidth>100</radiowidth>
+					<radioheight>100</radioheight>
+					<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+					<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+					<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+					<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+					<onclick condition="!System.HasAddon(repository.luar)">InstallAddon(repository.luar)</onclick>																																				
+					<selected>System.HasAddon(repository.luar)</selected>
+					<texturenofocus/>
+					<include>DefaultSettingButton</include>
+				</control>
+				<control type="radiobutton" id="328">
+					<radioposx>1220</radioposx>
+					<font>font14</font>
+					<height>60</height>
+					<label>Repositorio Theblackghost $INFO[System.AddonVersion(repository.theblackghost),(,)][COLOR lightgrey] - Pelis y Series[/COLOR]</label>
+					<radiowidth>100</radiowidth>
+					<radioheight>100</radioheight>
+					<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+					<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+					<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+					<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+					<onclick condition="!System.HasAddon(repository.theblackghost)">InstallAddon(repository.theblackghost)</onclick>																		
+					<texturenofocus/>
+					<selected>System.HasAddon(repository.theblackghost)</selected>
+					<include>DefaultSettingButton</include>
+				</control>
+				<control type="radiobutton" id="329">
+					<radioposx>1220</radioposx>
+					<font>font14</font>
+					<height>60</height>
+					<label>Repositorio Resolveurl $INFO[System.AddonVersion(repository.resolveurl),(,)][COLOR lightgrey] - Para Cristal[/COLOR]</label>
+					<radiowidth>100</radiowidth>
+					<radioheight>100</radioheight>
+					<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+					<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+					<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+					<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+					<onclick condition="!System.HasAddon(repository.resolveurl)">InstallAddon(repository.resolveurl)</onclick>																		
+					<texturenofocus/>
+					<selected>System.HasAddon(repository.resolveurl)</selected>
+					<include>DefaultSettingButton</include>
+				</control>
+				<!--magellan type="button" -->
+				<control type="radiobutton" id="332">
+						<radioposx>1220</radioposx>
+					    <font>font14</font>
+						<label>Repositorio STVA $INFO[System.AddonVersion(repository.stva),(,)] [COLOR grey]- Addons[/COLOR]</label>
+						<height>60</height>
+					    <radiowidth>100</radiowidth>
+					    <radioheight>100</radioheight>
+						<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+						<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+						<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+						<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+						<onclick condition="!System.HasAddon(repository.stva)">InstallAddon(repository.stva)</onclick>
+					    <texturenofocus/>
+					    <selected>System.HasAddon(repository.stva)</selected>
+						<include>DefaultSettingButton</include>
+					</control>
+				<control type="button" id="333">
+					<radioposx>1220</radioposx>
+					<font>font14</font>
+					<height>60</height>
+					<label>Repositorio.KODIvertiDO_TEAM $INFO[System.AddonVersion(repository.KODIvertiDO_TEAM),(,)][COLOR midgrey] - Pelis - Deportes (Acestream Necesario)[/COLOR]</label>
+					<radiowidth>100</radiowidth>
+					<radioheight>100</radioheight>
+					<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+					<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+					<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+					<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+					<onclick condition="!System.HasAddon(repository.KODIvertiDO_TEAM)">InstallAddon(repository.KODIvertiDO_TEAM)</onclick>																		
+					<texturenofocus/>
+					<selected>System.HasAddon(repository.KODIvertiDO_TEAM)</selected>
+					<include>DefaultSettingButton</include>
+				</control>	
+				<control type="button" id="308">
+				  <onup>333</onup>
+				  <onright>333</onright>
+				  <onleft>333</onleft>
+				  <ondown>321</ondown>
+					<top>70</top>
+					<height>60</height>
+					<label>Continuar</label>
+					<font>font14</font>
+					<textoffsetx>30</textoffsetx>
+					<texturenofocus/>
+					<onclick>Close</onclick>
+					<onclick>Skin.SetBool(FirstPagina,true)</onclick>
+					<!--<onclick>ActivateWindow(1130)</onclick>-->
+					<!--<onclick>Skin.SetBool(FirstPagina)</onclick>
+					<onclick>Skin.SetBool(SetupInicio)</onclick>
+					<onclick>ReplaceWindow(Home)</onclick>-->
+					<onclick>Close</onclick>
+					<onclick>ReplaceWindow(1130)</onclick>
+					<!--<onclick>ReplaceWindow(Custom_Setup_Addons)</onclick>-->
+					<align>center</align>
+				</control>
+			</control>
+		</control>
+	
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog">
+	<defaultcontrol always="true">450</defaultcontrol>
+	<include>window-openclose</include>
+	<controls>
+			<include>background</include>
+		<control type="button" id="125">
+			<!-- Touch mouse close button -->
+			<right>15</right>
+			<top>10</top>
+			<width>180</width>
+			<height>75</height>
+			<ondown>450</ondown>
+			<texturefocus colordiffuse="$VAR[AccentColor]">button-default-focus_back.png</texturefocus>
+			<texturenofocus colordiffuse="midgrey">backtransparent.png</texturenofocus>
+			<onclick>Dialog.Close(Favourites)</onclick>
+			<align>center</align>
+			<aligny>center</aligny>
+			<label>Cerrar</label>
+			<font>ctouch19</font>
+			<visible>Skin.HasSetting(menulittle)</visible>
+		</control>
+			<control type="label">
+				<!-- Favorites heading -->
+				<centerleft>45%</centerleft>
+				<top>10</top>
+				<width>auto</width>
+				<height>108</height>
+				<width>100%</width>
+				<label>$LOCALIZE[1036]</label>
+				<font>ctouch23w</font>
+				<wrapmultiline>true</wrapmultiline>
+			</control>
+		<control type="panel" id="450">
+			<left>175</left>
+			<top>-10</top>
+			<width>1770</width>
+			<height>1080</height>
+			<onleft condition="Skin.HasSetting(lock-screensettings)">450</onleft>
+			<onright>$VAR[ListScrollNavVideo]</onright>
+			<onup>125</onup>
+			<visible>!Container.Content(addons)</visible>
+			<ondown>450</ondown>
+			<pagecontrol>423</pagecontrol>
+			<itemlayout height="325" width="550">
+				<control type="group">
+					<control type="image">
+						<left>10</left>
+						<top>125</top>
+						<width>460</width>
+						<height>280</height>
+						<texture background="true">diffuse/landscape_shadow.png</texture>
+						<aspectratio scalediffuse="false">stretch</aspectratio>
+						<visible>$EXP[isnotParentFolder]</visible>	
+					</control>
+					<control type="image">
+						<left>15</left>
+						<top>130</top>
+						<width>450</width>
+						<height>270</height>
+						<align>center</align>								
+						<texture diffuse="diffuse/landscape.png" background="true" fallback="DefaultVideo.png">$VAR[IconPoster]</texture>
+						<bordersize>5</bordersize>
+						<aspectratio scalediffuse="false" align="center" aligny="center">scale</aspectratio>
+						<visible>$EXP[isnotDefaultIcon]</visible>
+					</control>
+					<control type="image">
+						<left>15</left>
+						<top>130</top>
+						<width>450</width>
+						<height>270</height>
+						<align>center</align>								
+						<texture diffuse="diffuse/landscape	.png" background="true" fallback="DefaultVideo.png">$VAR[IconPoster]</texture>
+						<bordersize>5</bordersize>
+						<aspectratio scalediffuse="false" align="center" aligny="center">scale</aspectratio>
+						<visible>$EXP[isDefaultIcon] + $EXP[isParentFolder]</visible>	
+					</control>			
+					<control type="image">
+						<left>15</left>
+						<top>130</top>
+						<width>450</width>
+						<height>270</height>
+						<align>center</align>								
+						<texture diffuse="diffuse/landscape.png" background="true">$INFO[ListItem.Art(fanart)]</texture>
+						<bordersize>5</bordersize>
+						<aspectratio scalediffuse="false" fallback="DefaultVideo.png">stretch</aspectratio>
+						<visible>[Container.Content(movies) | Container.Content(tvshows)] | $EXP[isParentFolder]</visible>
+					</control>		
+					<control type="image">
+						<top>135</top>
+						<right>10</right>
+						<width>50</width>
+						<height>50</height>
+						<texture>$VAR[Overlay_Corner]</texture>
+					</control>																							
+					<control type="image">
+						<!-- Watched Overlay -->
+						<right>12</right>
+						<top>135</top>
+						<width>28</width>
+						<height>28</height>
+						<texture>$VAR[Overlay]</texture>
+					</control>
+					<control type="label">
+						<left>20</left>
+						<top>385</top>
+						<width>420</width>
+						<height>62</height>
+						<font>ctouch16</font>
+						<textcolor>listselected-text</textcolor>						
+						<align>center</align>
+						<include>scrolltext</include>
+						<label>$INFO[ListItem.Label]</label>
+					</control>									
+					<include content="listitem-count">
+						<param name="left" value="407" />
+						<param name="top" value="100" />
+						<param name="count" value="ListItem.Property(UnwatchedEpisodes)" />
+						<param name="size" value="65" />
+					</include>
+				</control>
+			</itemlayout>
+			<focusedlayout height="325" width="550">
+				<control type="group">
+					<control type="image">
+						<left>15</left>
+						<top>130</top>
+						<width>450</width>
+						<height>270</height>
+						<texture background="true">diffuse/landscape_shadow.png</texture>
+						<aspectratio scalediffuse="false">stretch</aspectratio>
+						<bordertexture diffuse="diffuse/landscape.png" colordiffuse="$VAR[AccentColor]">homeiconlite_landscape.png</bordertexture>
+					</control>
+					<control type="image">
+						<left>15</left>
+						<top>130</top>
+						<width>450</width>
+						<height>270</height>
+						<align>center</align>								
+						<texture diffuse="diffuse/landscape.png" background="true" fallback="DefaultVideo.png">$VAR[IconPoster]</texture>
+						<bordersize>5</bordersize>
+						<aspectratio scalediffuse="false" align="center" aligny="center">scale</aspectratio>
+						<visible>$EXP[isnotDefaultIcon]</visible>
+					</control>
+					<control type="image">
+						<left>15</left>
+						<top>130</top>
+						<width>450</width>
+						<height>270</height>
+						<align>center</align>								
+						<texture diffuse="diffuse/landscape	.png" background="true" fallback="DefaultVideo.png">$VAR[IconPoster]</texture>
+						<bordersize>5</bordersize>
+						<aspectratio scalediffuse="false" align="center" aligny="center">scale</aspectratio>
+						<visible>$EXP[isDefaultIcon] + $EXP[isParentFolder]</visible>	
+					</control>			
+					<control type="image">
+						<left>15</left>
+						<top>130</top>
+						<width>450</width>
+						<height>270</height>
+						<align>center</align>								
+						<texture diffuse="diffuse/landscape.png" background="true">$INFO[ListItem.Art(fanart)]</texture>
+						<bordersize>5</bordersize>
+						<aspectratio scalediffuse="false" fallback="DefaultVideo.png">scale</aspectratio>
+						<visible>[Container.Content(movies) | Container.Content(tvshows)] | $EXP[isParentFolder]</visible>
+					</control>		
+					<control type="image">
+						<top>135</top>
+						<right>10</right>
+						<width>50</width>
+						<height>50</height>
+						<texture>$VAR[Overlay_Corner]</texture>
+					</control>																							
+					<control type="image">
+						<!-- Watched Overlay -->
+						<right>12</right>
+						<top>135</top>
+						<width>28</width>
+						<height>28</height>
+						<texture>$VAR[Overlay]</texture>
+					</control>
+					<control type="label">
+						<left>20</left>
+						<top>385</top>
+						<width>420</width>
+						<height>62</height>
+						<font>ctouch16</font>
+						<textcolor>listselected-text</textcolor>						
+						<align>center</align>
+						<include>scrolltext</include>
+						<label>$INFO[ListItem.Label]</label>
+					</control>									
+					<include content="listitem-count">
+						<param name="left" value="407" />
+						<param name="top" value="100" />
+						<param name="count" value="ListItem.Property(UnwatchedEpisodes)" />
+						<param name="size" value="65" />
+					</include>
+				</control>												
+			</focusedlayout>
+		</control>	
+		<control type="scrollbar" id="423">
+			<left>1900</left>
+			<top>130</top>
+			<width>18</width>
+			<height>935</height>
+			<onleft>450</onleft>
+			<animation condition="!Control.HasFocus(423) + !Container.Scrolling + !String.IsEqual(Skin.String(show-scrollbar),$LOCALIZE[31875])" effect="fade" start="100" end="0" time="200" reversible="true">Conditional</animation>
+			<visible>$EXP[isEnabledScrollbar]</visible>
+		</control>
+		<control type="group">
+			<control type="image">
+				<include>fullscreenimage</include>
+				<texture>background-mask-set.png</texture>
+				<aspectratio>scale</aspectratio>
+				<visible>Window.IsVisible(1136)</visible>
+			</control>		
+			<include>hora</include>	
+		</control>
+	</controls>
+</window>

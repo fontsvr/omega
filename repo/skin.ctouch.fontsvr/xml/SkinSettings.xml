@@ -1,0 +1,3237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+	<defaultcontrol always="true">999</defaultcontrol>
+	<controls>
+		<include>background</include>
+		<include>playerplay</include>
+		<control type="image">
+			<!-- Dialog background image -->
+			<left>1505</left>
+			<top>215</top>
+			<width>455</width>
+			<height>700</height>
+			<texture border="14" colordiffuse="midgrey">button-default.png</texture>
+		</control>
+		<control type="group" id="999">
+			<control type="button" id="983">
+				<!-- General -->
+				<right>0</right>
+				<top>230</top>
+				<width>415</width>
+				<height>75</height>
+				<font>ctouch21</font>
+				<label>General</label>
+				<onfocus>Skin.SetString(skinsettingmenu,background)</onfocus>
+				<onup>80006</onup>
+				<ondown>981</ondown>
+				<align>right</align>
+				<onleft>501</onleft>
+				<texturenofocus/>
+				<texturefocus colordiffuse="$VAR[AccentColor]">button-default-white-long.png</texturefocus>
+			</control>
+			<control type="image">
+				<right>355</right>
+				<top>240</top>
+				<width>55</width>
+				<height>55</height>
+				<texture>icons/sysinfo.png</texture>
+			</control>
+			<control type="button" id="981">
+				<!-- Inicio -->
+				<right>0</right>
+				<top>315</top>
+				<width>415</width>
+				<height>75</height>
+				<font>ctouch21</font>
+				<label>Tipo de Inicio</label>
+				<onfocus>Skin.SetString(skinsettingmenu,inicio)</onfocus>
+				<onup>983</onup>
+				<ondown>982</ondown>
+				<align>right</align>
+				<onleft>300</onleft>
+				<texturenofocus/>
+				<texturefocus colordiffuse="$VAR[AccentColor]">button-default-white-long.png</texturefocus>
+			</control>			
+			<control type="image">
+				<right>355</right>
+				<top>325</top>
+				<width>55</width>
+				<height>55</height>
+				<texture>icons/paintbrush.png</texture>
+			</control>
+			<control type="button" id="982">
+				<!-- Items Inicio -->
+				<right>0</right>
+				<top>400</top>
+				<width>415</width>
+				<height>75</height>
+				<font>ctouch21</font>
+				<label>Items del Inicio</label>
+				<onfocus>Skin.SetString(skinsettingmenu,custom)</onfocus>
+				<onup>981</onup>
+				<ondown>984</ondown>
+				<align>right</align>
+				<onleft>400</onleft>
+				<texturenofocus/>
+				<texturefocus colordiffuse="$VAR[AccentColor]">button-default-white-long.png</texturefocus>
+			</control>			
+			<control type="image">
+				<right>355</right>
+				<top>410</top>
+				<width>55</width>
+				<height>55</height>
+				<texture>icons/apps.png</texture>
+			</control>
+			<control type="button" id="984">
+				<!-- Widgets Inicio -->
+				<right>0</right>
+				<top>485</top>
+				<width>415</width>
+				<height>75</height>
+				<font>ctouch21</font>
+				<label>Widgets del Inicio</label>
+				<onfocus>Skin.SetString(skinsettingmenu,widgets)</onfocus>
+				<onup>982</onup>
+				<ondown>986</ondown>
+				<align>right</align>
+				<onleft>900</onleft>
+				<texturenofocus/>
+				<texturefocus colordiffuse="$VAR[AccentColor]">button-default-white-long.png</texturefocus>
+			</control>			
+			<control type="image">
+				<right>355</right>
+				<top>495</top>
+				<width>55</width>
+				<height>55</height>
+				<texture>icons/skinsettings.png</texture>
+			</control>
+			<control type="button" id="986">
+				<!-- addons -->
+				<right>0</right>
+				<top>570</top>
+				<width>415</width>
+				<height>75</height>
+				<font>ctouch21</font>
+				<label>Addons del Skin</label>
+				<onfocus>Skin.SetString(skinsettingmenu,addons)</onfocus>
+				<onup>984</onup>
+				<ondown>990</ondown>
+				<align>right</align>
+				<onleft>600</onleft>
+				<texturenofocus/>
+				<texturefocus colordiffuse="$VAR[AccentColor]">button-default-white-long.png</texturefocus>
+			</control>
+			<control type="image">
+				<right>355</right>
+				<top>580</top>
+				<width>55</width>
+				<height>55</height>
+				<texture>icons/video-addons.png</texture>
+			</control>
+			<control type="button" id="990">
+				<!-- ajustes addons -->
+				<right>0</right>
+				<top>655</top>
+				<width>415</width>
+				<height>75</height>
+				<font>ctouch21</font>
+				<label>Ajustes de Addons</label>
+				<onfocus>Skin.SetString(skinsettingmenu,addonssettings)</onfocus>
+				<onup>986</onup>
+				<ondown>987</ondown>
+				<align>right</align>
+				<onleft>800</onleft>
+				<texturenofocus/>
+				<texturefocus colordiffuse="$VAR[AccentColor]">button-default-white-long.png</texturefocus>
+			</control>
+			<control type="image">
+				<right>355</right>
+				<top>665</top>
+				<width>55</width>
+				<height>55</height>
+				<texture>icons/settings.png</texture>
+			</control>
+			<control type="button" id="987">
+				<!-- Help -->
+				<right>0</right>
+				<top>740</top>
+				<width>415</width>
+				<height>75</height>
+				<font>ctouch21</font>
+				<label>Ayuda del Skin</label>
+				<onfocus>Skin.SetString(skinsettingmenu,help)</onfocus>
+				<onup>990</onup>
+				<ondown>989</ondown>
+				<align>right</align>
+				<onleft>700</onleft>
+				<texturenofocus/>
+				<texturefocus colordiffuse="$VAR[AccentColor]">button-default-white-long.png</texturefocus>
+			</control>
+			<control type="image">
+				<right>355</right>
+				<top>750</top>
+				<width>55</width>
+				<height>55</height>
+				<texture>game-information.png</texture>
+			</control>
+			<control type="button" id="989">
+				<!-- Canales -->
+				<right>0</right>
+				<top>825</top>
+				<width>415</width>
+				<height>75</height>
+				<font>ctouch21</font>
+				<label>Canales de Addons</label>
+				<onfocus>Skin.SetString(skinsettingmenu,canales)</onfocus>
+				<onup>987</onup>
+				<ondown>983</ondown>
+				<align>right</align>
+				<onleft>200</onleft>
+				<texturenofocus/>
+				<texturefocus colordiffuse="$VAR[AccentColor]">button-default-white-long.png</texturefocus>
+			</control>
+			<control type="image">
+				<right>355</right>
+				<top>835</top>
+				<width>55</width>
+				<height>55</height>
+				<texture>icons/popcont.png</texture>
+			</control>
+		</control>
+		<control type="scrollbar" id="1223">
+			<left>15</left>
+			<top>155</top>
+			<width>18</width>
+			<height>750</height>
+			<onright>998</onright>
+			<animation condition="!Control.HasFocus(1223) + !Container.Scrolling + !String.IsEqual(Skin.String(show-scrollbar),$LOCALIZE[31875])" effect="fade" start="100" end="0" time="200" reversible="true">Conditional</animation>
+			<visible>!Skin.String(skinsettingmenu,custom)</visible>
+		</control>
+		<control type="group" id="998">
+			<control type="group" id="500">
+				<visible>Skin.String(skinsettingmenu,background)</visible>
+				<control type="image">
+				<!-- Dialog background image -->
+					<left>60</left>
+					<top>160</top>
+					<width>1350</width>
+					<height>815</height>
+					<texture colordiffuse="midgrey">button-default-long.png</texture>
+				</control>
+				<control type="image">
+					<right>0</right>
+					<top>230</top>
+					<width>415</width>
+					<height>75</height>
+					<texture colordiffuse="$VAR[AccentColor]">button-default-white-long.png</texture>
+					<include>settingbutton-fade</include>
+					<visible>![ControlGroup(999).HasFocus() | ControlGroup(8000).HasFocus()]</visible>
+				</control>								
+				<control type="grouplist" id="501">
+					<left>80</left>
+					<top>175</top>
+					<width>1300</width>
+					<height>750</height>
+					<itemgap>5</itemgap>
+					<onleft>1223</onleft>
+					<onright>999</onright>
+					<pagecontrol>1223</pagecontrol>
+					<control type="label" id="5002">
+						<left>70</left>
+						<height>70</height>
+						<width>500</width>
+						<label>Personalizar</label>
+						<textcolor>$VAR[AccentColor]</textcolor>
+						<font>ctouch22</font>
+					</control>
+					<control type="button" id="503">
+						<!-- Custom Background Button -->
+						<font>ctouch21</font>
+						<width>1300</width>
+						<height>70</height>
+						<texturenofocus/>
+						<include>settings-submenu-common</include>
+						<label>Cambiar Fondo</label>
+						<textwidth>1178</textwidth>
+						<onclick>Skin.SetImage(background-custom)</onclick>
+						<visible>!Skin.String(background-custom)</visible>
+					</control>
+					<control type="button" id="504">
+						<font>ctouch21</font>
+						<!-- Reset Custom Background Button -->
+						<width>1300</width>
+						<texturenofocus/>
+						<height>70</height>
+						<include>settings-submenu-common</include>
+						<label>Restaurar Fondo</label>
+						<textwidth>1278</textwidth>
+						<onclick>Skin.Reset(background-custom)</onclick>
+						<visible>Skin.String(background-custom)</visible>
+						<onfocus>$INFO[Skin.String(background-custom)]</onfocus>
+					</control>
+					<control type="radiobutton" id="523">
+						<font>ctouch21</font>
+						<width>1300</width>
+						<height>70</height>
+						<texturenofocus/>
+						<include>settings-submenu-common</include>
+						<label>Imagen de Fondo estática</label>
+						<textwidth>1125</textwidth>
+						<onclick>Skin.ToggleSetting(staticbg)</onclick>
+						<selected>Skin.HasSetting(staticbg)</selected>
+						<radioposx>1240</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+					</control>
+					<control type="button" id="505">
+						<!-- Visibilidad -->
+						<width>1300</width>
+						<font>ctouch21</font>
+						<height>70</height>
+						<include>settings-submenu-common</include>
+						<label>$LOCALIZE[31991]</label>
+						<label2>$VAR[BackgroundVisibilty]</label2>
+						<textwidth>1125</textwidth>
+						<onclick>Skin.SelectBool(31990, 391|background-visibiltylow, 392|background-visibiltymed, 393|background-visibiltyhigh)</onclick>
+						<texturenofocus/>
+					</control>
+					<control type="button" id="506">
+						<font>ctouch21</font>
+						<height>70</height>
+						<width>1300</width>
+						<texturenofocus/>
+						<include>settings-submenu-common</include>
+						<textwidth>1125</textwidth>
+						<onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick>
+						<onclick condition="System.HasAddon(script.skin.helper.colorpicker)">RunScript(script.skin.helper.colorpicker,skinstring=color_accent,palette=rainbow)</onclick>
+						<label>$LOCALIZE[31984]</label>
+						<label2>$VAR[AccentColorLabel]</label2>
+					</control>
+					<control type="radiobutton" id="508">
+						<font>ctouch21</font>
+						<width>1300</width>
+						<height>70</height>
+						<texturenofocus/>
+						<include>settings-submenu-common</include>
+						<label>Ocultar menu</label>
+						<textwidth>1125</textwidth>
+						<onclick>Skin.ToggleSetting(menuoculto)</onclick>
+						<selected>Skin.HasSetting(menuoculto)</selected>
+						<radioposx>1240</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+						<visible>!Skin.HasSetting(menulittle)</visible>
+					</control>
+					<control type="radiobutton" id="507">
+						<font>ctouch21</font>
+						<width>1300</width>
+						<height>70</height>
+						<texturenofocus/>
+						<include>settings-submenu-common</include>
+						<label>Botones Táctiles</label>
+						<textwidth>1125</textwidth>
+						<onclick>Skin.ToggleSetting(menulittle)</onclick>
+						<onclick>Skin.SetBool(menuoculto,false)</onclick>
+						<selected>Skin.HasSetting(menulittle)</selected>
+						<radioposx>1240</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+					</control>
+					<control type="radiobutton" id="517">
+						<font>ctouch21</font>
+						<width>1300</width>
+						<height>70</height>
+						<texturenofocus/>
+						<include>settings-submenu-common</include>
+						<label>Nombre de Items Siempre Visibles (Inicio Iconos)</label>
+						<textwidth>1125</textwidth>
+					<!--<visible>Skin.HasSetting(etiquetas-visibles)</visible>no aqui-->
+						<onclick>Skin.ToggleSetting(etiquetas-visibles)</onclick>
+						<selected>Skin.HasSetting(etiquetas-visibles)</selected>
+						<radioposx>1240</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+					</control>
+					<control type="radiobutton" id="516">
+						<font>ctouch21</font>
+						<width>1300</width>
+						<height>70</height>
+						<texturenofocus/>
+						<include>settings-submenu-common</include>
+						<label>Ocultar icono del Addon</label>
+						<textwidth>1125</textwidth>
+						<onclick>Skin.ToggleSetting(ocultar-addonicon)</onclick>
+						<selected>Skin.HasSetting(ocultar-addonicon)</selected>
+						<radioposx>1240</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+					</control>
+					<control type="label" id="518">
+						<left>70</left>
+						<height>70</height>
+						<width>500</width>
+						<label>Buscadores</label>
+						<textcolor>$VAR[AccentColor]</textcolor>
+						<font>ctouch22</font>
+					</control>
+					<control type="radiobutton" id="519">
+						<width>1300</width>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Ocultar Buscador Palantir</label>
+						<textwidth>550</textwidth>
+						<onclick>Skin.ToggleSetting(buscador-palantir)</onclick>
+						<selected>Skin.HasSetting(buscador-palantir)</selected>
+						<font>ctouch21</font>
+						<radioposx>1240</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+						<height>70</height>
+					</control>
+					<control type="radiobutton" id="520">
+						<width>1300</width>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Ocultar Buscador Cristal Azul</label>
+						<textwidth>550</textwidth>
+						<font>ctouch21</font>
+						<onclick>Skin.ToggleSetting(buscador-cristal)</onclick>
+						<selected>Skin.HasSetting(buscador-cristal)</selected>
+						<radioposx>1240</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+						<height>70</height>
+					</control>
+					<control type="radiobutton" id="521">
+						<width>1300</width>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Ocultar Buscador Alfa</label>
+						<textwidth>550</textwidth>
+						<font>ctouch21</font>
+						<onclick>Skin.ToggleSetting(buscador-alfa)</onclick>
+						<selected>Skin.HasSetting(buscador-alfa)</selected>
+						<radioposx>1240</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+						<height>70</height>
+					</control>
+					<control type="radiobutton" id="522">
+						<width>1300</width>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Ocultar Buscador Balandro</label>
+						<textwidth>550</textwidth>
+						<onclick>Skin.ToggleSetting(buscador-balandro)</onclick>
+						<selected>Skin.HasSetting(buscador-balandro)</selected>
+						<font>ctouch21</font>
+						<radioposx>1240</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+						<height>70</height>
+					</control>
+					<control type="radiobutton" id="523">
+						<width>1300</width>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Ocultar Buscador Tacones</label>
+						<textwidth>550</textwidth>
+						<onclick>Skin.ToggleSetting(buscador-tacones)</onclick>
+						<selected>Skin.HasSetting(buscador-tacones)</selected>
+						<font>ctouch21</font>
+						<radioposx>1240</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+						<height>70</height>
+					</control>
+					<control type="radiobutton" id="524">
+						<width>1300</width>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Ocultar Buscador DuffYou</label>
+						<textwidth>550</textwidth>
+						<onclick>Skin.ToggleSetting(buscador-duffyou)</onclick>
+						<selected>Skin.HasSetting(buscador-duffyou)</selected>
+						<font>ctouch21</font>
+						<radioposx>1240</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+						<height>70</height>
+					</control>
+					<control type="radiobutton" id="525">
+						<width>1300</width>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Ocultar Buscador BlackGhost</label>
+						<textwidth>550</textwidth>
+						<onclick>Skin.ToggleSetting(buscador-blackghost)</onclick>
+						<selected>Skin.HasSetting(buscador-blackghost)</selected>
+						<font>ctouch21</font>
+						<radioposx>1240</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+						<height>70</height>
+					</control>
+					<control type="label" id="529">
+						<left>70</left>
+						<height>70</height>
+						<width>500</width>
+						<label>Buscadores Personales</label>
+						<textcolor>$VAR[AccentColor]</textcolor>
+						<font>ctouch22</font>
+					</control>
+				<control type="panel" id="9022">
+					<!-- Buscadores Custom -->
+					<height>230</height>
+					<top>690</top>
+					<align>left</align>
+					<onleft>984</onleft>
+					<onright>984</onright>
+					<onup>501</onup>
+					<ondown>502</ondown>
+					<itemlayout height="70" width="1400">
+						<control type="label">
+							<centerleft>50%</centerleft>
+							<left>30</left>
+							<width>1300</width>
+							<height>70</height>
+							<align>left</align>
+							<label fallback="Buscador Personal">$INFO[ListItem.Label]</label>
+							<font>ctouch21</font>
+						</control>
+					</itemlayout>
+					<focusedlayout height="70" width="1400">
+						<control type="group">
+							<control type="image">
+								<left>0</left>
+								<!-- Icon image -->
+								<width>1400</width>
+								<height>70</height>
+								<aspectratio>scale</aspectratio>
+								<texture colordiffuse="$VAR[AccentColor]" border="9">button-default-white.png</texture>
+							</control>
+							<control type="label">
+								<centerleft>50%</centerleft>
+								<left>30</left>
+								<width>1300</width>
+								<height>70</height>
+								<align>left</align>
+								<label fallback="Buscador Personal">$INFO[ListItem.Label]</label>
+								<font>ctouch21</font>
+							</control>
+						</control>
+					</focusedlayout>
+					<content>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomSearch.1" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomSearch.1.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomSearch.1.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomSearch.1.Path))" />
+							<param name="itemmenuid" value="9022" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomSearch.2" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomSearch.2.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomSearch.2.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomSearch.2.Path))" />
+							<param name="itemmenuid" value="9022" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomSearch.3" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomSearch.3.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomSearch.3.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomSearch.3.Path))" />
+							<param name="itemmenuid" value="9022" />
+						</include>
+					</content>
+				</control>
+				<control type="grouplist" id="502">
+					<left>80</left>
+					<width>1300</width>
+					<height>750</height>
+					<itemgap>5</itemgap>
+					<onleft>1223</onleft>
+					<onright>999</onright>
+					<pagecontrol>1223</pagecontrol>			
+					<control type="label" id="509">
+						<left>70</left>
+						<height>70</height>
+						<width>500</width>
+						<label>Copias de Seguridad</label>
+						<textcolor>$VAR[AccentColor]</textcolor>
+						<font>ctouch22</font>
+					</control>
+					<control type="button" id="510">
+						<!-- Backup skin settings -->
+						<width>1300</width>
+						<font>ctouch21</font>
+						<height>70</height>
+						<include>settings-submenu-common</include>
+						<label>Copia de Seguridad del Skin</label>
+						<textwidth>1125</textwidth>
+						<onclick condition="!System.HasAddon(script.stva)">InstallAddon(script.stva)</onclick>
+						<onclick condition="System.HasAddon(script.stva)">PlayMedia(&quot;plugin://script.stva/?mode=backup&amp;action=skin&quot;)</onclick>
+						<texturenofocus/>
+					</control>
+					<control type="button" id="511">
+						<font>ctouch21</font>
+						<width>1300</width>
+						<include>settings-submenu-common</include>
+						<height>70</height>
+						<label>Copia de Seguridad de la Videoteca</label>
+						<textwidth>1125</textwidth>
+						<onclick condition="!System.HasAddon(script.stva)">InstallAddon(script.stva)</onclick>
+						<onclick condition="System.HasAddon(script.stva)">PlayMedia(&quot;plugin://script.stva/?mode=backup&amp;action=gui&quot;)</onclick>
+						<texturenofocus/>
+					</control>
+					<control type="button" id="512">
+						<font>ctouch21</font>
+						<width>1300</width>
+						<height>70</height>
+						<include>settings-submenu-common</include>
+						<label>Copia de Seguridad de Addon_data</label>
+						<textwidth>1125</textwidth>
+						<onclick condition="!System.HasAddon(script.stva)">InstallAddon(script.stva)</onclick>
+						<onclick condition="System.HasAddon(script.stva)">PlayMedia(&quot;plugin://script.stva/?mode=backup&amp;action=addondata&quot;)</onclick>
+						<texturenofocus/>
+					</control>
+					<control type="button" id="513">
+						<font>ctouch21</font>
+						<width>1300</width>
+						<height>70</height>
+						<include>settings-submenu-common</include>
+						<label>Restaurar Copias de Seguridad</label>
+						<textwidth>1125</textwidth>
+						<onclick condition="!System.HasAddon(script.stva)">InstallAddon(script.stva)</onclick>
+						<onclick condition="System.HasAddon(script.stva)">ActivateWindow(10001,&quot;plugin://script.stva/?mode=maint&amp;name=copias&quot;,return)</onclick>
+						<texturenofocus/>
+					</control>
+					<control type="label" id="8112">
+						<left>70</left>
+						<height>70</height>
+						<width>500</width>
+						<label>Otros</label>
+						<textcolor>$VAR[AccentColor]</textcolor>
+						<font>ctouch22</font>
+					</control>
+					<control type="button" id="524">
+						<font>ctouch21</font>
+						<width>1300</width>
+						<include>settings-submenu-common</include>
+						<label>Actualizar Listados de Series y Películas de Palantir</label>
+						<textwidth>1178</textwidth>
+						<onclick>RunAddon(plugin.video.palantir2)</onclick>
+						<onclick>ActivateWindow(home)</onclick>
+						<onclick>ReloadSkin()</onclick>
+						<texturenofocus/>
+					</control>
+					<control type="button" id="514">
+						<font>ctouch21</font>
+						<width>1300</width>
+						<include>settings-submenu-common</include>
+						<label>Packs Ajustes</label>
+						<textwidth>1178</textwidth>
+						<onclick condition="!System.HasAddon(script.stva)">InstallAddon(script.stva)</onclick>
+						<onclick condition="System.HasAddon(script.stva)">ActivateWindow(10001,&quot;plugin://script.stva/?mode=builds&amp;name=Pack%20Ajustes%20CON%20Videoteca&quot;,return)</onclick>
+						<texturenofocus/>
+					</control>
+					<control type="button" id="515">
+						<font>ctouch21</font>
+						<width>1300</width>
+						<include>settings-submenu-common</include>
+						<label>Actualizar Addons</label>
+						<textwidth>1178</textwidth>
+						<onclick condition="!System.HasAddon(script.luar)">InstallAddon(script.luar)</onclick>
+						<onclick condition="System.HasAddon(script.luar)">ActivateWindow(10001,&quot;plugin://script.luar/?eydhY3Rpb24nOiAnb2kwT09vbzBPJywgJ2ljb24nOiAnQzpcXFVzZXJzXFx2ZWdhbVxcQXBwRGF0YVxcUm9hbWluZ1xcS29kaVxcYWRkb25zXFxzY3JpcHQubHVhclxccmVzb3VyY2VzXFxtZWRpYVxcdXBkYXRlcy5wbmcnLCAnbGFiZWwnOiAnICAgIEJ1c2NhciBhY3R1YWxpemFjaW9uZXMnLCAnZmFuYXJ0JzogJ0M6XFxVc2Vyc1xcdmVnYW1cXEFwcERhdGFcXFJvYW1pbmdcXEtvZGlcXGFkZG9uc1xcc2NyaXB0Lmx1YXJcXGZhbmFydC5qcGcnfQ%3d%3d&quot;,return)</onclick>
+						<texturenofocus/>
+					</control>
+				</control>
+			</control>	
+		</control>
+			<control type="group" id="300">
+				<!-- Home Screen Settings -->
+				<visible>Skin.String(skinsettingmenu,inicio)</visible>
+				<control type="image">
+				<!-- Dialog background image -->
+					<left>60</left>
+					<top>160</top>
+					<width>1350</width>
+					<height>815</height>
+					<texture border="14" colordiffuse="midgrey">button-default-long.png</texture>
+				</control>
+				<control type="image">
+					<!-- Background Settings Button Image -->
+					<right>0</right>
+					<top>315</top>
+					<width>415</width>
+					<height>75</height>
+					<texture border="9" colordiffuse="$VAR[AccentColor]">button-default-white-long.png</texture>
+					<include>settingbutton-fade</include>
+					<visible>!ControlGroup(999).HasFocus()</visible>
+				</control>
+				<control type="grouplist" id="301">
+					<left>80</left>
+					<top>175</top>
+					<width>1300</width>
+					<height>750</height>
+					<itemgap>5</itemgap>
+					<onleft>1223</onleft>
+					<onright>999</onright>
+					<pagecontrol>1223</pagecontrol>
+					<control type="label" id="502">
+						<left>70</left>
+						<height>70</height>
+						<width>500</width>
+						<label>Estilo de Inicio</label>
+						<textcolor>$VAR[AccentColor]</textcolor>
+						<font>ctouch22</font>
+					</control>
+					<control type="radiobutton" id="302">
+						<width>1300</width>
+						<height>70</height>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Inicio Iconos</label>
+						<textwidth>1125</textwidth>
+						<onclick>Skin.SetBool(homemenu-icon)</onclick>
+						<font>ctouch21</font>
+						<onclick>Skin.Reset(homemenu-widgets)</onclick>
+						<selected>Skin.HasSetting(homemenu-icon)</selected>
+						<radioposx>1240</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+						<onfocus>SetProperty(Image_Preview,special://skin/resources/screenshot001.jpg)</onfocus>
+					</control>
+					<control type="radiobutton" id="303">
+						<width>1300</width>
+						<height>70</height>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Inicio Widgets</label>
+						<textwidth>1125</textwidth>
+						<onclick>Skin.SetBool(homemenu-widgets)</onclick>
+						<font>ctouch21</font>
+						<onclick>Skin.Reset(homemenu-icon)</onclick>
+						<selected>Skin.HasSetting(homemenu-widgets)</selected>
+						<radioposx>1240</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+						<onfocus>SetProperty(Image_Preview,special://skin/resources/screenshot002.jpg)</onfocus>
+					</control>
+				</control>
+				<control type="group">
+					<left>240</left>
+					<width>1000</width>
+					<top>430</top>
+					<height>500</height>
+					<visible>Control.HasFocus(302) | Control.HasFocus(303) | Control.HasFocus(981)</visible>
+					<control type="image">
+						<aspectratio scalediffuse="false">keep</aspectratio>
+						<texture background="true" fallback="special://skin/fanart.jpg" diffuse="diffuse/landscape.png">$INFO[Window.Property(Image_Preview)]</texture>
+					</control>
+				</control>
+			</control>		
+			<control type="group" id="400">
+				<!-- Home Menu Settings -->				
+				<visible>Skin.String(skinsettingmenu,custom)</visible>
+				<control type="image">
+				<!-- Dialog background image -->
+					<left>60</left>
+					<top>160</top>
+					<width>1350</width>
+					<height>815</height>
+					<texture border="14" colordiffuse="midgrey">button-default-long.png</texture>
+				</control>
+				<control type="image">
+					<!-- Background Settings Button Image -->
+					<right>0</right>
+					<top>400</top>
+					<width>415</width>
+					<height>75</height>
+					<texture border="9" colordiffuse="$VAR[AccentColor]">button-default-white-long.png</texture>
+					<include>settingbutton-fade</include>
+					<visible>!ControlGroup(999).HasFocus()</visible>
+				</control>			
+				<control type="grouplist">
+					<left>80</left>
+					<top>175</top>
+					<width>1200</width><!--600-->
+					<height>750</height>
+					<itemgap>5</itemgap>
+					<onright>307</onright>
+					<onleft>982</onleft>
+					<onup>8000</onup>
+					<ondown>9021</ondown>
+					<control type="label" id="304">
+						<left>70</left>
+						<height>70</height>
+						<width>1200</width><!--500-->
+						<label>Activar Grupos de Items del Skin (Selecciona)</label>
+						<textcolor>$VAR[AccentColor]</textcolor>
+						<font>ctouch22</font>
+					</control>
+					<control type="radiobutton" id="305">
+						<width>440</width><!--600-->
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Cristal Azul</label>
+						<textwidth>380</textwidth><!--550-->
+						<onclick>Skin.ToggleSetting(cristalazul-items)</onclick>
+						<selected>Skin.HasSetting(cristalazul-items)</selected>
+						<font>ctouch21</font>
+						<radioposx>390</radioposx><!--560-->
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+						<height>70</height>
+					</control>
+					<control type="radiobutton" id="306">
+						<width>440</width><!--600-->
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Alfa</label>
+						<textwidth>380</textwidth><!--550-->
+						<font>ctouch21</font>
+						<onclick>Skin.ToggleSetting(alfa-items)</onclick>
+						<selected>Skin.HasSetting(alfa-items)</selected>
+						<radioposx>390</radioposx><!--560-->
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+						<height>70</height>
+					</control>
+					<control type="radiobutton" id="310">
+						<width>440</width><!--600-->
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Balandro</label>
+						<textwidth>380</textwidth><!--550-->
+						<font>ctouch21</font>
+						<onclick>Skin.ToggleSetting(balandro-items)</onclick>
+						<selected>Skin.HasSetting(balandro-items)</selected>
+						<radioposx>390</radioposx><!--560-->
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+						<height>70</height>
+					</control>
+					<control type="label" id="309">
+						<left>70</left>
+						<height>70</height>
+						<width>500</width>
+						<label>Items del Skin</label>
+						<textcolor>$VAR[AccentColor]</textcolor>
+						<font>ctouch22</font>
+					</control>
+				</control>
+				<control type="grouplist">
+					<left>520</left><!--700-->
+					<top>248</top><!--245-->
+					<width>600</width><!--600-->
+					<height>750</height><!--750-->
+					<itemgap>5</itemgap>
+					<onright>311</onright><!--982-->
+					<onup>8000</onup>
+					<onleft>305</onleft>
+					<ondown>9021</ondown>
+					<control type="radiobutton" id="307">
+						<width>440</width><!--600-->
+						<height>70</height>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Palantir</label>
+						<textwidth>380</textwidth><!--550-->
+						<onclick>Skin.ToggleSetting(palantir-items)</onclick>
+						<font>ctouch21</font>
+						<selected>Skin.HasSetting(palantir-items)</selected>
+						<radioposx>390</radioposx><!--560-->
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+					</control>
+					<control type="radiobutton" id="308">
+						<width>440</width>
+						<height>70</height>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>TV/Deportes</label>
+						<textwidth>380</textwidth>
+						<onclick>Skin.ToggleSetting(sportv-items)</onclick>
+						<font>ctouch21</font>
+						<selected>Skin.HasSetting(sportv-items)</selected>
+						<radioposx>390</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+					</control>
+					<control type="radiobutton" id="309"><!--vavoo-->
+						<width>440</width>
+						<height>70</height>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Vavoo y Magellan</label>
+						<textwidth>380</textwidth>
+						<onclick>Skin.ToggleSetting(vavoo-items)</onclick>
+						<font>font14</font>
+						<selected>Skin.HasSetting(vavoo-items)</selected>
+						<radioposx>390</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+					</control>
+				</control>	
+				<!--3er control-->
+				    <control type="grouplist">
+					<left>950</left><!--700-->
+					<top>248</top><!--245-->
+					<width>600</width><!--600-->
+					<height>750</height><!--750-->
+					<itemgap>5</itemgap>
+					<onright>982</onright>
+					<onup>8000</onup>
+					<onleft>307</onleft>
+					<ondown>9021</ondown>
+					<control type="radiobutton" id="311">
+						<width>440</width><!--600-->
+						<height>70</height>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Tacones/KodispainTV</label>
+						<textwidth>380</textwidth><!--550-->
+						<onclick>Skin.ToggleSetting(tacones-items)</onclick>
+						<font>ctouch21</font>
+						<selected>Skin.HasSetting(tacones-items)</selected>
+						<radioposx>390</radioposx><!--560-->
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+					</control>
+					<!--Activar items KodivertidoteamTVCine-->
+					<control type="radiobutton" id="312">
+						<width>440</width><!--600-->
+						<height>70</height>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Kodivertido TVCine</label>
+						<textwidth>380</textwidth><!--550-->
+						<onclick>Skin.ToggleSetting(kodivertido-items)</onclick>
+						<font>ctouch21</font>
+						<selected>Skin.HasSetting(kodivertido-items)</selected>
+						<radioposx>390</radioposx><!--560-->
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+					</control>
+				
+				    <!--Activar items The Blackghost-->
+					<control type="radiobutton" id="313">
+						<width>440</width><!--600-->
+						<height>70</height>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>The Blackghost</label>
+						<textwidth>380</textwidth><!--550-->
+						<onclick>Skin.ToggleSetting(blackghost-items)</onclick>
+						<font>ctouch21</font>
+						<selected>Skin.HasSetting(blackghost-items)</selected>
+						<radioposx>390</radioposx><!--560-->
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+					</control>
+				</control>
+				
+				<control type="panel" id="9021">
+					<!-- Home menu icon panel -->
+					<animation condition="true" effect="zoom" start="100" end="80" center="auto">Conditional</animation>
+					<width>1890</width>
+					<height>570</height>
+					<top>480</top><!--<top>450</top>-->
+					<left>-90</left>
+					<onleft>982</onleft>
+					<onright>982</onright>
+					<onup>305</onup>
+					<ondown>noop</ondown>
+					<itemlayout height="290" width="410">
+						<control type="image">
+							<!-- Icon image -->
+							<width>350</width>
+							<height>210</height>
+							<aspectratio>stretch</aspectratio>
+							<texture fallback="special://skin/extras/homeicons/fallback.png" diffuse="diffuse/landscape.png">$INFO[ListItem.Art(thumb)]</texture>
+							<animation effect="fade" start="100" end="35" condition="!ListItem.Property(isActive) | Control.HasFocus(402) | Control.HasFocus(403)">Conditional</animation>
+							<bordersize>5</bordersize>
+						</control>
+						<control type="image" id="421">
+							<!-- Icon visible -->
+							<left>105</left>
+							<top>30</top>
+							<width>140</width>
+							<height>140</height>
+							<aspectratio>scale</aspectratio>
+							<texture colordiffuse="lightgrey">desactivado.png</texture>
+							<visible>[!String.IsEmpty(ListItem.thumb) + !ListItem.Property(isActive)] | Control.HasFocus(402) | Control.HasFocus(403)</visible>
+						</control>
+					</itemlayout>
+					<focusedlayout height="290" width="410">
+						<control type="group">
+							<control type="image">
+								<!-- Focused non settings icon image -->
+								<top>0</top>
+								<width>350</width>
+								<height>210</height>
+								<aspectratio>stretch</aspectratio>
+								<bordertexture colordiffuse="$VAR[AccentColor]">homeiconlite_landscape.png</bordertexture>
+								<texture fallback="special://skin/extras/homeicons/fallback.png" diffuse="diffuse/landscape.png">$INFO[ListItem.Art(thumb)]</texture>
+								<animation effect="fade" start="100" end="35" condition="!ListItem.Property(isActive) | Control.HasFocus(402) | Control.HasFocus(403)">Conditional</animation>
+								<bordersize>5</bordersize>
+							</control>
+							<control type="image">
+								<!-- Icon visible -->
+								<top>30</top>
+								<left>105</left>
+								<width>140</width>
+								<height>140</height>
+								<aspectratio>scale</aspectratio>
+								<texture colordiffuse="lightgrey">desactivado.png</texture>
+							<visible>[!String.IsEmpty(ListItem.thumb) + !ListItem.Property(isActive)] | Control.HasFocus(402) | Control.HasFocus(403)</visible>
+							</control>
+							<control type="label">
+								<left>0</left>
+								<top>215</top>
+								<width>350</width>
+								<height>33</height>
+								<align>center</align>
+								<label fallback="Agregar Favorito">$INFO[ListItem.Label]</label>
+								<font>ctouch19</font>
+								<animation effect="fade" start="100" end="35" condition="!ListItem.Property(isActive) | Control.HasFocus(402)">Conditional</animation>
+							</control>
+						</control>
+					</focusedlayout>
+					<content>
+					    <!--balandro-->
+						<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/pelis-balandro.png" />
+							<param name="itemlabel" value="Pelis en Balandro" />
+							<param name="itemcondition" value="!Skin.HasSetting(pelis-balandro) + Skin.HasSetting(balandro-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="pelis-balandro" />
+						</include>
+						<!--vavooto-->
+						<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/tv-vavoo.png" />
+							<param name="itemlabel" value="Michaz Vavooto" />
+							<param name="itemcondition" value="!Skin.HasSetting(tv-vavoo) + Skin.HasSetting(vavoo-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="tv-vavoo" />
+						</include><!--magellan rik-->
+						<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/tv-magellan.png" /><!--menutv.png-->
+							<param name="itemlabel" value="TV Magellan" />
+							<param name="itemcondition" value="!Skin.HasSetting(tv-magellan) + Skin.HasSetting(vavoo-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="tv-magellan" />
+						</include><!--tacones-->
+						<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/tacones.png" /><!--menutv.png-->
+							<param name="itemlabel" value="Tacones" />
+							<param name="itemcondition" value="!Skin.HasSetting(cine-tacones) + Skin.HasSetting(tacones-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="cine-tacones" />
+						</include><!--no en inicioiconos: kelebek-->
+						<!--kodispaintv-->
+						<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/kodispaintv.png" />
+							<param name="itemlabel" value="Kodispain TV" />
+							<param name="itemcondition" value="!Skin.HasSetting(kodispaintv) + Skin.HasSetting(tacones-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="kodispaintv" />
+						</include>
+						<!--kodivertido-->
+					    <include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/kodivertido.png" />
+							<param name="itemlabel" value="kodivertido" />
+							<param name="itemcondition" value="!Skin.HasSetting(kodivertido) + Skin.HasSetting(kodivertido-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="kodivertido" />
+						</include>
+						<!--blackghost-->
+						<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/blackghost.png" />
+							<param name="itemlabel" value="blackghost" />
+							<param name="itemcondition" value="!Skin.HasSetting(blackghost) + Skin.HasSetting(blackghost-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="blackghost" />
+						</include>
+						<!--cristalazul-->
+						<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/cristal-pelis.png" />
+							<param name="itemlabel" value="Cine Cristal" />
+							<param name="itemcondition" value="!Skin.HasSetting(peliscristal) + Skin.HasSetting(cristalazul-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="peliscristal" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/cristal-series.png" />
+							<param name="itemlabel" value="Series Cristal" />
+							<param name="itemcondition" value="!Skin.HasSetting(seriescristal) + Skin.HasSetting(cristalazul-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="seriescristal" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/pcanales.png" />
+							<param name="itemlabel" value="Cine" />
+							<param name="itemcondition" value="!Skin.HasSetting(pcristal) + Skin.HasSetting(cristal-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="pcristal" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/pelishd.png" />
+							<param name="itemlabel" value="Películas HD" />
+							<param name="itemcondition" value="!Skin.HasSetting(4kcristal) + Skin.HasSetting(cristal-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="4kcristal" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/estrenos.png" />
+							<param name="itemlabel" value="SuperCine Estrenos" />
+							<param name="itemcondition" value="!Skin.HasSetting(superestrenos) + Skin.HasSetting(cristal-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="superestrenos" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/scanales.png" />
+							<param name="itemlabel" value="Series" />
+							<param name="itemcondition" value="!Skin.HasSetting(scristal) + Skin.HasSetting(cristal-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="scristal" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/serieshd.png" />
+							<param name="itemlabel" value="Series HD" />
+							<param name="itemcondition" value="!Skin.HasSetting(shd) + Skin.HasSetting(cristal-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="shd" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/pidepalomitas.png" />
+							<param name="itemlabel" value="Series Torrent" />
+							<param name="itemcondition" value="!Skin.HasSetting(torrentcristal) + Skin.HasSetting(cristal-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="torrentcristal" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/sagas.png" />
+							<param name="itemlabel" value="Sagas" />
+							<param name="itemcondition" value="!Skin.HasSetting(sagascristal) + Skin.HasSetting(cristal-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="sagascristal" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/idocumentales.png" />
+							<param name="itemlabel" value="Documentales" />
+							<param name="itemcondition" value="!Skin.HasSetting(doccristal) + Skin.HasSetting(cristal-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="doccristal" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/tvmagellan.png" />
+							<param name="itemlabel" value="Televisión" />
+							<param name="itemcondition" value="!Skin.HasSetting(tvcristal) + Skin.HasSetting(cristal-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="tvcristal" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/deportesca.png" />
+							<param name="itemlabel" value="Deportes Cristal" />
+							<param name="itemcondition" value="!Skin.HasSetting(deportescristal) + Skin.HasSetting(cristal-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="deportescristal" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/videoteca.png" />
+							<param name="itemlabel" value="Favoritos Cristal" />
+							<param name="itemcondition" value="!Skin.HasSetting(favcristal) + Skin.HasSetting(cristal-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="favcristal" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/youtube.png" />
+							<param name="itemlabel" value="Youtube" />
+							<param name="itemcondition" value="!Skin.HasSetting(youtubecristal) + Skin.HasSetting(cristal-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="youtubecristal" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/festakids.png" />
+							<param name="itemlabel" value="Festa Kids" />
+							<param name="itemcondition" value="!Skin.HasSetting(festacristal) + Skin.HasSetting(cristal-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="festacristal" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/latino.png" />
+							<param name="itemlabel" value="Cristal Latino" />
+							<param name="itemcondition" value="!Skin.HasSetting(latinocristal) + Skin.HasSetting(cristal-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="latinocristal" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/tags.png" />
+							<param name="itemlabel" value="Pelis Alfa" /><!--Pelis en Tendencia-->
+							<param name="itemcondition" value="!Skin.HasSetting(ptendencia) + Skin.HasSetting(alfa-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="ptendencia" />
+						</include>
+						<!--<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/cinema.png" />
+							<param name="itemlabel" value="Películas Populares" />
+							<param name="itemcondition" value="!Skin.HasSetting(ppopulares) + Skin.HasSetting(alfa-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="ppopulares" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/genre.png" />
+							<param name="itemlabel" value="Géneros de Películas" />
+							<param name="itemcondition" value="!Skin.HasSetting(pgenre) + Skin.HasSetting(alfa-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="pgenre" />
+						</include>-->
+						<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/hot.png" />
+							<param name="itemlabel" value="Series en Alfa" />
+							<param name="itemcondition" value="!Skin.HasSetting(stendencia) + Skin.HasSetting(alfa-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="stendencia" />
+						</include>
+						<!--<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/emision.png" />
+							<param name="itemlabel" value="Series Populares" />
+							<param name="itemcondition" value="!Skin.HasSetting(spopulares) + Skin.HasSetting(alfa-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="spopulares" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/genres.png" />
+							<param name="itemlabel" value="Géneros de Series" />
+							<param name="itemcondition" value="!Skin.HasSetting(sgeneros) + Skin.HasSetting(alfa-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="sgeneros" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/mseries.png" />
+							<param name="itemlabel" value="Videoteca" />
+							<param name="itemcondition" value="!Skin.HasSetting(videoteca) + Skin.HasSetting(alfa-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="videoteca" />
+						</include>-->
+						<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/coleccion.png" />
+							<param name="itemlabel" value="Colección Series Videoteca" />
+							<param name="itemcondition" value="!Skin.HasSetting(coleccion-v) + Library.HasContent(tvshows)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="coleccion-v" />
+						</include><!--palantir2-items son items que no activo de momento-->
+						<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/palantir-seguimiento.png" />
+							<param name="itemlabel" value="Series en Seguimiento" />
+							<param name="itemcondition" value="!Skin.HasSetting(seguimiento) + Skin.HasSetting(palantir-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="seguimiento" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/palantir-series-nuevas.png" />
+							<param name="itemlabel" value="Series Nuevas Palantir" />
+							<param name="itemcondition" value="!Skin.HasSetting(actualizadas) + Skin.HasSetting(palantir-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="actualizadas" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/palantir-pelis.png" />
+							<param name="itemlabel" value="Pelis Palantir" />
+							<param name="itemcondition" value="!Skin.HasSetting(palantir-pelis) + Skin.HasSetting(palantir-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="palantir-pelis" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/palantir-novedades.png" />
+							<param name="itemlabel" value="Novedad Pelis Palantir2" />
+							<param name="itemcondition" value="!Skin.HasSetting(novedades) + Skin.HasSetting(palantir-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="novedades" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/documentales.png" />
+							<param name="itemlabel" value="Documentales Palantir2" />
+							<param name="itemcondition" value="!Skin.HasSetting(documentales-palantir) + Skin.HasSetting(palantir-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="documentales-palantir" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/dibujos.png" />
+							<param name="itemlabel" value="Dibujos Palantir" />
+							<param name="itemcondition" value="!Skin.HasSetting(dibujos) + Skin.HasSetting(palantir2-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="dibujos" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/telenovelas.png" />
+							<param name="itemlabel" value="Telenovelas Palantir2" />
+							<param name="itemcondition" value="!Skin.HasSetting(telenovelas) + Skin.HasSetting(palantir2-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="telenovelas" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/updatepalantir.png" />
+							<param name="itemlabel" value="Actualizar Palantir2" />
+							<param name="itemcondition" value="!Skin.HasSetting(updatepalantir) + Skin.HasSetting(palantir2-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="updatepalantir" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/moes.png" />
+							<param name="itemlabel" value="Plataformas TV" />
+							<param name="itemcondition" value="!Skin.HasSetting(moes) + Skin.HasSetting(sportv-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="moes" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/tdt.png" />
+							<param name="itemlabel" value="Canales TDT" />
+							<param name="itemcondition" value="!Skin.HasSetting(tdt) + Skin.HasSetting(sportv-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="tdt" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/menutv.png" />
+							<param name="itemlabel" value="TV Premium Mag" />
+							<param name="itemcondition" value="!Skin.HasSetting(tvmagellan) + Skin.HasSetting(sportv-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="tvmagellan" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/ideportes.png" />
+							<param name="itemlabel" value="Deportes" />
+							<param name="itemcondition" value="!Skin.HasSetting(winner) + Skin.HasSetting(sportv-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="winner" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/repeticiones.png" />
+							<param name="itemlabel" value="Repeticiones" />
+							<param name="itemcondition" value="!Skin.HasSetting(repes) + Skin.HasSetting(sportv-items)" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="repes" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemthumb" value="special://skin/extras/homeicons/liptv.png" />
+							<param name="itemlabel" value="IPTV" />
+							<param name="itemcondition" value="!Skin.HasSetting(iptv-v) + System.HasPVRAddon" />
+							<param name="itemmenuid" value="9021" />
+							<param name="itemtoggle" value="iptv-v" />
+						</include>
+						
+						
+						
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomMovies.1" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomMovies.1.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomMovies.1.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomMovies.1.Path))" />
+							<param name="itemmenuid" value="9021" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomMovies.2" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomMovies.2.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomMovies.2.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomMovies.2.Path))" />
+							<param name="itemmenuid" value="9021" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomMovies.3" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomMovies.3.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomMovies.3.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomMovies.3.Path))" />
+							<param name="itemmenuid" value="9021" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomMovies.4" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomMovies.4.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomMovies.4.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomMovies.4.Path))" />
+							<param name="itemmenuid" value="9021" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomMovies.5" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomMovies.5.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomMovies.5.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomMovies.5.Path))" />
+							<param name="itemmenuid" value="9021" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomTVShow.1" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomTVShow.1.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomTVShow.1.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomTVShow.1.Path))" />
+							<param name="itemmenuid" value="9021" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomTVShow.2" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomTVShow.2.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomTVShow.2.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomTVShow.2.Path))" />
+							<param name="itemmenuid" value="9021" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomTVShow.3" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomTVShow.3.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomTVShow.3.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomTVShow.3.Path))" />
+							<param name="itemmenuid" value="9021" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomTVShow.4" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomTVShow.4.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomTVShow.4.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomTVShow.4.Path))" />
+							<param name="itemmenuid" value="9021" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomTVShow.5" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomTVShow.5.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomTVShow.5.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomTVShow.5.Path))" />
+							<param name="itemmenuid" value="9021" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomTV.1" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomTV.1.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomTV.1.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomTV.1.Path))" />
+							<param name="itemmenuid" value="9021" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomTV.2" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomTV.2.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomTV.2.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomTV.2.Path))" />
+							<param name="itemmenuid" value="9021" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomTV.3" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomTV.3.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomTV.3.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomTV.3.Path))" />
+							<param name="itemmenuid" value="9021" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomTV.4" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomTV.4.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomTV.4.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomTV.4.Path))" />
+							<param name="itemmenuid" value="9021" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomTV.5" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomTV.5.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomTV.5.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomTV.5.Path))" />
+							<param name="itemmenuid" value="9021" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomRadio.1" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomRadio.1.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomRadio.1.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomRadio.1.Path))" />
+							<param name="itemmenuid" value="9021" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomRadio.2" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomRadio.2.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomRadio.2.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomRadio.2.Path))" />
+							<param name="itemmenuid" value="9021" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomRadio.3" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomRadio.3.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomRadio.3.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomRadio.3.Path))" />
+							<param name="itemmenuid" value="9021" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomRadio.4" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomRadio.4.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomRadio.4.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomRadio.4.Path))" />
+							<param name="itemmenuid" value="9021" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomRadio.5" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomRadio.5.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomRadio.5.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomRadio.5.Path))" />
+							<param name="itemmenuid" value="9021" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomFav.1" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomFav.1.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomFav.1.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomFav.1.Path))" />
+							<param name="itemmenuid" value="9021" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomFav.2" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomFav.2.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomFav.2.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomFav.2.Path))" />
+							<param name="itemmenuid" value="9021" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomFav.3" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomFav.3.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomFav.3.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomFav.3.Path))" />
+							<param name="itemmenuid" value="9021" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomFav.4" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomFav.4.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomFav.4.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomFav.4.Path))" />
+							<param name="itemmenuid" value="9021" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomFav.5" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomFav.5.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomFav.5.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomFav.5.Path))" />
+							<param name="itemmenuid" value="9021" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomMusic.1" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomMusic.1.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomMusic.1.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomMusic.1.Path))" />
+							<param name="itemmenuid" value="9021" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomMusic.2" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomMusic.2.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomMusic.2.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomMusic.2.Path))" />
+							<param name="itemmenuid" value="9021" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomMusic.3" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomMusic.3.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomMusic.3.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomMusic.3.Path))" />
+							<param name="itemmenuid" value="9021" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomMusic.4" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomMusic.4.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomMusic.4.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomMusic.4.Path))" />
+							<param name="itemmenuid" value="9021" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomMusic.5" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomMusic.5.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomMusic.5.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomMusic.5.Path))" />
+							<param name="itemmenuid" value="9021" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomAddon.1" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomAddon.1.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomAddon.1.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomAddon.1.Path))" />
+							<param name="itemmenuid" value="9021" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomAddon.2" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomAddon.2.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomAddon.2.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomAddon.2.Path))" />
+							<param name="itemmenuid" value="9021" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomAddon.3" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomAddon.3.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomAddon.3.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomAddon.3.Path))" />
+							<param name="itemmenuid" value="9021" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomAddon.4" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomAddon.4.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomAddon.4.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomAddon.4.Path))" />
+							<param name="itemmenuid" value="9021" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomAddon.5" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomAddon.5.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomAddon.5.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomAddon.5.Path))" />
+							<param name="itemmenuid" value="9021" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomGame.1" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomGame.1.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomGame.1.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomGame.1.Path))" />
+							<param name="itemmenuid" value="9021" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomGame.2" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomGame.2.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomGame.2.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomGame.2.Path))" />
+							<param name="itemmenuid" value="9021" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomGame.3" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomGame.3.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomGame.3.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomGame.3.Path))" />
+							<param name="itemmenuid" value="9021" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomGame.4" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomGame.4.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomGame.4.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomGame.4.Path))" />
+							<param name="itemmenuid" value="9021" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomGame.5" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomGame.5.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomGame.5.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomGame.5.Path))" />
+							<param name="itemmenuid" value="9021" />
+						</include>
+					</content>
+				</control>
+			</control>	
+			<control type="group" id="900">
+				<!-- Home Menu Settings -->				
+				<visible>Skin.String(skinsettingmenu,widgets)</visible>
+				<control type="image">
+					<!-- Background Settings Button Image -->
+					<right>0</right>
+					<top>485</top>
+					<width>415</width>
+					<height>75</height>
+					<texture border="9" colordiffuse="$VAR[AccentColor]">button-default-white-long.png</texture>
+					<include>settingbutton-fade</include>
+					<visible>!ControlGroup(999).HasFocus()</visible>
+				</control>			
+				<control type="image">
+				<!-- Dialog background image -->
+					<left>60</left>
+					<top>160</top>
+					<width>1350</width>
+					<height>815</height>
+					<texture border="14" colordiffuse="midgrey">button-default-long.png</texture>
+				</control>
+				<control type="grouplist" id="901">
+					<left>80</left>
+					<top>175</top>
+					<width>1300</width>
+					<height>760</height>
+					<itemgap>5</itemgap>
+					<onup>8000</onup>
+					<ondown>9021</ondown>
+					<onleft>1223</onleft>
+					<onright>984</onright>
+					<pagecontrol>1223</pagecontrol>
+					<control type="label" id="927">
+						<left>70</left>
+						<height>100</height>
+						<width>500</width>
+						<label>Widgets del Skin</label>
+						<textcolor>$VAR[AccentColor]</textcolor>
+						<font>ctouch22</font>
+					</control>
+					<control type="radiobutton" id="902">
+						<width>1300</width>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Activar Widgets Palantir</label>
+						<textwidth>1125</textwidth>
+						<onclick>Skin.ToggleSetting(widgets-palantir)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.palantir2)">InstallAddon(plugin.video.palantir2)</onclick>
+						<selected>Skin.HasSetting(widgets-palantir)</selected>
+						<font>ctouch21</font>
+						<radioposx>1240</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+						<height>70</height>
+					</control>
+					<control type="radiobutton" id="917">
+						<width>800</width>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label> ∟ Widget Series en Seguimiento</label>
+						<textcolor>lightgrey</textcolor>
+						<textwidth>1125</textwidth>
+						<onclick>Skin.ToggleSetting(widgets-palantir-myseries)</onclick>
+						<selected>Skin.HasSetting(widgets-palantir-myseries)</selected>
+						<font>ctouch21</font>
+						<radioposx>700</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+						<height>70</height>
+						<visible>Skin.HasSetting(widgets-palantir)</visible>
+					</control>
+					<control type="radiobutton" id="903">
+						<width>800</width>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label> ∟ Widget Películas Palantir 1</label>
+						<textcolor>lightgrey</textcolor>
+						<textwidth>1125</textwidth>
+						<onclick>Skin.ToggleSetting(widgets-palantir-pelis1)</onclick>
+						<selected>Skin.HasSetting(widgets-palantir-pelis1)</selected>
+						<font>ctouch21</font>
+						<radioposx>700</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+						<height>70</height>
+						<visible>Skin.HasSetting(widgets-palantir)</visible>
+					</control>
+					<control type="radiobutton" id="904">
+						<width>800</width>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label> ∟ Widget Series Palantir 1</label>
+						<textcolor>lightgrey</textcolor>
+						<textwidth>1125</textwidth>
+						<onclick>Skin.ToggleSetting(widgets-palantir-series1)</onclick>
+						<selected>Skin.HasSetting(widgets-palantir-series1)</selected>
+						<font>ctouch21</font>
+						<radioposx>700</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+						<height>70</height>
+						<visible>Skin.HasSetting(widgets-palantir)</visible>
+					</control>
+					<control type="radiobutton" id="905">
+						<width>800</width>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label> ∟ Widget Películas Palantir 2</label>
+						<textcolor>lightgrey</textcolor>
+						<textwidth>1125</textwidth>
+						<onclick>Skin.ToggleSetting(widgets-palantir-pelis2)</onclick>
+						<selected>Skin.HasSetting(widgets-palantir-pelis2)</selected>
+						<font>ctouch21</font>
+						<radioposx>700</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+						<height>70</height>
+						<visible>Skin.HasSetting(widgets-palantir)</visible>
+					</control>
+					<control type="radiobutton" id="906">
+						<width>800</width>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label> ∟ Widget Series Palantir 2</label>
+						<textcolor>lightgrey</textcolor>
+						<textwidth>1125</textwidth>
+						<onclick>Skin.ToggleSetting(widgets-palantir-series2)</onclick>
+						<selected>Skin.HasSetting(widgets-palantir-series2)</selected>
+						<font>ctouch21</font>
+						<radioposx>700</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+						<height>70</height>
+						<visible>Skin.HasSetting(widgets-palantir)</visible>
+					</control>
+					<control type="radiobutton" id="907">
+						<width>1300</width>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Activar Widgets Alfa</label>
+						<textwidth>1125</textwidth>
+						<onclick>Skin.ToggleSetting(widgets-alfa)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.alfa)">InstallAddon(plugin.video.alfa)</onclick>
+						<selected>Skin.HasSetting(widgets-alfa)</selected>
+						<font>ctouch21</font>
+						<radioposx>1240</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+						<height>70</height>
+					</control>
+					<control type="radiobutton" id="908">
+						<width>800</width>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label> ∟ Widget Películas Alfa 1</label>
+						<textcolor>lightgrey</textcolor>
+						<textwidth>1125</textwidth>
+						<onclick>Skin.ToggleSetting(widgets-alfa-pelis1)</onclick>
+						<selected>Skin.HasSetting(widgets-alfa-pelis1)</selected>
+						<font>ctouch21</font>
+						<radioposx>700</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+						<height>70</height>
+						<visible>Skin.HasSetting(widgets-alfa)</visible>
+					</control>
+					<control type="radiobutton" id="909">
+						<width>800</width>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label> ∟ Widget Series Alfa 1</label>
+						<textcolor>lightgrey</textcolor>
+						<textwidth>1125</textwidth>
+						<onclick>Skin.ToggleSetting(widgets-alfa-series1)</onclick>
+						<selected>Skin.HasSetting(widgets-alfa-series1)</selected>
+						<font>ctouch21</font>
+						<radioposx>700</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+						<height>70</height>
+						<visible>Skin.HasSetting(widgets-alfa)</visible>
+					</control>
+					<control type="radiobutton" id="910">
+						<width>800</width>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label> ∟ Widget Películas Alfa 2</label>
+						<textcolor>lightgrey</textcolor>
+						<textwidth>1125</textwidth>
+						<onclick>Skin.ToggleSetting(widgets-alfa-pelis2)</onclick>
+						<selected>Skin.HasSetting(widgets-alfa-pelis2)</selected>
+						<font>ctouch21</font>
+						<radioposx>700</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+						<height>70</height>
+						<visible>Skin.HasSetting(widgets-alfa)</visible>
+					</control>
+					<control type="radiobutton" id="911">
+						<width>800</width>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label> ∟ Widget Series Alfa 2</label>
+						<textcolor>lightgrey</textcolor>
+						<textwidth>1125</textwidth>
+						<onclick>Skin.ToggleSetting(widgets-alfa-series2)</onclick>
+						<selected>Skin.HasSetting(widgets-alfa-series2)</selected>
+						<font>ctouch21</font>
+						<radioposx>700</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+						<height>70</height>
+						<visible>Skin.HasSetting(widgets-alfa)</visible>
+					</control>
+					<control type="radiobutton" id="912">
+						<width>1300</width>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Activar Widgets Cristal Azul</label>
+						<textwidth>1125</textwidth>
+						<onclick>Skin.ToggleSetting(widgets-cristal)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.cristalazul)">InstallAddon(plugin.video.cristalazul)</onclick>
+						<selected>Skin.HasSetting(widgets-cristal)</selected>
+						<font>ctouch21</font>
+						<radioposx>1240</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+						<height>70</height>
+					</control>
+					<control type="radiobutton" id="913">
+						<width>800</width>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label> ∟ Widget Películas Cristal 1</label>
+						<textcolor>lightgrey</textcolor>
+						<textwidth>1125</textwidth>
+						<onclick>Skin.ToggleSetting(widgets-cristal-pelis1)</onclick>
+						<selected>Skin.HasSetting(widgets-cristal-pelis1)</selected>
+						<font>ctouch21</font>
+						<radioposx>700</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+						<height>70</height>
+						<visible>Skin.HasSetting(widgets-cristal)</visible>
+					</control>
+					<control type="radiobutton" id="914">
+						<width>800</width>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label> ∟ Widget Series Cristal 1</label>
+						<textcolor>lightgrey</textcolor>
+						<textwidth>1125</textwidth>
+						<onclick>Skin.ToggleSetting(widgets-cristal-series1)</onclick>
+						<selected>Skin.HasSetting(widgets-cristal-series1)</selected>
+						<font>ctouch21</font>
+						<radioposx>700</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+						<height>70</height>
+						<visible>Skin.HasSetting(widgets-cristal)</visible>
+					</control>
+					<control type="radiobutton" id="915">
+						<width>800</width>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label> ∟ Widget Películas Cristal 2</label>
+						<textcolor>lightgrey</textcolor>
+						<textwidth>1125</textwidth>
+						<onclick>Skin.ToggleSetting(widgets-cristal-pelis2)</onclick>
+						<selected>Skin.HasSetting(widgets-cristal-pelis2)</selected>
+						<font>ctouch21</font>
+						<radioposx>700</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+						<height>70</height>
+						<visible>Skin.HasSetting(widgets-cristal)</visible>
+					</control>
+					<control type="radiobutton" id="916">
+						<width>800</width>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label> ∟ Widget Series Cristal 2</label>
+						<textcolor>lightgrey</textcolor>
+						<textwidth>1125</textwidth>
+						<onclick>Skin.ToggleSetting(widgets-cristal-series2)</onclick>
+						<selected>Skin.HasSetting(widgets-cristal-series2)</selected>
+						<font>ctouch21</font>
+						<radioposx>700</radioposx>
+						<radiowidth>40</radiowidth>
+						<radioheight>40</radioheight>
+						<height>70</height>
+						<visible>Skin.HasSetting(widgets-cristal)</visible>
+					</control>
+					<control type="label" id="926">
+						<left>70</left>
+						<height>100</height>
+						<width>500</width>
+						<label>Widgets Personales</label>
+						<textcolor>$VAR[AccentColor]</textcolor>
+						<font>ctouch22</font>
+					</control>
+				<control type="panel" id="9023">
+					<!-- Widgets Custom -->
+					<height>700</height>
+					<align>left</align>
+					<onleft>984</onleft>
+					<onright>984</onright>
+					<onup>501</onup>
+					<ondown>502</ondown>
+					<itemlayout height="80" width="1400">
+						<control type="label">
+							<centerleft>50%</centerleft>
+							<left>30</left>
+							<width>1300</width>
+							<height>80</height>
+							<align>left</align>
+							<label fallback="Widget Personal">$INFO[ListItem.Label]</label>
+							<font>ctouch21</font>
+						</control>
+					</itemlayout>
+					<focusedlayout height="80" width="1400">
+						<control type="group">
+							<control type="image">
+								<left>0</left>
+								<!-- Icon image -->
+								<width>1400</width>
+								<height>80</height>
+								<aspectratio>scale</aspectratio>
+								<texture colordiffuse="$VAR[AccentColor]" border="9">button-default-white.png</texture>
+							</control>
+							<control type="label">
+								<centerleft>50%</centerleft>
+								<left>30</left>
+								<width>1300</width>
+								<height>80</height>
+								<align>left</align>
+								<label fallback="Widget Personal">$INFO[ListItem.Label]</label>
+								<font>ctouch21</font>
+							</control>
+						</control>
+					</focusedlayout>
+					<content>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomWidget.1" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomWidget.1.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomWidget.1.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomWidget.1.Path))" />
+							<param name="itemmenuid" value="9023" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomWidget.2" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomWidget.2.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomWidget.2.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomWidget.2.Path))" />
+							<param name="itemmenuid" value="9023" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomWidget.3" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomWidget.3.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomWidget.3.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomWidget.3.Path))" />
+							<param name="itemmenuid" value="9023" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomWidget.4" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomWidget.4.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomWidget.4.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomWidget.4.Path))" />
+							<param name="itemmenuid" value="9023" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomWidget.5" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomWidget.5.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomWidget.5.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomWidget.5.Path))" />
+							<param name="itemmenuid" value="9023" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomWidget.6" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomWidget.6.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomWidget.6.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomWidget.6.Path))" />
+							<param name="itemmenuid" value="9023" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomWidget.7" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomWidget.7.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomWidget.7.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomWidget.7.Path))" />
+							<param name="itemmenuid" value="9023" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomWidget.8" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomWidget.8.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomWidget.8.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomWidget.8.Path))" />
+							<param name="itemmenuid" value="9023" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomWidget.9" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomWidget.9.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomWidget.9.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomWidget.9.Path))" />
+							<param name="itemmenuid" value="9023" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomWidget.10" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomWidget.10.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomWidget.10.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomWidget.10.Path))" />
+							<param name="itemmenuid" value="9023" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomWidget.11" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomWidget.11.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomWidget.11.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomWidget.11.Path))" />
+							<param name="itemmenuid" value="9023" />
+						</include>
+						<include content="listpanelitems">
+							<param name="itemcustombase" value="CustomWidget.12" />
+							<param name="itemthumb" value="$INFO[Skin.String(CustomWidget.12.Icon)]" />
+							<param name="itemlabel" value="$INFO[Skin.String(CustomWidget.12.Label)]" />
+							<param name="itemcondition" value="!String.IsEmpty(Skin.String(CustomWidget.12.Path))" />
+							<param name="itemmenuid" value="9023" />
+						</include>
+					</content>
+				</control>
+				</control>
+			</control>	
+			<control type="group" id="600">
+				<!-- Support Settings -->
+				<visible>Skin.String(skinsettingmenu,addons)</visible>
+				<control type="image">
+				<!-- Dialog background image -->
+					<left>60</left>
+					<top>160</top>
+					<width>1350</width>
+					<height>815</height>
+					<texture border="14" colordiffuse="midgrey">button-default-long.png</texture>
+				</control>
+				<control type="image">
+					<!-- Background Settings Button Image -->
+					<right>0</right>
+					<top>570</top>
+					<width>415</width>
+					<height>75</height>
+					<texture border="9" colordiffuse="$VAR[AccentColor]">button-default-white-long.png</texture>
+					<include>settingbutton-fade</include>
+					<visible>!ControlGroup(999).HasFocus()</visible>
+				</control>				
+				<control type="grouplist" id="601">
+					<left>80</left>
+					<top>175</top>
+					<width>1300</width>
+					<height>750</height>
+					<itemgap>5</itemgap>
+					<onleft>1223</onleft>
+					<onright>999</onright>
+				<onup>8000</onup>
+					<pagecontrol>1223</pagecontrol>
+					<control type="label">
+						<height>70</height>
+						<font>ctouch22</font>
+						<label>Repositorios</label>
+						<textcolor>$VAR[AccentColor]</textcolor>
+					</control>
+				<control type="grouplist" id="357"><!--vacio-dirige último addon-->
+				    <onup>357</onup>
+					<height>5</height>
+					<label> </label>
+					<font>ctouch21</font>
+					<texturenofocus/>
+					<!--<onclick>321</onclick>
+					<onclick>ActivateWindow(5111)</onclick>
+					<onclick>Skin.SetBool(FirstRunSetup,true)</onclick>-->
+				</control>
+				    <control type="radiobutton" id="319">
+						<!--<onup>347</onup>-->
+						<font>ctouch21</font>
+						<radioposx>1200</radioposx>
+						<label>Repositorio Rebase $INFO[System.AddonVersion(repository.rebase),(,)]</label>
+						<height>70</height>
+						<radiowidth>120</radiowidth>
+						<radioheight>120</radioheight>
+						<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+						<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+						<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+						<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+						<onclick condition="!System.HasAddon(repository.reeebase)">InstallAddon(repository.rebase)</onclick>																		
+						<!--<onup>8000</onup>-->
+						<onup>347</onup>
+						<onclick condition="System.HasAddon(repository.rebase)">ActivateWindow(10040,&quot;addons://repository.rebase/&quot;,return)</onclick>
+						<selected>System.HasAddon(repository.rebase)</selected>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+					<control type="radiobutton" id="320">
+						<!--<onup>347</onup>-->
+						<font>ctouch21</font>
+						<radioposx>1200</radioposx>
+						<label>Repositorio STVA $INFO[System.AddonVersion(repository.stva),(,)]</label>
+						<height>70</height>
+						<radiowidth>120</radiowidth>
+						<radioheight>120</radioheight>
+						<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+						<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+						<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+						<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+						<onclick condition="!System.HasAddon(repository.stva)">InstallAddon(repository.stva)</onclick>																		
+						<onclick condition="System.HasAddon(repository.stva)">ActivateWindow(10040,&quot;addons://repository.stva/&quot;,return)</onclick>
+						<selected>System.HasAddon(repository.stva)</selected>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control><!--Luar-->
+					<control type="radiobutton" id="318">
+						<radioposx>1200</radioposx>
+						<height>70</height>
+						<font>ctouch21</font>
+						<label>Repositorio Luar $INFO[System.AddonVersion(repository.luar),(,)]</label>
+						<radiowidth>120</radiowidth>
+						<radioheight>120</radioheight>
+						<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+						<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+						<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+						<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+						<onclick condition="!System.HasAddon(repository.luar)">InstallAddon(repository.luar)</onclick>																		
+						<onclick condition="System.HasAddon(repository.luar)">ActivateWindow(10040,&quot;addons://repository.luar/&quot;,return)</onclick>
+						<selected>System.HasAddon(repository.luar)</selected>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+					<control type="radiobutton" id="321">
+						<radioposx>1200</radioposx>
+						<height>70</height>
+						<font>ctouch21</font>
+						<label>Repositorio Palantir2 $INFO[System.AddonVersion(repository.palantir2),(,)]</label>
+						<radiowidth>120</radiowidth>
+						<radioheight>120</radioheight>
+						<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+						<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+						<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+						<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+						<onclick condition="!System.HasAddon(repository.palantir2)">InstallAddon(repository.palantir2)</onclick>																		
+						<onclick condition="System.HasAddon(repository.palantir2)">ActivateWindow(10040,&quot;addons://repository.palantir2/&quot;,return)</onclick>
+						<selected>System.HasAddon(repository.palantir2)</selected>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+					<control type="radiobutton" id="322">
+						<radioposx>1200</radioposx>
+						<height>70</height>
+						<font>ctouch21</font>
+						<label>Repositorio Alfa $INFO[System.AddonVersion(repository.alfa-addon),(,)]</label>
+						<radiowidth>120</radiowidth>
+						<radioheight>120</radioheight>
+						<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+						<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+						<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+						<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+						<onclick condition="!System.HasAddon(repository.alfa-addon)">InstallAddon(repository.alfa-addon)</onclick>																		
+						<onclick condition="System.HasAddon(repository.alfa-addon)">ActivateWindow(10040,&quot;addons://repository.alfa-addon/&quot;,return)</onclick>
+						<selected>System.HasAddon(repository.alfa-addon)</selected>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+					<control type="radiobutton" id="323">
+						<font>ctouch21</font>
+						<radioposx>1200</radioposx>
+						<label>Repositorio fontsVR $INFO[System.AddonVersion(repository.fontsvr),(,)]</label>
+						<height>70</height>
+						<radiowidth>120</radiowidth>
+						<radioheight>120</radioheight>
+						<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+						<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+						<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+						<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+						<onclick condition="!System.HasAddon(repository.fontsvr)">InstallAddon(repository.fontsvr)</onclick>																		
+						<onclick condition="System.HasAddon(repository.fontsvr)">ActivateWindow(10040,&quot;addons://repository.fontsvr/&quot;,return)</onclick>
+						<selected>System.HasAddon(repository.fontsvr)</selected>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+					<control type="radiobutton" id="324">
+						<font>ctouch21</font>
+						<radioposx>1200</radioposx>
+						<label>Repositorio Balandro $INFO[System.AddonVersion(repository.balandro),(,)]</label>
+						<height>70</height>
+						<radiowidth>120</radiowidth>
+						<radioheight>120</radioheight>
+						<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+						<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+						<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+						<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+						<onclick condition="!System.HasAddon(repository.balandro)">InstallAddon(repository.balandro)</onclick>																		
+						<onclick condition="System.HasAddon(repository.balandro)">ActivateWindow(10040,&quot;addons://repository.balandro/&quot;,return)</onclick>
+						<selected>System.HasAddon(repository.balandro)</selected>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+					<control type="radiobutton" id="325">
+						<font>ctouch21</font>
+						<radioposx>1200</radioposx>
+						<label>Repositorio Michaz $INFO[System.AddonVersion(repository.michaz),(,)]</label>
+						<height>70</height>
+						<radiowidth>120</radiowidth>
+						<radioheight>120</radioheight>
+						<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+						<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+						<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+						<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+						<onclick condition="!System.HasAddon(repository.michaz)">InstallAddon(repository.michaz)</onclick>																	
+						<onclick condition="System.HasAddon(repository.michaz)">ActivateWindow(10040,&quot;addons://repository.michaz/&quot;,return)</onclick>
+						<selected>System.HasAddon(repository.michaz)</selected>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+					<control type="radiobutton" id="326">
+						<radioposx>1200</radioposx>
+						<font>ctouch21</font>
+						<label>Repositorio Magellan $INFO[System.AddonVersion(repository.magellan),(,)]</label>
+						<height>70</height>
+						<radiowidth>120</radiowidth>
+						<radioheight>120</radioheight>
+						<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+						<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+						<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+						<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+						<onclick condition="!System.HasAddon(repository.magellan)">InstallAddon(repository.magellan)</onclick>																		
+						<onclick condition="System.HasAddon(repository.magellan)">ActivateWindow(10040,&quot;addons://repository.magellan/&quot;,return)</onclick>
+						<selected>System.HasAddon(repository.magellan)</selected>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+					<control type="radiobutton" id="327">
+						<radioposx>1200</radioposx>
+						<font>ctouch21</font>
+						<label>Repositorio TheBlackGhost $INFO[System.AddonVersion(repository.theblackghost),(,)]</label>
+						<height>70</height>
+						<radiowidth>120</radiowidth>
+						<radioheight>120</radioheight>
+						<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+						<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+						<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+						<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+						<onclick condition="!System.HasAddon(repository.theblackghost)">InstallAddon(repository.theblackghost)</onclick>																		
+						<onclick condition="System.HasAddon(repository.theblackghost)">ActivateWindow(10040,&quot;addons://repository.theblackghost/&quot;,return)</onclick>
+						<selected>System.HasAddon(repository.theblackghost)</selected>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+					<control type="button" id="328">
+						<radioposx>1200</radioposx>
+						<font>ctouch21</font>
+						<label>Repositorio KODIvertiDO TEAM $INFO[System.AddonVersion(repository.KODIvertiDO_TEAM),(,)]</label>
+						<height>70</height>
+						<radiowidth>120</radiowidth>
+						<radioheight>120</radioheight>
+						<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+						<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+						<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+						<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+						<onclick condition="!System.HasAddon(repository.KODIvertiDO_TEAM)">InstallAddon(repository.KODIvertiDO_TEAM)</onclick>																		
+						<onclick condition="System.HasAddon(repository.KODIvertiDO_TEAM)">ActivateWindow(10040,&quot;addons://repository.KODIvertiDO_TEAM/&quot;,return)</onclick>
+						<selected>System.HasAddon(repository.KODIvertiDO_TEAM)</selected>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+					<control type="label" id="329">
+						<height>70</height>
+						<font>ctouch22</font>
+						<label>Addons de Contenido</label>
+						<textcolor>$VAR[AccentColor]</textcolor>
+					</control>	
+					<control type="radiobutton" id="330">
+						<radioposx>1200</radioposx>
+						<font>ctouch21</font>
+						<label>Cristal Azul $INFO[System.AddonVersion(plugin.video.cristalazul),(,)] [COLOR grey]- Pelis, Series, TV, Deportes, Documentales, Varios[/COLOR]</label>
+						<height>70</height>
+						<radiowidth>120</radiowidth>
+						<radioheight>120</radioheight>
+						<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+						<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+						<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+						<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+						<onclick condition="!System.HasAddon(plugin.video.cristalazul) + System.HasAddon(repository.rebase)">InstallAddon(plugin.video.cristalazul)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.cristalazul)">Skin.SetBool(widgets-cristal-pelis1)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.cristalazul)">Skin.SetBool(widgets-cristal-pelis2)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.cristalazul)">Skin.SetBool(widgets-cristal-series1)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.cristalazul)">Skin.SetBool(widgets-cristal-pelis2)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.cristalazul)">Skin.SetBool(cristalazul-items)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.cristalazul)">Skin.SetBool(buscador-cristal)</onclick>
+						<selected>System.HasAddon(plugin.video.cristalazul)</selected>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+					<control type="radiobutton" id="331">
+						<radioposx>1200</radioposx>
+						<height>70</height>
+						<font>ctouch21</font>
+						<label>Palantir2 $INFO[System.AddonVersion(plugin.video.palantir2),(,)][COLOR grey] - Pelis, Series, Documentales[/COLOR]</label>
+						<radiowidth>120</radiowidth>
+						<radioheight>120</radioheight>
+						<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+						<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+						<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+						<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+					<onclick condition="!System.HasAddon(repository.palantir2)">InstallAddon(repository.palantir2)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.palantir2) + System.HasAddon(repository.palantir2)">InstallAddon(plugin.video.palantir2)</onclick>																		
+						<onclick condition="System.HasAddon(plugin.video.palantir2)">ActivateWindow(10040,&quot;addons://plugin.video.palantir2/&quot;,return)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.palantir2)">Skin.SetBool(widgets-palantir-myseries)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.palantir2)">Skin.SetBool(widgets-palantir-pelis1)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.palantir2)">Skin.SetBool(widgets-palantir-pelis2)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.palantir2)">Skin.SetBool(widgets-palantir-series1)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.palantir2)">Skin.SetBool(widgets-palantir-series2)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.palantir2)">Skin.SetBool(palantir-items)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.palantir2)">Skin.SetBool(buscador-palantir)</onclick>
+						<selected>System.HasAddon(plugin.video.palantir2)</selected>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+					<control type="radiobutton" id="332">
+						<radioposx>1200</radioposx>
+						<height>70</height>
+						<font>ctouch21</font>
+						<label>Alfa $INFO[System.AddonVersion(plugin.video.alfa),(,)][COLOR grey] - Pelis, Series, Documentales[/COLOR]</label>
+						<radiowidth>120</radiowidth>
+						<radioheight>120</radioheight>
+						<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+						<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+						<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+						<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+					<onclick condition="!System.HasAddon(repository.alfa-addon)">InstallAddon(repository.alfa-addon)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.alfa) + System.HasAddon(repository.alfa-addon)">InstallAddon(plugin.video.alfa)</onclick>																		
+						<onclick condition="System.HasAddon(plugin.video.alfa)">ActivateWindow(10040,&quot;addons://plugin.video.alfa/&quot;,return)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.alfa)">Skin.SetBool(widgets-alfa-pelis1)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.alfa)">Skin.SetBool(widgets-alfa-pelis2)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.alfa)">Skin.SetBool(widgets-alfa-series1)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.alfa)">Skin.SetBool(widgets-alfa-series2)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.alfa)">Skin.SetBool(alfa-items)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.alfa)">Skin.SetBool(buscador-alfa)</onclick>
+						<selected>System.HasAddon(plugin.video.alfa)</selected>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+					<control type="radiobutton" id="333">
+						<radioposx>1200</radioposx>
+						<height>70</height>
+						<font>ctouch21</font>
+						<label>Balandro $INFO[System.AddonVersion(plugin.video.balandro),(,)][COLOR grey] - Pelis, Series, Documentales[/COLOR]</label>
+						<radiowidth>120</radiowidth>
+						<radioheight>120</radioheight>
+						<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+						<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+						<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+						<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+						<onclick condition="!System.HasAddon(repository.balandro)">InstallAddon(repository.balandro)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.balandro) + System.HasAddon(repository.balandro)">InstallAddon(plugin.video.balandro)</onclick>																		
+						<onclick condition="System.HasAddon(plugin.video.balandro)">ActivateWindow(10040,&quot;addons://plugin.video.balandro/&quot;,return)</onclick>
+						<!--<onclick condition="System.HasAddon(plugin.video.balandro)">Skin.SetBool(widgets-balandro-pelis1)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.balandro)">Skin.SetBool(widgets-balandro-pelis2)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.balandro)">Skin.SetBool(widgets-balandro-series1)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.balandro)">Skin.SetBool(widgets-balandro-series2)</onclick>-->
+						<onclick condition="System.HasAddon(plugin.video.balandro)">Skin.SetBool(balandro-items)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.balandro)">Skin.SetBool(buscador-balandro)</onclick>
+						<selected>System.HasAddon(plugin.video.balandro)</selected>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+					<!--vavoo(michaz)-->
+					<control type="radiobutton" id="334">
+						<radioposx>1200</radioposx>
+						<height>70</height>
+						<font>ctouch21</font>
+						<label>Vavoo $INFO[System.AddonVersion(plugin.video.vavooto),(,)][COLOR grey] - TV Premium[/COLOR]</label>
+						<radiowidth>120</radiowidth>
+						<radioheight>120</radioheight>
+						<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+						<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+						<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+						<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+						<onclick condition="!System.HasAddon(repository.michaz)">InstallAddon(repository.michaz)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.vavooto) + System.HasAddon(repository.michaz)">InstallAddon(plugin.video.vavooto)</onclick>																		
+						<onclick condition="System.HasAddon(plugin.video.vavooto)">ActivateWindow(10040,&quot;addons://plugin.video.vavooto/&quot;,return)</onclick>
+						<!--<onclick condition="System.HasAddon(plugin.video.balandro)">Skin.SetBool(widgets-balandro-pelis1)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.balandro)">Skin.SetBool(widgets-balandro-pelis2)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.balandro)">Skin.SetBool(widgets-balandro-series1)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.balandro)">Skin.SetBool(widgets-balandro-series2)</onclick>-->
+						<onclick condition="System.HasAddon(plugin.video.vavooto)">Skin.SetBool(vavoo-items)</onclick>
+						<selected>System.HasAddon(plugin.video.vavooto)</selected>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+					<!--Tacones-->
+					<control type="radiobutton" id="335">
+						<radioposx>1200</radioposx>
+						<height>70</height>
+						<font>ctouch21</font>
+						<label>Tacones $INFO[System.AddonVersion(plugin.video.tacones),(,)][COLOR grey] - Cine[/COLOR]</label>
+						<radiowidth>120</radiowidth>
+						<radioheight>120</radioheight>
+						<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+						<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+						<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+						<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+						<onclick condition="!System.HasAddon(plugin.video.tacones) + System.HasAddon(repository.rebase)">InstallAddon(plugin.video.tacones)</onclick>																		
+						<onclick condition="System.HasAddon(plugin.video.tacones)">ActivateWindow(10040,&quot;addons://plugin.video.tacones/?url=%24doregex%5Bindex%5D&amp;mode=17&amp;regexs=%7B%27index%27%3A%20%7B%27name%27%3A%20%27index%27%2C%20%27listrepeat%27%3A%20%27%5Cn%3Ctitle%3E%5BB%5D%5BCOLOR%20red%5D%E2%80%A2%5B/COLOR%5D%20%5BCOLOR%20white%5D%5Bindex.param1%5D%5B/COLOR%5D%5BCOLOR%20red%5D%20%28%5Bindex.param8%5D%20%7C%20%5Bindex.param9%5D%29%5B/COLOR%5D%5B/B%5D%3C/title%3E%5Cn%3Clink%3E%24doregex%5Bgestor%5D%3C/link%3E%5Cn%3Cyear%3E%5Bindex.param8%5D%3C/year%3E%5Cn%3Cgenre%3E%5Bindex.param9%5D%3C/genre%3E%5Cn%3Cinfo%3E%5Bindex.param11%5D%3C/info%3E%5Cn%3Cthumbnail%3E%5Bindex.param6%5D%3C/thumbnail%3E%5Cn%3Cfanart%3E%5Bindex.param7%5D%3C/fanart%3E%5Cn%27%2C%20%27expres%27%3A%20%27title.%28.%2A%29..title.%5C%5Cs%2A.microhd.%28%5B%5ENA%5D%2B%29..microhd.%5C%5Cs%2A.fullhd.%28.%2A%29..fullhd.%5C%5Cs%2A.tresd.%28.%2A%29..tresd.%5C%5Cs%2A.cuatrok.%28.%2A%29..cuatrok.%5C%5Cs%2A.thumbnail.%28.%2A%29..thumbnail.%5C%5Cs%2A.fanart.%28.%2A%29..fanart.%5C%5Cs%2A.date.%28.%2A%29..date.%5C%5Cs%2A.genre.%28.%2A%29..genre.%5C%5Cs%2A.extra.%28.%2A%29..extra.%5C%5Cs%2A.info.%28.%2A%29..info.%27%2C%20%27page%27%3A%20%27https%3A//gitlab.com/stiletto1/s/-/raw/main/c%27%2C%20%27cookiejar%27%3A%20%27%27%7D%2C%20%27gestor%27%3A%20%7B%27name%27%3A%20%27gestor%27%2C%20%27expres%27%3A%20%22%23%24pyFunction%5Cndef%20GetLSProData%28page_data%2CCookie_Jar%2Cm%29%3A%5Cn%20calidad%20%3D%20%27%5Bindex.param2%5D%27%2C%20%27%5Bindex.param3%5D%27%2C%20%27%5Bindex.param4%5D%27%2C%20%27%5Bindex.param5%5D%27%5Cn%20for%20x%20in%20calidad%3A%5Cn%20%20%20%20if%20x%20%21%3D%20%27NA%27%3A%5Cn%20%20%20%20%20%20%20%20calidad%20%3D%3D%20x%5Cn%20%20%20%20%20%20%20%20break%5Cn%20%20%20%20else%3A%5Cn%20%20%20%20%20%20%20%20x%20%3D%20%27%27%5Cn%20return%20%27plugin%3A//plugin.video.elementum/play%3Furi%3Dmagnet%3A%3Fxt%3Durn%3Abtih%3A%5Bindex.param2%5D%27%5Cn%22%2C%20%27page%27%3A%20None%2C%20%27cookiejar%27%3A%20%27%27%7D%7D&amp;iconimage=https%3A%2F%2Fi.imgur.com%2FgdMxN0J.png&quot;,return)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.tacones)">Skin.SetBool(tacones-items)</onclick>
+					<onclick condition="!System.HasAddon(plugin.video.tacones)">Skin.SetBool(buscador-tacones)</onclick>
+						<selected>System.HasAddon(plugin.video.tacones)</selected>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+					<!--KodispainTV-->
+					<control type="radiobutton" id="336">
+						<radioposx>1200</radioposx>
+						<height>70</height>
+						<font>ctouch21</font>
+						<label>Kodispain TV $INFO[System.AddonVersion(plugin.video.kodispaintv),(,)][COLOR grey] - TV Premium[/COLOR]</label>
+						<radiowidth>120</radiowidth>
+						<radioheight>120</radioheight>
+						<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+						<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+						<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+						<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+						<onclick condition="!System.HasAddon(plugin.video.kodispaintv) + System.HasAddon(repository.rebase)">InstallAddon(plugin.video.kodispaintv)</onclick>																		
+						<onclick condition="System.HasAddon(plugin.video.kodispaintv)">ActivateWindow(10040,&quot;addons://plugin.video.kodispaintv/&quot;,return)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.kodispaintv)">Skin.SetBool(tacones-items)</onclick>
+					<onclick condition="!System.HasAddon(plugin.video.kodispaintv)">Skin.SetBool(buscador-tacones)</onclick>
+						<selected>System.HasAddon(plugin.video.kodispaintv)</selected>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+					<control type="radiobutton" id="338">
+						<radioposx>1200</radioposx>
+						<font>ctouch21</font>
+						<height>70</height>
+						<label>Moe's TV $INFO[System.AddonVersion(plugin.video.moestv),(,)] [COLOR grey]- Plataformas TV[/COLOR]</label>
+						<radiowidth>120</radiowidth>
+						<radioheight>120</radioheight>
+						<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+						<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+						<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+						<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+						<onclick condition="!System.HasAddon(plugin.video.moestv) + System.HasAddon(repository.rebase)">InstallAddon(plugin.video.moestv)</onclick>																		
+						<selected>System.HasAddon(plugin.video.moestv)</selected>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+					<control type="radiobutton" id="339">
+						<radioposx>1200</radioposx>
+						<font>ctouch21</font>
+						<height>70</height>
+						<label>Winner $INFO[System.AddonVersion(plugin.video.winner),(,)] [COLOR grey]- Deportes[/COLOR]</label>
+						<radiowidth>120</radiowidth>
+						<radioheight>120</radioheight>
+						<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+						<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+						<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+						<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+						<onclick condition="!System.HasAddon(plugin.video.winner) + System.HasAddon(repository.rebase)">InstallAddon(plugin.video.winner)</onclick>																		
+						<selected>System.HasAddon(plugin.video.winner)</selected>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+					<control type="radiobutton" id="340">
+						<radioposx>1200</radioposx>
+						<font>ctouch21</font>
+						<height>70</height>
+						<label>The Blackgost $INFO[System.AddonVersion(plugin.video.blackghost),(,)] [COLOR grey]- Cine y Series[/COLOR]</label>
+						<radiowidth>120</radiowidth>
+						<radioheight>120</radioheight>
+						<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+						<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+						<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+						<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+						<onclick condition="!System.HasAddon(repository.theblackghost)">InstallAddon(repository.theblackghost)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.blackghost) + System.HasAddon(repository.theblackghost)">InstallAddon(plugin.video.blackghost)</onclick>																		
+					<onclick condition="System.HasAddon(plugin.video.blackghost)">Skin.SetBool(blackghost-items)</onclick>
+					<onclick condition="!System.HasAddon(plugin.video.blackghost)">Skin.SetBool(buscador-blackghost)</onclick>
+						<selected>System.HasAddon(plugin.video.blackghost)</selected>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+					 <!--KodiVerTido-->
+					<control type="button" id="337">
+						<radioposx>1200</radioposx>
+						<height>70</height>
+						<font>ctouch21</font>
+						<label>KodivertidoTVCine $INFO[System.AddonVersion(plugin.video.KovertidoTeamTvCine),(,)][COLOR grey] - Pelis y Series[/COLOR]</label>
+						<radiowidth>120</radiowidth>
+						<radioheight>120</radioheight>
+						<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+						<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+						<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+						<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>	
+						<onclick condition="!System.HasAddon(repository.KODIvertiDO_TEAM)">InstallAddon(repository.KODIvertiDO_TEAM)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.KovertidoTeamTvCine) + System.HasAddon(repository.KODIvertiDO_TEAM)">InstallAddon(plugin.video.KovertidoTeamTvCine)</onclick>																		
+						<onclick condition="System.HasAddon(plugin.video.KovertidoTeamTvCine)">ActivateWindow(10040,&quot;addons://plugin.video.KovertidoTeamTvCine/&quot;,return)</onclick>
+						<onclick condition="System.HasAddon(plugin.video.KovertidoTeamTvCine)">Skin.SetBool(kodivertido-items)</onclick>
+						<!--<onclick condition="!System.HasAddon(plugin.video.kodispaintv)">Skin.SetBool(buscador-tacones)</onclick>-->
+						<selected>System.HasAddon(plugin.video.KovertidoTeamTvCine)</selected>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+					<control type="button" id="341"><!--<control type="button" id="331">radiobutton ?-->
+						<radioposx>1200</radioposx>
+						<font>ctouch21</font>
+						<height>70</height>
+						<label>Magellan $INFO[System.AddonVersion(plugin.video.Magellan_Matrix),(,)] [COLOR grey]- TV Gratis[/COLOR]</label>
+						<radiowidth>120</radiowidth>
+						<radioheight>120</radioheight>
+						<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+						<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+						<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+						<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+					    <onclick condition="!System.HasAddon(repository.magellan)">InstallAddon(repository.magellan)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.Magellan_Matrix) + System.HasAddon(repository.magellan)">InstallAddon(plugin.video.Magellan_Matrix)</onclick>
+					  <!--<onclick condition="System.HasAddon(plugin.video.Magellan_Matrix)">ActivateWindow(10040,&quot;addons://plugin.video.Magellan_Matrix/&quot;,return)</onclick>	
+					  <onclick condition="System.HasAddon(plugin.video.Magellan_Matrix)">Skin.SetBool(vavoo-items)</onclick>
+					  <selected>System.HasAddon(plugin.video.Magellan_Matrix)</selected>-->
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+					<control type="label" id="342">
+						<height>70</height>
+						<font>ctouch22</font>
+						<label>Addons requeridos</label>
+						<textcolor>$VAR[AccentColor]</textcolor>
+					</control>	
+					<control type="radiobutton" id="343">
+						<radioposx>1200</radioposx>
+						<font>ctouch21</font>
+						<height>70</height>
+						<label>Horus $INFO[System.AddonVersion(script.module.horus),(,)] [COLOR grey]- Requerido para ver Deportes[/COLOR]</label>
+						<radiowidth>120</radiowidth>
+						<radioheight>120</radioheight>
+						<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+						<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+						<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+						<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+						<onclick condition="!System.HasAddon(script.module.horus) + System.HasAddon(repository.rebase)">InstallAddon(script.module.horus)</onclick>
+						<onclick condition="System.HasAddon(script.module.horus)">RunAddon(script.module.horus)</onclick>
+						<selected>System.HasAddon(script.module.horus)</selected>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+					<control type="radiobutton" id="344">
+						<radioposx>1200</radioposx>
+						<label>Complemento STVA $INFO[System.AddonVersion(script.stva),(,)] [COLOR grey]- Addon de Mantenimiento[/COLOR]</label>
+						<font>ctouch21</font>
+						<height>70</height>
+						<radiowidth>120</radiowidth>
+						<radioheight>120</radioheight>
+						<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+						<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+						<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+						<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+						<onclick condition="!System.HasAddon(script.stva) + System.HasAddon(repository.stva)">InstallAddon(script.stva)</onclick>																		
+						<selected>System.HasAddon(script.stva)</selected>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+					<control type="radiobutton" id="345">
+						<radioposx>1200</radioposx>
+						<font>ctouch21</font>
+						<label>The Movie Database Helper $INFO[System.AddonVersion(plugin.video.themoviedb.helper),(,)] [COLOR grey]- Dependencia de arte para el skin[/COLOR]</label>
+						<textwidth>1175</textwidth>
+						<include>autoscroll</include>
+						<height>70</height>
+						<radiowidth>120</radiowidth>
+						<radioheight>120</radioheight>
+						<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+						<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+						<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+						<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+						<onclick condition="!System.HasAddon(repository.jurialmunkey)">InstallAddon(repository.jurialmunkey)</onclick>																		
+						<onclick condition="!System.HasAddon(plugin.video.themoviedb.helper) + System.HasAddon(repository.jurialmunkey)">InstallAddon(plugin.video.themoviedb.helper)</onclick>																		
+						<selected>System.HasAddon(plugin.video.themoviedb.helper)</selected>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+					<control type="radiobutton" id="346">
+						<radioposx>1200</radioposx>
+						<font>ctouch21</font>
+						<label>Image Studio Coloured $INFO[System.AddonVersion(resource.images.studios.coloured),(,)] [COLOR grey]- Iconos de estudios para el skin[/COLOR]</label>
+						<height>70</height>
+						<radiowidth>120</radiowidth>
+						<radioheight>120</radioheight>
+						<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+						<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+						<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+						<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+						<onclick condition="!System.HasAddon(resource.images.studios.coloured)">InstallAddon(resource.images.studios.coloured)</onclick>																		
+						<selected>System.HasAddon(resource.images.studios.coloured)</selected>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+					<control type="radiobutton" id="347">
+						<radioposx>1200</radioposx>
+						<font>ctouch21</font>
+						<height>70</height>
+						<radiowidth>120</radiowidth>
+						<radioheight>120</radioheight>
+						<label>ResolveURL $INFO[System.AddonVersion(script.module.resolveurl),(,)] [COLOR grey]- Necesario para Cristal Azul[/COLOR]</label>
+						<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+						<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+						<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+						<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+						<onclick condition="!System.HasAddon(script.module.resolveurl) + System.HasAddon(repository.resolveurl)">InstallAddon(script.module.resolveurl)</onclick>
+						<selected>System.HasAddon(script.module.resolveurl)</selected>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+					<control type="radiobutton" id="348">
+						<radioposx>1200</radioposx>
+						<font>ctouch21</font>
+						<height>70</height>
+						<radiowidth>120</radiowidth>
+						<radioheight>120</radioheight>
+						<label>Embuary Info $INFO[System.AddonVersion(script.embuary.info),(,)] [COLOR grey]- Necesario para Palantir[/COLOR]</label>
+						<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+						<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+						<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+						<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+						<onclick condition="!System.HasAddon(script.embuary.info)">InstallAddon(script.embuary.info)</onclick>
+						<selected>System.HasAddon(script.embuary.info)</selected>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+					<control type="label" id="349">
+						<height>70</height>
+						<font>ctouch22</font>
+						<label>Addons opcionales</label>
+						<textcolor>$VAR[AccentColor]</textcolor>
+					</control>	
+					<control type="radiobutton" id="350">
+						<radioposx>1200</radioposx>
+						<font>ctouch21</font>
+						<label>Luar $INFO[System.AddonVersion(script.luar),(,)] [COLOR grey]- Instalador de Addons[/COLOR]</label>
+						<height>70</height>
+						<radiowidth>120</radiowidth>
+						<radioheight>120</radioheight>
+						<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+						<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+						<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+						<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+						<onclick condition="!System.HasAddon(repository.luar)">InstallAddon(repository.luar)</onclick>
+						<onclick condition="!System.HasAddon(script.luar) + System.HasAddon(repository.luar)">InstallAddon(script.luar)</onclick>																		
+						<selected>System.HasAddon(script.luar)</selected>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control><!--kelebek-->
+					<control type="radiobutton" id="351">
+						<radioposx>1200</radioposx>
+						<font>ctouch21</font>
+						<label>Kelebek $INFO[System.AddonVersion(script.kelebek),(,)] [COLOR grey]- Instalador de Addons[/COLOR]</label>
+						<height>70</height>
+						<radiowidth>120</radiowidth>
+						<radioheight>120</radioheight>
+						<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+						<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+						<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+						<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+						<onclick condition="!System.HasAddon(repository.rebase)">InstallAddon(repository.rebase)</onclick>
+						<onclick condition="!System.HasAddon(script.kelebek) + System.HasAddon(repository.rebase)">InstallAddon(script.kelebek)</onclick>																		
+						<selected>System.HasAddon(script.kelebek)</selected>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+					<control type="radiobutton" id="352">
+						<radioposx>1200</radioposx>
+						<font>ctouch21</font>
+						<label>Autocompletion $INFO[System.AddonVersion(plugin.program.autocompletion),(,)] [COLOR grey]- Autocompletar texto[/COLOR]</label>
+						<height>70</height>
+						<radiowidth>120</radiowidth>
+						<radioheight>120</radioheight>
+						<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+						<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+						<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+						<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+						<!--<onclick condition="!System.HasAddon(plugin.program.autocompletion)">InstallAddon(plugin.program.autocompletion)</onclick>-->																	
+						<onclick condition="!System.HasAddon(script.limpiarkodi)">InstallAddon(plugin.program.autocompletion)</onclick>
+						<selected>System.HasAddon(plugin.program.autocompletion)</selected>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+					<control type="radiobutton" id="353">
+						<radioposx>1200</radioposx>
+						<font>ctouch21</font>
+						<label>PVR IPTV Simple Client $INFO[System.AddonVersion(pvr.iptvsimple),(,)] [COLOR grey]- Cliente IPTV[/COLOR]</label>
+						<height>70</height>
+						<radiowidth>120</radiowidth>
+						<radioheight>120</radioheight>
+						<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+						<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+						<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+						<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+						<onclick condition="!System.HasAddon(pvr.iptvsimple)">InstallAddon(pvr.iptvsimple)</onclick>																		
+						<selected>System.HasAddon(pvr.iptvsimple)</selected>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+					<control type="radiobutton" id="354">
+						<radioposx>1200</radioposx>
+						<font>ctouch21</font>
+						<label>Limpia tu Kodi $INFO[System.AddonVersion(script.limpiarkodi),(,)] [COLOR grey]- Cliente IPTV[/COLOR]</label>
+						<height>70</height>
+						<radiowidth>120</radiowidth>
+						<radioheight>120</radioheight>
+						<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+						<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+						<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+						<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+						<onclick condition="!System.HasAddon(script.limpiarkodi)">InstallAddon(script.limpiarkodi)</onclick>																		
+						<selected>System.HasAddon(script.limpiarkodi)</selected>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+					<control type="radiobutton" id="355">
+						<radioposx>1200</radioposx>
+						<font>ctouch21</font>
+						<label>Repositorio Github (Torrest) $INFO[System.AddonVersion(repository.github),(,)] [COLOR grey]- Repositorio para Torrest[/COLOR]</label>
+						<height>70</height>
+						<radiowidth>120</radiowidth>
+						<radioheight>120</radioheight>
+						<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+						<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+						<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+						<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+						<onclick condition="!System.HasAddon(repository.github) + System.HasAddon(repository.rebase)">InstallAddon(repository.github)</onclick>																		
+						<selected>System.HasAddon(repository.github)</selected>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+					<control type="radiobutton" id="356">
+						<radioposx>1200</radioposx>
+						<font>ctouch21</font>
+						<height>70</height>
+						<radiowidth>120</radiowidth>
+						<radioheight>120</radioheight>
+						<label>Torrest $INFO[System.AddonVersion(plugin.video.torrest),(,)] [COLOR grey]- Cliente Torrent[/COLOR]</label>
+						<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+						<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+						<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+						<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+						<onclick condition="!System.HasAddon(repository.github)">InstallAddon(repository.github)</onclick>
+						<onclick condition="!System.HasAddon(plugin.video.torrest) + System.HasAddon(repository.github)">InstallAddon(plugin.video.torrest)</onclick>
+						<selected>System.HasAddon(plugin.video.torrest)</selected>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+					<control type="radiobutton" id="357">
+					<!--<ondown>321</ondown>-->
+						<radioposx>1200</radioposx>
+						<font>ctouch21</font>
+						<height>70</height>
+						<radiowidth>120</radiowidth>
+						<radioheight>120</radioheight>
+						<label>Elementum $INFO[System.AddonVersion(plugin.video.elementum),(,)] [COLOR grey]- Cliente Torrent (Para Android ARM y Windows x64)[/COLOR]</label>
+						<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+						<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+						<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+						<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+						<onclick condition="!System.HasAddon(plugin.video.elementum) + System.HasAddon(repository.rebase)">InstallAddon(plugin.video.elementum)</onclick>
+						<selected>System.HasAddon(plugin.video.elementum)</selected>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+				   <control type="button" id="319"><!--vacio-dirige a top 319-->
+				  <!--<onup>319</onup>-->
+					<height>50</height>
+					<label>Fin Addons</label>
+					<font>ctouch21</font>
+					<!--<textoffsetx>30</textoffsetx>-->
+					<textureradioonfocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonfocus>
+						<textureradioonnofocus colordiffuse="ffffffff">buttons/status-on.png</textureradioonnofocus>
+						<textureradioofffocus colordiffuse="fff02222">buttons/status-off.png</textureradioofffocus>
+						<textureradiooffnofocus colordiffuse="fff02222">buttons/status-off.png</textureradiooffnofocus>
+					<!--<onclick>321</onclick>
+					<onclick>ActivateWindow(5111)</onclick>
+					<onclick>Skin.SetBool(FirstRunSetup,true)</onclick>-->
+					<align>center</align>
+				   </control>
+				</control>	
+			</control>
+			<control type="group" id="800">
+				<!-- Home Screen Settings -->
+				<visible>Skin.String(skinsettingmenu,addonssettings)</visible>
+				<control type="image">
+				<!-- Dialog background image -->
+					<left>60</left>
+					<top>160</top>
+					<width>1350</width>
+					<height>815</height>
+					<texture border="14" colordiffuse="midgrey">button-default-long.png</texture>
+				</control>
+				<control type="image">
+					<!-- Background Settings Button Image -->
+					<right>0</right>
+					<top>655</top>
+					<width>415</width>
+					<height>75</height>
+					<texture border="9" colordiffuse="$VAR[AccentColor]">button-default-white-long.png</texture>
+					<include>settingbutton-fade</include>
+					<visible>!ControlGroup(999).HasFocus()</visible>
+				</control>
+				<control type="grouplist" id="801">
+					<left>80</left>
+					<top>175</top>
+					<width>1300</width>
+					<height>750</height>
+					<itemgap>5</itemgap>
+					<onleft>1223</onleft>
+				  <onup>818</onup>
+					<onright>999</onright>
+					<pagecontrol>1223</pagecontrol>
+					<control type="label" id="502">
+						<left>70</left>
+						<height>70</height>
+						<width>500</width>
+						<label>Addons de Contenido</label>
+						<textcolor>$VAR[AccentColor]</textcolor>
+						<font>ctouch22</font>
+					</control>
+				 <control type="grouplist" id="824"><!--vacio-dirige último addon-->
+				    <onup>824</onup>
+					<height>5</height>
+					<label> </label>
+					<font>ctouch21</font>
+					<texturenofocus/>
+					<!--<onclick>321</onclick>
+					<onclick>ActivateWindow(5111)</onclick>
+					<onclick>Skin.SetBool(FirstRunSetup,true)</onclick>-->
+				  </control>
+					<control type="button" id="802">
+						<width>1300</width>
+						<height>70</height>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Cristal Azul</label>
+						<onclick>Addon.OpenSettings(plugin.video.cristalazul)</onclick>
+						<font>ctouch21</font>
+						<visible>System.HasAddon(plugin.video.cristalazul)</visible>
+					</control>
+					<control type="button" id="803">
+						<width>1300</width>
+						<height>70</height>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Alfa</label>
+						<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.alfa/?ewogICAgImFjdGlvbiI6ICJtYWlubGlzdCIsCiAgICAiY2F0ZWdvcnkiOiAiQ29uZmlndXJhY2lcdTAwZjNuIiwKICAgICJjaGFubmVsIjogInNldHRpbmciLAogICAgImluZm9MYWJlbHMiOiB7fSwKICAgICJ0aHVtYm5haWwiOiAiaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FsZmEtYWRkb24vbWVkaWEvbWFzdGVyL3RoZW1lcy9kYXJrXFx0aHVtYl9zZXR0aW5nXzAucG5nIiwKICAgICJ0aXRsZSI6ICJDb25maWd1cmFjaVx1MDBmM24iLAogICAgInZpZXdtb2RlIjogImxpc3QiCn0%3d&quot;,return)</onclick>
+						<font>ctouch21</font>
+						<visible>System.HasAddon(plugin.video.alfa)</visible>
+					</control>
+					<control type="button" id="804">
+						<width>1300</width>
+						<height>70</height>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Palantir2</label>
+						<onclick>Addon.OpenSettings(plugin.video.palantir2)</onclick>
+						<font>ctouch21</font>
+						<visible>System.HasAddon(plugin.video.palantir2)</visible>
+					</control>
+					<control type="button" id="805"><!--balandro-->
+						<width>1300</width>
+						<height>70</height>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Balandro</label>
+						<onclick>Addon.OpenSettings(plugin.video.balandro)</onclick>
+						<font>ctouch21</font>
+						<visible>System.HasAddon(plugin.video.balandro)</visible>
+					</control>
+					<control type="button" id="806">
+						<width>1300</width>
+						<height>70</height>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Moe's TV</label>
+						<onclick>Addon.OpenSettings(plugin.video.moestv)</onclick>
+						<font>ctouch21</font>
+						<visible>System.HasAddon(plugin.video.moestv)</visible>
+					</control>
+					<control type="button" id="807"><!--no se muestra aquí Magellan al estar instalado-->
+						<width>1300</width>
+						<height>70</height>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Magellan</label>
+						<onclick>Addon.OpenSettings(plugin.video.Magellan_Matrix)</onclick>
+						<font>ctouch21</font>
+						<!--<visible>System.HasAddon(plugin.video.Magellan_Matrix)</visible>-->
+					    <textcolor>$VAR[AccentColor]</textcolor>
+					</control>
+					<control type="button" id="808"><!--tacones-->
+						<width>1300</width>
+						<height>70</height>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Tacones</label>
+						<onclick>Addon.OpenSettings(plugin.video.tacones)</onclick>
+						<font>ctouch21</font>
+						<visible>System.HasAddon(plugin.video.tacones)</visible>
+					</control>
+					<control type="button" id="809"><!--tacones-->
+						<width>1300</width>
+						<height>70</height>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>KodispainTV</label>
+						<onclick>Addon.OpenSettings(plugin.video.kodispaintv)</onclick>
+						<font>ctouch21</font>
+						<visible>System.HasAddon(plugin.video.kodispaintv)</visible>
+					</control>
+					<control type="button" id="810"><!--KodivertidoteamTVCine-->
+						<width>1300</width>
+						<height>70</height>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>KodivertidoTV</label>
+						<onclick>Addon.OpenSettings(plugin.video.KovertidoTeamTvCine)</onclick>
+						<font>ctouch21</font>
+						<visible>System.HasAddon(plugin.video.KovertidoTeamTvCine)</visible>
+					</control>
+					<control type="button" id="811"><!--The Blackghost-->
+						<width>1300</width>
+						<height>70</height>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>The Blackgost</label>
+						<onclick>Addon.OpenSettings(plugin.video.blackghost)</onclick>
+						<font>ctouch21</font>
+						<visible>System.HasAddon(plugin.video.blackghost)</visible>
+					</control><!--The Crew-->
+					<!--<control type="button" id="812">
+						<width>1300</width>
+						<height>70</height>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>The Blackgost</label>
+						<onclick>Addon.OpenSettings(plugin.video.blackghost)</onclick>
+						<font>ctouch21</font>
+						<visible>System.HasAddon(plugin.video.blackghost)</visible>
+					</control>-->
+					<control type="button" id="815">
+						<width>1300</width>
+						<height>70</height>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Duff You</label>
+						<onclick>Addon.OpenSettings(plugin.video.duffyou)</onclick>
+						<font>ctouch21</font>
+						<visible>System.HasAddon(plugin.video.duffyou)</visible>
+					</control>
+					<control type="label" id="816">
+						<left>70</left>
+						<height>70</height>
+						<width>500</width>
+						<label>Otros addons</label>
+						<textcolor>$VAR[AccentColor]</textcolor>
+						<font>ctouch22</font>
+					</control>
+					<control type="button" id="817">
+						<width>1300</width>
+						<height>70</height>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Horus</label>
+						<onclick>Addon.OpenSettings(script.module.horus)</onclick>
+						<font>ctouch21</font>
+						<visible>System.HasAddon(script.module.horus)</visible>
+					</control>
+					<control type="button" id="818">
+						<width>1300</width>
+						<height>70</height>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Luar</label>
+						<onclick>Addon.OpenSettings(script.luar)</onclick>
+						<font>ctouch21</font>
+						<visible>System.HasAddon(script.luar)</visible>
+					</control>
+					<!--kelebek-->
+					<control type="button" id="819">
+						<width>1300</width>
+						<height>70</height>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Kelebek</label>
+						<onclick>Addon.OpenSettings(script.kelebek)</onclick>
+						<font>ctouch21</font>
+						<visible>System.HasAddon(script.kelebek)</visible>
+					</control>
+					<control type="button" id="820">
+						<width>1300</width>
+						<height>70</height>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Limpia tu Kodi</label>
+						<onclick>Addon.OpenSettings(script.limpiarkodi)</onclick>
+						<font>ctouch21</font>
+						<visible>System.HasAddon(script.limpiarkodi)</visible>
+					</control>
+					<control type="button" id="821">
+						<width>1300</width>
+						<height>70</height>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Embuary Info</label>
+						<onclick>Addon.OpenSettings(script.embuary.info)</onclick>
+						<font>ctouch21</font>
+						<visible>System.HasAddon(script.embuary.info)</visible>
+					</control>
+					<control type="button" id="822">
+						<width>1300</width>
+						<height>70</height>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Torrest</label>
+						<onclick>Addon.OpenSettings(plugin.video.torrest)</onclick>
+						<font>ctouch21</font>
+						<visible>System.HasAddon(plugin.video.torrest)</visible>
+					</control>
+					<control type="button" id="823">
+						<width>1300</width>
+						<height>70</height>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>Elementum</label>
+						<onclick>Addon.OpenSettings(plugin.video.elementum)</onclick>
+						<font>ctouch21</font>
+						<visible>System.HasAddon(plugin.video.elementum)</visible>
+					</control>
+					<control type="button" id="824">
+						<width>1300</width>
+						<height>70</height>
+						<texturenofocus/>
+						<include>DefaultSettingButton</include>
+						<label>PVR IPTV Simple Client</label>
+						<onclick>Addon.OpenSettings(pvr.iptvsimple)</onclick>
+						<font>ctouch21</font>
+						<visible>System.HasAddon(pvr.iptvsimple)</visible>
+					</control>
+					<control type="button" id="802"><!--vacio-dirige a primer addon-->
+				    <onup>802</onup>
+					<height>5</height>
+					<label> </label>
+					<font>ctouch21</font>
+					<texturenofocus/>
+					<!--<onclick>321</onclick>
+					<onclick>ActivateWindow(5111)</onclick>
+					<onclick>Skin.SetBool(FirstRunSetup,true)</onclick>-->
+				    </control>
+				</control>
+			</control>
+			<control type="group" id="700">
+				<!-- Support Settings -->
+				<visible>Skin.String(skinsettingmenu,help)</visible>
+				<control type="image">
+				<!-- Dialog background image -->
+					<left>60</left>
+					<top>160</top>
+					<width>1350</width>
+					<height>815</height>
+					<texture border="14" colordiffuse="midgrey">button-default-long.png</texture>
+				</control>
+				<control type="image">
+					<!-- Background Settings Button Image -->
+					<right>0</right>
+					<top>740</top>
+					<width>415</width>
+					<height>75</height>
+					<texture border="9" colordiffuse="$VAR[AccentColor]">button-default-white-long.png</texture>
+					<include>settingbutton-fade</include>
+					<visible>!ControlGroup(999).HasFocus()</visible>
+				</control>				
+				<control type="label" id="701">
+					<left>90</left>
+					<top>155</top>
+					<width>1260</width>
+					<height>800</height>
+					<onleft>1223</onleft>
+					<onright>999</onright>
+					<align>left</align>
+					<pagecontrol>1223</pagecontrol>
+					<font>ctouch20</font>
+					<wrapmultiline>true</wrapmultiline>
+					<label>[COLOR $VAR[AccentColor]][B]Cambiar Vista[/B][/COLOR]
+Cuando visualizamos contenido, por ejemplo entrando en algún item de Inicio, podemos cambiar el tipo de vista, lista, póster, muero, etc.
+Para poder cambiarla, nos desplazamos a la izquierda o pulsamos el icono azul del ojo y aparecerá una ventana donde podremos cambiar la vista y bloquearla.[CR]
+[COLOR $VAR[AccentColor]][B]Menú Contextual[/B][/COLOR]
+Si dejas pulsado el OK o en modo táctil sobre el item que quieras, película, serie, addon, etc, aparecerá un menú con las opciones extra sobre ese elemento.[CR]
+[COLOR $VAR[AccentColor]][B]Añadir items al Inicio[/B][/COLOR]
+Hay dos formas de añadir items al Inicio, mediante los favoritos o por menú contextual.
+Mediante los favoritos, debes agregar el item que quieras a favoritos, haciendo pulsación larga y añadiendo a Favoritos.
+Desde el menú contextual (pulsación larga), sobre el ítem que quieras, aparecerá la opción, Añadir al Inicio y podrás editar el icono y el nombre.[CR][CR]
+Para más ayuda con el Skin: www.stva.ga/foro - t.me/stvabuild
+Para más ayuda con Cristal Azul: t.me/addonfestaycristal
+					</label>
+				</control>
+			</control>			
+		</control>
+			<control type="group" id="200">
+				<!-- Canales -->
+				<visible>Skin.String(skinsettingmenu,canales)</visible>
+				<control type="image">
+				<!-- Dialog background image -->
+					<left>60</left>
+					<top>160</top>
+					<width>1350</width>
+					<height>815</height>
+					<texture border="14" colordiffuse="midgrey">button-default-long.png</texture>
+				</control>
+				<control type="image">
+					<!-- Background Settings Button Image -->
+					<right>0</right>
+					<top>825</top>
+					<width>415</width>
+					<height>75</height>
+					<texture border="9" colordiffuse="$VAR[AccentColor]">button-default-white-long.png</texture>
+					<include>settingbutton-fade</include>
+					<visible>!ControlGroup(999).HasFocus()</visible>
+				</control>				
+				<control type="grouplist" id="201">
+					<left>80</left>
+					<top>165</top>
+					<width>1270</width>
+					<height>750</height>
+					<itemgap>10</itemgap>
+					<onleft>1223</onleft>
+					<onright>999</onright>
+					<pagecontrol>1223</pagecontrol>
+					<control type="label">
+						<height>70</height>
+						<font>ctouch22</font>
+						<label>Canales y Grupos de Telegram</label>
+						<textcolor>$VAR[AccentColor]</textcolor>
+					</control>	
+					<control type="button" id="221">
+						<font>font14</font>
+						<radioposx>1230</radioposx>
+						<label>Canal STVA - [COLOR midgrey]t.me/stvabuild[/COLOR]</label>
+						<height>60</height>
+						<onup>8000</onup>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+					<control type="button" id="222">
+						<radioposx>1230</radioposx>
+						<font>font14</font>
+						<label>Grupo Cristal Azul - [COLOR midgrey]t.me/addonfestaycristal[/COLOR]</label>
+						<height>60</height>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+					<control type="button" id="223">
+						<radioposx>1230</radioposx>
+						<font>font14</font>
+						<label>Grupo Winner (camaradas) - [COLOR midgrey]t.me/kodicamaradas[/COLOR]</label>
+						<height>60</height>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+					<control type="button" id="224">
+						<radioposx>1230</radioposx>
+						<font>font14</font>
+						<label>Grupo Moe`s TV - [COLOR midgrey]t.me/hirayasoftware[/COLOR]</label>
+						<height>60</height>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+					<control type="button" id="225">
+						<radioposx>1230</radioposx>
+						<font>font14</font>
+						<label>Canal Alfa Addon - [COLOR midgrey]t.me/alfa_addon[/COLOR]</label>
+						<height>60</height>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+					<control type="button" id="227">
+						<radioposx>1230</radioposx>
+						<font>font14</font>
+						<label>Grupo Luar - [COLOR grey]t.me/KodiManiac[/COLOR]</label>
+						<height>60</height>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+					<control type="label" id="226">
+						<height>70</height>
+						<font>ctouch22</font>
+						<label>Webs</label>
+						<textcolor>$VAR[AccentColor]</textcolor>
+						<texturenofocus/>
+					</control>	
+					<control type="button" id="228">
+						<radioposx>1230</radioposx>
+						<font>font14</font>
+						<label>Web STVA - [COLOR grey]stva.ga[/COLOR]</label>
+						<height>60</height>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+					<control type="button" id="229">
+						<radioposx>1230</radioposx>
+						<font>font14</font>
+						<label>Web Alfa Addon - [COLOR midgrey]alfa-addon.com[/COLOR]</label>
+						<height>60</height>
+						<include>DefaultSettingButton</include>
+						<texturenofocus/>
+					</control>
+				</control>	
+			</control>
+		<control type="textbox">
+			<!-- Settings description area -->
+			<left>70</left>
+			<top>999</top>
+			<width>1700</width>
+			<height>75</height>
+			<font>ctouch19</font>
+			<align>left</align>
+			<label>$VAR[SkinSettingHelp]</label>
+		</control>
+		<include>touch-controls</include>
+		<include>hora</include>
+	</controls>
+</window>

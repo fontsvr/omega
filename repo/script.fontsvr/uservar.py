@@ -66,7 +66,7 @@ SPACER = ''
 
 # You can edit these however you want, just make sure that you have a %s in each of the
 # THEME's so it grabs the text from the menu item
-COLOR1 = 'goldenrod'
+COLOR1 = 'mediumspringgreen'
 COLOR2 = 'white'
 # Primary menu items   / {0} is the menu item and is required
 THEME1 = u'[COLOR {color1}][COLOR {color2}]{{}}[/COLOR]'.format(color1=COLOR1, color2=COLOR2)
