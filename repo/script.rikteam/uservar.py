@@ -127,7 +127,7 @@ HEADERIMAGE = 'https://res.cloudinary.com/dsmvomgrd/image/upload/v1683640913/bui
 # Font for Notification Window
 FONTSETTINGS = 'Font13'
 # Background for Notification Window
-BACKGROUND = 'https://res.cloudinary.com/dsmvomgrd/image/upload/v1683640927/build/fandrart.png'
+BACKGROUND = 'https://asset.cloudinary.com/dsmvomgrd/164b8737a4e9dc0148cca718ac5ce289'
 #########################################################
 
 
