@@ -19,7 +19,7 @@
     
     <extension point="xbmc.addon.metadata">
         <summary lang="es">[COLOR azure]RikTeam[/COLOR] [COLOR white]Wizard</summary>
-        <description lang="es">[COLOR azure]RikTeam[/COLOR] [COLOR white]Wizard [COLOR lightpink] Complementos incluidos: Scripts, Elementum, Luar y fuentes para Kodi[/COLOR]
+        <description lang="es">[COLOR azure]RikTeam[/COLOR] [COLOR white]Wizard [COLOR lightpink] Complementos incluidos: Scripts, Elementum, Luar,Kelebek y fuentes para Kodi[/COLOR]
 		[B]• Developers:[/B] [COLOR white]Rik Team[/COLOR]
 		</description>
         <platform>all</platform>
