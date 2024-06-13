@@ -13,7 +13,7 @@ ART = os.path.join(PATH, 'resources', 'media')
 #########################################################
 #        User Edit Variables                            #
 #########################################################
-ADDONTITLE = '[COLOR azure]RikTeam [COLOR white] [COLOR aqua]Wizard[COLOR violet] NEXUS[/COLOR]'
+ADDONTITLE = '[COLOR azure]RikTeam [COLOR white] [COLOR aqua]Wizard[/COLOR]'
 BUILDERNAME = 'RikTeamWiz'
 EXCLUDES = [ADDON_ID, 'plugin.program.rikteamwiz']
 # Enable/Disable the text file caching with 'Yes' or 'No' and age being how often it rechecks in minutes
@@ -121,7 +121,7 @@ NOTIFICATION = 'http://'
 HEADERTYPE = 'Text'
 # Font size of header
 FONTHEADER = 'Font14'
-HEADERMESSAGE = '[COLOR azure][B]RikTeam[/B][/COLOR] [COLOR white][B]Wizard [COLOR violet]NEXUS[/B][/COLOR]'
+HEADERMESSAGE = '[COLOR azure][B]RikTeam[/B][/COLOR] [COLOR aqua][B]Wizard[/B][/COLOR]'
 # url to image if using Image 424x180
 HEADERIMAGE = 'https://res.cloudinary.com/dsmvomgrd/image/upload/v1683640913/build/banner.png'
 # Font for Notification Window

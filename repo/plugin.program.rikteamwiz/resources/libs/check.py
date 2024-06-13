@@ -384,7 +384,7 @@ def build_count():
     response = tools.open_url(CONFIG.BUILDFILE)
 
     total = 0
-    count20 = 0
+    count21 = 0
     hidden = 0
     adultcount = 0
 
@@ -405,8 +405,8 @@ def build_count():
                 continue
             kodi = int(float(kodi))
             total += 1
-            if kodi == 20:
-                count20 += 1
-    return total, count20, adultcount, hidden
+            if kodi == 21:
+                count21 += 1
+    return total, count21, adultcount, hidden
 
 
