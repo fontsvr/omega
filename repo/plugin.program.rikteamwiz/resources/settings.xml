@@ -157,7 +157,7 @@
 
     <category label="Install Settings">
         <setting type="lsep" label="APKs" />
-        <setting type="action" label="Open Kodi Android Updater Settings" action="RunPlugin(plugin://plugin.program.openwizard/?mode=fmchoose)" option="close" />
+        <setting type="action" label="Open Kodi Android Updater Settings" action="RunPlugin(plugin://plugin.program.rikteamwiz/?mode=fmchoose)" option="close" />
         <setting id="apk_path" type="folder" label="Choose Download Location" default="/storage/emulated/0/Download/"/>
         <setting type="lsep" label="Save Data When Installing Build:"/>
         <setting id="keeptrakt" type="bool" label="Keep My Trakt Data" default="true"/>
@@ -184,7 +184,7 @@
         <setting id="auto-view" type="bool" label="Enable Auto View" default="true"/>
         <setting id="viewType" type="number" label="View Type" default="50" visible="!eq(-1, false)" enable="!eq(-1,false)"/>
         <setting type="lsep" label="Notification Window on Startup:"/>
-        <setting id="notify" type="bool" label="Disable Notification on Startup" default="false" />
+        <setting id="notify" type="bool" label="Disable Notification on Startup" default="true" />
         <setting id="noteid" type="number" label="Latest Notification" visible="false" default="0" />
         <setting id="notedismiss" type="bool" label="Dismiss or Remind me later" visible="false" />
     </category>
