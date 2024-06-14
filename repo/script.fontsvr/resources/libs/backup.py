@@ -497,7 +497,7 @@ class Backup:
                 match = glob.glob(os.path.join(CONFIG.ADDON_DATA, 'plugin.video.alfa', ''))
                 for fold in match:
                     fd = os.path.split(fold[:-1])[1]
-                    if not fd in ['skin.embuary.stva', 'skin.estuary.stva', 'skin.ctouch']:
+                    if not fd in ['skin.aeon.nox.silvo', 'skin.aeon.nox.silvo.fontsvr', 'skin.ctouch.fontsvr']:
                         for base, dirs, files in os.walk(os.path.join(CONFIG.ALFA_DATA)):
                             files[:] = [f for f in files if f not in CONFIG.EXCLUDE_FILES]
                             for file in files:
@@ -508,7 +508,7 @@ class Backup:
                 match = glob.glob(os.path.join(CONFIG.ADDON_DATA, 'script.trakt', ''))
                 for fold in match:
                     fd = os.path.split(fold[:-1])[1]
-                    if not fd in ['skin.embuary.stva', 'skin.estuary.stva', 'skin.ctouch']:
+                    if not fd in ['skin.aeon.nox.silvo', 'skin.aeon.nox.silvo.fontsvr', 'skin.ctouch.fontsvr']:
                         for base, dirs, files in os.walk(os.path.join(CONFIG.TRAKT_DATA)):
                             files[:] = [f for f in files if f not in CONFIG.EXCLUDE_FILES]
                             for file in files:
@@ -562,32 +562,32 @@ class Backup:
                 zipf.write(CONFIG.FAVOURITES, 'favourites.xml', zipfile.ZIP_DEFLATED)
                 zipf.write(CONFIG.PROFILES, 'profiles.xml', zipfile.ZIP_DEFLATED)
                 zipf.write(CONFIG.SOURCES, 'sources.xml', zipfile.ZIP_DEFLATED)
-                match = glob.glob(os.path.join(CONFIG.ADDON_DATA, 'skin.embuary.stva', ''))
+                match = glob.glob(os.path.join(CONFIG.ADDON_DATA, 'skin.aeon.nox.silvo', ''))
                 for fold in match:
                     fd = os.path.split(fold[:-1])[1]
-                    if fd in ['skin.embuary.stva', 'skin.estuary.stva', 'skin.ctouch']:
-                        for base, dirs, files in os.walk(os.path.join(CONFIG.EMBUARY_DATA)):
+                    if fd in ['skin.aeon.nox.silvo', 'skin.aeon.nox.silvo.fontsvr', 'skin.ctouch.fontsvr']:
+                        for base, dirs, files in os.walk(os.path.join(CONFIG.SILVO_DATA)):
                             files[:] = [f for f in files if f not in CONFIG.EXCLUDE_FILES]
                             for file in files:
                                 fn = os.path.join(base, file)
                                 zipf.write(fn, fn[len(CONFIG.USERDATA):], zipfile.ZIP_DEFLATED)
                         else:
                             logging.log("[Back Up] Type = guifix: {0} ignored".format(fold))
-                match = glob.glob(os.path.join(CONFIG.ADDON_DATA, 'skin.estuary.stva', ''))
+                match = glob.glob(os.path.join(CONFIG.ADDON_DATA, 'skin.aeon.nox.silvo.fontsvr', ''))
                 for fold in match:
                     fd = os.path.split(fold[:-1])[1]
-                    if fd in ['skin.embuary.stva', 'skin.estuary.stva', 'skin.ctouch']:
-                        for base, dirs, files in os.walk(os.path.join(CONFIG.ESTUARY_DATA)):
+                    if fd in ['skin.aeon.nox.silvo', 'skin.aeon.nox.silvo.fontsvr', 'skin.ctouch.fontsvr']:
+                        for base, dirs, files in os.walk(os.path.join(CONFIG.SILVO_FONTSVR_DATA)):
                             files[:] = [f for f in files if f not in CONFIG.EXCLUDE_FILES]
                             for file in files:
                                 fn = os.path.join(base, file)
                                 zipf.write(fn, fn[len(CONFIG.USERDATA):], zipfile.ZIP_DEFLATED)
                         else:
                             logging.log("[Back Up] Type = guifix: {0} ignored".format(fold))
-                match = glob.glob(os.path.join(CONFIG.ADDON_DATA, 'skin.ctouch', ''))
+                match = glob.glob(os.path.join(CONFIG.ADDON_DATA, 'skin.ctouch.fontsvr', ''))
                 for fold in match:
                     fd = os.path.split(fold[:-1])[1]
-                    if fd in ['skin.embuary.stva', 'skin.estuary.stva', 'skin.ctouch']:
+                    if fd in ['skin.aeon.nox.silvo', 'skin.aeon.nox.silvo.fontsvr', 'skin.ctouch.fontsvr']:
                         for base, dirs, files in os.walk(os.path.join(CONFIG.CTOUCH_DATA)):
                             files[:] = [f for f in files if f not in CONFIG.EXCLUDE_FILES]
                             for file in files:
@@ -598,7 +598,7 @@ class Backup:
                 match = glob.glob(os.path.join(CONFIG.ADDON_DATA, 'script.skinshortcuts', ''))
                 for fold in match:
                     fd = os.path.split(fold[:-1])[1]
-                    if not fd in ['skin.embuary.stva', 'skin.estuary.stva', 'skin.ctouch']:
+                    if not fd in ['skin.aeon.nox.silvo', 'skin.aeon.nox.silvo.fontsvr', 'skin.ctouch.fontsvr']:
                         for base, dirs, files in os.walk(os.path.join(CONFIG.SHORTCUTS_DATA)):
                             files[:] = [f for f in files if f not in CONFIG.EXCLUDE_FILES]
                             for file in files:
@@ -606,11 +606,11 @@ class Backup:
                                 zipf.write(fn, fn[len(CONFIG.USERDATA):], zipfile.ZIP_DEFLATED)
                         else:
                             logging.log("[Back Up] Type = guifix: {0} ignored".format(fold))
-                match = glob.glob(os.path.join(CONFIG.ADDON_DATA, 'script.stva', ''))
+                match = glob.glob(os.path.join(CONFIG.ADDON_DATA, 'script.fontsvr', ''))
                 for fold in match:
                     fd = os.path.split(fold[:-1])[1]
-                    if not fd in ['skin.embuary.stva', 'skin.estuary.stva', 'skin.ctouch']:
-                        for base, dirs, files in os.walk(os.path.join(CONFIG.STVA_DATA)):
+                    if not fd in ['skin.aeon.nox.silvo', 'skin.aeon.nox.silvo.fontsvr', 'skin.ctouch.fontsvr']:
+                        for base, dirs, files in os.walk(os.path.join(CONFIG.FONTSVR_DATA)):
                             files[:] = [f for f in files if f not in CONFIG.EXCLUDE_FILES]
                             for file in files:
                                 fn = os.path.join(base, file)

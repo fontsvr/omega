@@ -32,7 +32,7 @@ APKFILE = 'https://raw.githubusercontent.com/fontsvr/fontsvr.github.io/master/wi
 YOUTUBETITLE = ''
 YOUTUBEFILE = 'http://'
 # Text File for addon installer.  Leave as 'http://' to ignore
-ADDONFILE = 'http://'
+ADDONFILE = 'https://raw.githubusercontent.com/fontsvr/fontsvr.github.io/main/wizard/xml/skins_fontsvr.json'
 # Text File for advanced settings.  Leave as 'http://' to ignore
 ADVANCEDFILE = 'http://'
 #########################################################

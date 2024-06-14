@@ -1,0 +1,69 @@
+{
+  "addons": [
+    {
+      "name": "VR21 Aeon Nox Silvo (fontsvr)",
+      "type": "addon",
+      "section": false,
+      "plugin": "skin.aeon.nox.silvo.fontsvr", 
+      "url": "https://raw.githubusercontent.com/fontsvr/omega/master/repo/zips/skin.aeon.nox.silvo.fontsvr/skin.aeon.nox.silvo.fontsvr-21.0.1.zip",
+      "repository": "repository.fontsvr",
+      "repositoryxml": "https://raw.githubusercontent.com/fontsvr/omega/master/repo/zips/addons.xml",
+      "repositoryurl": "https://github.com/fontsvr/omega/blob/master/repo/zips/repository.fontsvr/repository.fontsvr-2.0.zip?raw=true",
+      "icon": "https://res.cloudinary.com/dsmvomgrd/image/upload/v1683640927/build/fandrart.png",
+      "adult": false,
+      "description": "Skin Wizard VR21 - skin.aeon.nox.silvo.fontsvr-21.0.1  + info: https://github.com/fontsvr/omega/"
+    },
+    {
+      "name": "VR21 Aeon Nox Silvo (mod)",
+      "type": "addon",
+      "section": false,
+      "plugin": "skin.aeon.nox.silvo", 
+      "url": "https://raw.githubusercontent.com/fontsvr/omega/master/repo/zips/skin.aeon.nox.silvo/skin.aeon.nox.silvo-21.0.1.zip",
+      "repository": "repository.fontsvr",
+      "repositoryxml": "https://raw.githubusercontent.com/fontsvr/omega/master/repo/zips/addons.xml",
+      "repositoryurl": "https://github.com/fontsvr/omega/blob/master/repo/zips/repository.fontsvr/repository.fontsvr-2.0.zip?raw=true",
+      "icon": "https://res.cloudinary.com/dsmvomgrd/image/upload/v1683640927/build/fandrart.png",
+      "adult": false,
+      "description": "Skin VR21 - skin.aeon.nox.silvo-21.0.1  + info: https://github.com/fontsvr/omega/"
+    },
+    {
+      "name": "Aeon Nox 5 (fontsvr)",
+      "type": "addon",
+      "section": false,
+      "plugin": "skin.aeon.nox.5.fontsvr", 
+      "url": "https://raw.githubusercontent.com/fontsvr/omega/master/repo/zips/skin.aeon.nox.5.fontsvr/skin.aeon.nox.5.fontsvr-21.0.1.zip",
+      "repository": "repository.fontsvr",
+      "repositoryxml": "https://raw.githubusercontent.com/fontsvr/omega/master/repo/zips/addons.xml",
+      "repositoryurl": "https://github.com/fontsvr/omega/blob/master/repo/zips/repository.fontsvr/repository.fontsvr-2.0.zip?raw=true",
+      "icon": "https://res.cloudinary.com/dsmvomgrd/image/upload/v1683640927/build/fandrart.png",
+      "adult": false,
+      "description": "Skin - skin.aeon.nox.5.fontsvr-21.0.1  + info: https://github.com/fontsvr/omega/"
+    },
+    {
+      "name": "Cristal Touch (fontsvr)",
+      "type": "addon",
+      "section": false,
+      "plugin": "skin.ctouch.fontsvr",
+      "url": "https://raw.githubusercontent.com/fontsvr/omega/master/repo/zips/skin.ctouch.fontsvr/skin.ctouch.fontsvr-9.3.4.3.zip",
+      "repository": "repository.rebase",
+      "repositoryxml": "https://raw.githubusercontent.com/fontsvr/omega/master/repo/zips/addons.xml",
+      "repositoryurl": "https://github.com/fontsvr/omega/blob/master/repo/zips/repository.fontsvr/repository.fontsvr-2.0.zip?raw=true",
+      "icon": "https://asset.cloudinary.com/dsmvomgrd/da8173f9b06ab68af9bd04d4b3c355c1",
+      "adult": false,
+      "description": "Skin Wizard - skin.ctouch.fontsvr-9.3.4.3  + info: https://github.com/fontsvr/omega/"
+    },
+    {
+      "name": "Cristal Touch",
+      "type": "addon",
+      "section": false,
+      "plugin": "skin.ctouch",
+      "url": "https://raw.githubusercontent.com/fontsvr/nexus/master/repo/zips/skin.ctouch/skin.ctouch-9.3.4.3.zip",
+      "repository": "repository.rebase",
+      "repositoryxml": "https://raw.githubusercontent.com/fontsvr/nexus/master/repo/zips/addons.xml",
+      "repositoryurl": "https://github.com/fontsvr/nexus/raw/master/repo/zips/repository.rebase/repository.rebase-1.0.zip?raw=true",
+      "icon": "https://asset.cloudinary.com/dsmvomgrd/da8173f9b06ab68af9bd04d4b3c355c1",
+      "adult": false,
+      "description": "Skin Wizard - skin.ctouch-9.3.4.3  + info: https://github.com/fontsvr/nexus/"
+    }
+  ]
+}
