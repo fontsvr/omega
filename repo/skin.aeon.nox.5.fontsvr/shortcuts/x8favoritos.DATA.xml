@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shortcuts>
+	<shortcut>
+		<defaultID>movies</defaultID>
+		<label>Videoteca</label>
+		<label2>Películas</label2>
+		<icon>DefaultMovies.png</icon>
+		<thumb />
+		<action>ActivateWindow(Videos,videodb://movies/titles/,return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>[COLOR white]KODI[COLOR gold]verti[COLOR yellow]DO [COLOR white]Tv[/COLOR]</label>
+		<label2>Add-on de Vídeo</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>image://https%3a%2f%2fi.postimg.cc%2fm2tT1bYP%2fIMG-20230706-WA0006.jpg/</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.KODIvertiDO/?action=iptv_v&amp;title=%5BCOLOR+white%5D%5BB%5DKODIvertiDO+Tv%5B%2FB%5D%5B%2FCOLOR%5D&amp;url=&amp;thumbnail=https%3A%2F%2Fi.postimg.cc%2Fm2tT1bYP%2FIMG-20230706-WA0006.jpg&amp;plot=&amp;extra=0&amp;page=",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID>plugin.video.palantir3</defaultID>
+		<label>[COLOR gold]Palantir 3[/COLOR]</label>
+		<label2>Add-on de Vídeo</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>thumb</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.palantir3",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID>plugin.video.alfa</defaultID>
+		<label>[COLOR goldenrod]Alfa[/COLOR]</label>
+		<label2>Add-on de Vídeo</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>thumb</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.alfa",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID>plugin.video.balandro</defaultID>
+		<label>[COLORdeepskyblue]Balandro[/COLOR]</label>
+		<label2>Add-on de Vídeo</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>thumb</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.balandro",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID>movies</defaultID>
+		<label>LIMPIAR VIDEOTECA</label>
+		<label2>Ítem Personalizado</label2>
+		<icon>special://skin/extras/icons/film.png</icon>
+		<thumb>special://skin/extras/icons/wand.png</thumb>
+		<action>CleanLibrary(video,true)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>ACTUALIZAR VIDEOTECA</label>
+		<label2>Ítem Personalizado</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/infinity.png</thumb>
+		<action>UpdateLibrary(video,,true)</action>
+		</shortcut>
+	</shortcuts>

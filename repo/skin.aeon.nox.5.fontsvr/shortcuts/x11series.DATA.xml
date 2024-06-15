@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shortcuts>
+	<shortcut>
+		<defaultID>plugin.video.cristalazul</defaultID>
+		<label>[COLOR aqua]CRISTAL AZUL[/COLOR]</label>
+		<label2>Elemento Personalizado</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>thumb</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.cristalazul/?url=%24doregex%5Bdistancia%5D&amp;mode=1&amp;name=%5BCOLOR+white%5DSERIES%5B%2FCOLOR%5D&amp;fanart=https%3A%2F%2Fi.imgur.com%2FByq4oSp.jpg&amp;regexs=%7B%27distancia%27%3A%20%7B%27name%27%3A%20%27distancia%27%2C%20%27expres%27%3A%20%27%23%24pyFunction%5Cnimport%20re%2Crequests%2Cbase64%2Cshutil%2Crandom%5Cnfrom%20kodi_six%20import%20xbmc%2Cxbmcgui%2Cxbmcaddon%2Cxbmcvfs%5Cnfrom%20six.moves%20import%20urllib_request%5Cnimport%20six%5CnTRANSLATEPATH%20%3D%20xbmc.translatePath%20if%20six.PY2%20else%20xbmcvfs.translatePath%5Cndef%20GetLSProData%28page_data%2CCookie_Jar%2Cm%29%3A%5Cn%20%20%20%20%20%20pasta%20%3D%20requests.get%28%5C%27http%3A//bit.ly/cristal_menus_distancia%5C%27%2C%20headers%3D%7B%5C%27User-Agent%5C%27%3A%20%5C%27Mozilla/5.0%5C%27%7D%29.text%5Cn%20%20%20%20%20%20pasta%20%3D%20six.ensure_str%28pasta%29%5Cn%20%20%20%20%20%20return%20re.findall%28%5C%27%3D%22%28.%2A%3F%29%22%5C%27%2C%20pasta%29%5B4%5D%5Cn%27%2C%20%27page%27%3A%20None%2C%20%27cookiejar%27%3A%20%27%27%7D%7D",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>[COLOR goldenrod]ALFA[/COLOR]</label>
+		<label2>Add-on de Vídeo</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>image://%2fstorage%2femulated%2f0%2fAndroid%2fdata%2fthe.team.rik%2ffiles%2f.kodi%2faddons%2fplugin.video.alfa%2fresources%2fmedia%2fthemes%2fdefault%2fthumb_channels_tvshow.png/</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.alfa/?ewogICAgImFjdGlvbiI6ICJuZXdzIiwKICAgICJjYXRlZ29yeSI6ICJOb3ZlZGFkZXMgZW4gc2VyaWVzIiwKICAgICJjaGFubmVsIjogIm5ld3MiLAogICAgImNvbnRleHQiOiBbCiAgICAgICAgewogICAgICAgICAgICAiYWN0aW9uIjogInNldHRpbmdfY2hhbm5lbCIsCiAgICAgICAgICAgICJjaGFubmVsIjogIm5ld3MiLAogICAgICAgICAgICAibmV3cyI6ICJzZXJpZXMiLAogICAgICAgICAgICAidGl0bGUiOiAiQ2FuYWxlcyBpbmNsdWlkb3MgZW46IEVwaXNvZGlvcyBkZSBzZXJpZXMiCiAgICAgICAgfSwKICAgICAgICB7CiAgICAgICAgICAgICJhY3Rpb24iOiAibGlzdF9jaGFubmVscyIsCiAgICAgICAgICAgICJjYXRlZ29yeSI6ICJzZXJpZXMiLAogICAgICAgICAgICAiY2hhbm5lbCI6ICJuZXdzIiwKICAgICAgICAgICAgInN3aXRjaF90byI6IHRydWUsCiAgICAgICAgICAgICJ0aXRsZSI6ICJWZXIgY2FuYWxlcyBkZSBlc3RhIGNhdGVnb3JcdTAwZWRhIgogICAgICAgIH0KICAgIF0sCiAgICAiaW5mb0xhYmVscyI6IHt9LAogICAgIm5ld3MiOiAic2VyaWVzIiwKICAgICJ0aHVtYm5haWwiOiAiL3N0b3JhZ2UvZW11bGF0ZWQvMC9BbmRyb2lkL2RhdGEvdGhlLnRlYW0ucmlrL2ZpbGVzLy5rb2RpL2FkZG9ucy9wbHVnaW4udmlkZW8uYWxmYS9yZXNvdXJjZXMvbWVkaWEvdGhlbWVzL2RlZmF1bHQvdGh1bWJfY2hhbm5lbHNfdHZzaG93LnBuZyIsCiAgICAidGl0bGUiOiAiRXBpc29kaW9zIGRlIHNlcmllcyIKfQ%3D%3D",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>[COLOR ffb30101]TACONES[/COLOR]</label>
+		<label2>Elemento Personalizado</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/film.png</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.tacones/?url=%24doregex%5Bindex%5D&amp;mode=17&amp;regexs=%7B%27index%27%3A%20%7B%27name%27%3A%20%27index%27%2C%20%27listrepeat%27%3A%20%27%5Cn%3Ctitle%3E%5BB%5D%5BCOLOR%20red%5D%E2%80%A2%5B/COLOR%5D%20%5BCOLOR%20white%5D%5Bindex.param1%5D%5B/COLOR%5D%5BCOLOR%20red%5D%20%28%5Bindex.param3%5D%20%7C%20%5Bindex.param4%5D%29%5B/COLOR%5D%5B/B%5D%3C/title%3E%5Cn%3Clink%3E%24doregex%5Btemp%5D%3C/link%3E%5Cn%3Cyear%3E%5Bindex.param3%5D%3C/year%3E%5Cn%3Cgenre%3E%5Bindex.param4%5D%3C/genre%3E%5Cn%3Cinfo%3E%5Bindex.param2%5D%3C/info%3E%5Cn%3Cthumbnail%3E%5Bindex.param5%5D%3C/thumbnail%3E%5Cn%3Cfanart%3E%5Bindex.param6%5D%3C/fanart%3E%5Cn%27%2C%20%27expres%27%3A%20%27%28%3Fs%29title%3E%28.%2A%3F%29%3C.%2A%3Finfo%3E%28.%2A%3F%29%3C.%2A%3Fyear%3E%28.%2A%3F%29%3C.%2A%3Fgenre%3E%28.%2A%3F%29%3C.%2A%3Fthumb%3E%28.%2A%3F%29%3C.%2A%3Ffanart%3E%28.%2A%3F%29%3C%28.%2A%3F%5C%5C/serie%3E%29%27%2C%20%27page%27%3A%20%27https%3A//gitlab.com/stiletto1/s/-/raw/main/s%27%2C%20%27cookiejar%27%3A%20%27%27%7D%2C%20%27temp%27%3A%20%7B%27name%27%3A%20%27temp%27%2C%20%27listrepeat%27%3A%20%27%5Cn%3Ctitle%3E%5BB%5D%5BCOLOR%20red%5D%E2%80%A2%5B/COLOR%5D%20%5BCOLOR%20white%5D%5Bindex.param1%5D%20%5B/COLOR%5D%5BCOLOR%20red%5D%20Temporada%20%5Btemp.param1%5D%5B/COLOR%5D%5B/B%5D%3C/title%3E%5Cn%3Clink%3E%24doregex%5Bep%5D%3C/link%3E%5Cn%3Cinfo%3E%5Bindex.param2%5D%3C/info%3E%5Cn%3Cthumbnail%3E%5Btemp.param2%5D%3C/thumbnail%3E%5Cn%3Cfanart%3E%5Btemp.param3%5D%3C/fanart%3E%5Cn%27%2C%20%27expres%27%3A%20%27%28%3Fs%29%3Ct%28%5C%5Cd%2B%29%3E.%2A%3Fthumb.%5C%5Cd%2B%3E%28.%2A%3F%29%3C.%2A%3Ffanart.%5C%5Cd%2B%3E%28.%2A%3F%29%3C.%2A%3F%28ep.%2A%3F%29%5C%5C/t%27%2C%20%27page%27%3A%20%27%5Bindex.param7%5D%27%2C%20%27cookiejar%27%3A%20%27%27%7D%2C%20%27ep%27%3A%20%7B%27name%27%3A%20%27ep%27%2C%20%27listrepeat%27%3A%20%27%5Cn%3Ctitle%3E%5BB%5D%5BCOLOR%20red%5D%5Bindex.param1%5D%20%5Btemp.param1%5D%5B/COLOR%5D%5BCOLOR%20white%5D%20%20%20%5Bep.param1%5D%5B/COLOR%5D%5B/B%5D%3C/title%3E%5Cn%3Clink%3Eplugin%3A//plugin.video.elementum/play%3Furi%3Dmagnet%3A%3Fxt%3Durn%3Abtih%3A%5Bep.param2%5D%3C/link%3E%5Cn%3Cinfo%3E%5Bindex.param2%5D%3C/info%3E%5Cn%3Cthumbnail%3E%5Btemp.param2%5D%3C/thumbnail%3E%5Cn%3Cfanart%3E%5Btemp.param3%5D%3C/fanart%3E%5Cn%27%2C%20%27expres%27%3A%20%27%28%3Fs%29ep%5C%5Cd%2B.%5C%5Cd%2B%3E%28.%2A%3F%29%3C.%2A%3Fid%5C%5Cd%2B.%5C%5Cd%2B%3E%28.%2A%3F%29%3C%27%2C%20%27page%27%3A%20%27%5Btemp.param4%5D%27%2C%20%27cookiejar%27%3A%20%27%27%7D%7D&amp;iconimage=https%3A%2F%2Fi.imgur.com%2FynqruFA.png",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>[COLORdeepskyblue]BALANDRO[/COLOR]</label>
+		<label2>Add-on de Vídeo</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>image://%2fstorage%2femulated%2f0%2fAndroid%2fdata%2fthe.team.rik%2ffiles%2f.kodi%2faddons%2fplugin.video.balandro%2fresources%2fmedia%2fthemes%2fdefault%2ftv.png/</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.balandro/?ewogICAgImFjdGlvbiI6ICJjaGFubmVscyIsCiAgICAiY2F0ZWdvcnkiOiAiQmFsYW5kcm8iLAogICAgImNoYW5uZWwiOiAibWFpbm1lbnUiLAogICAgImV4dHJhIjogInR2c2hvd3MiLAogICAgImluZm9MYWJlbHMiOiB7fSwKICAgICJ0aHVtYm5haWwiOiAiL3N0b3JhZ2UvZW11bGF0ZWQvMC9BbmRyb2lkL2RhdGEvdGhlLnRlYW0ucmlrL2ZpbGVzLy5rb2RpL2FkZG9ucy9wbHVnaW4udmlkZW8uYmFsYW5kcm8vcmVzb3VyY2VzL21lZGlhL3RoZW1lcy9kZWZhdWx0L3R2LnBuZyIsCiAgICAidGl0bGUiOiAiW0NPTE9SIGhvdHBpbmtdIC0gU2VyaWVzWy9DT0xPUl0iCn0%3D",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>[COLOR ffffd700]PALANTIR3[/COLOR]</label>
+		<label2>Add-on de Vídeo</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>image://C%3a%5cProgram%20Files%5cRIK%2020.1%20x64%5cportable_data%5caddons%5cplugin.video.palantir3%5cresources%5cmedia%5cseries.png/</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.palantir3/?25ibpdWdsBHXcNnbvRGZhxFXhRXYk9VZsJWY0J3bwxFX0YDegEjLwIDILlkUcx1clxWaGBSbhJ3ZvJHUcxlODdCI6ICdyFmbhZmIgwyJzVGbpZ2JgojI05WZ052bjJCIscSduVWbnAiOi42bpR3YhJyeQfnM2chBCZp9VblRXagknYgIVREJ1TgACM00DZp9VduVWbgUmclh2dgMXduVWbg02byZGI0JXYuFmZswWczxibvNWas42bpR3YhxCblJWYsBCdjVGblN3JgojIsF3ciACLn0lUPx0TD9yWzVWayV2UdBDM3QmZmZmZgI1TM90QbdCI6ICdvxGciACLwAiOiU2ZhBnIgwyJdJ1TM90Qvs1cllmclNVXwAzNkZmZmZGIS9ETPN0WnAiOiwWZiFGbiACLncmbw5ycllmclNHXcFWakVWbcx1clNmc192clJHXcNjcpRnbhxWYw5yblRWa25ibpdWdsBHXcNnbvRGZhxFXhRXYk9VZsJWY0J3bwxFX0YDegEjLwIDILlkUcx1clxWaGBSbhJ3ZvJHUcxlODdCI6IibvNWaiACLnYWan5CdyFmbhZGXcNjcpRnbhxWYw5yblRWa",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>[COLOR orchid]THE CREW[/COLOR]</label>
+		<label2>Add-on de Vídeo</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>image://C%3a%5cProgram%20Files%5cRIK%2020.1%20x64%5cportable_data%5caddons%5cscript.thecrew.artwork%5cresources%5cmedia%5cthecrew%5cinternational2.png/</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.thecrew/?action=tvshows&amp;url=https%3A%2F%2Fwww.imdb.com%2Fsearch%2Ftitle%2F%3Ftitle_type%3Dtv_series%2Ctv_miniseries%26num_votes%3D100%2C%26production_status%3Dreleased%26primary_language%3Des%26sort%3Dmoviemeter%2Casc%26count%3D20%26start%3D1",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID>script.embuary.info/tv</defaultID>
+		<label>Info [COLOR green]TMDB[/COLOR]</label>
+		<label2>Add-on de Vídeo</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>image://special%3a%2f%2fhome%2faddons%2fscript.embuary.info%2fresources%2ficon.png/</thumb>
+		<action>ActivateWindow(Videos,"plugin://script.embuary.info/tv",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID>script.extendedinfo/trakt</defaultID>
+		<label>[COLOR red]Trakt[/COLOR]</label>
+		<label2>Add-on de Vídeo</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>image://C%3a%5cProgram%20Files%5cRIK%2020.1%20x64%5cportable_data%5caddons%5cscript.extendedinfo%5cresources%5cskins%5cDefault%5cmedia%5ctrakt.png/</thumb>
+		<action>ActivateWindow(Videos,"plugin://script.extendedinfo/trakt",return)</action>
+		</shortcut>
+	</shortcuts>

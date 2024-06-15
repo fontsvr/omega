@@ -13,7 +13,7 @@ ART = os.path.join(PATH, 'resources', 'media')
 #########################################################
 #        User Edit Variables                            #
 #########################################################
-ADDONTITLE = '[COLOR azure]RikTeam [COLOR white] [COLOR aqua]Wizard[/COLOR]'
+ADDONTITLE = '[COLOR azure]RikTeam[COLOR hotpink]Wiz[/COLOR]'
 BUILDERNAME = 'RikTeamWiz'
 EXCLUDES = [ADDON_ID, 'plugin.program.rikteamwiz']
 # Enable/Disable the text file caching with 'Yes' or 'No' and age being how often it rechecks in minutes
@@ -65,10 +65,10 @@ SPACER = '='
 
 # You can edit these however you want, just make sure that you have a %s in each of the
 # THEME's so it grabs the text from the menu item
-COLOR1 = 'violet'
+COLOR1 = 'hotpink'
 COLOR2 = 'white'
 # Primary menu items   / {0} is the menu item and is required
-THEME1 = u'[COLOR {color1}][I]([COLOR {color1}][B]RikTeam [/B][/COLOR][COLOR {color2}]Wizard NEXUS[COLOR {color1}])[/I][/COLOR] [COLOR {color2}]{{}}[/COLOR]'.format(color1=COLOR1, color2=COLOR2)
+THEME1 = u'[COLOR {color1}][I]([COLOR {color1}][B]RikTeam [/B][/COLOR][COLOR {color2}]Wizard [COLOR {color1}])[/I][/COLOR] [COLOR {color2}]{{}}[/COLOR]'.format(color1=COLOR1, color2=COLOR2)
 # Build Names          / {0} is the menu item and is required
 THEME2 = u'[COLOR {color1}]{{}}[/COLOR]'.format(color1=COLOR1)
 # Alternate items      / {0} is the menu item and is required
@@ -82,7 +82,7 @@ THEME5 = u'[COLOR {color1}][B]Parche Actual:[/B][/COLOR] [COLOR {color2}]{{}}[/C
 # Enable 'Contact' menu item 'Yes' hide or 'No' dont hide
 HIDECONTACT = 'No'
 # You can add \n to do line breaks
-CONTACT = '[B][LOWERCASE][CAPITALIZE][COLOR aqua]\r\n\r\nGracias por elegir RikTeam Wizard.\r\n\r\n[COLOR yellow] Rik Team[/COLOR][/CAPITALIZE][/LOWERCASE][/B]'
+CONTACT = '[B][LOWERCASE][CAPITALIZE][COLOR aqua]\r\n\r\nGracias por elegir RikTeamWiz.\r\n\r\n[COLOR yellow] Rik Team[/COLOR][/CAPITALIZE][/LOWERCASE][/B]'
 # Images used for the contact window.  http:// for default icon and fanart
 CONTACTICON = os.path.join(ART, 'qricon.png')
 CONTACTFANART = 'http://'
@@ -121,7 +121,7 @@ NOTIFICATION = 'http://'
 HEADERTYPE = 'Text'
 # Font size of header
 FONTHEADER = 'Font14'
-HEADERMESSAGE = '[COLOR azure][B]RikTeam[/B][/COLOR] [COLOR aqua][B]Wizard[/B][/COLOR]'
+HEADERMESSAGE = '[COLOR azure][B]RikTeam[/B][/COLOR] [COLOR hotpink][B]Wizard[/B][/COLOR]'
 # url to image if using Image 424x180
 HEADERIMAGE = 'https://res.cloudinary.com/dsmvomgrd/image/upload/v1683640913/build/banner.png'
 # Font for Notification Window

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shortcuts>
+	<shortcut>
+		<defaultID />
+		<label>[COLOR cd00e600]DIRECTOS[/COLOR]</label>
+		<label2>Elemento Personalizado</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/Deportes/Live TV.png</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.winner/?yckJXZulGZvtmL0VmbvEGdhR2Lkl2byRmbB9CMvQWZ0FGb11WZvU2ZhJ3b0N3LnAiOiQnch5WYmJCIscybP90bw8EMwk2bnAiOi42bpR3YhJye9diZpdmLlZXas9SYpRWZt9yclNmc192clJ3LyVmbul2du8WZklmdu4WanVHbw9ycu9GZkF2LpR2br5yLzVGbpZ2LwITak92au4WZ2FWbuMHZyVmbpR2br5Cdl52LhRXYk9CZp9mck5WQvAzLkVGdhxWdtV2LldWYy9Gdz9yJgojIyVGdz9GciACLn0lQvsVYk5WZnFEIyVmVdJ0WnAiOiwWZiFGbiACLncGcq5CdyFmbhZ2LhlGZl12LzV2YyV3bzVmcvIXZu5Wa35yblRWa25ibpdWdsB3Lz52bkRWYvkGZvtmLvMXZslmZvAjMpR2br5iblZXYt5",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>FUTBOL</label>
+		<label2>Elemento Personalizado</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/Deportes/football.png</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.winner/?cwRHdodCI6ICdyFmbhZmIgwyJs9mY0FIz1Z0JgojIlRncvBXZkJCIscCMv92bP90Twk2bnAiOi42bpR3YhJye9dCbvJGdBycdGdCI6ICblJWYsJCIscyZwpmLs9mY0FkQlMzQlY2LhlGZl12Lx4COuIzLuFGdpR3LuFGdpRXY0xWYv02bj5CduVGdu92YyV2c1JWdoRXan5ydhJ3LvozcwRHdodCI6IibvNWaiACLncGcq5CdyFmbhZ2Xs9mY0FkQlMzQlY2LhlGZl12Lx4COuIzLuFGdpR3LuFGdpRXY0xWYv02bj5CduVGdu92YyV2c1JWdoRXan5ydhJ3Lvoz",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>[COLORcd00e600]canales[/COLOR] deportes</label>
+		<label2>Add-on de Vídeo</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>image://https%3a%2f%2fi.blogs.es%2f4605e4%2flaliga%2f500_333.webp/</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.koditv/?action=acestream_menu&amp;title=%5BB%5D%5BCOLOR+white%5Dcanales+deportes+acestream+%5B%2FCOLOR%5D%5B%2FB%5D&amp;url=&amp;thumbnail=https%3A%2F%2Fi.blogs.es%2F4605e4%2Flaliga%2F500_333.webp&amp;plot=&amp;extra=&amp;page=",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>BALONCESTO</label>
+		<label2>Elemento Personalizado</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/Deportes/basketball.png</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.winner/?Hd0h2JgojI0JXYuFmZiACLn8GdzV2Yu9GbhJ0JgojIlRncvBXZkJCIscCMv92bP90Twk2bnAiOi42bpR3YhJye03JvR3clNmbvxWYCdCI6ICblJWYsJCIscyZwpmLvR3clNmbvxWYi9SYpRWZt9SMugjLy8ibhRXa09ibhRXa0FGdsF2Lt92YuQnblRnbvNmclNXdiVHa0l2ZucXYy9yL6MHc0RHanAiOi42bjlmIgwyJnBnauQnch5WYm91b0NXZj52bsFmYvEWakVWbvEjL44iMv4WY0lGdv4WY0lGdhRHbh9SbvNmL05WZ052bjJXZzVnY1hGdpdmL3Fmcv8iOzB",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>[COLORcd00e600]Agendas[/COLOR] Deportivas</label>
+		<label2>Add-on de Vídeo</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>image://https%3a%2f%2fi.postimg.cc%2fW1LjykC6%2fPicsart-22-10-30-16-51-56-087-removebg-preview.png/</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.KODIvertiDO/?action=agendas_deportivas&amp;title=%5BCOLOR+white%5D%5BB%5DAgendas+Deportivas%5BI%5D%5B%2FB%5D....%5BCOLOR+aquamarine%5DAcestream%5B%2FI%5D%5B%2FCOLOR%5D&amp;url=&amp;thumbnail=https%3A%2F%2Fi.postimg.cc%2FW1LjykC6%2FPicsart-22-10-30-16-51-56-087-removebg-preview.png&amp;plot=&amp;extra=&amp;page=",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>ATLETISMO</label>
+		<label2>Elemento Personalizado</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/Deportes/athletics.png</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.winner/?0h2JgojI0JXYuFmZiACLn8WbzlGdlxGdBdCI6ISZ0J3bwVGZiACLnETMxETaplUSp9WanAiOi42bpR3YhJyeQfn8WbzlGdlxGdBdCI6ICblJWYsJCIscyZwpmLv12cpRXZsRXYvEWakVWbvQjLy8ibhRXa09ibhRXa0FGdsF2Lt92YuQnblRnbvNmclNXdiVHa0l2ZucXYy9yL6MHc0RHanAiOi42bjlmIgwyJnBnauQnch5WYm91btNXa0VGb0F2LhlGZl12L04iMv4WY0lGdv4WY0lGdhRHbh9SbvNmL05WZ052bjJXZzVnY1hGdpdmL3Fmcv8iOzBHd",return)</action>
+		<disabled>True</disabled>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>AUTOMOVILISMO</label>
+		<label2>Elemento Personalizado</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/Deportes/f1.png</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.winner/?zBHd0h2JgojI0JXYuFmZiACLn8WbzlGbpZ3bt9Gd1F0JgojIlRncvBXZkJCIscCMwADMvl2bnAiOi42bpR3YhJyeQfn8WbzlGbpZ3bt9Gd1F0JgojIsVmYhxmIgwyJnBnau8WbzlGbpZ3bt9Gd1F2LhlGZl12L14iMv4WY0lGdv4WY0lGdhRHbh9SbvNmL05WZ052bjJXZzVnY1hGdpdmL3Fmcv8iOzBHd0h2JgojIu92YpJCIscyZwpmL0JXYuFmZf9WbzlGbpZ3bt9Gd1F2LhlGZl12L14iMv4WY0lGdv4WY0lGdhRHbh9SbvNmL05WZ052bjJXZzVnY1hGdpdmL3Fmcv8iO",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>MOTOCICLISMO</label>
+		<label2>Elemento Personalizado</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/Deportes/moto gp.png</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.winner/?Hc0RHanAiOiQnch5WYmJCIscybtNXasNWaj9Gdv10JgojIlRncvBXZkJCIscCMwADMvl2bnAiOi42bpR3YhJye9dybtNXasNWaj9Gdv10JgojIsVmYhxmIgwyJnBnau8WbzlGbjl2YvR3bt9SYpRWZt9SNuIzLuFGdpR3LuFGdpRXY0xWYv02bj5CduVGdu92YyV2c1JWdoRXan5ydhJ3LvozcwRHdodCI6IibvNWaiACLncGcq5CdyFmbhZ2Xv12cpx2YpN2b09WbvEWakVWbvUjLy8ibhRXa09ibhRXa0FGdsF2Lt92YuQnblRnbvNmclNXdiVHa0l2ZucXYy9yL6M",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>CICLISMO</label>
+		<label2>Elemento Personalizado</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/Deportes/Ciclismo.png</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.winner/?RHdodCI6ICdyFmbhZmIgwyJv12cpx2YpN0JgojIlRncvBXZkJCIscCMv92bP90Twk2bnAiOi42bpR3YhJye9dybtNXasNWaDdCI6ICblJWYsJCIscyZwpmLv12cpx2YpN2LhlGZl12Lx4COuIzLuFGdpR3LuFGdpRXY0xWYv02bj5CduVGdu92YyV2c1JWdoRXan5ydhJ3LvozcwRHdodCI6IibvNWaiACLncGcq5CdyFmbhZ2Xv12cpx2YpN2LhlGZl12Lx4COuIzLuFGdpR3LuFGdpRXY0xWYv02bj5CduVGdu92YyV2c1JWdoRXan5ydhJ3Lvozcw",return)</action>
+		<visible>System.HasAddon(plugin.video.winner)</visible>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>TENIS</label>
+		<label2>Elemento Personalizado</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/Deportes/tennis.png</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.winner/?RHdodCI6ICdyFmbhZmIgwyJzlmblR1JgojIlRncvBXZkJCIscCMv92bP90Twk2bnAiOi42bpR3YhJye9dycp5WZUdCI6ICblJWYsJCIscyZwpmLzlmblR3LhlGZl12Lx4COuIzLuFGdpR3LuFGdpRXY0xWYv02bj5CduVGdu92YyV2c1JWdoRXan5ydhJ3LvozcwRHdodCI6IibvNWaiACLncGcq5CdyFmbhZ2XzlmblR3LhlGZl12Lx4COuIzLuFGdpR3LuFGdpRXY0xWYv02bj5CduVGdu92YyV2c1JWdoRXan5ydhJ3Lvozcw",return)</action>
+		<visible>System.HasAddon(plugin.video.winner)</visible>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>PADEL</label>
+		<label2>Elemento Personalizado</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/Deportes/padel.png</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.winner/?iOzBHd0h2JgojI0JXYuFmZiACLnwWZkFIzhB1JgojIlRncvBXZkJCIscCMwADMvl2bnAiOi42bpR3YhJyeQfnwWZkFIzhB1JgojIsVmYhxmIgwyJnBnauwWZkFTQlMzQlA3LhlGZl12L14iMv4WY0lGdv4WY0lGdhRHbh9SbvNmL05WZ052bjJXZzVnY1hGdpdmL3Fmcv8iOzBHd0h2JgojIu92YpJCIscyZwpmL0JXYuFmZfxWZkFTQlMzQlA3LhlGZl12L14iMv4WY0lGdv4WY0lGdhRHbh9SbvNmL05WZ052bjJXZzVnY1hGdpdmL3Fmcv8",return)</action>
+		<visible>System.HasAddon(plugin.video.winner)</visible>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>RUGBY</label>
+		<label2>Add-on de Vídeo</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/Deportes/american football.png</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.winner/?HanAiOiQnch5WYmJCIscSeidWdSdCI6ISZ0J3bwVGZiACLnkWaJlUaxkUMp9WanAiOi42bpR3YhJye9dSeidWdSdCI6ICblJWYsJCIscyZwpmL5J2Z1J3LhlGZl12Lz4iMv4WY0lGdv4WY0lGdhRHbh9SbvNmL05WZ052bjJXZzVnY1hGdpdmL3Fmcv8iOzBHd0h2JgojIu92YpJCIscyZwpmL0JXYuFmZflnYnVncvEWakVWbvMjLy8ibhRXa09ibhRXa0FGdsF2Lt92YuQnblRnbvNmclNXdiVHa0l2ZucXYy9yL6MHc0R",return)</action>
+		<visible>System.HasAddon(plugin.video.winner)</visible>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>LUCHA</label>
+		<label2>Elemento Personalizado</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/Deportes/boxing.png</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.winner/?HanAiOiQnch5WYmJCIscyblh3bCdCI6ISZ0J3bwVGZiACLnkWaJlUaxkUMp9WanAiOi42bpR3YhJye9dyblh3bCdCI6ICblJWYsJCIscyZwpmLvVGevJ2LhlGZl12Lz4iMv4WY0lGdv4WY0lGdhRHbh9SbvNmL05WZ052bjJXZzVnY1hGdpdmL3Fmcv8iOzBHd0h2JgojIu92YpJCIscyZwpmL0JXYuFmZf9WZ49mYvEWakVWbvMjLy8ibhRXa09ibhRXa0FGdsF2Lt92YuQnblRnbvNmclNXdiVHa0l2ZucXYy9yL6MHc0R",return)</action>
+		<visible>System.HasAddon(plugin.video.winner)</visible>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>WATERPOLO</label>
+		<label2>Add-on de Vídeo</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/Deportes/water_polo.png</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.winner/?0h2JgojI0JXYuFmZiACLn8GbvBnclRXYXdCI6ISZ0J3bwVGZiACLnkWaJlUaxkUMp9WanAiOi42bpR3YhJyeQfn8GbvBnclRXYXdCI6ICblJWYsJCIscyZwpmLvx2bwJXZ0F2dvEWakVWbvMjLy8ibhRXa09ibhRXa0FGdsF2Lt92YuQnblRnbvNmclNXdiVHa0l2ZucXYy9yL6MHc0RHanAiOi42bjlmIgwyJnBnauQnch5WYm91bs9GcyVGdhd3LhlGZl12Lz4iMv4WY0lGdv4WY0lGdhRHbh9SbvNmL05WZ052bjJXZzVnY1hGdpdmL3Fmcv8iOzBHd",return)</action>
+		<visible>System.HasAddon(plugin.video.winner)</visible>
+		</shortcut>
+	</shortcuts>
