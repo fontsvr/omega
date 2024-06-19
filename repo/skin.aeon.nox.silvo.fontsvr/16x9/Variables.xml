@@ -11,7 +11,7 @@
 	   <value condition="System.AddonIsEnabled(repository.rebase)+System.HasAddon(repository.rebase)">• [COLOR=snow]repository.rebase[/COLOR] $INFO[System.AddonVersion(repository.rebase),(,)] [COLOR=FF00991F]√[/COLOR]</value>
     </variable>
 	<variable name="Instalado-script.skinshortcuts">
-	   <value condition="!System.AddonIsEnabled(script.skinshortcuts) + System.HasAddon(script.skinshortcuts)">• script.skinshorcuts $INFO[System.AddonVersion(script.skinshorcuts),(,)] [COLOR pink]!![/COLOR]</value>
+	   <value condition="!System.AddonIsEnabled(script.skinshortcuts) + System.HasAddon(script.skinshortcuts)">• script.skinshorcuts $INFO[System.AddonVersion(script.skinshortcuts),(,)] [COLOR pink]!![/COLOR]</value>
 	   <value condition="!System.HasAddon(script.skinshortcuts)">• script.skinshorcuts [COLOR invalid]×[/COLOR] </value>
 	   <value condition="System.AddonIsEnabled(script.skinshortcuts) + System.HasAddon(script.skinshortcuts)">• [COLOR=snow]script.skinshorcuts[/COLOR]  $INFO[System.AddonVersion(script.skinshorcuts),(,)] [COLOR=FF00991F]√[/COLOR]</value>
     </variable>

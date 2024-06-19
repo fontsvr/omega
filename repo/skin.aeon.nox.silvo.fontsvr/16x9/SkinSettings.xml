@@ -365,6 +365,13 @@
 							<onclick>AlarmClock(Settings,ReplaceWindow(SkinSettings),00:01,silent)</onclick>
 						    <visible>System.HasAddon(plugin.program.iptv.merge) + System.AddonIsEnabled(plugin.program.iptv.merge)</visible>
 						</control>
+						<control type="radiobutton" id="1023">
+							<include>SettingsButtonCommonValues</include>
+							<label>Mostrar Estado Internet en la barra superior</label>
+					        <onclick>Skin.ToggleSetting(show_inet)</onclick>
+					        <selected>Skin.HasSetting(show_inet)</selected>
+					        <visible>!String.IsEmpty(System.InternetState) + Skin.HasSetting(activa_internet)</visible>
+						</control>
 					</control>
 					<control type="grouplist" id="9001">
 						<left>437</left>

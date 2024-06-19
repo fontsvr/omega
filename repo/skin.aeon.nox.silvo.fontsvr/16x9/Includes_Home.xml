@@ -119,8 +119,8 @@
 					<label>RIKTEAMWIZ $INFO[System.AddonVersion(plugin.program.rikteamwiz),,]</label>
 					<textoffsetx>15</textoffsetx>
 					<font>font12</font>
-					<textcolor>$VAR[FocusedMainMenuColor]</textcolor><!--<textcolor>hotpink-$VAR[ThemeLabelColor]snow</textcolor>-->
-					<shadowcolor>shadow</shadowcolor>
+					<textcolor>disabled</textcolor><!--$VAR[FocusedMainMenuColor]<textcolor>hotpink-$VAR[ThemeLabelColor]snow</textcolor>-->
+					<shadowcolor>41000000</shadowcolor>
 					<visible>System.AddonIsEnabled(plugin.program.rikteamwiz)</visible>
 					<visible>!String.IsEqual(Container(9000).ListItem.Property(InfoLine),$LOCALIZE[130])</visible>
 				    <visible>!String.IsEqual(Container(9000).ListItem.Property(InfoLine),$LOCALIZE[31058])</visible>
@@ -142,8 +142,8 @@
 					<label>RIKTEAMWIZ $INFO[System.AddonVersion(plugin.program.rikteamwiz),,]</label>
 					<textoffsetx>15</textoffsetx>
 					<font>font12</font>
-					<textcolor>$VAR[UnfocusedMainMenuColor]</textcolor><!--<textcolor>grey3-snow</textcolor>-->
-					<shadowcolor>shadow</shadowcolor>
+					<textcolor>41000000</textcolor><!--$VAR[UnfocusedMainMenuColor]<textcolor>grey3-snow</textcolor>-->
+					<shadowcolor />
 					<onclick condition="!System.AddonIsEnabled(plugin.program.rikteamwiz)">EnableAddon(plugin.program.rikteamwiz)</onclick>
 					<texturefocus />
 					<texturenofocus />
@@ -216,6 +216,21 @@
 						<font>font13</font><!--font13_title-->
 						<textcolor>$VAR[ThemeHomeLabelColor]</textcolor>
 						<shadowcolor>shadow</shadowcolor>
+					</control>
+					<control type="image">
+						<!--<top>25</top>-->
+						<width>35</width>
+						<height>41</height>
+						<aspectratio aligny="center">keep</aspectratio>
+						<texture>special://skin/extras/buttons/inet_ok.png</texture>
+						<visible>Skin.HasSetting(show_inet) + System.InternetState</visible>
+					</control>
+					<control type="image">
+						<width>35</width>
+						<height>41</height>
+						<aspectratio aligny="center">keep</aspectratio>
+						<texture>special://skin/extras/buttons/inet_nok.png</texture>
+						<visible>Skin.HasSetting(show_inet) + !System.InternetState + !String.IsEmpty(System.InternetState)</visible>
 					</control>
 				</control>
 				<control type="grouplist" id="9020">
