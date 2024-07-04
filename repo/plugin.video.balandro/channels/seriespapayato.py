@@ -242,10 +242,11 @@ def list_all(item):
 
     if itemlist:
         if '<a class="page-link current"' in data:
-            next_page = scrapertools.find_single_match(data, '<a class="page-link" href="(.*?)">')
+            next_page = scrapertools.find_single_match(data, '<a class="page-link current".*?<a class="page-link" href="(.*?)">')
 
             if next_page:
-                itemlist.append(item.clone( title = 'Siguientes ...', url = next_page, action = 'list_all', text_color='coral' ))
+                if '/page/' in next_page:
+                    itemlist.append(item.clone( title = 'Siguientes ...', url = next_page, action = 'list_all', text_color='coral' ))
 
     return itemlist
 
@@ -276,7 +277,7 @@ def list_letra(item):
 
     if itemlist:
         if '<a class="page-link current"' in data:
-            next_page = scrapertools.find_single_match(data, '<a class="page-link current".*?<a class="page-link" href="(.*?)">')
+            next_page = scrapertools.find_single_match(data, '<a class="page-link current".*?<a class="page-link".*?</a>.*?href="(.*?)"')
 
             if next_page:
                 itemlist.append(item.clone( title = 'Siguientes ...', url = next_page, action = 'list_letra', text_color='coral' ))
@@ -453,6 +454,10 @@ def play(item):
 
         servidor = servertools.get_server_from_url(new_url)
         servidor = servertools.corregir_servidor(servidor)
+
+        if servidor == 'directo':
+            new_server = servertools.corregir_other(new_url).lower()
+            if not new_server.startswith("http"): servidor = new_server
 
         if servidor:
            itemlist.append(item.clone(server = servidor, url = new_url))

@@ -727,7 +727,34 @@ def submnu_canales(item):
     itemlist.append(item.clone( action='show_help_register', title= '    - [COLOR green][B]Información[/B][/COLOR] webs que requieren [COLOR gold][B]Registrarse[/B][/COLOR] (Cuenta)', thumbnail=config.get_thumb('news') ))
     itemlist.append(item.clone( action='show_channels_list', title= '    - Qué canales requieren [COLOR teal][B]Cuenta[/B][/COLOR]', cta_register = True ))
 
-    itemlist.append(item.clone( action='', title= '[B][I]CANALES SITUACIÖN:[/I][/B]', text_color='goldenrod', folder=False ))
+    itemlist.append(item.clone( action='', title= '[B][I]CANALES SITUACIÓN:[/I][/B]', text_color='goldenrod', folder=False ))
+
+    txt_status = ''
+
+    try:
+       with open(os.path.join(config.get_runtime_path(), 'dominios.txt'), 'r') as f: txt_status=f.read(); f.close()
+    except:
+       try: txt_status = open(os.path.join(config.get_runtime_path(), 'dominios.txt'), encoding="utf8").read()
+       except: pass
+
+    if txt_status:
+        bloque = scrapertools.find_single_match(txt_status, 'SITUACION CANALES(.*?)CANALES TEMPORALMENTE DES-ACTIVADOS')
+
+        matches = scrapertools.find_multiple_matches(bloque, "[B](.*?)[/B]")
+
+        if not '[COLOR moccasin]' in str(matches): matches = ''
+
+        if matches:
+            itemlist.append(item.clone( channel='submnuteam', action='resumen_incidencias', title= '    - Canales[COLOR tan][B] Con Incidencias[/B][/COLOR]' ))
+
+        bloque = scrapertools.find_single_match(txt_status, 'CANALES PROBABLEMENTE NO ACCESIBLES(.*?)ULTIMOS CAMBIOS DE DOMINIOS')
+
+        matches = scrapertools.find_multiple_matches(bloque, "[B](.*?)[/B]")
+
+        if not '[COLOR moccasin]' in str(matches): matches = ''
+
+        if matches:
+            itemlist.append(item.clone( channel='submnuteam', action='resumen_no_accesibles', title= '    - Canales[COLOR indianred][B] No Accesibles[/B][/COLOR]' ))
 
     itemlist.append(item.clone( action='submnu_avisinfo_channels', title= '    - [COLOR aquamarine][B]Avisos[/COLOR] [COLOR green]Información[/B][/COLOR] canales' ))
 
@@ -935,6 +962,12 @@ def submnu_play(item):
     itemlist.append(item.clone( channel='submnuteam', action='resumen_servidores', title= ' - Resumen y Distribución Servidores', thumbnail=config.get_thumb('bolt') ))
 
     itemlist.append(item.clone( action='show_play_parameters', title=' - Qué [COLOR chocolate][B]Ajustes[/B][/COLOR] tiene en preferencias [COLOR fuchsia][B]Play[/B][/COLOR]', thumbnail=config.get_thumb('news') ))
+
+    if config.get_setting('autoplay', default=False):
+        itemlist.append(item.clone( channel='actions', action='quitar_autoplay', title= ' - Quitar [COLOR fuchsia][B]Auto Play[/B][/COLOR]', thumbnail=config.get_thumb('news') ))
+
+    if config.get_setting('autoplay_one_link', default=True):
+        itemlist.append(item.clone( channel='actions', action='quitar_autoplay_one_link', title= ' - Quitar [COLOR fuchsia][B]Auto Play[/B][/COLOR] Si solo hay [COLOR gold][B]Un enlace[/B][/COLOR] para reproducir', thumbnail=config.get_thumb('news') ))
 
     itemlist.append(item.clone( action='show_server_report', title= ' - Reportar [COLOR gold][B]Reproducción de lista abortada[/B][/COLOR]', thumbnail=config.get_thumb('megaphone') ))
 
@@ -1732,16 +1765,16 @@ def show_help_cinecalidadlol(item):
     item.notice = 'cinecalidadlol'
     show_help_canales(item)
 
-def show_help_cuevana3lw(item):
-    item.notice = 'cuevana3lw'
-    show_help_canales(item)
-
 def show_help_cuevana3pro(item):
     item.notice = 'cuevana3pro'
     show_help_canales(item)
 
 def show_help_cuevana3video(item):
     item.notice = 'cuevana3video'
+    show_help_canales(item)
+
+def show_help_doramasyt(item):
+    item.notice = 'doramasyt'
     show_help_canales(item)
 
 def show_help_ennovelas(item):
@@ -1784,8 +1817,8 @@ def show_help_megaserie(item):
     item.notice = 'megaserie'
     show_help_canales(item)
 
-def show_help_mirapeliculas(item):
-    item.notice = 'mirapeliculas'
+def show_help_mundodonghua(item):
+    item.notice = 'mundodonghua'
     show_help_canales(item)
 
 def show_help_nextdede(item):
@@ -1884,7 +1917,7 @@ def show_help_canales(item):
           txt += '[CR][COLOR yellow]  Para conocer el dominio actual acceder a través de un navegador web a[/COLOR] [B][COLOR greenyellow]https://dominiosplaydede.com[/COLOR][/B][CR]'
           txt += '[COLOR yellow]  ó su[COLOR yellow][B] Telegram[/B] [B][COLOR greenyellow] t.me/playdedeinformacion[/COLOR][/B][CR]'
 
-    elif item.notice == 'cuevana3lw' or item.notice == 'cuevana3pro':
+    elif item.notice == 'cuevana3pro':
        txt += '[COLOR greenyellow][B][CR]También ha añadido un control contra robots [COLOR red]reCAPTCHA[/COLOR] oculto.[/COLOR][/B][CR]'
        txt += '[COLOR yellow][B][CR]Además efectuan control de acceso que puede [COLOR indianred]Bloquear[/COLOR] la Web incluso con el uso [COLOR red]Proxies[/COLOR].[/COLOR][/B][CR]'
 
@@ -2688,7 +2721,7 @@ def show_play_parameters(item):
     if config.get_setting('autoplay', default=False): txt += '[CR]    - [COLOR yellow][B] Activado[/B][/COLOR]'
     else: txt += '[CR]    - [COLOR yellow][B] Des-Activado[/B][/COLOR]'
 
-    if config.get_setting('autoplay_one_link', default=False): txt += '[CR]    -  Si solo hay [COLOR gold][B]Un enlace[/B][/COLOR] reproducirlo automáticamente[COLOR yellow][B]  Activado[/B][/COLOR]'
+    if config.get_setting('autoplay_one_link', default=True): txt += '[CR]    -  Si solo hay [COLOR gold][B]Un enlace[/B][/COLOR] reproducirlo automáticamente[COLOR yellow][B]  Activado[/B][/COLOR]'
     else: txt += '[CR]    -  Si solo hay [COLOR gold][B]Un enlace[/B][/COLOR] reproducirlo automáticamente[COLOR yellow][B]  Des-Activado[/B][/COLOR]'
 
     if config.get_setting('autoplay_channels_discarded', default=''):
@@ -4442,13 +4475,6 @@ def show_test(item):
            if tex_dom: tex_dom = tex_dom + '   Cuevana2Esp: ' + cuevana2esp_dominio + '[CR]'
            else: tex_dom = '[CR]   Cuevana2Esp: ' + cuevana2esp_dominio + '[CR]'
 
-    datos = channeltools.get_channel_parameters('cuevana3lw')
-    if datos['active']:
-        cuevana3lw_dominio = config.get_setting('channel_cuevana3lw_dominio', default='')
-        if cuevana3lw_dominio:
-           if tex_dom: tex_dom = tex_dom + '   Cuevana3Lw: ' + cuevana3lw_dominio + '[CR]'
-           else: tex_dom = '[CR]   CuevanaLw: ' + cuevana3lw_dominio + '[CR]'
-
     datos = channeltools.get_channel_parameters('cuevana3pro')
     if datos['active']:
         cuevana3pro_dominio = config.get_setting('channel_cuevana3pro_dominio', default='')
@@ -4784,6 +4810,13 @@ def show_test(item):
         if tupelihd_dominio:
            if tex_dom: tex_dom = tex_dom + '   TupeliHd: ' + tupelihd_dominio + '[CR]'
            else: tex_dom = '[CR]   TupeliHd: ' + tupelihd_dominio + '[CR]'
+
+    datos = channeltools.get_channel_parameters('veronline')
+    if datos['active']:
+        veronline_dominio = config.get_setting('channel_veronline_dominio', default='')
+        if veronline_dominio:
+           if tex_dom: tex_dom = tex_dom + '   VerOnline: ' + veronline_dominio + '[CR]'
+           else: tex_dom = '[CR]   VerOnline: ' + veronline_dominio + '[CR]'
 
     datos = channeltools.get_channel_parameters('yestorrent')
     if datos['active']:

@@ -33,32 +33,34 @@ def mainlist_series(item):
 
     itemlist.append(item.clone( title = 'Catálogo general', action = 'list_all', url = host + '/descargas/detallada/bittorrent', search_type = 'tvshow' ))
 
-    itemlist.append(item.clone( title = 'Doramas:', folder=False, text_color='firebrick' ))
-    itemlist.append(item.clone( title = ' - Episodios', action = 'list_all', url = host + '/descargas/detallada/bittorrent/dorama', search_type = 'tvshow' ))
+    if item.extra == 'all' or item.extra == 'torrents' or item.extra == 'dorama' or item.extra == 'groups':
+        itemlist.append(item.clone( title = 'Doramas:', folder=False, text_color='firebrick' ))
+        itemlist.append(item.clone( title = ' - Episodios', action = 'list_all', url = host + '/descargas/detallada/bittorrent/dorama', search_type = 'tvshow' ))
 
     if not config.get_setting('descartar_anime', default=False):
-        itemlist.append(item.clone( title = 'Animes:', folder=False, text_color='springgreen' ))
+        if item.extra == 'all' or item.extra == 'torrents' or item.extra == 'anime' or item.extra == 'groups':
+            itemlist.append(item.clone( title = 'Animes:', folder=False, text_color='springgreen' ))
 
-        itemlist.append(item.clone( title = ' - Catálogo', action = 'list_lst', url = host + '/buscar/anime/tv?&categoria=tv&detallada=true', search_type = 'tvshow' ))
+            itemlist.append(item.clone( title = ' - Catálogo', action = 'list_lst', url = host + '/buscar/anime/tv?&categoria=tv&detallada=true', search_type = 'tvshow' ))
 
-        itemlist.append(item.clone( title = ' - [COLOR cyan]Estrenos[/COLOR]', action = 'list_lst', url = host + '/animes/lista?sort=anio&direction=desc&detallada=true', search_type = 'tvshow' ))
+            itemlist.append(item.clone( title = ' - [COLOR cyan]Estrenos[/COLOR]', action = 'list_lst', url = host + '/animes/lista?sort=anio&direction=desc&detallada=true', search_type = 'tvshow' ))
 
-        itemlist.append(item.clone( title = ' - Más valorados', action = 'list_lst', url = host + '/animes/lista?sort=rating&direction=desc&detallada=true', search_type = 'tvshow' ))
+            itemlist.append(item.clone( title = ' - Más valorados', action = 'list_lst', url = host + '/animes/lista?sort=rating&direction=desc&detallada=true', search_type = 'tvshow' ))
 
-        itemlist.append(item.clone( title = ' - [COLOR deepskyblue]Películas[/COLOR]', action = 'list_lst', url = host + '/buscar/anime/pelicula?&categoria=pelicula&detallada=true', search_type = 'tvshow' ))
+            itemlist.append(item.clone( title = ' - [COLOR deepskyblue]Películas[/COLOR]', action = 'list_lst', url = host + '/buscar/anime/pelicula?&categoria=pelicula&detallada=true', search_type = 'tvshow' ))
 
-        itemlist.append(item.clone( title = ' - Episodios', action = 'list_all', url = host + '/descargas/detallada/bittorrent/anime', search_type = 'tvshow' ))
+            itemlist.append(item.clone( title = ' - Episodios', action = 'list_all', url = host + '/descargas/detallada/bittorrent/anime', search_type = 'tvshow' ))
 
-        itemlist.append(item.clone( title = ' - Por categoría', action = 'categorias', search_type = 'tvshow' ))
+            itemlist.append(item.clone( title = ' - Por categoría', action = 'categorias', search_type = 'tvshow' ))
 
-        itemlist.append(item.clone( title = ' - Por letra (A - Z)', action = 'alfabetico', search_type = 'tvshow' ))
+            itemlist.append(item.clone( title = ' - Por letra (A - Z)', action = 'alfabetico', search_type = 'tvshow' ))
 
-        itemlist.append(item.clone( title = 'Ovas:', folder=False, text_color='moccasin' ))
-        itemlist.append(item.clone( title = ' - Catálogo', action = 'list_lst', url = host + '/buscar/anime/ova?&categoria=ova&detallada=true', search_type = 'tvshow' ))
-        itemlist.append(item.clone( title = ' - Episodios', action = 'list_all', url = host + '/descargas/detallada/bittorrent/anime-OVA', search_type = 'tvshow' ))
+            itemlist.append(item.clone( title = 'Ovas:', folder=False, text_color='moccasin' ))
+            itemlist.append(item.clone( title = ' - Catálogo', action = 'list_lst', url = host + '/buscar/anime/ova?&categoria=ova&detallada=true', search_type = 'tvshow' ))
+            itemlist.append(item.clone( title = ' - Episodios', action = 'list_all', url = host + '/descargas/detallada/bittorrent/anime-OVA', search_type = 'tvshow' ))
 
-        itemlist.append(item.clone( title = 'Mangas:', folder=False, text_color='orange' ))
-        itemlist.append(item.clone( title = ' - Episodios', action = 'list_all', url = host + '/descargas/detallada/bittorrent/manga', search_type = 'tvshow' ))
+            itemlist.append(item.clone( title = 'Mangas:', folder=False, text_color='orange' ))
+            itemlist.append(item.clone( title = ' - Episodios', action = 'list_all', url = host + '/descargas/detallada/bittorrent/manga', search_type = 'tvshow' ))
 
     return itemlist
 
@@ -82,7 +84,7 @@ def categorias(item):
 
         url = host + url + '?&detallada=true'
 
-        itemlist.append(item.clone( title = title.capitalize(), action = 'list_lst', url = url, text_color = 'hotpink' ))
+        itemlist.append(item.clone( title = title.capitalize(), action = 'list_lst', url = url, text_color = 'springgreen' ))
 
     return sorted(itemlist, key=lambda x: x.title)
 
@@ -94,7 +96,7 @@ def alfabetico(item):
     for letra in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0':
         url = host + '/animes/lista/letra/' + letra + '?&detallada=true'
 
-        itemlist.append(item.clone( title = letra, action = 'list_lst', url = url, text_color = 'hotpink' ))
+        itemlist.append(item.clone( title = letra, action = 'list_lst', url = url, text_color = 'springgreen' ))
 
     return itemlist
 
@@ -304,17 +306,20 @@ def findvideos(item):
         if not servidor == 'directo':
             itemlist.append(Item( channel = item.channel, action = 'play', title = '', url = match, server = servidor, language = 'Vose' ))
 
-
     if not itemlist:
         matches = scrapertools.find_multiple_matches(data, 'FlashVars.*?text=https.*?https(.*?)">')
         if not matches:
-            if 'FlashVars="text=' in data: ses += 1
+            matches = scrapertools.find_multiple_matches(data, 'tr class="enlaces">.*?">(.*?)</td>')
+
+            if not matches:
+               if 'FlashVars="text=' in data or 'tr class="enlaces">' in data: ses += 1
 
         if matches:
            for match in matches:
                ses += 1
 
-               url = 'https' + match
+               if not 'http' in match: url = 'https' + match
+               else: url = match
 
                if url.endswith('.torrent'): servidor = 'torrent'
                elif url.startswith('magnet:?'): servidor = 'torrent'

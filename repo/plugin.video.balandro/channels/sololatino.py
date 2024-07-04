@@ -63,9 +63,9 @@ def mainlist_series(item):
 
     itemlist.append(item.clone( title = 'Más valoradas', action = 'list_all', url = host + 'series/mejor-valoradas/', search_type = 'tvshow' ))
 
-    itemlist.append(item.clone( title = 'Toons', action = 'list_all', url = host + 'genre_series/toons/', search_type = 'tvshow', text_color = 'moccasin' ))
+    itemlist.append(item.clone( title = 'Animación', action = 'list_all', url = host + 'genre_series/toons/', search_type = 'tvshow', text_color = 'greenyellow' ))
 
-    itemlist.append(item.clone( title = 'Por plataforma', action= 'plataformas', search_type='tvshow'))
+    itemlist.append(item.clone( title = 'Por plataforma', action= 'plataformas', search_type='tvshow', text_color = 'moccasin' ))
 
     itemlist.append(item.clone( title = 'Por género', action = 'generos', search_type = 'tvshow' ))
     itemlist.append(item.clone( title = 'Por año', action = 'anios', search_type = 'tvshow' ))
@@ -373,6 +373,8 @@ def findvideos(item):
 
         if not stream: continue
 
+        if not 'http' in stream: continue
+
         data_s = do_downloadpage(stream)
 
         links = scrapertools.find_multiple_matches(data_s, '<li onclick="go_to_playerVast(.*?)>')
@@ -381,6 +383,9 @@ def findvideos(item):
             url = scrapertools.find_single_match(str(link), "'(.*?)'")
 
             if not url: continue
+
+            if '/plustream.' in url: continue
+            elif '/embedsito.' in url: continue
 
             if 'data-lang="0"' in link: lang = 'Lat'
             elif 'data-lang="1"' in link: lang = 'Esp'

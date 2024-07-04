@@ -26,7 +26,7 @@ def mainlist_animes(item):
 
     current_year = int(datetime.today().year)
 
-    itemlist.append(item.clone( title = 'Buscar anime ...', action = 'search', search_type = 'tvshow', text_color='springgreen' ))
+    itemlist.append(item.clone( title = 'Buscar anime ...', action = 'search', search_type = 'all', text_color='springgreen' ))
 
     itemlist.append(item.clone( title = 'Catálogo', action = 'list_all', url = host + '/directorio', search_type = 'tvshow' ))
 
@@ -78,7 +78,7 @@ def anios(item):
 
     current_year = int(datetime.today().year)
 
-    for x in range(current_year, 1949, -1):
+    for x in range(current_year, 1999, -1):
         url = url_anios + str(x) + '%2C' + str(x) + '&status=2&sort=recent'
 
         itemlist.append(item.clone( title = str(x), url = url, action = 'list_all', text_color='springgreen' ))
@@ -117,12 +117,16 @@ def list_all(item):
 
         SerieName = SerieName.strip()
 
+        tipo = 'movie' if '-movie-' in url else 'tvshow'
+        sufijo = '' if item.search_type != 'all' else tipo
+
         if item.group == 'last_epis':
             itemlist.append(item.clone( action = 'findvideos', url = url, title = title, thumbnail = thumb, infoLabels={'year': '-'},
                                         contentSerieName = SerieName, contentType = 'episode', contentSeason = 1, contentEpisodeNumber = 1))
 
         else:
-            itemlist.append(item.clone( action = 'episodios', url = url, title = title, thumbnail = thumb, contentType = 'tvshow', contentSerieName = SerieName, infoLabels={'year': '-'} ))
+            itemlist.append(item.clone( action = 'episodios', url = url, title = title, thumbnail = thumb, fmt_sufijo=sufijo,
+                                        contentType = 'tvshow', contentSerieName = SerieName, infoLabels={'year': '-'} ))
 
     tmdb.set_infoLabels(itemlist)
 

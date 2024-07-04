@@ -109,7 +109,7 @@ def mainlist_animes(item):
 
     itemlist.append(item.clone( action='acciones', title= '[B]Acciones[/B] [COLOR plum](si no hay resultados)[/COLOR]', text_color='goldenrod' ))
 
-    itemlist.append(item.clone( title = 'Buscar anime ...', action = 'search', search_type = 'tvshow', text_color='springgreen' ))
+    itemlist.append(item.clone( title = 'Buscar anime ...', action = 'search', search_type = 'all', text_color='springgreen' ))
 
     itemlist.append(item.clone( title = 'Catálogo', action = 'list_all', url = host + 'animes?p=1', search_type = 'tvshow' ))
 
@@ -117,13 +117,39 @@ def mainlist_animes(item):
 
     itemlist.append(item.clone( title = 'En emisión', action = 'list_all', url = host + 'emision?p=1', search_type = 'tvshow' ))
 
-    itemlist.append(item.clone( title = 'Por idioma', action = 'generos', group = 'idiomas', search_type = 'tvshow' ))
+    itemlist.append(item.clone( title = 'Películas', action = 'pelis', group = 'cats', search_type = 'movie', text_color='deepskyblue' ))
+
+    itemlist.append(item.clone( title = 'Por idioma', action = 'idiomas', search_type = 'tvshow' ))
 
     itemlist.append(item.clone( title = 'Por categorías', action = 'categorias', group = 'cats', search_type = 'tvshow' ))
+
     itemlist.append(item.clone( title = 'Por género', action = 'generos', search_type = 'tvshow' ))
     itemlist.append(item.clone( title = 'Por año', action = 'anios', search_type = 'tvshow' ))
 
     itemlist.append(item.clone( title = 'Por letra (A - Z)', action = 'alfabetico', search_type = 'tvshow' ))
+
+    return itemlist
+
+
+def pelis(item):
+    logger.info()
+    itemlist = []
+
+    itemlist.append(item.clone( title = 'En 1080p', action = 'list_all', url = host + 'animes?fecha=false&genero=false&letra=false&categoria=pelicula-1080p', text_color='deepskyblue' ))
+    itemlist.append(item.clone( title = 'En castellano', action = 'list_all', url = host + 'animes?fecha=false&genero=false&letra=false&categoria=Película+Castellano', text_color='deepskyblue' ))
+    itemlist.append(item.clone( title = 'En latino', action = 'list_all', url = host + 'animes?fecha=false&genero=false&letra=false&categoria=Película+Latino', text_color='deepskyblue' ))
+    itemlist.append(item.clone( title = 'Otras', action = 'list_all', url = host + 'animes?fecha=false&genero=false&letra=false&categoria=Película', text_color='deepskyblue' ))
+
+    return itemlist
+
+
+def idiomas(item):
+    logger.info()
+    itemlist = []
+
+    itemlist.append(item.clone( title = 'En castellano', action = 'list_all', url = host + 'animes?fecha=false&genero=false&letra=false&categoria=castellano', search_type = 'tvshow', text_color='moccasin' ))
+    itemlist.append(item.clone( title = 'En catalán', action = 'list_all', url = host + 'animes?fecha=false&genero=false&letra=false&categoria=catalan', search_type = 'tvshow', text_color='moccasin' ))
+    itemlist.append(item.clone( title = 'En latino', action = 'list_all', url = host + 'animes?fecha=false&genero=false&letra=false&categoria=latino', search_type = 'tvshow', text_color='moccasin' ))
 
     return itemlist
 
@@ -139,7 +165,7 @@ def categorias(item):
 
     bloque = scrapertools.find_single_match(data, 'name="categoria"(.*?)>Categoria<')
 
-    matches = re.compile('<option value="(.*?)">(.*?)</option>').findall(bloque)
+    matches = re.compile('<optionvalue="(.*?)">(.*?)</option>').findall(bloque)
 
     for categoria, title in matches:
         if title == "Seleccionar": continue
@@ -149,9 +175,11 @@ def categorias(item):
         elif title == 'Latino': continue
         elif title == 'Catalán': continue
 
+        elif 'Pelicula' in title or 'Película' in title: continue
+
         url = url_cat + '?fecha=false&genero=false&letra=false&categoria=' + categoria
 
-        itemlist.append(item.clone( title = title, action = 'list_all', url = url, text_color='springgreen' ))
+        itemlist.append(item.clone( title = title, action = 'list_all', url = url, text_color='moccasin' ))
 
     return sorted(itemlist,key=lambda x: x.title)
 
@@ -160,39 +188,26 @@ def generos(item):
     logger.info()
     itemlist = []
 
-    if item.group == 'idiomas': text_color = 'moccasin'
-    else: text_color = 'springgreen'
-
     url_genre = host + 'animes'
 
     data = do_downloadpage(url_genre)
     data = re.sub(r'\n|\r|\t|\s{2}|&nbsp;', '', data)
 
-    bloque = scrapertools.find_single_match(data, 'name="genero"(.*?)>Géneros<')
+    bloque = scrapertools.find_single_match(data, 'name="genero"(.*?)</select>')
 
-    matches = re.compile('<option value="(.*?)">(.*?)</option>').findall(bloque)
+    matches = re.compile('<optionvalue="(.*?)">(.*?)</option>').findall(bloque)
 
     for genre, title in matches:
         title = title.strip()
 
         if title == 'Seleccionar': continue
 
-        if item.group == 'idiomas':
-            if title == 'Castellano': pass
-            elif title == 'Latino': pass
-            else: continue
-        else:
-            if title == 'Castellano': continue
-            elif title == 'Latino': continue
+        if title == 'Castellano': continue
+        elif title == 'Latino': continue
 
         url = url_genre + '?fecha=false&genero=' + genre + '&letra=false&categoria=false'
 
-        itemlist.append(item.clone( title = title, action = 'list_all', url = url, text_color = text_color ))
-
-    if item.group == 'idiomas':
-        url = url_genre + '?fecha=false&genero=false&letra=false&categoria=catalan'
-
-        itemlist.append(item.clone( title = 'Catalán', action = 'list_all', url = url, text_color = text_color ))
+        itemlist.append(item.clone( title = title, action = 'list_all', url = url, text_color='springgreen' ))
 
     return sorted(itemlist,key=lambda x: x.title)
 
@@ -235,6 +250,7 @@ def list_all(item):
     data = re.sub(r'\n|\r|\t|\s{2}|&nbsp;', '', data)
 
     bloque = scrapertools.find_single_match(data, '<div class="row">(.*?)<nav>')
+
     if not bloque:
         if item.group == 'cats':
             hay_cat = scrapertools.find_single_match(item.url, '&categoria=(.*?)$')
@@ -261,7 +277,7 @@ def list_all(item):
         if year: title = title.replace('(' + year + ')', '').strip()
         else: year = '-'
 
-        title = title.replace('&#039;s', "'s")
+        title = title.replace('&#039;s', "'s").replace('&quot;', '').strip()
 
         SerieName = title
 
@@ -283,10 +299,22 @@ def list_all(item):
 
         SerieName = SerieName.strip()
 
-        if '-pelicula-' in url:
-            itemlist.append(item.clone( action='episodios', url=url, title=title, thumbnail=thumb,  contentType = 'movie', contentTitle = SerieName, infoLabels={'year': year} ))
-        else:
-            itemlist.append(item.clone( action='episodios', url=url, title=title, thumbnail=thumb, contentType = 'tvshow', contentSerieName = SerieName, infoLabels={'year': year} ))
+        tipo = 'movie' if '-pelicula-' in url else 'tvshow'
+        sufijo = '' if item.search_type != 'all' else tipo
+
+        if tipo == 'movie':
+            if item.search_type != 'all':
+                if item.search_type == 'tvshow': continue
+
+            itemlist.append(item.clone( action='episodios', url=url, title=title, thumbnail=thumb, fmt_sufijo=sufijo,
+                                        contentType = 'movie', contentTitle = SerieName, infoLabels={'year': year} ))
+
+        if tipo == 'tvshow':
+            if item.search_type != 'all':
+                if item.search_type == 'movie': continue
+
+            itemlist.append(item.clone( action='episodios', url=url, title=title, thumbnail=thumb, fmt_sufijo=sufijo,
+                                        contentType = 'tvshow', contentSerieName = SerieName, infoLabels={'year': year} ))
 
     tmdb.set_infoLabels(itemlist)
 
@@ -357,7 +385,7 @@ def episodios(item):
     data = do_downloadpage(item.url)
     data = re.sub(r'\n|\r|\t|\s{2}|&nbsp;', '', data)
 
-    bloque = scrapertools.find_single_match(data, '>Capítulos<(.*?)<script>')
+    bloque = scrapertools.find_single_match(data, '>Capítulos<(.*?)</script>')
 
     matches = scrapertools.find_multiple_matches(bloque, '<a href="(.*?)".*?</svg>(.*?)</div>')
 

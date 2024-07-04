@@ -44,7 +44,7 @@ except:
    except: pass
 
 
-host = 'https://cinecalidad.fi/'
+host = 'https://www.cinecalidad.vg/'
 
 
 _players = ['https://cinecalidad.', '.cinecalidad.']
@@ -63,7 +63,8 @@ ant_hosts = ['https://www.cinecalidad.eu/', 'https://www.cinecalidad.im/', 'http
              'https://v2.cinecalidad.foo/', 'https://www.cinecalidad.so/', 'https://wvw.cinecalidad.so/',
              'https://vww.cinecalidad.so/', 'https://wwv.cinecalidad.so/', 'https://vvv.cinecalidad.so/',
              'https://ww.cinecalidad.so/', 'https://w.cinecalidad.so/', 'https://vvw.cinecalidad.so/',
-             'https://wv.cinecalidad.so/', 'https://vvvv.cinecalidad.so/', 'https://wvvv.cinecalidad.so/']
+             'https://wv.cinecalidad.so/', 'https://vvvv.cinecalidad.so/', 'https://wvvv.cinecalidad.so/',
+             'https://cinecalidad.fi/']
 
 
 domain = config.get_setting('dominio', 'cinecalidad', default='')
@@ -240,7 +241,7 @@ def mainlist_series(item):
 
     itemlist.append(item.clone( title = 'Catálogo', action = 'list_all', url = host + 'serie/', search_type = 'tvshow' ))
 
-    itemlist.append(item.clone( title = 'Últimas', action = 'destacadas', url = host, search_type = 'tvshow', text_color = 'cyan' ))
+    itemlist.append(item.clone( title = 'Últimas', action = 'destacadas', url = host, search_type = 'tvshow', text_color = 'moccasin' ))
 
     itemlist.append(item.clone( title = 'Más populares', action = 'list_all', url = host + 'series-populares/', search_type = 'tvshow' ))
 
@@ -593,6 +594,7 @@ def findvideos(item):
             elif servidor == 'drive': servidor = 'gvideo'
             elif servidor == 'google drive': servidor = 'gvideo'
             elif servidor == 'netu' or servidor == 'hqq': servidor = 'waaw'
+            elif servidor == 'd0o0d' or servidor == 'do0od' or servidor == 'd0000d' or servidor == 'd000d': servidor = 'doodstream'
 
             elif servidor == 'goodstream': servertools.corregir_other(servidor)
             elif servidor == 'streamwish': servertools.corregir_other(servidor)
@@ -639,6 +641,7 @@ def findvideos(item):
             elif servidor == 'bittorrent': servidor = 'torrent'
 
             elif 'bittorrent' in servidor: servidor = 'torrent'
+            elif 'spanishtracker' in servidor: servidor = 'torrent'
 
             elif 'voesx' in servidor: servidor = 'voe'
             elif servidor == 'maxplay': servidor = 'voe'
@@ -652,7 +655,8 @@ def findvideos(item):
             else:
                 if not config.get_setting('developer_mode', default=False): continue
 
-            itemlist.append(Item (channel = item.channel, action = 'play', server = servidor, title = '', data_url = data_url, data_lmt = data_lmt, quality = qlty, language = lang ))
+            itemlist.append(Item (channel = item.channel, action = 'play', server = servidor, title = '', data_url = data_url, data_lmt = data_lmt,
+                                  quality = qlty, language = lang ))
 
     # ~ es por las series
     if not hay_descargas:
@@ -687,7 +691,7 @@ def findvideos(item):
 
                 url = item.url + _url
 
-                itemlist.append(Item (channel = item.channel, action = 'play', server = 'directo', title = '', url = url, other = servidor ))
+                itemlist.append(Item (channel = item.channel, action = 'play', server = servidor, title = '', url = url, other = 'd' ))
 
     if not itemlist:
         if not ses == 0:
@@ -706,7 +710,7 @@ def play(item):
     if domain_memo: host_player = domain_memo
     else: host_player = host
 
-    if item.server == 'directo':
+    if item.server == 'directo' or item.other == 'd':
         url = ''
 
         if item.url:
@@ -813,7 +817,10 @@ def play(item):
 
             if '/okru.' in url: servidor = 'okru'
 
-        elif servidor == 'zplayer': url = url + '|' + host_player
+            new_server = servertools.corregir_other(url).lower()
+            if not new_server.startswith("http"): servidor = new_server
+
+        if servidor == 'zplayer': url = url + '|' + host_player
 
         itemlist.append(item.clone(url = url, server = servidor))
 
