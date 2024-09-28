@@ -167,7 +167,7 @@ def acciones(item):
 
     itemlist.append(item_configurar_proxies(item))
 
-    itemlist.append(Item( channel='helper', action='show_help_pelisforte', title='[COLOR aquamarine][B]Aviso[/COLOR] [COLOR green]Información[/B][/COLOR] canal', thumbnail=config.get_thumb('help') ))
+    itemlist.append(Item( channel='helper', action='show_help_pelisforte', title='[COLOR aquamarine][B]Aviso[/COLOR] [COLOR green]Información[/B][/COLOR] canal', thumbnail=config.get_thumb('pelisforte') ))
 
     platformtools.itemlist_refresh()
 
@@ -324,7 +324,12 @@ def findvideos(item):
 
             other = ''
 
-            if srv == 'ok': other = 'ok'
+            if srv == 'ok':
+                servidor = 'directo'
+                srv = 'ok'
+            elif srv == 'okhd':
+                servidor = 'directo'
+                srv = 'okhd'
 
             elif srv == 'playpf': servidor = 'directo'
             elif srv == 'ds': servidor = 'directo'
@@ -384,6 +389,8 @@ def play(item):
                     return 'Servidor [COLOR plum]No Soportado[/COLOR]'
                 elif '/playpf.link/' in url:
                     return 'Servidor [COLOR plum]No Soportado[/COLOR]'
+                elif '/okhd.' in url:
+                    return 'Servidor [COLOR plum]No Soportado[/COLOR]'
 
                 servidor = servertools.get_server_from_url(url)
                 servidor = servertools.corregir_servidor(servidor)
@@ -428,6 +435,8 @@ def play(item):
     if url:
         if 'gounlimited' in url:
             return 'Requiere verificación [COLOR red]reCAPTCHA[/COLOR]'
+        elif '/okhd.' in url:
+            return 'Servidor [COLOR plum]No Soportado[/COLOR]'
 
         servidor = servertools.get_server_from_url(url)
         servidor = servertools.corregir_servidor(servidor)

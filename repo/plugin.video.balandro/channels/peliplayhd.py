@@ -143,7 +143,7 @@ def acciones(item):
 
     itemlist.append(item_configurar_proxies(item))
 
-    itemlist.append(Item( channel='helper', action='show_help_peliplayhd', title='[COLOR aquamarine][B]Aviso[/COLOR] [COLOR green]Información[/B][/COLOR] canal', thumbnail=config.get_thumb('help') ))
+    itemlist.append(Item( channel='helper', action='show_help_peliplayhd', title='[COLOR aquamarine][B]Aviso[/COLOR] [COLOR green]Información[/B][/COLOR] canal', thumbnail=config.get_thumb('peliplayhd') ))
 
     platformtools.itemlist_refresh()
 
@@ -257,6 +257,8 @@ def list_all(item):
         title = scrapertools.find_single_match(match, '<h2 class="entry-title">(.*?)</h2>')
 
         if not url or not title: continue
+
+        if '/clasicoanimado/' in url: continue
 
         title = title.replace('&#038;', '&')
 
@@ -484,6 +486,23 @@ def findvideos(item):
             elif 'strwish' in srv:
                 servidor = 'directo'
                 other = 'strwish'
+            elif 'vidhidepre' in srv:
+                servidor = 'directo'
+                other = 'vidhidepre'
+            elif 'playerwish' in srv:
+                servidor = 'directo'
+                other = 'playerwish'
+
+            else:
+                if 'wish' in srv:
+                    servidor = 'directo'
+                    other = 'streamwish'
+                elif 'vidhide' in srv:
+                    servidor = 'directo'
+                    other = 'vidhidepro'
+                else:
+                    servidor = 'directo'
+                    other = 'indeterminado'
 
             if servidor == srv: other = ''
             elif not servidor == 'directo':
@@ -510,7 +529,7 @@ def play(item):
     url = scrapertools.find_single_match(data, '<iframe.*?src="([^"]+)')
     if not url: url = scrapertools.find_single_match(data, '<IFRAME.*?SRC="([^"]+)')
 
-    if item.other == 'Peliplaywish' or item.other == 'Mivideoplay' or item.other == 'Peliplaymoon' or item.other == 'Fmoonembed' or item.other == 'Embedmoon' or item.other == 'Jodwish' or item.other == 'Swhoi' or item.other == 'Swdyu' or item.other == 'strwish':
+    if item.other == 'Indeterminado' or item.other == 'Peliplaywish' or item.other == 'Mivideoplay' or item.other == 'Peliplaymoon' or item.other == 'Fmoonembed' or item.other == 'Embedmoon' or item.other == 'Jodwish' or item.other == 'Swhoi' or item.other == 'Swdyu' or item.other == 'Strwish' or item.other == 'Vidhidepre' or item.other == 'Playerwish' or item.other == 'Streamwish' or item.other == 'Vidhidepro':
         if '/?trembed' in url:
             data = do_downloadpage(url)
 

@@ -40,6 +40,46 @@ _telegram = "[COLOR lightblue][B][I] t.me/balandro_asesor [/I][/B][/COLOR]"
 
 _team = "[COLOR hotpink][B][I] t.me/balandro_team [/I][/B][/COLOR]"
 
+tests_all_webs = []
+tests_all_srvs = []
+
+srv_pending = ''
+con_incidencias = ''
+no_accesibles = ''
+
+try:
+    with open(os.path.join(config.get_runtime_path(), 'dominios.txt'), 'r') as f: txt_status=f.read(); f.close()
+except:
+    try: txt_status = open(os.path.join(config.get_runtime_path(), 'dominios.txt'), encoding="utf8").read()
+    except: txt_status = ''
+
+if txt_status:
+    bloque = scrapertools.find_single_match(txt_status, 'SITUACION SERVIDORES(.*?)SITUACION CANALES')
+
+    matches = scrapertools.find_multiple_matches(bloque, "[B](.*?)[/B]")
+
+    for match in matches:
+        match = match.strip()
+
+        if '[COLOR orchid]' in match: srv_pending += '[B' + match + '/I][/B][/COLOR][CR]'
+
+    bloque = scrapertools.find_single_match(txt_status, 'SITUACION CANALES(.*?)CANALES TEMPORALMENTE DES-ACTIVADOS')
+
+    matches = scrapertools.find_multiple_matches(bloque, "[B](.*?)[/B]")
+
+    for match in matches:
+        match = match.strip()
+
+        if '[COLOR moccasin]' in match: con_incidencias += '[B' + match + '/I][/B][/COLOR][CR]'
+
+    bloque = scrapertools.find_single_match(txt_status, 'CANALES PROBABLEMENTE NO ACCESIBLES(.*?)ULTIMOS CAMBIOS DE DOMINIOS')
+
+    matches = scrapertools.find_multiple_matches(bloque, "[B](.*?)[/B]")
+
+    for match in matches:
+        match = match.strip()
+
+        if '[COLOR moccasin]' in match: no_accesibles += '[B' + match + '/I][/B][/COLOR][CR]'
 
 context_desarrollo = []
 
@@ -279,39 +319,14 @@ def submnu_team_info(item):
 
     itemlist.append(item.clone( action='', title='[COLOR green][B]INFORMACIÓN[/COLOR] [COLOR darkorange]DESARROLLO:[/COLOR][/B]' ))
 
-    path = os.path.join(config.get_runtime_path(), 'dominios.txt')
-
-    existe = filetools.exists(path)
-
-    if existe:
+    if txt_status:
         itemlist.append(item.clone( channel='actions', action='show_latest_domains', title='[COLOR aqua][B]Últimos Cambios Dominios[/B][/COLOR]', thumbnail=config.get_thumb('stack') ))
 
-        txt_status = ''
+        if con_incidencias:
+            itemlist.append(item.clone( action='resumen_incidencias', title='[COLOR gold][B]Canales[/COLOR][COLOR tan] Con Incidencias[/B][/COLOR]', thumbnail=config.get_thumb('stack') ))
 
-        try:
-           with open(os.path.join(config.get_runtime_path(), 'dominios.txt'), 'r') as f: txt_status=f.read(); f.close()
-        except:
-           try: txt_status = open(os.path.join(config.get_runtime_path(), 'dominios.txt'), encoding="utf8").read()
-           except: pass
-
-        if txt_status:
-            bloque = scrapertools.find_single_match(txt_status, 'SITUACION CANALES(.*?)CANALES TEMPORALMENTE DES-ACTIVADOS')
-
-            matches = scrapertools.find_multiple_matches(bloque, "[B](.*?)[/B]")
-
-            if not '[COLOR moccasin]' in str(matches): matches = ''
-
-            if matches:
-                itemlist.append(item.clone( action='resumen_incidencias', title='[COLOR gold][B]Canales[/COLOR][COLOR tan] Con Incidencias[/B][/COLOR]', thumbnail=config.get_thumb('stack') ))
-
-            bloque = scrapertools.find_single_match(txt_status, 'CANALES PROBABLEMENTE NO ACCESIBLES(.*?)ULTIMOS CAMBIOS DE DOMINIOS')
-
-            matches = scrapertools.find_multiple_matches(bloque, "[B](.*?)[/B]")
-
-            if not '[COLOR moccasin]' in str(matches): matches = ''
-
-            if matches:
-                itemlist.append(item.clone( action='resumen_no_accesibles', title='[COLOR gold][B]Canales[/COLOR][COLOR indianred] No Accesibles[/B][/COLOR]', thumbnail=config.get_thumb('stack') ))
+        if no_accesibles:
+            itemlist.append(item.clone( action='resumen_no_accesibles', title='[COLOR gold][B]Canales[/COLOR][COLOR indianred] No Accesibles[/B][/COLOR]', thumbnail=config.get_thumb('stack') ))
 
     if config.get_setting('memorize_channels_proxies', default=True):
         itemlist.append(item.clone( channel='helper',  action='channels_with_proxies_memorized', title= '[COLOR gold][B]Canales[/COLOR][COLOR red][B] Con Proxies[/B][/COLOR]', new_proxies=True, memo_proxies=True, test_proxies=True, thumbnail=config.get_thumb('stack') ))
@@ -319,6 +334,10 @@ def submnu_team_info(item):
     itemlist.append(item.clone( action='resumen_canales', title='[COLOR gold][B]Canales[/B][/COLOR] Resúmenes y Distribución', thumbnail=config.get_thumb('stack') ))
 
     itemlist.append(item.clone( action='resumen_servidores', title='[COLOR fuchsia][B]Servidores[/B][/COLOR] Resúmenes y Distribución', thumbnail=config.get_thumb('bolt') ))
+
+    if txt_status:
+        if srv_pending:
+            itemlist.append(item.clone( action='resumen_pending', title='[COLOR fuchsia][B]Servidores[/COLOR][COLOR tan] Con Incidencias[/B][/COLOR]', thumbnail=config.get_thumb('bolt') ))
 
     if xbmc.getCondVisibility('System.HasAddon("script.module.resolveurl")'):
         itemlist.append(item.clone( action='show_help_alternativas', title='Qué servidores tienen [COLOR yellow][B]Vías Alternativas[/B][/COLOR]', thumbnail=config.get_thumb('bolt') ))
@@ -1080,6 +1099,8 @@ def test_tplus(item):
 
     tplus_actual = config.get_setting('proxies_tplus', default='32')
 
+    if config.get_setting('proxies_tplus_proces'): tplus_actual = config.get_setting('proxies_tplus_proces', default='32')
+
     opciones_tplus = [
             'openproxy.space http',
             'openproxy.space socks4',
@@ -1118,10 +1139,20 @@ def test_tplus(item):
             'hookzof',
             'manuGMG',
             'rdavydov socks5',
-            'lamt3012'
+            'lamt3012',
+            'proxyfly http',
+            'proxyfly socks4',
+            'proxyfly socks5',
+            'ErcinDedeoglu http',
+            'ErcinDedeoglu https',
+            'ErcinDedeoglu socks4',
+            'ErcinDedeoglu socks5'
             ]
 
     preselect = tplus_actual
+
+    opciones_tplus = sorted(opciones_tplus, key=lambda x: x[0])
+
     ret = platformtools.dialog_select('[COLOR cyan][B]Proveedores Proxies Tplus[/B][/COLOR]', opciones_tplus, preselect=preselect)
     if ret == -1: return -1
 
@@ -1163,10 +1194,20 @@ def test_tplus(item):
     elif opciones_tplus[ret] == 'manuGMG': proxies_tplus = '35'
     elif opciones_tplus[ret] == 'rdavydov socks5': proxies_tplus = '36'
     elif opciones_tplus[ret] == 'lamt3012': proxies_tplus = '37'
+    elif opciones_tplus[ret] == 'proxyfly http': proxies_tplus = '38'
+    elif opciones_tplus[ret] == 'proxyfly socks4': proxies_tplus = '39'
+    elif opciones_tplus[ret] == 'proxyfly socks5': proxies_tplus = '40'
+    elif opciones_tplus[ret] == 'ErcinDedeoglu http': proxies_tplus = '41'
+    elif opciones_tplus[ret] == 'ErcinDedeoglu https': proxies_tplus = '42'
+    elif opciones_tplus[ret] == 'ErcinDedeoglu socks4': proxies_tplus = '43'
+    elif opciones_tplus[ret] == 'ErcinDedeoglu socks5': proxies_tplus = '44'
 
     else: proxies_tplus = '32'
 
     config.set_setting('proxies_tplus', proxies_tplus)
+    config.set_setting('proxies_tplus_proces', '')
+
+    return proxies_tplus
 
 
 def test_alfabetico(item):
@@ -1250,8 +1291,11 @@ def test_all_webs(item):
                 try: txt = tester.test_channel(ch['name'])
                 except:
                      platformtools.dialog_notification(config.__addon_name + ' [COLOR yellow][B] ' + ch['name'] + '[/COLOR][/B]', '[B][COLOR %s]Error comprobación, Canal Ignorado[/B][/COLOR]' % color_alert)
+                     tests_all_webs.append(ch['name'])
                      continue
-            else: continue
+            else:
+                tests_all_webs.append(ch['name'])
+                continue
 
         rememorize = False
 
@@ -1268,11 +1312,13 @@ def test_all_webs(item):
                         try: txt = tester.test_channel(ch['name'])
                         except:
                              platformtools.dialog_notification(config.__addon_name + ' [COLOR yellow][B] ' + ch['name'] + '[/COLOR][/B]', '[B][COLOR %s]Error comprobación, Canal Ignorado[/B][/COLOR]' % color_alert)
+                             tests_all_webs.append(ch['name'])
                              continue
 
                         if not 'code: [COLOR springgreen][B]200' in str(txt):
                             if ' con proxies ' in str(txt):
                                 platformtools.dialog_ok(config.__addon_name + ' [COLOR yellow][B]' + ch['name'] + '[/B][/COLOR]', '[COLOR red][B]No se ha solucionado Buscando Nuevos Proxies.[/B][/COLOR]')
+                                tests_all_webs.append(ch['name'])
                         else:
                             rememorize = True
 
@@ -1283,24 +1329,29 @@ def test_all_webs(item):
                         try: txt = tester.test_channel(ch['name'])
                         except:
                              platformtools.dialog_notification(config.__addon_name + ' [COLOR yellow][B] ' + ch['name'] + '[/COLOR][/B]', '[B][COLOR %s]Error comprobación, Canal Ignorado[/B][/COLOR]' % color_alert)
+                             tests_all_webs.append(ch['name'])
                              continue
 
                         if not 'code: [COLOR springgreen][B]200' in str(txt):
                             if 'Sin proxies' in str(txt):
                                 platformtools.dialog_ok(config.__addon_name + ' [COLOR yellow][B]' + ch['name'] + '[/B][/COLOR]', '[COLOR red][B]No se ha solucionado Buscando Nuevos Proxies.[/B][/COLOR]')
+                                tests_all_webs.append(ch['name'])
                         else:
                             rememorize = True
 
                 if 'invalid:' in str(txt):
-                    if platformtools.dialog_yesno(config.__addon_name + ' [COLOR yellow][B]' + ch['name'] + '[/B][/COLOR]', '¿ Desea comprobar el Canal de nuevo, [COLOR red][B]por Acceso sin Host Válido en los datos. [/B][/COLOR]?'):
-                        try: txt = tester.test_channel(ch['name'])
-                        except:
-                             platformtools.dialog_notification(config.__addon_name + ' [COLOR yellow][B] ' + ch['name'] + '[/COLOR][/B]', '[B][COLOR %s]Error comprobación, Canal Ignorado[/B][/COLOR]' % color_alert)
-                             continue
+                    if not 'Suspendida' in str(txt):
+                        if platformtools.dialog_yesno(config.__addon_name + ' [COLOR yellow][B]' + ch['name'] + '[/B][/COLOR]', '¿ Desea comprobar el Canal de nuevo, [COLOR red][B]por Acceso sin Host Válido en los datos. [/B][/COLOR]?'):
+                            try: txt = tester.test_channel(ch['name'])
+                            except:
+                                 platformtools.dialog_notification(config.__addon_name + ' [COLOR yellow][B] ' + ch['name'] + '[/COLOR][/B]', '[B][COLOR %s]Error comprobación, Canal Ignorado[/B][/COLOR]' % color_alert)
+                                 tests_all_webs.append(ch['name'])
+                                 continue
 
-                        if 'code: [COLOR springgreen][B]200' in str(txt):
-                            if 'invalid:' in str(txt):
-                                platformtools.dialog_ok(config.__addon_name + ' [COLOR yellow][B]' + ch['name'] + '[/B][/COLOR]', '[COLOR red][B]No se ha solucionado el Acceso sin Host Válido en los datos.[/B][/COLOR]')
+                            if 'code: [COLOR springgreen][B]200' in str(txt):
+                                if 'invalid:' in str(txt):
+                                    platformtools.dialog_ok(config.__addon_name + ' [COLOR yellow][B]' + ch['name'] + '[/B][/COLOR]', '[COLOR red][B]No se ha solucionado el Acceso sin Host Válido en los datos.[/B][/COLOR]')
+                                    tests_all_webs.append(ch['name'])
 
             elif 'Falso Positivo.' in str(txt):
                 platformtools.dialog_textviewer(ch['name'], txt)
@@ -1312,11 +1363,13 @@ def test_all_webs(item):
                         try: txt = tester.test_channel(ch['name'])
                         except:
                               platformtools.dialog_notification(config.__addon_name + ' [COLOR yellow][B] ' + ch['name'] + '[/COLOR][/B]', '[B][COLOR %s]Error comprobación, Canal Ignorado[/B][/COLOR]' % color_alert)
+                              tests_all_webs.append(ch['name'])
                               continue
 
                         if not 'code: [COLOR springgreen][B]200' in str(txt):
                             if ' con proxies ' in str(txt):
                                 platformtools.dialog_ok(config.__addon_name + ' [COLOR yellow][B]' + ch['name'] + '[/B][/COLOR]', '[COLOR red][B]No se ha solucionado Buscando Nuevos Proxies.[/B][/COLOR]')
+                                tests_all_webs.append(ch['name'])
                         else:
                             rememorize = True
 
@@ -1327,24 +1380,65 @@ def test_all_webs(item):
                         try: txt = tester.test_channel(ch['name'])
                         except:
                              platformtools.dialog_notification(config.__addon_name + ' [COLOR yellow][B] ' + ch['name'] + '[/COLOR][/B]', '[B][COLOR %s]Error comprobación, Canal Ignorado[/B][/COLOR]' % color_alert)
+                             tests_all_webs.append(ch['name'])
                              continue
 
                         if not 'code: [COLOR springgreen][B]200' in str(txt):
                             if 'Sin proxies' in str(txt):
                                 platformtools.dialog_ok(config.__addon_name + ' [COLOR yellow][B]' + ch['name'] + '[/B][/COLOR]', '[COLOR red][B]No se ha solucionado Buscando Nuevos Proxies.[/B][/COLOR]')
+                                tests_all_webs.append(ch['name'])
                         else:
                             rememorize = True
 
                 if 'Falso Positivo.' in str(txt):
+                    if txt_status:
+                        if con_incidencias:
+                            host_incid = ch['name']
+
+                            if host_incid in str(con_incidencias):
+                                incidencia = ''
+
+                                incids = scrapertools.find_multiple_matches(str(con_incidencias), '[COLOR moccasin](.*?)[/B][/COLOR]')
+
+                                for incid in incids:
+                                    if not ' ' + host_incid + ' ' in str(incid): continue
+
+                                    incidencia = incid
+                                    break
+
+                                if incidencia:
+                                    tests_all_webs.append(ch['name'])
+                                    continue
+
+                        if no_accesibles:
+                            host_incid = ch['name']
+
+                            if host_incid in str(no_accesibles):
+                                incidencia = ''
+
+                                incids = scrapertools.find_multiple_matches(str(no_accesibles), '[COLOR moccasin](.*?)[/B][/COLOR]')
+
+                                for incid in incids:
+                                    if not ' ' + host_incid + ' ' in str(incid): continue
+
+                                    incidencia = incid
+                                    break
+
+                                if incidencia:
+                                    tests_all_webs.append(ch['name'])
+                                    continue
+
                     if platformtools.dialog_yesno(config.__addon_name + ' [COLOR yellow][B]' + ch['name'] + '[/B][/COLOR]', '¿ Desea comprobar el Canal de nuevo, [COLOR red][B]por Falso Positivo. [/B][/COLOR]?'):
                         try: txt = tester.test_channel(ch['name'])
                         except:
                              platformtools.dialog_notification(config.__addon_name + ' [COLOR yellow][B] ' + ch['name'] + '[/COLOR][/B]', '[B][COLOR %s]Error comprobación, Canal Ignorado[/B][/COLOR]' % color_alert)
+                             tests_all_webs.append(ch['name'])
                              continue
 
                         if 'code: [COLOR springgreen][B]200' in str(txt):
                             if 'Falso Positivo.' in str(txt):
                                 platformtools.dialog_ok(config.__addon_name + ' [COLOR yellow][B]' + ch['name'] + '[/B][/COLOR]', '[COLOR red][B]No se ha solucionado el Falso Positivo.[/B][/COLOR]')
+                                tests_all_webs.append(ch['name'])
 
             if ' al parecer No se necesitan' in str(txt):
                 if platformtools.dialog_yesno(config.__addon_name + ' [COLOR yellow][B]' + ch['name'] + '[/B][/COLOR]', '[COLOR red][B]¿ Desea Quitar los Proxies del Canal ?[/B][/COLOR], porqué parece que NO se necesitan.'):
@@ -1353,6 +1447,7 @@ def test_all_webs(item):
                     try: txt = tester.test_channel(ch['name'])
                     except:
                          platformtools.dialog_notification(config.__addon_name + ' [COLOR yellow][B] ' + ch['name'] + '[/COLOR][/B]', '[B][COLOR %s]Error comprobación, Canal Ignorado[/B][/COLOR]' % color_alert)
+                         tests_all_webs.append(ch['name'])
                          continue
 
                     proxies = config.get_setting('proxies', ch['id'], default='').strip()
@@ -1368,41 +1463,92 @@ def test_all_webs(item):
                                 config.set_setting('channels_proxies_memorized', channels_proxies_memorized)
 
         else:
-           if 'code: [COLOR [COLOR orangered][B]301' in str(txt) or 'code: [COLOR [COLOR orangered][B]308' in str(txt): continue
+           if 'code: [COLOR [COLOR orangered][B]301' in str(txt) or 'code: [COLOR [COLOR orangered][B]308' in str(txt):
+               tests_all_webs.append(ch['name'])
+               continue
 
-           if 'code: [COLOR [COLOR orangered][B]302' in str(txt) or 'code: [COLOR [COLOR orangered][B]307' in str(txt): continue
+           if 'code: [COLOR [COLOR orangered][B]302' in str(txt) or 'code: [COLOR [COLOR orangered][B]307' in str(txt):
+               tests_all_webs.append(ch['name'])
+               continue
 
-           if 'Podría estar Correcto' in str(txt): continue
+           if 'Podría estar Correcto' in str(txt):
+               tests_all_webs.append(ch['name'])
+               continue
 
-           if ' con proxies ' in str(txt):
-               if platformtools.dialog_yesno(config.__addon_name + ' [COLOR yellow][B]' + ch['name'] + '[/B][/COLOR]', '[COLOR red][B]¿ Desea Iniciar una nueva Búsqueda de Proxies en el Canal ?[/B][/COLOR]'):
-                   _proxies(item, ch['id'])
+           if txt_status:
+               if con_incidencias:
+                   host_incid = ch['name']
 
-                   try: txt = tester.test_channel(ch['name'])
-                   except:
-                        platformtools.dialog_notification(config.__addon_name + ' [COLOR yellow][B] ' + ch['name'] + '[/COLOR][/B]', '[B][COLOR %s]Error comprobación, Canal Ignorado[/B][/COLOR]' % color_alert)
-                        continue
+                   if host_incid in str(con_incidencias):
+                       incidencia = ''
 
-                   if not 'code: [COLOR springgreen][B]200' in str(txt):
-                       if ' con proxies ' in str(txt):
-                           platformtools.dialog_ok(config.__addon_name + ' [COLOR yellow][B]' + ch['name'] + '[/B][/COLOR]', '[COLOR red][B]No se ha solucionado Buscando Nuevos Proxies.[/B][/COLOR]')
-                   else:
-                       rememorize = True
+                       incids = scrapertools.find_multiple_matches(str(con_incidencias), '[COLOR moccasin](.*?)[/B][/COLOR]')
 
-           elif 'Sin proxies' in str(txt):
-               if platformtools.dialog_yesno(config.__addon_name + ' [COLOR yellow][B]' + ch['name'] + '[/B][/COLOR]', '[COLOR chartreuse][B]Quizás necesite Proxies.[/B][/COLOR] ¿ Desea Iniciar la Búsqueda de Proxies en el Canal ?'):
-                   _proxies(item, ch['id'])
+                       for incid in incids:
+                           if not ' ' + host_incid + ' ' in str(incid): continue
 
-                   try: txt = tester.test_channel(ch['name'])
-                   except:
-                        platformtools.dialog_notification(config.__addon_name + ' [COLOR yellow][B] ' + ch['name'] + '[/COLOR][/B]', '[B][COLOR %s]Error comprobación, Canal Ignorado[/B][/COLOR]' % color_alert)
-                        continue
+                           incidencia = incid
+                           break
 
-                   if not 'code: [COLOR springgreen][B]200' in str(txt):
-                       if 'Sin proxies' in str(txt):
-                           platformtools.dialog_ok(config.__addon_name + ' [COLOR yellow][B]' + ch['name'] + '[/B][/COLOR]', '[COLOR red][B]No se ha solucionado Buscando Nuevos Proxies.[/B][/COLOR]')
-                   else:
-                       rememorize = True
+                       if incidencia:
+                           tests_all_webs.append(ch['name'])
+                           continue
+
+               if no_accesibles:
+                   host_incid = ch['name']
+
+                   if host_incid in str(no_accesibles):
+                       incidencia = ''
+
+                       incids = scrapertools.find_multiple_matches(str(no_accesibles), '[COLOR moccasin](.*?)[/B][/COLOR]')
+
+                       for incid in incids:
+                            if not ' ' + host_incid + ' ' in str(incid): continue
+
+                            incidencia = incid
+                            break
+
+                       if incidencia:
+                           tests_all_webs.append(ch['name'])
+                           continue
+
+           if not 'nuevo:' in txt:
+               if ' con proxies ' in str(txt):
+                   if platformtools.dialog_yesno(config.__addon_name + ' [COLOR yellow][B]' + ch['name'] + '[/B][/COLOR]', '[COLOR red][B]¿ Desea Iniciar una nueva Búsqueda de Proxies en el Canal ?[/B][/COLOR]'):
+                       _proxies(item, ch['id'])
+
+                       try: txt = tester.test_channel(ch['name'])
+                       except:
+                            platformtools.dialog_notification(config.__addon_name + ' [COLOR yellow][B] ' + ch['name'] + '[/COLOR][/B]', '[B][COLOR %s]Error comprobación, Canal Ignorado[/B][/COLOR]' % color_alert)
+                            tests_all_webs.append(ch['name'])
+                            continue
+
+                       if not 'code: [COLOR springgreen][B]200' in str(txt):
+                           if ' con proxies ' in str(txt):
+                               platformtools.dialog_ok(config.__addon_name + ' [COLOR yellow][B]' + ch['name'] + '[/B][/COLOR]', '[COLOR red][B]No se ha solucionado Buscando Nuevos Proxies.[/B][/COLOR]')
+                               tests_all_webs.append(ch['name'])
+                       else:
+                           rememorize = True
+
+               elif 'Sin proxies' in str(txt):
+                   if platformtools.dialog_yesno(config.__addon_name + ' [COLOR yellow][B]' + ch['name'] + '[/B][/COLOR]', '[COLOR chartreuse][B]Quizás necesite Proxies.[/B][/COLOR] ¿ Desea Iniciar la Búsqueda de Proxies en el Canal ?'):
+                       _proxies(item, ch['id'])
+
+                       try: txt = tester.test_channel(ch['name'])
+                       except:
+                            platformtools.dialog_notification(config.__addon_name + ' [COLOR yellow][B] ' + ch['name'] + '[/COLOR][/B]', '[B][COLOR %s]Error comprobación, Canal Ignorado[/B][/COLOR]' % color_alert)
+                            tests_all_webs.append(ch['name'])
+                            continue
+
+                       if not 'code: [COLOR springgreen][B]200' in str(txt):
+                           if 'Sin proxies' in str(txt):
+                               platformtools.dialog_ok(config.__addon_name + ' [COLOR yellow][B]' + ch['name'] + '[/B][/COLOR]', '[COLOR red][B]No se ha solucionado Buscando Nuevos Proxies.[/B][/COLOR]')
+                               tests_all_webs.append(ch['name'])
+                       else:
+                           rememorize = True
+
+               else:
+                   tests_all_webs.append(ch['name'])
 
         if rememorize:
             proxies = config.get_setting('proxies', ch['id'], default='').strip()
@@ -1417,7 +1563,20 @@ def test_all_webs(item):
                         channels_proxies_memorized = channels_proxies_memorized + ', ' + el_memorizado
                         config.set_setting('channels_proxies_memorized', channels_proxies_memorized)
 
-    if i > 0: platformtools.dialog_ok(config.__addon_name, 'Canales Testeados ' + str(i))
+    if i > 0:
+        if not tests_all_webs:
+            platformtools.dialog_ok(config.__addon_name, 'Canales Testeados ' + str(i))
+        else:
+            if not config.get_setting('developer_mode', default=False):
+                platformtools.dialog_ok(config.__addon_name, 'Canales Testeados ' + str(i))
+            else:
+                if platformtools.dialog_yesno(config.__addon_name, 'Canales Testeados ' + str(i), '[B][COLOR red]Hay Conflictos. [COLOR yellow]Desea Verlos ?[/B][/COLOR]'):
+                    txt_conflict = ''
+
+                    for conflict in tests_all_webs:
+                        txt_conflict += conflict + '[CR]'
+
+                    platformtools.dialog_textviewer('Canales con Conflictos', txt_conflict)
 
     config.set_setting('developer_test_channels', '')
 
@@ -1513,12 +1672,50 @@ def test_all_srvs(item):
                 try: txt = tester.test_server(dict_server['name'])
                 except:
                      platformtools.dialog_notification(config.__addon_name + ' [COLOR yellow][B]' + dict_server['name'] + '[/B][/COLOR]', '[B][COLOR %s]Error comprobación, Servidor ignorado[/B][/COLOR]' % color_alert)
+                     tests_all_srvs.append(dict_server['name'])
                      continue
-            else: continue
+            else:
+                tests_all_srvs.append(dict_server['name'])
+                continue
 
         if not txt: continue
 
-    if i > 0: platformtools.dialog_ok(config.__addon_name, 'Servidores Testeados ' + str(i))
+        if txt_status:
+            if srv_pending:
+                srv_incid = dict_server['name']
+
+                if srv_incid in str(srv_pending):
+                    incidencia = ''
+
+                    incids = scrapertools.find_multiple_matches(str(srv_pending), '[COLOR orchid](.*?)[/B][/COLOR]')
+
+                    for incid in incids:
+                         if not ' ' + srv_incid + ' ' in str(incid): continue
+
+                         incidencia = incid
+                         break
+
+                    if incidencia:
+                        tests_all_srvs.append(dict_server['name'])
+                        continue
+
+        if not 'code: [COLOR springgreen][B]200' in str(txt):
+            tests_all_srvs.append(dict_server['name'])
+
+    if i > 0:
+        if not tests_all_srvs:
+            platformtools.dialog_ok(config.__addon_name, 'Servidores Testeados ' + str(i))
+        else:
+            if not config.get_setting('developer_mode', default=False):
+                platformtools.dialog_ok(config.__addon_name, 'Servidores Testeados ' + str(i))
+            else:
+                if platformtools.dialog_yesno(config.__addon_name, 'Servidores Testeados ' + str(i), '[B][COLOR red]Hay Conflictos. [COLOR yellow]Desea Verlos ?[/B][/COLOR]'):
+                    txt_conflict = ''
+
+                    for conflict in tests_all_srvs:
+                        txt_conflict += conflict + '[CR]'
+
+                    platformtools.dialog_textviewer('Servidores con Conflictos', txt_conflict)
 
     config.set_setting('developer_test_servers', '')
 
@@ -1646,7 +1843,7 @@ def show_sistema(item):
 
     if config.get_setting('chrome_last_version', default=''): txt += '[CR][COLOR yellow][B] - Versión Chrome/Chromium: [/COLOR][COLOR cyan]' + config.get_setting('chrome_last_version') + ' [/B][/COLOR][CR]'
 
-    if config.get_setting('httptools_timeout', default='15'): txt += '[CR][COLOR yellow][B] - Timeout [/B](tiempo máximo de espera en los Accesos)[B]: [/COLOR][COLOR cyan]' + str(config.get_setting('httptools_timeout')) + ' [/B][/COLOR][CR]'
+    if config.get_setting('httptools_timeout', default='15'): txt += '[CR][COLOR yellow][B] - Timeout [/B](tiempo máximo de espera en los Accesos, por defecto 15)[B]: [/COLOR][COLOR cyan]' + str(config.get_setting('httptools_timeout')) + ' [/B][/COLOR][CR]'
 
     txt += '[CR] - Confirmar con el Botón pulsar [OK] en ciertas Notificaciones: '
 
@@ -1658,9 +1855,9 @@ def show_sistema(item):
     if config.get_setting('notification_beep', default=False): txt += '[COLOR yellow][B] Activado[/B][/COLOR][CR]'
     else: txt += '[COLOR yellowgreen][B] Des-Activado[/B][/COLOR][CR]'
 
-    if config.get_setting('channels_repeat', default='30'): txt += '[CR][COLOR yellow][B] - Tiempo de espera en los Reintentos [/B](en el acceso a ciertos Canales)[B]: [/COLOR][COLOR cyan]' + str(config.get_setting('channels_repeat')) + ' [/B][/COLOR][CR]'
+    if config.get_setting('channels_repeat', default='30'): txt += '[CR][COLOR yellow][B] - Tiempo de espera en los Reintentos [/B](en el acceso a ciertos Canales, por defecto 30)[B]: [/COLOR][COLOR cyan]' + str(config.get_setting('channels_repeat')) + ' [/B][/COLOR][CR]'
 
-    if config.get_setting('servers_waiting', default='6'): txt += '[CR][COLOR yellow][B] - Tiempo de espera [/B](en el acceso a ciertos Servidores)[B]: [/COLOR][COLOR cyan]' + str(config.get_setting('servers_waiting')) + ' [/B][/COLOR][CR]'
+    if config.get_setting('servers_waiting', default='6'): txt += '[CR][COLOR yellow][B] - Tiempo de espera [/B](en el acceso a ciertos Servidores, por defecto 6)[B]: [/COLOR][COLOR cyan]' + str(config.get_setting('servers_waiting')) + ' [/B][/COLOR][CR]'
 
     txt += '[CR][COLOR goldenrod][B]PREFERENCIAS NOTIFICACIONES CANALES:[/B][/COLOR][CR]'
 
@@ -1683,6 +1880,15 @@ def show_sistema(item):
 
     if config.get_setting('channels_charges', default=True): txt += '[COLOR yellow][B] Activado[/B][/COLOR][CR]'
     else: txt += '[COLOR yellowgreen][B] Des-Activado[/B][/COLOR][CR]'
+
+    txt += '[CR][COLOR goldenrod][B]DEPURACIÓN:[/B][/COLOR][CR]'
+
+    loglevel = config.get_setting('debug', 0)
+    if loglevel == 0: tex_niv = 'Solo Errores'
+    elif loglevel == 1: tex_niv = 'Errores e Información'
+    else: tex_niv = 'Máxima Información'
+
+    txt += '[COLOR yellow][B] - Nivel de información del fichero [COLOR aqua][B]LOG[/B][/COLOR] (por defecto Error): [COLOR cyan][B]' + tex_niv + ' [/B][/COLOR][CR]'
 
     platformtools.dialog_textviewer('Información Ajustes del Sistema', txt)
 
@@ -1782,7 +1988,7 @@ def resumen_canales(item):
     currents = 0
     onlyones = 0
     searchables = 0
-    status = 0
+    status_access = 0
     con_proxies = 0
 
     bus_pelisyseries = 0
@@ -1942,45 +2148,30 @@ def resumen_canales(item):
     txt += '     ' + str(onlyones) + ' [COLOR fuchsia]Con un Único Servidor[/COLOR][CR]'
     txt += '     ' + str(searchables) + ' [COLOR aquamarine]No Actuan en Búsquedas[/COLOR][CR]'
 
-    path = os.path.join(config.get_runtime_path(), 'dominios.txt')
-
-    existe = filetools.exists(path)
-
-    if existe:
-        txt_status = ''
-
-        try:
-           with open(os.path.join(config.get_runtime_path(), 'dominios.txt'), 'r') as f: txt_status=f.read(); f.close()
-        except:
-           try: txt_status = open(os.path.join(config.get_runtime_path(), 'dominios.txt'), encoding="utf8").read()
-           except: pass
-
-        if txt_status:
-            bloque = scrapertools.find_single_match(txt_status, 'SITUACION CANALES(.*?)CANALES TEMPORALMENTE DES-ACTIVADOS')
-
-            matches = bloque.count('[COLOR lime]')
+    if txt_status:
+        if no_accesibles:
+            matches = no_accesibles.count('[COLOR lime]')
 
             if matches:
-                status = matches
-
-                txt += '       ' + str(status) + ' [COLOR tan]Con Incidencias[/COLOR][CR]'
-
-            bloque = scrapertools.find_single_match(txt_status, 'CANALES PROBABLEMENTE NO ACCESIBLES(.*?)ULTIMOS CAMBIOS DE DOMINIOS')
-
-            matches = bloque.count('[COLOR lime]')
-
-            if matches:
-                status = matches
-
-                txt += '       ' + str(status) + ' [COLOR indianred]Probablemente No Accesibles[/COLOR][CR]'
+                status_access = matches
 
     txt += '[CR]  ' + str(disponibles) + ' [COLOR gold][B]Disponibles[/B][/COLOR][CR]'
 
-    if not status == 0:
-        accesibles = (disponibles - status)
-        txt += '  ' + str(accesibles) + ' [COLOR powderblue][B]Accesibles[/B][/COLOR][CR]'
+    if not status_access == 0: txt += '          [COLOR indianred]No Accesibles[/COLOR][B] '  + str(status_access) + '[/B][CR]'
 
-    if not no_actives == 0: txt += '  ' + str(no_actives) + ' [COLOR gray][B]Desactivados[/B][/COLOR][CR]'
+    accesibles = (disponibles - status_access)
+    txt += '  ' + str(accesibles) + ' [COLOR powderblue][B]Accesibles[/B][/COLOR][CR]'
+
+    if txt_status:
+        if con_incidencias:
+            matches = con_incidencias.count('[COLOR lime]')
+
+            if matches:
+                status_incid = matches
+
+                txt += '          [COLOR tan]Con Incidencias[/COLOR][B] ' + str(status_incid) + '[/B][CR]'
+
+    if not no_actives == 0: txt += '          [COLOR gray][B]Desactivados[/B][/COLOR][B] ' + str(no_actives) + '[/B][CR]'
 
     filtros = {}
 
@@ -1994,7 +2185,7 @@ def resumen_canales(item):
 
             con_proxies += 1
 
-        if con_proxies > 0: txt += '          [COLOR red]Con Proxies Informados[/COLOR] ' +  str(con_proxies) + '[CR]'
+        if con_proxies > 0: txt += '          [COLOR red]Con Proxies Informados[/COLOR][B] ' +  str(con_proxies) + '[/B][CR]'
 
     txt += '[CR][COLOR dodgerblue][B]DISTRIBUCIÓN CANALES DISPONIBLES:[/B][/COLOR][CR]'
 
@@ -2018,7 +2209,7 @@ def resumen_canales(item):
 
     txt += '[CR][COLOR powderblue][B]DISTRIBUCIÓN CANALES DISPONIBLES PARA BÚSQUEDAS:[/B][/COLOR][CR]'
 
-    txt += '     ' + str(bus_pelis) + ' [COLOR deepskyblue]Películas[/COLOR][CR]'
+    txt += '   ' + str(bus_pelis) + ' [COLOR deepskyblue]Películas[/COLOR][CR]'
     txt += '   ' + str(bus_series) + ' [COLOR hotpink]Series[/COLOR][CR]'
     txt += '     ' + str(bus_pelisyseries) + ' [COLOR teal]Películas y Series[/COLOR][CR]'
     txt += '   ' + str(bus_documentales) + ' [COLOR cyan]Temática Documental[/COLOR][CR]'
@@ -2032,25 +2223,16 @@ def resumen_canales(item):
 def resumen_incidencias(item):
     logger.info()
 
-    txt_status = ''
-
     txt = ''
 
-    try:
-       with open(os.path.join(config.get_runtime_path(), 'dominios.txt'), 'r') as f: txt_status=f.read(); f.close()
-    except:
-       try: txt_status = open(os.path.join(config.get_runtime_path(), 'dominios.txt'), encoding="utf8").read()
-       except: pass
-
     if txt_status:
-        bloque = scrapertools.find_single_match(txt_status, 'SITUACION CANALES(.*?)CANALES TEMPORALMENTE DES-ACTIVADOS')
+        if con_incidencias:
+            matches = scrapertools.find_multiple_matches(con_incidencias, "[B](.*?)[/B]")
 
-        matches = scrapertools.find_multiple_matches(bloque, "[B](.*?)[/B]")
+            for match in matches:
+               match = match.strip()
 
-        for match in matches:
-            match = match.strip()
-
-            if '[COLOR moccasin]' in match: txt += '[B' + match + '/I][/B][/COLOR][CR]'
+               if '[COLOR moccasin]' in match: txt += '[B' + match + '/I][/B][/COLOR][CR]'
 
     if not txt:
         platformtools.dialog_notification(config.__addon_name, '[B][COLOR %s]No Hay Incidencias[/COLOR][/B]' % color_exec)
@@ -2062,25 +2244,16 @@ def resumen_incidencias(item):
 def resumen_no_accesibles(item):
     logger.info()
 
-    txt_status = ''
-
     txt = ''
 
-    try:
-       with open(os.path.join(config.get_runtime_path(), 'dominios.txt'), 'r') as f: txt_status=f.read(); f.close()
-    except:
-       try: txt_status = open(os.path.join(config.get_runtime_path(), 'dominios.txt'), encoding="utf8").read()
-       except: pass
-
     if txt_status:
-        bloque = scrapertools.find_single_match(txt_status, 'CANALES PROBABLEMENTE NO ACCESIBLES(.*?)ULTIMOS CAMBIOS DE DOMINIOS')
+        if no_accesibles:
+            matches = scrapertools.find_multiple_matches(no_accesibles, "[B](.*?)[/B]")
 
-        matches = scrapertools.find_multiple_matches(bloque, "[B](.*?)[/B]")
+            for match in matches:
+                match = match.strip()
 
-        for match in matches:
-            match = match.strip()
-
-            if '[COLOR moccasin]' in match: txt += '[B' + match + '/I][/B][/COLOR][CR]'
+                if '[COLOR moccasin]' in match: txt += '[B' + match + '/I][/B][/COLOR][CR]'
 
     if not txt:
         platformtools.dialog_notification(config.__addon_name, '[B][COLOR %s]No Hay No Accesibles[/COLOR][/B]' % color_exec)
@@ -2099,8 +2272,9 @@ def resumen_servidores(item):
     notsuported = 0
     outservice = 0
     alternatives = 0
-    aditionals = 39
+    aditionals = 40
     disponibles = 0
+    pending = 0
 
     path = os.path.join(config.get_runtime_path(), 'servers')
 
@@ -2129,7 +2303,7 @@ def resumen_servidores(item):
         if "requiere" in notes.lower(): notsuported += 1
         elif "out of service" in notes.lower(): outservice += 1
 
-        if not dict_server['name'] == 'various':
+        if not dict_server['name'] == 'Youtube':
             if "alternative" in notes.lower(): alternatives += 1
 
     txt = '[COLOR yellow][B]RESÚMENES SERVIDORES:[/B][/COLOR][CR]'
@@ -2139,7 +2313,7 @@ def resumen_servidores(item):
     txt += '    ' + str(inactives) + '  [COLOR coral]Inactivos[/COLOR][CR]'
     txt += '    ' + str(notsuported) + '  [COLOR fuchsia]Sin Soporte[/COLOR][CR]'
 
-    if outservice > 0: txt += '      ' + str(outservice) + '  [COLOR red]Sin Servicio[/COLOR][CR]'
+    if outservice > 0: txt += '    ' + str(outservice) + '  [COLOR red]Sin Servicio[/COLOR][CR]'
 
     txt += '[CR]  ' + str(disponibles) + '  [COLOR gold][B]Disponibles[/B][/COLOR][CR]'
 
@@ -2155,10 +2329,47 @@ def resumen_servidores(item):
         txt += '    ' + str(alternatives) + '  [COLOR green]Vías alternativas[/COLOR][CR]'
         txt += '    ' + str(aditionals) + '  [COLOR powderblue]Vías Adicionales[/COLOR][CR]'
 
-        accesibles = (operativos + aditionals)
-        txt += '[CR]  ' + str(accesibles) + '  [COLOR powderblue][B]Accesibles[/B][/COLOR]'
+    if xbmc.getCondVisibility('System.HasAddon("plugin.video.youtube")'):
+        txt += '[CR][COLOR goldenrod][B]YOUTUBE:[/B][/COLOR][CR]'
+
+        txt += '      1' + '   [COLOR green]Vía alternativa[/COLOR][CR]'
+
+    txt += '[CR][COLOR dodgerblue][B]DISTRIBUCIÓN SERVIDORES DISPONIBLES:[/B][/COLOR]'
+
+    accesibles = (operativos + aditionals)
+    txt += '[CR]  ' + str(accesibles) + '  [COLOR powderblue][B]Accesibles[/B][/COLOR][CR]'
+
+    if txt_status:
+        if srv_pending:
+            matches = srv_pending.count('[COLOR orchid]')
+
+            if matches:
+                status = matches
+
+                txt += '           [COLOR tan]Con Incidencias[/COLOR][B] ' + str(status) + '[/B][CR]'
 
     platformtools.dialog_textviewer('Resúmenes Servidores y su Distribución', txt)
+
+
+def resumen_pending(item):
+    logger.info()
+
+    txt = ''
+
+    if txt_status:
+        if srv_pending:
+            matches = scrapertools.find_multiple_matches(srv_pending, "[B](.*?)[/B]")
+
+            for match in matches:
+                match = match.strip()
+
+                if '[COLOR orchid]' in match: txt += '[B' + match + '/I][/B][/COLOR][CR]'
+
+    if not txt:
+        platformtools.dialog_notification(config.__addon_name, '[B][COLOR %s]No Hay No con Incidencias[/COLOR][/B]' % color_exec)
+        return
+
+    platformtools.dialog_textviewer('Servidores con Incidencias', txt)
 
 
 def show_help_alternativas(item):
@@ -2177,6 +2388,7 @@ def show_help_alternativas(item):
 
     txt += '   [COLOR yellow]Clicknupload[/COLOR][CR]'
     txt += '   [COLOR yellow]Cloudvideo[/COLOR][CR]'
+    txt += '   [COLOR yellow]Dailymotion[/COLOR][CR]'
     txt += '   [COLOR yellow]Doodstream[/COLOR][CR]'
     txt += '   [COLOR yellow]Flashx[/COLOR][CR]'
     txt += '   [COLOR yellow]Gofile[/COLOR][CR]'
@@ -2185,6 +2397,7 @@ def show_help_alternativas(item):
     txt += '   [COLOR yellow]Playtube[/COLOR][CR]'
     txt += '   [COLOR yellow]Racaty[/COLOR][CR]'
     txt += '   [COLOR yellow]Streamlare[/COLOR][CR]'
+    txt += '   [COLOR yellow]Streamvid[/COLOR][CR]'
     txt += '   [COLOR yellow]Uptobox[/COLOR][CR]'
     txt += '   [COLOR yellow]Userscloud[/COLOR][CR]'
     txt += '   [COLOR yellow]Various[/COLOR][CR]'

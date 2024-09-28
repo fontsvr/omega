@@ -42,12 +42,13 @@ def get_video_url(page_url, url_referer=''):
     if xbmc.getCondVisibility('System.HasAddon("script.module.resolveurl")'):
         txt_server = 'Unknow'
 
-        if 'allviid' in page_url: txt_server = 'Allviid'
+        if 'amdahost' in page_url: txt_server = 'Amdahost'
+        elif 'allviid' in page_url: txt_server = 'Allviid'
         elif 'cloudfile' in page_url: txt_server = 'Cloudfile'
         elif 'cloudmail' in page_url: txt_server = 'Cloudmail'
         elif 'dailyuploads' in page_url: txt_server = 'Dailyuploads'
         elif 'darkibox' in page_url: txt_server = 'Darkibox'
-        elif 'dembed' in page_url: txt_server = 'Dembed'
+        elif 'dembed' in page_url or 'asianplay' in page_url: txt_server = 'Dembed'
         elif 'downace' in page_url: txt_server = 'Downace'
         elif 'fastdrive' in page_url: txt_server = 'Fastdrive'
         elif 'fastplay' in page_url: txt_server = 'Fastplay'
@@ -81,6 +82,10 @@ def get_video_url(page_url, url_referer=''):
         elif 'vkprime' in page_url: txt_server = 'Vkprime'
         elif 'worlduploads' in page_url: txt_server = 'Worlduploads'
         elif 'ztreamhub' in page_url: txt_server = 'Ztreamhub'
+        elif 'updown' in page_url: txt_server = 'Updown'
+        elif 'udrop' in page_url: txt_server = 'Udrop'
+        elif 'videa' in page_url: txt_server = 'Videa'
+        elif 'swiftload' in page_url: txt_server = 'SwiftLoad'
 
         if txt_server == 'Unknow': return 'Servidor desconocido'
 

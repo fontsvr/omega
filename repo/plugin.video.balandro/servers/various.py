@@ -94,12 +94,12 @@ def get_video_url(page_url, url_referer=''):
               txt_server = 'Yandex'
               page_url = page_url.replace('/yadi.sk/', '/disk.yandex.ru/')
 
-        elif 'streamwish' in page_url or 'strwish' in page_url or 'embedwish' in page_url or 'wishembed' in page_url or 'awish' in page_url or 'dwish' in page_url or 'mwish' in page_url or 'wishfast' in page_url or 'sfastwish' in page_url or 'doodporn' in page_url or 'flaswish' in page_url or 'obeywish' in page_url or 'cdnwish' in page_url or 'asnwish' in page_url or 'flastwish' in page_url or 'jodwish' in page_url or 'swhoi' in page_url or 'fsdcmo' in page_url or 'swdyu' in page_url:
+        elif 'streamwish' in page_url or 'strwish' in page_url or 'embedwish' in page_url or 'wishembed' in page_url or 'awish' in page_url or 'dwish' in page_url or 'mwish' in page_url or 'wishfast' in page_url or 'sfastwish' in page_url or 'doodporn' in page_url or 'flaswish' in page_url or 'obeywish' in page_url or 'cdnwish' in page_url or 'asnwish' in page_url or 'flastwish' in page_url or 'jodwish' in page_url or 'swhoi' in page_url or 'fsdcmo' in page_url or 'swdyu' in page_url or 'wishonly' in page_url or 'playerwish' in page_url or 'wish' in page_url:
               txt_server = 'Streamwish'
               page_url = page_url.replace('/streamwish.com/', '/streamwish.to/').replace('/streamwish.top/', '/streamwish.to/').replace('/streamwish.site/', '/streamwish.to/').replace('/strwish.xyz/', '/streamwish.to/').replace('/strwish.com/', '/streamwish.to/').replace('/embedwish.com/', '/streamwish.to/').replace('/wishembed.pro/', '/streamwish.to/')
               page_url = page_url.replace('/awish.pro/', '/streamwish.to/').replace('/dwish.pro/', '/streamwish.to/').replace('/mwish.pro/', '/streamwish.to/').replace('/wishfast.top/', '/streamwish.to/').replace('/sfastwish.com/', '/streamwish.to/').replace('/doodporn.xyz/', '/streamwish.to/')
               page_url = page_url.replace('/flaswish.com/', '/streamwish.to/').replace('/obeywish.com/', '/streamwish.to/').replace('/cdnwish.com/', '/streamwish.to/').replace('/asnwish.com/', '/streamwish.to/').replace('/flastwish.com/', '/streamwish.to/').replace('/jodwish.com/', '/streamwish.to/')
-              page_url = page_url.replace('/swhoi.com/', '/streamwish.to/').replace('/fsdcmo.sbs/', '/streamwish.to/').replace('/swdyu.com/', '/streamwish.to/')
+              page_url = page_url.replace('/swhoi.com/', '/streamwish.to/').replace('/fsdcmo.sbs/', '/streamwish.to/').replace('/swdyu.com/', '/streamwish.to/').replace('/wishonly.site/', '/streamwish.to/').replace('/playerwish.com/', '/streamwish.to/')
 
         elif 'desiupload' in page_url:
               txt_server = 'Desiupload'
@@ -128,25 +128,25 @@ def get_video_url(page_url, url_referer=''):
 
         elif 'hexupload' in page_url or 'hexload' in page_url:
               txt_server = 'Hexupload'
-              page_url = page_url.replace('/hexload.com/', '/hexupload.net/')
+              page_url = page_url.replace('/hexupload.net/', '/hexload.com/')
 
-        elif 'vidguard' in page_url or 'vgfplay' in page_url or 'vgembed' in page_url or 'v6embed' in page_url or 'vembed' in page_url or 'vid-guard' in page_url or 'embedv' in page_url or 'bembed' in page_url or 'listeamed' in page_url:
+        elif 'vidguard' in page_url or 'vgfplay' in page_url or 'vgembed' in page_url or 'v6embed' in page_url or 'vembed' in page_url or 'vid-guard' in page_url or 'embedv' in page_url or 'bembed' in page_url or 'listeamed' in page_url or 'go-streamer.net' in page_url:
               txt_server = 'Vidguard'
               page_url = page_url.replace('/vidguard.to/', '/vgembed.com/').replace('/vgfplay.com/', '/vgembed.com/').replace('/vgfplay.xyz/', '/vgembed.com/').replace('/vgplayer.xyz/', '/vgembed.com/').replace('/v6embed.xyz/', '/vgembed.com/').replace('/vembed.net/', '/vgembed.com/').replace('/vembed.org/', '/vgembed.com/').replace('/vid-guard.com/', '/vgembed.com/').replace('/embedv.net/', '/vgembed.com/').replace('/bembed.net/', '/vgembed.com/')
 
-        elif 'lulustream' in page_url or 'luluvdo' in page_url:
+        elif 'lulustream' in page_url or 'luluvdo' in page_url or 'lulu' in page_url or 'ponmi' in page_url:
               txt_server = 'Lulustream'
-              page_url = page_url.replace('/luluvdo.com/', '/lulustream.com/')
+              page_url = page_url.replace('/luluvdo.com/', '/lulustream.com/').replace('/lulu.st/', '/lulustream.com/').replace('/ponmi.sbs/', '/lulustream.com/')
 
-        elif 'turboviplay' in page_url or 'emturbovid' in page_url or 'tuborstb' in page_url:
+        elif 'turboviplay' in page_url or 'emturbovid' in page_url or 'tuborstb' in page_url or 'streamsilk' in page_url:
               txt_server = 'Turboviplay'
-              page_url = page_url.replace('/turboviplay.com/', '/emturbovid.com/').replace('/tuborstb.co/', '/emturbovid.com/')
+              page_url = page_url.replace('/turboviplay.com/', '/emturbovid.com/').replace('/tuborstb.co/', '/emturbovid.com/').replace('/streamsilk.com/', '/emturbovid.com/')
 
         elif 'file-upload' in page_url:
               txt_server = 'Fileupload'
               page_url = page_url.replace('/www.file-upload.com/', '/www.file-upload.org/')
 
-        elif 'vidspeed' in page_url or 'vidspeeds' in page_url:
+        elif 'vidspeed' in page_url or 'vidroba' in page_url:
               txt_server = 'Vidspeed'
               page_url = page_url.replace('/www.vidspeeds.com/', '/vidspeed.cc/').replace('/vidspeeds.com/', '/vidspeed.cc/')
 
@@ -160,13 +160,16 @@ def get_video_url(page_url, url_referer=''):
               txt_server = 'Twitch'
               page_url = page_url.replace('/player.twitch.tv/', '/www.twitch.tv/')
 
-        elif 'vidhide' in page_url:
+        elif 'vidhide' in page_url or 'stblion' in page_url:
               txt_server = 'Vidhidepro'
               page_url = page_url.replace('/embed/', '/v/').replace('/file/', '/s/').replace('/download/', '/v/')
 
               page_url = page_url.replace('/vidhide.com/v/', '/vidhidepro.com/s/').replace('/vidhidepro.com/v/', '/vidhidepro.com/s/').replace('/vidhidevip.com/v/', '/vidhidepro.com/s/').replace('/vidhide.com/f/', '/vidhidepro.com/s/').replace('/vidhidepro.com/f/', '/vidhidepro.com/s/').replace('/vidhidevip.com/f/', '/vidhidepro.com/s/')
 
               page_url = page_url.replace('/vidhidepre.com/v/', '/vidhidepro.com/s/').replace('/vidhidepre.com/f/', '/vidhidepro.com/s/')
+              page_url = page_url.replace('/vidhideplus.com/v/', '/vidhidepro.com/s/').replace('/vidhideplus.com/f/', '/vidhidepro.com/s/')
+
+              page_url = page_url.replace('/stblion.xyz/v/', '/vidhidepro.com/s/').replace('/stblion.xyz/f/', '/vidhidepro.com/s/')
 
         if txt_server == 'Unknow': return 'Servidor desconocido'
 

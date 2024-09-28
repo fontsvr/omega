@@ -7,13 +7,16 @@ from core.item import Item
 from core import httptools, scrapertools, servertools, tmdb
 
 
-host = 'https://w-ww.seriesgod.cc/'
+# ~ 14/8/24 Peliculas solo hay 26
+
+host = 'https://wv5u.seriesgod.cc/'
 
 
 # ~ por si viene de enlaces guardados
 ant_hosts = ['https://www.gnula24.xyz/', 'https://www3.gnula24.xyz/', 'https://ww2.gnula24.xyz/',
              'https://www11.gnula24.xyz/', 'https://w-ww.gnula24.xyz/', 'https://c1.gnula24.xyz/',
-             'https://www.seriesgod.cc/', 'https://ww-w.seriesgod.cc/']
+             'https://www.seriesgod.cc/', 'https://ww-w.seriesgod.cc/', 'https://w-ww.seriesgod.cc/',
+             'https://www.seriesgod.cc/']
 
 
 domain = config.get_setting('dominio', 'gnula24', default='')
@@ -251,7 +254,9 @@ def list_all(item):
 
         if not url or not title: continue
 
-        title = title.replace('&#8230;', '').replace('&#8211;', '').replace('&#038;', '').replace('&#8217;s', "'s")
+        if '/movies/' in url: continue
+
+        title = title.replace('&#8230;', '').replace('&#8211;', '').replace('&#038;', '').replace('&#8217;s', "'s").replace('&#8217;', '')
 
         title = re.sub(r" \(.*?\)| \| .*", "", title)
 
@@ -590,9 +595,11 @@ def list_search(item):
     for article in matches:
         url = scrapertools.find_single_match(article, ' href="(.*?)"')
 
+        if '/movies/' in url: continue
+
         title = scrapertools.find_single_match(article, ' alt="(.*?)"')
 
-        title = title.replace('&#8217;', '')
+        title = title.replace('&#8230;', '').replace('&#8211;', '').replace('&#038;', '').replace('&#8217;s', "'s").replace('&#8217;', '')
 
         thumb = scrapertools.find_single_match(article, ' src="(.*?)"')
 

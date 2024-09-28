@@ -172,7 +172,7 @@ def acciones(item):
 
     itemlist.append(item_configurar_proxies(item))
 
-    itemlist.append(Item( channel='helper', action='show_help_animeonline', title='[COLOR aquamarine][B]Aviso[/COLOR] [COLOR green]Información[/B][/COLOR] canal', thumbnail=config.get_thumb('help') ))
+    itemlist.append(Item( channel='helper', action='show_help_animeonline', title='[COLOR aquamarine][B]Aviso[/COLOR] [COLOR green]Información[/B][/COLOR] canal', thumbnail=config.get_thumb('animeonline') ))
 
     platformtools.itemlist_refresh()
 
@@ -252,7 +252,7 @@ def pelis(item):
     logger.info()
     itemlist = []
 
-    itemlist.append(item.clone( title = 'Catálogo (Películas)', action = 'list_all', url = host + 'pelicula/', text_color = 'deepskyblue' ))
+    itemlist.append(item.clone( title = 'Catálogo [COLOR deepskyblue]Películas[/COLOR]', action = 'list_all', url = host + 'pelicula/' ))
 
     itemlist.append(item.clone( title = 'Más vistas', action = 'list_all', url = host + 'tendencias/?get=movies' ))
     itemlist.append(item.clone( title = 'Más valoradas', action = 'list_all', url = host + 'ratings/?get=movies' ))
@@ -332,7 +332,7 @@ def list_all(item):
             if '/release/' in item.url: year = scrapertools.find_single_match(item.url, "/release/(.*?)/")
             else: year = '-'
 
-        title = title.replace('&#8217;', '').replace('&#8211;', '')
+        title = title.replace('&#8217;', '').replace('&#8211;', '').replace('&#8220;', '').replace('&#8221;', '')
 
         tipo = 'movie' if '/pelicula/' in url else 'tvshow'
         sufijo = '' if item.search_type != 'all' else tipo
@@ -365,7 +365,7 @@ def list_all(item):
                 epis = scrapertools.find_single_match(title, 'Cap(.*?)$').strip()
                 if not epis: epis = 1
 
-                title = title.replace('Cap ', '[COLOR goldenrod]Cap [/COLOR]')
+                title = title.replace('Cap ', '[COLOR goldenrod]Cap [/COLOR]').replace('Episode ', '[COLOR goldenrod]Episode [/COLOR]')
 
                 itemlist.append(item.clone( action = 'findvideos', url = url, title = title, thumbnail = thumb, qualities=qlty, languages=lang, fmt_sufijo=sufijo,
                                             contentType = 'episode', contentSerieName = SerieName, contentSeason = 1, contentEpisodeNumber=epis, infoLabels={'year': year} ))
@@ -538,7 +538,7 @@ def findvideos(item):
     for datos in players:
         ses += 1
 
-        _server = scrapertools.find_single_match(datos, "<span class='server'>(.*?)</span>")
+        _server = scrapertools.find_single_match(datos, "<<span class='server'>(.*?)</span>")
         if not _server: _server = scrapertools.find_single_match(datos, '<span class="server">(.*?)</span>')
 
         if not 'saidochesto' in _server: continue
@@ -608,7 +608,7 @@ def findvideos(item):
 
                 link_other = link_other.replace('www.', '').replace('.com', '').replace('.net', '').replace('.org', '').replace('.top', '').replace('.do', '')
                 link_other = link_other.replace('.co', '').replace('.cc', '').replace('.sh', '').replace('.to', '').replace('.tv', '').replace('.ru', '').replace('.io', '')
-                link_other = link_other.replace('.eu', '').replace('.ws', '').replace('.ag', '').replace('.sx', '').replace('.online', '').replace('.lat', '')
+                link_other = link_other.replace('.eu', '').replace('.ws', '').replace('.ag', '').replace('.sx', '').replace('.online', '').replace('.lat', '').replace('.link', '')
 
                 if servidor == 'various': other = servertools.corregir_other(link_other)
                 else:

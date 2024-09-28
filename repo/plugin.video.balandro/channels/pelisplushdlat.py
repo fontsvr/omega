@@ -7,13 +7,14 @@ from core.item import Item
 from core import httptools, scrapertools, servertools, tmdb
 
 
-host = 'https://www17.pelisplushd.to/'
+host = 'https://www18.pelisplushd.to/'
 
 
 # ~ por si viene de enlaces guardados
 ant_hosts = ['https://pelisplushd.lat/', 'https://www1.pelisplushd.lat/', 'https://www2.pelisplushd.lat/',
              'https://www.pelisplushd.la/', 'https://ww1.pelisplushd.to/', 'https://www9.pelisplushd.to/',
-             'https://www11.pelisplushd.to/', 'https://www15.pelisplushd.to/', 'https://www16.pelisplushd.to/']
+             'https://www11.pelisplushd.to/', 'https://www15.pelisplushd.to/', 'https://www16.pelisplushd.to/',
+             'https://www17.pelisplushd.to/']
 
 
 domain = config.get_setting('dominio', 'pelisplushdlat', default='')
@@ -506,6 +507,7 @@ def findvideos(item):
             link_other = scrapertools.find_single_match(data, '<a href="#option' + opt + '">(.*?)</a>')
 
             link_other = normalize_other(link_other)
+            if not link_other: continue
 
         if servidor == 'various': link_other = servertools.corregir_other(url)
 
@@ -533,7 +535,9 @@ def findvideos(item):
 
         link_other = ''
 
-        if servidor == 'directo': link_other = normalize_other(url)
+        if servidor == 'directo':
+            link_other = normalize_other(url)
+            if not link_other: continue
 
         if servidor == 'various': link_other = servertools.corregir_other(url)
 
@@ -551,7 +555,9 @@ def normalize_other(url):
     if 'pelisplus' in url: link_other = 'plus'
     elif 'damedamehoy' in url: link_other = 'dame'
     elif 'tomatomatela' in url: link_other = 'dame'
-    elif 'plustream' in url: link_other = 'plustream'
+
+    elif 'plustream' in url: link_other = ''
+
     else:
        if config.get_setting('developer_mode', default=False): link_other = url
        else: link_other = ''

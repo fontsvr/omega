@@ -160,10 +160,10 @@ def acciones(item):
                                 from_channel='hdfullse', folder=False, text_color='chartreuse' ))
 
     itemlist.append(Item( channel='domains', action='operative_domains_hdfullse', title='Comprobar [B]Dominio Operativo Vigente[/B]',
-                          desde_el_canal = True, thumbnail=config.get_thumb('settings'), text_color='mediumaquamarine' ))
+                          desde_el_canal = True, thumbnail=config.get_thumb('hdfullse'), text_color='mediumaquamarine' ))
 
     itemlist.append(Item( channel='domains', action='last_domain_hdfullse', title='[B]Comprobar último dominio vigente[/B]',
-                          desde_el_canal = True, host_canal = url, thumbnail=config.get_thumb('settings'), text_color='chocolate' ))
+                          desde_el_canal = True, host_canal = url, thumbnail=config.get_thumb('hdfullse'), text_color='chocolate' ))
 
     if domain_memo: title = '[B]Modificar/Eliminar el dominio memorizado[/B]'
     else: title = '[B]Informar Nuevo Dominio manualmente[/B]'
@@ -172,7 +172,7 @@ def acciones(item):
 
     itemlist.append(item_configurar_proxies(item))
 
-    itemlist.append(Item( channel='helper', action='show_help_hdfullse', title='[COLOR aquamarine][B]Aviso[/COLOR] [COLOR green]Información[/B][/COLOR] canal', thumbnail=config.get_thumb('help') ))
+    itemlist.append(Item( channel='helper', action='show_help_hdfullse', title='[COLOR aquamarine][B]Aviso[/COLOR] [COLOR green]Información[/B][/COLOR] canal', thumbnail=config.get_thumb('hdfullse') ))
 
     platformtools.itemlist_refresh()
 
@@ -608,7 +608,8 @@ def findvideos(item):
         ses += 1
 
         if embed == 'd':
-            if not 'uptobox' in url: continue
+            if 'clicknupload' in url: pass
+            elif not 'uptobox' in url: continue
 
         elif '/powvideo.' in url: continue
         elif '/streamplay.' in url: continue

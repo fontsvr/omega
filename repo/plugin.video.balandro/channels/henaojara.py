@@ -44,7 +44,7 @@ except:
    except: pass
 
 
-host = 'https://wvw.henaojara.com/'
+host = 'https://www.henaojara.com/'
 
 
 _players = ['.henaojara.']
@@ -52,7 +52,7 @@ _players = ['.henaojara.']
 
 # ~ por si viene de enlaces guardados
 ant_hosts = ['https://henaojara.com/', 'https://henaojara2.com/', 'https://www1.henaojara.com/',
-             'https://www.henaojara.com/']
+             'https://wvw.henaojara.com/']
 
 
 domain = config.get_setting('dominio', 'henaojara', default='')
@@ -176,7 +176,7 @@ def acciones(item):
 
     itemlist.append(item_configurar_proxies(item))
 
-    itemlist.append(Item( channel='helper', action='show_help_henaojara', title='[COLOR aquamarine][B]Aviso[/COLOR] [COLOR green]Información[/B][/COLOR] canal', thumbnail=config.get_thumb('help') ))
+    itemlist.append(Item( channel='helper', action='show_help_henaojara', title='[COLOR aquamarine][B]Aviso[/COLOR] [COLOR green]Información[/B][/COLOR] canal', thumbnail=config.get_thumb('henaojara') ))
 
     platformtools.itemlist_refresh()
 
@@ -316,6 +316,10 @@ def list_all(item):
 
             PeliName = re.sub(r"Sub |Español|Latino|Castellano|HD|Temporada \d+|\(\d{4}\)", "", title).strip()
 
+            if 'Movie' in PeliName: PeliName = PeliName.split("Movie")[0]
+
+            PeliName = PeliName.replace('Peliculas', '').replace('Pelicula', '').strip()
+
             PeliName = PeliName.strip()
 
             itemlist.append(item.clone( action='findvideos', url=url, title=title, thumbnail=thumb, fmt_sufijo=sufijo,
@@ -387,8 +391,10 @@ def list_last(item):
                                         contentType = 'tvshow', contentSerieName = SerieName, infoLabels={'year': year} ))
 
         if tipo == 'movie':
-            if item.search_type != 'all':
-                if item.search_type == 'tvshow': continue
+            if 'Movie' in PeliName: PeliName = PeliName.split("Movie")[0]
+
+            PeliName = PeliName.replace('Peliculas', '').replace('Pelicula', '').strip()
+
             itemlist.append(item.clone( action='findvideos', url=url, title=title, thumbnail=thumb, fmt_sufijo=sufijo,
                                         contentType='movie', contentTitle=PeliName, infoLabels={'year': year} ))
 

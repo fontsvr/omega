@@ -9,16 +9,17 @@ from platformcode import config, logger, platformtools
 
 color_exec  = config.get_setting('notification_exec_color', default='cyan')
 
-tipos_plus = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37]
+tipos_plus = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44]
 
 
 def plus_proxies(proxies, max_proxies):
     logger.info()
 
-
-    if config.get_setting('proxies_vias', default=False): tplus = config.get_setting('proxies_tplus')
-    elif config.get_setting('proxies_tplus', default='32'): tplus = config.get_setting('proxies_tplus')
-    else: tplus = random.choice(tipos_plus)
+    if not config.get_setting('proxies_tplus_proces'):
+        if config.get_setting('proxies_vias', default=False): tplus = config.get_setting('proxies_tplus')
+        elif config.get_setting('proxies_tplus', default='32'): tplus = config.get_setting('proxies_tplus')
+        else: tplus = random.choice(tipos_plus)
+    else: tplus = config.get_setting('proxies_tplus_proces', default='32')
 
     if not config.get_setting('proxies_vias', default=False):
         if tplus == config.get_setting('proxies_tplus', default='32'): tplus = random.choice(tipos_plus)
@@ -91,8 +92,19 @@ def plus_proxies(proxies, max_proxies):
 
     elif tplus == 37: url_provider = 'https://lamt3012.wixsite.com/porxy/proxy-list'
 
+    elif tplus == 38: url_provider = 'https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/protocols/http/data.txt'
+    elif tplus == 39: url_provider = 'https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/protocols/socks4/data.txt'
+    elif tplus == 40: url_provider = 'https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/protocols/socks5/data.txt'
+
+    elif tplus == 41: url_provider = 'https://raw.githubusercontent.com/ErcinDedeoglu/proxies/main/proxies/http.txt'
+    elif tplus == 42: url_provider = 'https://raw.githubusercontent.com/ErcinDedeoglu/proxies/main/proxies/https.txt'
+    elif tplus == 43: url_provider = 'https://raw.githubusercontent.com/ErcinDedeoglu/proxies/main/proxies/socks4.txt'
+    elif tplus == 44: url_provider = 'https://raw.githubusercontent.com/ErcinDedeoglu/proxies/main/proxies/socks5.txt'
+
     if url_provider:
         resp = httptools.downloadpage(url_provider, raise_weberror=False, follow_redirects=False)
+
+        if 'location:' in resp.data: resp.data = ''
 
     if tplus == 0 or tplus == 1 or tplus == 2:
         el_provider = '[B][COLOR %s] Openproxy[/B][/COLOR]' % color_exec
@@ -109,12 +121,14 @@ def plus_proxies(proxies, max_proxies):
                  proxies_plus.append(prox)
 
     elif tplus == 3:
-        if '<title>Just a moment...</title>' in resp.data:
+        if '<title>Just a moment...</title>' in resp.data or '<title>Just a moment please...</title>' in resp.data:
             el_provider = '[B][COLOR %s] Privacyaffairs[/B][/COLOR]' % color_exec
             platformtools.dialog_notification('Hidester', 'Vía' + el_provider)
 
             url_provider = 'https://www.privacyaffairs.com/free-proxy-servers/'
             resp = httptools.downloadpage(url_provider, raise_weberror=False, follow_redirects=False)
+
+            if 'location:' in resp.data: resp.data = ''
 
             enlaces = scrapertools.find_multiple_matches(str(resp.data), '<tr>(.*?)</tr>')
 
@@ -302,7 +316,7 @@ def plus_proxies(proxies, max_proxies):
 
             proxies_plus.append(prox)
 
-    if tplus == 37:
+    elif tplus == 37:
         el_provider = '[B][COLOR %s] Lamt3012[/B][/COLOR]' % color_exec
         platformtools.dialog_notification('Plus ' + str(tplus), 'Vía' + el_provider)
 
@@ -316,11 +330,46 @@ def plus_proxies(proxies, max_proxies):
 
                  proxies_plus.append(prox)
 
+    elif tplus == 38 or tplus == 39 or tplus == 40:
+        if tplus == 38: el_provider = '[B][COLOR %s] Proxyfly Http[/B][/COLOR]' % color_exec
+        elif tplus == 39: el_provider = '[B][COLOR %s] Proxyfly Socks4[/B][/COLOR]' % color_exec
+        elif tplus == 40: el_provider = '[B][COLOR %s] Proxyfly Socks5[/B][/COLOR]' % color_exec
+
+        platformtools.dialog_notification('Plus ' + str(tplus), 'Vía' + el_provider)
+
+        enlaces = scrapertools.find_multiple_matches(str(resp.data), '(.*?)\n')
+
+        for prox in enlaces:
+            prox = prox.replace('http://', '').replace('https://', '').replace('socks4://', '').replace('socks5://', '')
+
+            prox = prox.strip()
+
+            if prox:
+                proxies_plus.append(prox)
+
+    elif tplus == 41 or tplus == 42 or tplus == 43 or tplus == 44:
+        if tplus == 41: el_provider = '[B][COLOR %s] ErcinDedeoglu Http[/B][/COLOR]' % color_exec
+        elif tplus == 42: el_provider = '[B][COLOR %s] ErcinDedeoglu Https[/B][/COLOR]' % color_exec
+        elif tplus == 43: el_provider = '[B][COLOR %s] ErcinDedeoglu Socks4[/B][/COLOR]' % color_exec
+        elif tplus == 44: el_provider = '[B][COLOR %s] ErcinDedeoglu socks5[/B][/COLOR]' % color_exec
+
+        platformtools.dialog_notification('Plus ' + str(tplus), 'Vía' + el_provider)
+
+        enlaces = scrapertools.find_multiple_matches(str(resp.data), '(.*?)\n')
+
+        for prox in enlaces:
+            prox = prox.strip()
+
+            if prox:
+                proxies_plus.append(prox)
+
     # ~ si no se obtuvo ninguno
     if not proxies_plus:
         if not tplus == 3:
             url_provider = 'https://vpnoverview.com/privacy/anonymous-browsing/free-proxy-servers/'
             resp = httptools.downloadpage(url_provider, raise_weberror=False, follow_redirects=False)
+
+            if 'location:' in resp.data: resp.data = ''
 
             el_provider = '[B][COLOR %s] Vpnoverview[/B][/COLOR]' % color_exec
             platformtools.dialog_notification('Plus ' + str(tplus), 'Vía' + el_provider)
@@ -349,6 +398,8 @@ def z_xroxy(url, tipo_proxy, pais_proxy, max_proxies):
     url_provider = 'https://www.xroxy.com/proxylist.htm'
     resp = httptools.downloadpage(url_provider, raise_weberror=False, follow_redirects=False)
 
+    if 'location:' in resp.data: resp.data = ''
+
     enlaces = scrapertools.find_multiple_matches(str(resp.data), "'View this Proxy details'>(.*?)<.*?Select proxies with port number.*?>(.*?)</a>")
 
     if enlaces:
@@ -365,6 +416,8 @@ def z_xroxy(url, tipo_proxy, pais_proxy, max_proxies):
 
         url_provider = 'https://proxylist.to/'
         resp = httptools.downloadpage(url_provider, raise_weberror=False, follow_redirects=False)
+
+        if 'location:' in resp.data: resp.data = ''
 
         enlaces = scrapertools.find_multiple_matches(str(resp.data), '<td class="t_ip">(.*?)</td>.*?<td class="t_port">(.*?)</td>')
 
@@ -389,6 +442,8 @@ def z_proxy_daily(url, tipo_proxy, pais_proxy, max_proxies):
     url_provider = 'https://proxy-daily.com/'
     resp = httptools.downloadpage(url_provider, raise_weberror=False, follow_redirects=False)
 
+    if 'location:' in resp.data: resp.data = ''
+
     block = scrapertools.find_single_match(str(resp.data), 'Free Http/Https Proxy List.*?freeProxyStyle">(.*?)</div>')
 
     enlaces = scrapertools.find_multiple_matches(block, '(.*?)\n')
@@ -408,6 +463,8 @@ def z_proxy_list_org(url, tipo_proxy, pais_proxy, max_proxies):
 
     url_provider = 'https://proxy-list.org/spanish/index.php'
     resp = httptools.downloadpage(url_provider, raise_weberror=False, follow_redirects=False)
+
+    if 'location:' in resp.data: resp.data = ''
 
     enlaces = scrapertools.find_multiple_matches(str(resp.data), '<li class="proxy"><script.*?' + "'(.*?)'")
 
@@ -431,6 +488,8 @@ def z_proxyhub(url, tipo_proxy, pais_proxy, max_proxies):
     url_provider = 'https://www.proxyhub.me/'
     resp = httptools.downloadpage(url_provider, raise_weberror=False, follow_redirects=False)
 
+    if 'location:' in resp.data: resp.data = ''
+
     enlaces = scrapertools.find_multiple_matches(str(resp.data), '<tr><td>(.*?)</td><td>(.*?)</td>')
 
     if enlaces:
@@ -444,6 +503,8 @@ def z_proxyhub(url, tipo_proxy, pais_proxy, max_proxies):
 
         url_provider = 'https://github.com/TheSpeedX/PROXY-List/blob/master/socks4.txt'
         resp = httptools.downloadpage(url_provider, raise_weberror=False, follow_redirects=False)
+
+        if 'location:' in resp.data: resp.data = ''
 
         block = scrapertools.find_single_match(str(resp.data), '"rawLines":(.*?)"stylingDirectives"')
 
@@ -465,6 +526,8 @@ def z_proxyranker(url, tipo_proxy, pais_proxy, max_proxies):
     url_provider = 'https://proxyranker.com/'
     resp = httptools.downloadpage(url_provider, raise_weberror=False, follow_redirects=False)
 
+    if 'location:' in resp.data: resp.data = ''
+
     enlaces = scrapertools.find_multiple_matches(str(resp.data), '<td>(.*?)</td>.*?<span title="Proxy port">(.*?)</span>.*?</tr>')
 
     for prox, port in enlaces:
@@ -484,6 +547,8 @@ def z_echolink(url, tipo_proxy, pais_proxy, max_proxies):
 
     url_provider = 'https://www.echolink.org/proxylist.jsp'
     resp = httptools.downloadpage(url_provider, raise_weberror=False, follow_redirects=False)
+
+    if 'location:' in resp.data: resp.data = ''
 
     enlaces = scrapertools.find_multiple_matches(str(resp.data), '<tr class="normal-row">.*?</td>.*?<td>(.*?)</td>.*?<td>(.*?)</td>')
 
@@ -507,6 +572,8 @@ def z_free_proxy_list_anon(url, tipo_proxy, pais_proxy, max_proxies):
 
     url_provider = 'https://free-proxy-list.net/anonymous-proxy.html'
     resp = httptools.downloadpage(url_provider, raise_weberror=False, follow_redirects=False)
+
+    if 'location:' in resp.data: resp.data = ''
 
     block = scrapertools.find_single_match(str(resp.data), 'Updated at(.*?)</textarea>')
 
@@ -533,6 +600,8 @@ def z_free_proxy_list_uk(url, tipo_proxy, pais_proxy, max_proxies):
     url_provider = 'https://free-proxy-list.net/uk-proxy.html'
     resp = httptools.downloadpage(url_provider, raise_weberror=False, follow_redirects=False)
 
+    if 'location:' in resp.data: resp.data = ''
+
     block = scrapertools.find_single_match(str(resp.data), 'Updated at(.*?)</textarea>')
 
     enlaces = scrapertools.find_multiple_matches(block, '(.*?)\n')
@@ -558,6 +627,8 @@ def z_github(url, tipo_proxy, pais_proxy, max_proxies):
     url_provider = 'https://raw.githubusercontent.com/hendrikbgr/Free-Proxy-Repo/master/proxy_list.txt'
     resp = httptools.downloadpage(url_provider, raise_weberror=False, follow_redirects=False)
 
+    if 'location:' in resp.data: resp.data = ''
+
     enlaces = scrapertools.find_multiple_matches(str(resp.data), '(.*?)\n')
 
     for prox in enlaces:
@@ -575,6 +646,8 @@ def z_squidproxyserver(url, tipo_proxy, pais_proxy, max_proxies):
 
     url_provider = 'https://squidproxyserver.com/'
     resp = httptools.downloadpage(url_provider, raise_weberror=False, follow_redirects=False)
+
+    if 'location:' in resp.data: resp.data = ''
 
     enlaces = scrapertools.find_multiple_matches(str(resp.data), '<tr><td>(.*?)</td><td>(.*?)</td>')
 
@@ -595,6 +668,8 @@ def z_socks(url, tipo_proxy, pais_proxy, max_proxies):
 
     url_provider = 'https://www.socks-proxy.net/'
     resp = httptools.downloadpage(url_provider, raise_weberror=False, follow_redirects=False)
+
+    if 'location:' in resp.data: resp.data = ''
 
     block = scrapertools.find_single_match(str(resp.data), 'Updated at(.*?)</div>')
 
@@ -620,6 +695,8 @@ def z_opsxcq(url, tipo_proxy, pais_proxy, max_proxies):
     url_provider = 'https://raw.githubusercontent.com/opsxcq/proxy-list/master/list.txt'
     resp = httptools.downloadpage(url_provider, raise_weberror=False, follow_redirects=False)
 
+    if 'location:' in resp.data: resp.data = ''
+
     enlaces = scrapertools.find_multiple_matches(str(resp.data), '(.*?)\n')
 
     for prox in enlaces:
@@ -637,6 +714,8 @@ def z_free_proxy_list_com(url, tipo_proxy, pais_proxy, max_proxies):
 
     url_provider = 'https://free-proxy-list.com/'
     resp = httptools.downloadpage(url_provider, raise_weberror=False, follow_redirects=False)
+
+    if 'location:' in resp.data: resp.data = ''
 
     enlaces = scrapertools.find_multiple_matches(str(resp.data), '<td class=""><a href=.*?title="(.*?)"')
 
@@ -659,6 +738,8 @@ def z_coderduck(url, tipo_proxy, pais_proxy, max_proxies):
     url_provider = 'https://pdfcoffee.com/proxy-listtxt-4-pdf-free.html'
     resp = httptools.downloadpage(url_provider, raise_weberror=False, follow_redirects=False)
 
+    if 'location:' in resp.data: resp.data = ''
+
     block = scrapertools.find_single_match(str(resp.data), '<p class="d-block text-justify">(.*?)</p>')
 
     if block:
@@ -672,6 +753,8 @@ def z_coderduck(url, tipo_proxy, pais_proxy, max_proxies):
         # ~ 13/9/2022 no devuelve proxies
         url_provider = 'https://www.coderduck.com/free-proxy-list'
         resp = httptools.downloadpage(url_provider, raise_weberror=False, follow_redirects=False)
+
+        if 'location:' in resp.data: resp.data = ''
 
         enlaces = scrapertools.find_multiple_matches(str(resp.data), '<tr>.*?</td>.*?<td>(.*?)</td>.*?<td>(.*?)</td>')
 

@@ -44,11 +44,11 @@ except:
    except: pass
 
 
-host = 'https://www.animefenix.tv/'
+host = 'https://www3.animefenix.tv/'
 
 
 # ~ por si viene de enlaces guardados
-ant_hosts = ['https://www.animefenix.com/', 'https://animefenix.tv/', 'https://www3.animefenix.tv/']
+ant_hosts = ['https://www.animefenix.com/', 'https://animefenix.tv/', 'https://www.animefenix.tv/']
 
 
 domain = config.get_setting('dominio', 'animefenix', default='')
@@ -170,7 +170,7 @@ def acciones(item):
 
     itemlist.append(item_configurar_proxies(item))
 
-    itemlist.append(Item( channel='helper', action='show_help_animefenix', title='[COLOR aquamarine][B]Aviso[/COLOR] [COLOR green]Información[/B][/COLOR] canal', thumbnail=config.get_thumb('help') ))
+    itemlist.append(Item( channel='helper', action='show_help_animefenix', title='[COLOR aquamarine][B]Aviso[/COLOR] [COLOR green]Información[/B][/COLOR] canal', thumbnail=config.get_thumb('animefenix') ))
 
     platformtools.itemlist_refresh()
 
@@ -387,6 +387,8 @@ def last_epis(item):
     matches = re.compile('<a href="(.*?)".*?<img src="(.*?)".*?alt="(.*?)".*?<div class="overepisode.*?">(.*?)</div>', re.DOTALL).findall(bloque)
 
     for url, thumb, title, episode in matches:
+        title = title.replace('&quot;', '').strip()
+
         SerieName = title
 
         if 'Peliculas' in SerieName: SerieName = SerieName.split("Peliculas")[0]

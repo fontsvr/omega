@@ -7,6 +7,8 @@ from core.item import Item
 from core import httptools, scrapertools, servertools, tmdb
 
 
+# ~ 14/8/24 Peliculas solo hay 26
+
 host = 'https://w-ww.gnula2h.cc/'
 
 
@@ -216,6 +218,8 @@ def list_all(item):
 
         if not url or not title: continue
 
+        if '/movies/' in url: continue
+
         thumb = scrapertools.find_single_match(match, 'src="(.*?)"')
 
         year = scrapertools.find_single_match(match, '<span class="imdb".*?</span>.*?<span>(.*?)</span>')
@@ -226,7 +230,7 @@ def list_all(item):
 
         if '/release/' in item.url: year = scrapertools.find_single_match(item.url, "/release/(.*?)/")
 
-        title = title.replace('&#8230;', '').replace('&#8211;', '').replace('&#038;', '').replace('&#8217;s', "'s")
+        title = title.replace('&#8230;', '').replace('&#8211;', '').replace('&#038;', '').replace('&#8217;s', "'s").replace('&#8217;', '')
 
         titulo = title
 
@@ -559,7 +563,11 @@ def list_search(item):
     for article in matches:
         url = scrapertools.find_single_match(article, ' href="(.*?)"')
 
+        if '/movies/' in url: continue
+
         title = scrapertools.find_single_match(article, ' alt="(.*?)"')
+
+        title = title.replace('&#8230;', '').replace('&#8211;', '').replace('&#038;', '').replace('&#8217;s', "'s").replace('&#8217;', '')
 
         thumb = scrapertools.find_single_match(article, ' src="(.*?)"')
 

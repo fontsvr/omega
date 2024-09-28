@@ -7,7 +7,7 @@ from core.item import Item
 from core import httptools, scrapertools, servertools, tmdb
 
 
-host = 'https://ww3.pelisplushd.lat/'
+host = 'https://ww4.pelisplushd.lat/'
 
 
 # ~ por si viene de enlaces guardados
@@ -19,7 +19,7 @@ ant_hosts = ['https://pelisplushd.net/', 'https://pelisplushd.to/', 'https://www
              'https://www14.pelisplushd.lat/', 'https://www15.pelisplushd.lat/', 'https://www16.pelisplushd.lat/',
              'https://www17.pelisplushd.lat/', 'https://www18.pelisplushd.lat/', 'https://www19.pelisplushd.lat/',
              'https://www20.pelisplushd.lat/', 'https://www21.pelisplushd.lat/', 'https://ww1.pelisplushd.lat/',
-             'https://ww2.pelisplushd.lat/' ]
+             'https://ww2.pelisplushd.lat/', 'https://ww3.pelisplushd.lat/']
 
 
 domain = config.get_setting('dominio', 'pelisplushd', default='')
@@ -510,6 +510,7 @@ def findvideos(item):
             if link_other.lower() == 'sbfast' or link_other.lower() == 'streamsb': continue
 
             link_other = normalize_other(link_other)
+            if not link_other: continue
 
         if servidor == 'various': link_other = servertools.corregir_other(url)
 
@@ -534,7 +535,10 @@ def findvideos(item):
 
         link_other = ''
 
-        if servidor == 'directo': link_other = normalize_other(url)
+        if servidor == 'directo':
+            link_other = normalize_other(url)
+            if not link_other: continue
+
         elif servidor == 'various': link_other = servertools.corregir_other(url)
 
         itemlist.append(Item( channel = item.channel, action = 'play', server = servidor, url = url, language = lang, other = link_other ))
@@ -580,7 +584,9 @@ def normalize_other(url):
     if 'pelisplus' in url: link_other = 'plus'
     elif 'damedamehoy' in url: link_other = 'dame'
     elif 'tomatomatela' in url: link_other = 'dame'
-    elif 'plustream' in url: link_other = 'plustream'
+
+    elif 'plustream' in url: link_other = ''
+
     else:
        if config.get_setting('developer_mode', default=False): link_other = url
        else: link_other = ''
@@ -606,7 +612,9 @@ def play(item):
 
     url = item.url
 
-    if '/plustream.' in url:
+    if url == 'embed': return itemlist
+
+    elif '/plustream.' in url:
         return 'Servidor [COLOR goldenrod]No Soportado[/COLOR]'
 
     if item.other == 'dame':

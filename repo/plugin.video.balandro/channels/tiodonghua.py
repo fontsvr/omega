@@ -10,12 +10,89 @@ from core import httptools, scrapertools, servertools, tmdb
 host = 'https://tiodonghua.com/'
 
 
+def item_configurar_proxies(item):
+    color_list_proxies = config.get_setting('channels_list_proxies_color', default='red')
+
+    color_avis = config.get_setting('notification_avis_color', default='yellow')
+    color_exec = config.get_setting('notification_exec_color', default='cyan')
+
+    context = []
+
+    tit = '[COLOR %s]Información proxies[/COLOR]' % color_avis
+    context.append({'title': tit, 'channel': 'helper', 'action': 'show_help_proxies'})
+
+    if config.get_setting('channel_tiodonghua_proxies', default=''):
+        tit = '[COLOR %s][B]Quitar los proxies del canal[/B][/COLOR]' % color_list_proxies
+        context.append({'title': tit, 'channel': item.channel, 'action': 'quitar_proxies'})
+
+    tit = '[COLOR %s]Ajustes categoría proxies[/COLOR]' % color_exec
+    context.append({'title': tit, 'channel': 'actions', 'action': 'open_settings'})
+
+    plot = 'Es posible que para poder utilizar este canal necesites configurar algún proxy, ya que no es accesible desde algunos países/operadoras.'
+    plot += '[CR]Si desde un navegador web no te funciona el sitio ' + host + ' necesitarás un proxy.'
+    return item.clone( title = '[B]Configurar proxies a usar ...[/B]', action = 'configurar_proxies', folder=False, context=context, plot=plot, text_color='red' )
+
+def quitar_proxies(item):
+    from modules import submnuctext
+    submnuctext._quitar_proxies(item)
+    return True
+
+def configurar_proxies(item):
+    from core import proxytools
+    return proxytools.configurar_proxies_canal(item.channel, host)
+
+
 def do_downloadpage(url, post=None, headers=None):
     if not headers: headers = {'Referer': host}
 
-    data = httptools.downloadpage(url, post=post, headers=headers).data
+    hay_proxies = False
+    if config.get_setting('channel_tiodonghua_proxies', default=''): hay_proxies = True
+
+    timeout = None
+    if host in url:
+        if hay_proxies: timeout = config.get_setting('channels_repeat', default=30)
+
+    if not url.startswith(host):
+        data = httptools.downloadpage(url, post=post, headers=headers, timeout=timeout).data
+    else:
+        if hay_proxies:
+            data = httptools.downloadpage_proxy('tiodonghua', url, post=post, headers=headers, timeout=timeout).data
+        else:
+            data = httptools.downloadpage(url, post=post, headers=headers, timeout=timeout).data
+
+        if not data:
+            if not '/?s=' in url:
+                if config.get_setting('channels_re_charges', default=True): platformtools.dialog_notification('TioDonghua', '[COLOR cyan]Re-Intentanto acceso[/COLOR]')
+
+                timeout = config.get_setting('channels_repeat', default=30)
+
+                if hay_proxies:
+                    data = httptools.downloadpage_proxy('tiodonghua', url, post=post, headers=headers, timeout=timeout).data
+                else:
+                    data = httptools.downloadpage(url, post=post, headers=headers, timeout=timeout).data
+
+    if '<title>You are being redirected...</title>' in data or '<title>Just a moment...</title>' in data:
+        if not '/?s=' in url:
+            platformtools.dialog_notification(config.__addon_name, '[COLOR red][B]CloudFlare[COLOR orangered] Protection[/B][/COLOR]')
+        return ''
 
     return data
+
+
+def acciones(item):
+    logger.info()
+    itemlist = []
+
+    itemlist.append(item.clone( channel='submnuctext', action='_test_webs', title='Test Web del canal [COLOR yellow][B] ' + host + '[/B][/COLOR]',
+                                from_channel='tiodonghua', folder=False, text_color='chartreuse' ))
+
+    itemlist.append(item_configurar_proxies(item))
+
+    itemlist.append(Item( channel='helper', action='show_help_tiodonghua', title='[COLOR aquamarine][B]Aviso[/COLOR] [COLOR green]Información[/B][/COLOR] canal', thumbnail=config.get_thumb('zonaleros') ))
+
+    platformtools.itemlist_refresh()
+
+    return itemlist
 
 
 def mainlist(item):
@@ -27,6 +104,8 @@ def mainlist_animes(item):
     itemlist = []
 
     if config.get_setting('descartar_anime', default=False): return
+
+    itemlist.append(item.clone( action='acciones', title= '[B]Acciones[/B] [COLOR plum](si no hay resultados)[/COLOR]', text_color='goldenrod' ))
 
     itemlist.append(item.clone( title = 'Buscar anime ...', action = 'search', search_type = 'tvshow', text_color='springgreen' ))
 
@@ -105,6 +184,8 @@ def list_all(item):
 
         SerieName = title
 
+        SerieName = SerieName.replace('Novela', '').strip()
+
         if 'Sub Español' in SerieName: SerieName = SerieName.split("Sub Español")[0]
         if 'Traducida al Español' in SerieName: SerieName = SerieName.split("Traducida al Español")[0]
         if 'Legendado Portugués' in SerieName: SerieName = SerieName.split("Legendado Portugués")[0]
@@ -136,10 +217,15 @@ def list_all(item):
             if item.group == 'animes':
                 epi = scrapertools.find_single_match(match, '<span class="epx">Ep(.*?)</span>').strip()
 
+                titulo = title
+
+                if epi:
+                    titulo = '[COLOR goldenrod]Episodio [/COLOR]' + titulo
+
                 if not epi: epi = 1
                 season = 1
 
-                itemlist.append(item.clone( action='findvideos', url = url, title = title, thumbnail = thumb,
+                itemlist.append(item.clone( action='findvideos', url = url, title = titulo, thumbnail = thumb,
                                             contentSerieName = SerieName, contentType = 'episode', contentSeason = season, contentEpisodeNumber = epi ))
 
                 continue
@@ -292,6 +378,13 @@ def findvideos(item):
 
         url = scrapertools.find_single_match(data, '"embed_url":.*?"(.*?)"')
 
+        if not 'http' in url:
+            if '<iframe' in data or '<IFRAME' in data:
+                 data = str(data).replace('=\\', '=').replace('\\"', '/"')
+
+                 url = scrapertools.find_single_match(str(data), '<iframe.*?src="(.*?)"')
+                 if not url: url = scrapertools.find_single_match(str(data), '<IFRAME.*?SRC="(.*?)"')
+
         if '<iframe' in url or '<IFRAME' in url:
              data = str(data).replace('=\\', '=').replace('\\"', '/"')
 
@@ -299,6 +392,75 @@ def findvideos(item):
              if not url: url = scrapertools.find_single_match(str(data), '<IFRAME.*?SRC="(.*?)"')
 
         url = url.replace('\\/', '/')
+
+        # ~ Multiserver
+        if '//player.tiodonghua.' in url:
+            data2 = do_downloadpage(url)
+            matches2 = scrapertools.find_multiple_matches(data2, "go_to_player.*?'(.*?)'")
+
+            url_post = url
+
+            for url in matches2:
+                ses += 1
+
+                new_url = ''
+
+                headers = {'Referer': url_post, 'Connection': 'keep-alive'}
+
+                if config.get_setting('channel_tiodonghua_proxies', default=''):
+                    resp = httptools.downloadpage_proxy('tiodonghua', url, headers = headers, follow_redirects=False, raise_weberror=False)
+                else:
+                    resp = httptools.downloadpage(url, headers = headers, follow_redirects=False, raise_weberror=False)
+
+                if 'location' in resp.headers:
+                    new_url = resp.headers['location']
+
+                if new_url: url = new_url
+
+                if '/terabox.' in url: continue
+                elif '/tioplayer.' in url: continue
+                elif '.tiodonghua.' in url: continue
+
+                if 'http:' in url: url = url.replace('http:', 'https:')
+
+                if not 'https:' in url: url = 'https:' + url
+
+                if url.startswith("https://sb"): continue
+                elif 'fembed' in url or  'streamsb' in url or 'playersb' in url or 'fcom' in url: continue
+
+                servidor = servertools.get_server_from_url(url)
+                servidor = servertools.corregir_servidor(servidor)
+
+                if servertools.is_server_available(servidor):
+                    if not servertools.is_server_enabled(servidor): continue
+                else:
+                    if not config.get_setting('developer_mode', default=False): continue
+
+                other = servidor
+
+                if servidor == 'various': other = servertools.corregir_other(url)
+
+                if servidor == other:
+                    if servidor == 'zures':
+                        other = url.split("/")[2]
+                        other = other.replace('https:', '').strip()
+
+                    else: other = ''
+
+                elif not servidor == 'directo':
+                    if not servidor == 'various': other = ''
+
+                if servidor == 'directo':
+                    if '/ok.ru' in url: servidor = 'okru'
+
+                    elif config.get_setting('developer_mode', default=False):
+                        other = url.split("/")[2]
+                        other = other.replace('https:', '').strip()
+
+                itemlist.append(Item( channel = item.channel, action = 'play', server = servidor, url = url, language = 'Vos', other = other ))
+
+            continue
+
 
         if not url: continue
 
@@ -314,10 +476,15 @@ def findvideos(item):
         elif 'tioplayer.com' in url: continue
         elif 'likessb.com' in url: continue
         elif '.animefenix.' in url: continue
+        elif '.tiodonghua.' in url: continue
+        elif '/odysee.' in url: continue
 
         if 'http:' in url: url = url.replace('http:', 'https:')
 
         if not 'https:' in url: url = 'https:' + url
+
+        if url.startswith("https://sb"): continue
+        elif 'fembed' in url or  'streamsb' in url or 'playersb' in url or 'fcom' in url: continue
 
         if 'es.png' in match: lang = 'Esp'
         elif 'mx.png' in match: lang = 'Lat'
@@ -337,7 +504,11 @@ def findvideos(item):
 
         if servidor == 'various': other = servertools.corregir_other(url)
 
-        if servidor == other: other = ''
+        if servidor == other:
+            if servidor == 'zures':
+                other = url.split("/")[2]
+                other = other.replace('https:', '').strip()
+            else: other = ''
 
         elif not servidor == 'directo':
            if not servidor == 'various': other = ''
@@ -351,6 +522,9 @@ def findvideos(item):
 
     if '<strong>DL</strong>' in data:
         url = scrapertools.find_single_match(data, '<strong>DL</strong>.*?<a href="(.*?)"')
+
+        if url.startswith("https://sb"): url = ''
+        elif 'fembed' in url or  'streamsb' in url or 'playersb' in url or 'fcom' in url: url = ''
 
         if url:
             servidor = servertools.get_server_from_url(url)

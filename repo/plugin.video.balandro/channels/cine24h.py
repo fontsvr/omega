@@ -97,7 +97,7 @@ def acciones(item):
 
     itemlist.append(item_configurar_proxies(item))
 
-    itemlist.append(Item( channel='helper', action='show_help_cine24h', title='[COLOR aquamarine][B]Aviso[/COLOR] [COLOR green]Información[/B][/COLOR] canal', thumbnail=config.get_thumb('help') ))
+    itemlist.append(Item( channel='helper', action='show_help_cine24h', title='[COLOR aquamarine][B]Aviso[/COLOR] [COLOR green]Información[/B][/COLOR] canal', thumbnail=config.get_thumb('cine24h') ))
 
     platformtools.itemlist_refresh()
 
@@ -368,7 +368,7 @@ def episodios(item):
     for epis, url, thumb, title in matches[item.page * item.perpage:]:
         if not 'http' in thumb: thumb = 'https:' + thumb
 
-        title = epis + 'x' + str(item.contentSeason) + ' ' + title
+        title = str(item.contentSeason) + 'x' + str(epis) + ' ' + title
 
         itemlist.append(item.clone( action='findvideos', url = url, title = title, thumbnail=thumb,
                                     contentType = 'episode', contentSeason = item.contentSeason, contentEpisodeNumber=epis ))

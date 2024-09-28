@@ -171,14 +171,14 @@ def submnu_special(item):
         itemlist.append(item.clone( channel='cinedeantes', action='list_sel', title='[COLOR moccasin] - Seleccion cinema[/COLOR]', url = 'https://pastebin.com/raw/QW0A0mzx', thumbnail=thumb_cinedeantes, search_type = 'movie' ))
 
         thumb_cinequinqui = os.path.join(config.get_runtime_path(), 'resources', 'media', 'channels', 'thumb', 'cinequinqui.jpg')
-        itemlist.append(item.clone( channel='cinequinqui', action='list_all', title=' - Cine Quinqui', url = 'https://cinekinkitv.freesite.host/movies/', thumbnail=thumb_cinequinqui, search_type = 'movie' ))
+        itemlist.append(item.clone( channel='cinequinqui', action='list_all', title='[COLOR greenyellow] - Cine QuinQui[/COLOR]', url = 'https://cinekinkitv.freesite.host/?post_type=movies', thumbnail=thumb_cinequinqui, search_type = 'movie' ))
 
         thumb_zoowomaniacos = os.path.join(config.get_runtime_path(), 'resources', 'media', 'channels', 'thumb', 'zoowomaniacos.jpg')
-        itemlist.append(item.clone( channel='zoowomaniacos', action='_las1001', title='[COLOR cyan] - Las 1001 que hay que ver[/COLOR]', thumbnail=thumb_zoowomaniacos, search_type = 'movie' ))
-        itemlist.append(item.clone( channel='zoowomaniacos', action='_culto', title='[COLOR moccasin] - Cine de culto[/COLOR]', thumbnail=thumb_zoowomaniacos, search_type = 'movie' ))
+        itemlist.append(item.clone( channel='zoowomaniacos', action='_las1001', title='[COLOR darkcyan] - Las 1001 que hay que ver[/COLOR]', thumbnail=thumb_zoowomaniacos, search_type = 'movie' ))
+        itemlist.append(item.clone( channel='zoowomaniacos', action='_culto', title='[COLOR yellowgreen] - Cine de culto[/COLOR]', thumbnail=thumb_zoowomaniacos, search_type = 'movie' ))
 
         thumb_sigloxx = os.path.join(config.get_runtime_path(), 'resources', 'media', 'channels', 'thumb', 'sigloxx.jpg')
-        itemlist.append(item.clone( channel='sigloxx', action='youtubes', title=' - Seleccion YouTube', thumbnail=thumb_sigloxx, search_type = 'movie' ))
+        itemlist.append(item.clone( channel='sigloxx', action='youtubes', title='[COLOR olivedrab] - Seleccion YouTube[/COLOR]', thumbnail=thumb_sigloxx, search_type = 'movie' ))
 
     if config.get_setting('search_extra_main', default=False):
         if item.extra == 'all' or item.extra == 'mixed' or item.extra == 'movies' or item.extra == 'tvshows':
@@ -303,6 +303,8 @@ def submnu_search(item):
 
     itemlist.append(item.clone( channel='helper', action='show_help_audios', title= '[COLOR green][B]Información[/B][/COLOR] [COLOR cyan][B]Idiomas[/B][/COLOR] en los Audios de los Vídeos', thumbnail=config.get_thumb('news') ))
 
+    itemlist.append(item.clone( channel='submnuteam', action='resumen_canales', title= '[COLOR green][B]Información[/B][/COLOR] Resumen y Distribución Canales', thumbnail=config.get_thumb('stack') ))
+
     if config.get_setting('search_extra_proxies', default=True):
         itemlist.append(item.clone( action='', title='[B]Búsquedas en canales con Proxies:[/B]', folder=False, thumbnail=config.get_thumb('stack'), text_color='red' ))
 
@@ -333,9 +335,9 @@ def submnu_search(item):
     if config.get_setting('sub_mnu_cfg_search', default=True):
         itemlist.append(item.clone( action='', title= '[B]Personalización búsquedas:[/B]', folder=False, text_color='moccasin' ))
 
-        itemlist.append(item.clone( channel='search', action='show_help_parameters', title='[COLOR chocolate][B] - Qué Ajustes tiene en preferencias para las búsquedas[/B][/COLOR]', thumbnail=config.get_thumb('news') ))
+        itemlist.append(item.clone( channel='search', action='show_help_parameters', title=' - Qué [COLOR chocolate][B]Ajustes[/B][/COLOR] tiene en preferencias para las búsquedas', thumbnail=config.get_thumb('news') ))
 
-        itemlist.append(item.clone( channel='filters', action='no_actives', title=' - Qué canales no intervienen en las búsquedas (están desactivados)', thumbnail=config.get_thumb('stack') ))
+        itemlist.append(item.clone( channel='filters', action='no_actives', title=' - Qué canales no intervienen en las búsquedas están [COLOR grey][B]están Desactivados[/B][/COLOR]', thumbnail=config.get_thumb('stack') ))
 
         itemlist.append(item.clone( channel='filters', action='channels_status', title=' - Personalizar [COLOR gold]Canales[/COLOR] (Desactivar ó Re-activar)', des_rea=True, thumbnail=config.get_thumb('stack') ))
 
@@ -348,38 +350,38 @@ def submnu_search(item):
     if config.get_setting('search_show_last', default=True):
         itemlist.append(item.clone( channel='actions', action = 'manto_textos', title= ' - Quitar los [COLOR coral][B]Textos[/B][/COLOR] Memorizados de las búsquedas', thumbnail=config.get_thumb('pencil') ))
 
-    itemlist.append(item.clone( channel='filters', action = 'mainlist2', title = ' - [COLOR greenyellow][B]Efectuar búsquedas [COLOR gold](solo en determinados canales)[/B][/COLOR]', thumbnail=config.get_thumb('stack') ))
+    itemlist.append(item.clone( channel='filters', action = 'mainlist2', title = ' - Efectuar búsquedas [COLOR gold][B](solo en determinados canales)[/B][/COLOR]', thumbnail=config.get_thumb('stack') ))
 
     itemlist.append(item.clone( action='', title= '[COLOR cyan][B]Excluir canales de las búsquedas:[/B][/COLOR]', folder=False, thumbnail=config.get_thumb('stack') ))
 
-    itemlist.append(item.clone( channel='filters', action = 'mainlist', title = ' - [COLOR cyan]Excluir canales de las búsquedas[/COLOR]', thumbnail=config.get_thumb('stack') ))
+    itemlist.append(item.clone( channel='filters', action = 'mainlist', title = ' - [COLOR cyan]Excluir[/COLOR] canales de las búsquedas', thumbnail=config.get_thumb('stack') ))
 
     if item.extra == 'movies':
-        itemlist.append(item.clone( channel='filters', action='channels_excluded', title=' - [COLOR tomato][B]Excluir canales de [COLOR deepskyblue]Películas[/B][/COLOR]', extra='movies', thumbnail=config.get_thumb('movie') ))
+        itemlist.append(item.clone( channel='filters', action='channels_excluded', title=' - [COLOR tomato]Excluir[/COLOR] canales de [COLOR deepskyblue][B]Películas[/B][/COLOR]', extra='movies', thumbnail=config.get_thumb('movie') ))
 
         if channels_search_excluded_movies:
             itemlist.append(item.clone( channel='filters', action='channels_excluded_del', title=' - [COLOR coral][B]Anular los canales excluidos de [COLOR deepskyblue]Películas[/B][/COLOR]', extra='movies', thumbnail=config.get_thumb('movie') ))
 
     elif item.extra == 'tvshows':
-        itemlist.append(item.clone( channel='filters', action='channels_excluded', title=' - [COLOR tomato][B]Excluir canales de [COLOR hotpink]Series[/B][/COLOR]', extra='tvshows', thumbnail=config.get_thumb('tvshow') ))
+        itemlist.append(item.clone( channel='filters', action='channels_excluded', title=' - [COLOR tomato]Excluir[/COLOR] canales de [COLOR hotpink][B]Series[/B][/COLOR]', extra='tvshows', thumbnail=config.get_thumb('tvshow') ))
 
         if channels_search_excluded_tvshows:
             itemlist.append(item.clone( channel='filters', action='channels_excluded_del', title=' - [COLOR coral][B]Anular los canales excluidos de [COLOR hotpink]Series[/B][/COLOR]', extra='tvshows', thumbnail=config.get_thumb('tvshow') ))
 
     elif item.extra == 'documentaries':
-        itemlist.append(item.clone( channel='filters', action='channels_excluded', title=' - [COLOR tomato][B]Excluir canales de [COLOR cyan]Documentales[/B][/COLOR]', extra='documentaries', thumbnail=config.get_thumb('documentary') ))
+        itemlist.append(item.clone( channel='filters', action='channels_excluded', title=' - [COLOR tomato]Excluir[/COLOR] canales de [COLOR cyan][B]Documentales[/B][/COLOR]', extra='documentaries', thumbnail=config.get_thumb('documentary') ))
 
         if channels_search_excluded_documentaries:
             itemlist.append(item.clone( channel='filters', action = 'channels_excluded_del', title=' - [COLOR coral][B]Anular los canales excluidos de [COLOR cyan]Documentales[/B][/COLOR]', extra='documentaries', thumbnail=config.get_thumb('documentary') ))
 
     elif item.extra == 'torrents':
-        itemlist.append(item.clone( channel='filters', action='channels_excluded', title=' - [COLOR tomato][B]Excluir canales [COLOR blue]Torrent[/COLOR][COLOR tomato] de [COLOR yellow]Películas y/ó Series[/B][/COLOR]', extra='torrents', thumbnail=config.get_thumb('torrents') ))
+        itemlist.append(item.clone( channel='filters', action='channels_excluded', title=' - [COLOR tomato]Excluir[/COLOR] canales [COLOR blue][B]Torrent[/COLOR][COLOR tomato] de [COLOR yellow]Películas y/ó Series[/B][/COLOR]', extra='torrents', thumbnail=config.get_thumb('torrents') ))
 
         if channels_search_excluded_mixed:
             itemlist.append(item.clone( channel='filters', action='channels_excluded_del', title=' - [COLOR coral][B]Anular los canales [COLOR blue]Torrent[/COLOR][COLOR coral]excluidos de Películas y/ó Series[/B][/COLOR]', extra='torrents', thumbnail=config.get_thumb('torrents') ))
 
     else:
-        itemlist.append(item.clone( channel='filters', action='channels_excluded', title=' - [COLOR tomato][B]Excluir canales de [COLOR green]Todos[/B][/COLOR]', extra='all', thumbnail=config.get_thumb('stack') ))
+        itemlist.append(item.clone( channel='filters', action='channels_excluded', title=' - [COLOR tomato]Excluir[/COLOR] canales de [COLOR green][B]Todos[/B][/COLOR]', extra='all', thumbnail=config.get_thumb('stack') ))
 
         if channels_search_excluded_all:
             itemlist.append(item.clone( channel='filters', action='channels_excluded_del', title=' - [COLOR coral][B]Anular los canales excluidos de [COLOR green]Todos[/B][/COLOR]', extra='all', thumbnail=config.get_thumb('stack') ))
@@ -672,8 +674,6 @@ def _dominio_memorizado(item):
 
     elif item.from_channel == 'veronline': domains.manto_domain_veronline(item)
 
-    elif item.from_channel == 'yestorrent': domains.manto_domain_yestorrent(item)
-
     else:
         platformtools.dialog_notification(config.__addon_name + '[B][COLOR yellow] ' + item.from_channel.capitalize() + '[/COLOR][/B]', '[B][COLOR %s]Ajuste No Permitido[/B][/COLOR]' % color_alert)
 
@@ -905,6 +905,13 @@ def _proxies(item):
 
         if config.get_setting('channel_divxtotal_proxies') is None: refrescar = False
 
+    elif item.from_channel == 'documaniatv':
+        from channels import documaniatv
+        item.channel = 'documaniatv'
+        documaniatv.configurar_proxies(item)
+
+        if config.get_setting('channel_documaniatv_proxies') is None: refrescar = False
+
     elif item.from_channel == 'dontorrents':
         from channels import dontorrents
         item.channel = 'dontorrents'
@@ -922,7 +929,7 @@ def _proxies(item):
     elif item.from_channel == 'doramasyt':
         from channels import doramasyt
         item.channel = 'doramasyt'
-        latanime.configurar_proxies(item)
+        doramasyt.configurar_proxies(item)
 
         if config.get_setting('channel_doramasyt_proxies') is None: refrescar = False
 
@@ -1059,6 +1066,13 @@ def _proxies(item):
 
         if config.get_setting('channel_lilatorrent_proxies') is None: refrescar = False
 
+    elif item.from_channel == 'mastorrents':
+        from channels import mastorrents
+        item.channel = 'mastorrents'
+        mastorrents.configurar_proxies(item)
+
+        if config.get_setting('channel_mastorrents_proxies') is None: refrescar = False
+
     elif item.from_channel == 'megaserie':
         from channels import megaserie
         item.channel = 'megaserie'
@@ -1079,6 +1093,13 @@ def _proxies(item):
         mejortorrentnz.configurar_proxies(item)
 
         if config.get_setting('channel_mejortorrentnz_proxies') is None: refrescar = False
+
+    elif item.from_channel == 'monoschinos':
+        from channels import monoschinos
+        item.channel = 'monoschinos'
+        monoschinos.configurar_proxies(item)
+
+        if config.get_setting('channel_monoschinos_proxies') is None: refrescar = False
 
     elif item.from_channel == 'mundodonghua':
         from channels import mundodonghua
@@ -1311,6 +1332,13 @@ def _proxies(item):
 
         if config.get_setting('channel_subtorrents_proxies') is None: refrescar = False
 
+    elif item.from_channel == 'tiodonghua':
+        from channels import tiodonghua
+        item.channel = 'tiodonghua'
+        tiodonghua.configurar_proxies(item)
+
+        if config.get_setting('channel_tiodonghua_proxies') is None: refrescar = False
+
     elif item.from_channel == 'todotorrents':
         from channels import todotorrents
         item.channel = 'todotorrents'
@@ -1339,6 +1367,13 @@ def _proxies(item):
 
         if config.get_setting('channel_ultrapelis_proxies') is None: refrescar = False
 
+    elif item.from_channel == 'uphd':
+        from channels import uphd
+        item.channel = 'uphd'
+        uphd.configurar_proxies(item)
+
+        if config.get_setting('channel_uphd_proxies') is None: refrescar = False
+
     elif item.from_channel == 'verdetorrent':
         from channels import verdetorrent
         item.channel = 'verdetorrent'
@@ -1352,13 +1387,6 @@ def _proxies(item):
         veronline.configurar_proxies(item)
 
         if config.get_setting('channel_veronline_proxies') is None: refrescar = False
-
-    elif item.from_channel == 'yestorrent':
-        from channels import yestorrent
-        item.channel = 'yestorrent'
-        yestorrent.configurar_proxies(item)
-
-        if config.get_setting('channel_yestorrent_proxies') is None: refrescar = False
 
     elif item.from_channel == 'zonaleros':
         from channels import zonaleros

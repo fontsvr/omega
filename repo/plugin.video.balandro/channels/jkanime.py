@@ -140,7 +140,7 @@ def acciones(item):
 
     itemlist.append(item_configurar_proxies(item))
 
-    itemlist.append(Item( channel='helper', action='show_help_jkanime', title='[COLOR aquamarine][B]Aviso[/COLOR] [COLOR green]Información[/B][/COLOR] canal', thumbnail=config.get_thumb('help') ))
+    itemlist.append(Item( channel='helper', action='show_help_jkanime', title='[COLOR aquamarine][B]Aviso[/COLOR] [COLOR green]Información[/B][/COLOR] canal', thumbnail=config.get_thumb('jkanime') ))
 
     platformtools.itemlist_refresh()
 
@@ -167,7 +167,7 @@ def mainlist_animes(item):
 
     itemlist.append(item.clone( title = 'Catálogo', action = 'list_dir', url = host + 'directorio/', search_type = 'tvshow' ))
 
-    itemlist.append(item.clone( title = 'Últimos capítulos', action = 'last_epis', url = host, search_type = 'tvshow', text_color = 'cyan' ))
+    itemlist.append(item.clone( title = 'Últimos episodios', action = 'last_epis', url = host, search_type = 'tvshow', text_color = 'cyan' ))
 
     itemlist.append(item.clone( title = 'Últimos animes', action = 'list_last', url = host, search_type = 'tvshow', text_color = 'moccasin' ))
 
@@ -230,6 +230,8 @@ def list_dir(item):
 
         if not url or not title: continue
 
+        title = title.replace('&quot;', '').replace('&#039;s', "'s").strip()
+
         thumb = scrapertools.find_single_match(match, '<img src="(.*?)"')
 
         tipo = 'movie' if 'Pelicula' in match else 'tvshow'
@@ -289,6 +291,8 @@ def list_all(item):
 
         if not url or not title: continue
 
+        title = title.replace('&quot;', '').replace('&#039;s', "'s").strip()
+
         thumb = scrapertools.find_single_match(match, 'data-setbg"(.*?)"')
 
         tipo = 'movie' if 'Pelicula' in match else 'tvshow'
@@ -341,6 +345,8 @@ def list_last(item):
     if not matches: matches = scrapertools.find_multiple_matches(bloque, 'data-setbg="(.*?)".*?<a href="(.*?)">(.*?)</a>')
 
     for thumb, url, title in matches:
+        title = title.replace('&quot;', '').replace('&#039;s', "'s").strip()
+
         SerieName = title
 
         if 'OVA' in title: SerieName = title.split("OVA")[0]
@@ -366,13 +372,15 @@ def last_epis(item):
     matches = scrapertools.find_multiple_matches(data, '<a href="([^"]+)" class="bloqq">.*?<img src="([^"]+)".*?title="([^"]+)".*?\n.*?\n.*?\n.*?\n.*?h6>.*?\n.*?(\d+).*?</')
 
     for url, thumb, title, episode in matches:
+        title = title.replace('&quot;', '').replace('&#039;s', "'s").strip()
+
         SerieName = title
 
         SerieName = SerieName.strip()
 
         title = 'Cap.{} - {}'.format(episode, title)
 
-        title = title.replace('Cap.', '[COLOR goldenrod]Cap.[/COLOR]')
+        title = title.replace('Cap.', '[COLOR goldenrod]Cap. [/COLOR]')
 
         itemlist.append(item.clone( action='findvideos', url = url, title = title, thumbnail=thumb,
                                     contentSerieName=SerieName, contentType='episode', contentSeason=1, contentEpisodeNumber=episode ))

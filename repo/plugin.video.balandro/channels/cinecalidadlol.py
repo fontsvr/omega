@@ -203,7 +203,7 @@ def acciones(item):
 
     itemlist.append(item_configurar_proxies(item))
 
-    itemlist.append(Item( channel='helper', action='show_help_cinecalidadlol', title='[COLOR aquamarine][B]Aviso[/COLOR] [COLOR green]Información[/B][/COLOR] canal', thumbnail=config.get_thumb('help') ))
+    itemlist.append(Item( channel='helper', action='show_help_cinecalidadlol', title='[COLOR aquamarine][B]Aviso[/COLOR] [COLOR green]Información[/B][/COLOR] canal', thumbnail=config.get_thumb('cinecalidadlol') ))
 
     platformtools.itemlist_refresh()
 
@@ -232,7 +232,7 @@ def mainlist_pelis(item):
 
     itemlist.append(item.clone( title = 'Buscar película ...', action = 'search', search_type = 'movie', text_color = 'deepskyblue' ))
 
-    itemlist.append(item.clone( title = 'En castellano:', folder=False, text_color='moccasin' ))
+    itemlist.append(item.clone( title = '[B]En castellano:[/B]', folder=False, text_color='moccasin' ))
     itemlist.append(item.clone( title = ' - Catálogo', action = 'list_all', url = host + 'espana/?ref=es', search_type = 'movie' ))
     itemlist.append(item.clone( title = ' - Más destacadas', action = 'destacadas', url = host + 'espana/?ref=es', search_type = 'movie' ))
     itemlist.append(item.clone( title = ' - En [COLOR moccasin]4K[/COLOR]', action = 'list_all', url = host + 'genero-de-la-pelicula/peliculas-en-calidad-4k/?ref=es', search_type = 'movie' ))
@@ -243,7 +243,7 @@ def mainlist_pelis(item):
     itemlist.append(item.clone( title = ' - Por género', action='generos', search_type = 'movie', group = '?ref=es' ))
     itemlist.append(item.clone( title = ' - Por año', action='anios', search_type = 'movie', group = '?ref=es' ))
 
-    itemlist.append(item.clone( title = 'En latino:', folder=False, text_color='moccasin' ))
+    itemlist.append(item.clone( title = '[B]En latino:[/B]', folder=False, text_color='moccasin' ))
     itemlist.append(item.clone( title = ' - Catálogo', action = 'list_all', url = host, search_type = 'movie' ))
     itemlist.append(item.clone( title = ' - Más destacadas', action = 'destacadas', url = host, search_type = 'movie' ))
     itemlist.append(item.clone( title = ' - En [COLOR moccasin]4K[/COLOR]', action = 'list_all', url = host + 'genero-de-la-pelicula/peliculas-en-calidad-4k/', search_type = 'movie' ))
@@ -265,15 +265,15 @@ def mainlist_series(item):
 
     itemlist.append(item.clone( title = 'Buscar serie ...', action = 'search', search_type = 'tvshow', text_color = 'hotpink' ))
 
-    itemlist.append(item.clone( title = 'En castellano:', folder=False, text_color='moccasin' ))
+    itemlist.append(item.clone( title = '[B]En castellano:[/B]', folder=False, text_color='moccasin' ))
     itemlist.append(item.clone( title = ' - Catálogo', action = 'list_all', url = host + 'ver-serie/?ref=es', search_type = 'tvshow' ))
-    itemlist.append(item.clone( title = ' - [COLOR greenyellow]Últimas[/COLOR]', action = 'destacadas', url = host + '?ref=es', search_type = 'tvshow' ))
+    itemlist.append(item.clone( title = ' - [COLOR moccasin]Últimas[/COLOR]', action = 'destacadas', url = host + '?ref=es', search_type = 'tvshow' ))
 
     itemlist.append(item.clone( title = ' - Por género', action='generos', search_type = 'tvshow', group = '?ref=es' ))
 
-    itemlist.append(item.clone( title = 'En latino:', folder=False, text_color='moccasin' ))
+    itemlist.append(item.clone( title = '[B]En latino:[/B]', folder=False, text_color='moccasin' ))
     itemlist.append(item.clone( title = ' - Catálogo', action = 'list_all', url = host + 'ver-serie/', search_type = 'tvshow' ))
-    itemlist.append(item.clone( title = ' - [COLOR greenyellow]Últimas[/COLOR]', action = 'destacadas', url = host, search_type = 'tvshow' ))
+    itemlist.append(item.clone( title = ' - [COLOR moccasin]Últimas[/COLOR]', action = 'destacadas', url = host, search_type = 'tvshow' ))
 
     itemlist.append(item.clone( title = ' - Por género', action='generos', search_type = 'tvshow' ))
 
@@ -336,6 +336,8 @@ def list_all(item):
     data = do_downloadpage(item.url)
     data = re.sub(r'\n|\r|\t|\s{2}|&nbsp;', '', data)
 
+    _promos = 0
+
     matches = scrapertools.find_multiple_matches(data, '<article(.*?)</article>')
 
     if not matches:
@@ -349,7 +351,13 @@ def list_all(item):
         url = scrapertools.find_single_match(match, ' href="(.*?)"')
 
         if url.startswith('/?post_id='): continue
-        elif '-premium-12-meses' in url or '-premium-1-ano' in url or '-12-meses' in url or '/netflix/o/' in url or '/product/' in url: continue
+
+        elif '-premium-12-meses' in url or '-premium-1-ano' in url or '-12-meses' in url or '/netflix/o/' in url or '/product/' in url:
+              _promos += 1
+              continue
+        elif 'Netflix Premium' in match or 'Suscripción Disney Plus' in match or 'Suscripción HBO' in match:
+              _promos += 1
+              continue
 
         if not url or not title: continue
 
@@ -406,6 +414,14 @@ def list_all(item):
         if next_page:
             if '/page/' in next_page:
                 itemlist.append(item.clone( title='Siguientes ...', url = next_page, action = 'list_all', text_color='coral' ))
+    else:
+        if not _promos == 0:
+            next_page = scrapertools.find_single_match(data, "<span class='pages'>.*?class='current'>.*?" + 'href="(.*?)"')
+            if not next_page: next_page = scrapertools.find_single_match(data, '<span class="pages">.*?class="current">.*?' + 'href="(.*?)"')
+
+            if next_page:
+                if '/page/' in next_page:
+                    itemlist.append(item.clone( title='Siguientes ...', url = next_page, action = 'list_all', text_color='coral' ))
 
     return itemlist
 

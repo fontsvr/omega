@@ -171,6 +171,9 @@ def list_all(item):
     if not bloque: bloque = scrapertools.find_single_match(data, '<span>ver-online</span>(.*?)>mas vistas<')
     if not bloque: bloque = scrapertools.find_single_match(data, '<span>Ver-online</span>(.*?)>mas vistas<')
 
+    if not bloque: bloque = scrapertools.find_single_match(data, '<span>ver-online.*?</span>(.*?)>mas vistas<')
+    if not bloque: bloque = scrapertools.find_single_match(data, '<span>Ver-online.*?</span>(.*?)>mas vistas<')
+
     if not bloque: bloque = scrapertools.find_single_match(data, '<span>Veronline.(.*?)>mas vistas<')
 
     if not bloque: bloque = scrapertools.find_single_match(data, '<span>veronline.(.*?)>mas vistas<')
@@ -350,6 +353,8 @@ def episodios(item):
         epis = scrapertools.find_single_match(title, 'Episodio(.*?)$').strip()
         if not epis: epis = scrapertools.find_single_match(title, 'Capítulo(.*?)$').strip()
         if not epis: epis = scrapertools.find_single_match(title, 'Capitulo(.*?)$').strip()
+        if not epis: epis = scrapertools.find_single_match(title, 'capítulo(.*?)$').strip()
+        if not epis: epis = scrapertools.find_single_match(title, 'capitulo(.*?)$').strip()
 
         if not epis: epis = 1
 
