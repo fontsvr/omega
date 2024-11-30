@@ -2,6 +2,11 @@
 
 [COLOR yellow][B]2024[/B][/COLOR]
 
+4.0.12 [COLOR darkorange] 4 de Noviembre de 2024[/COLOR]
+    Correcciones: Errores detectados
+    Generos: Re-configurados
+    Canales y Servidores: Sin variaciones
+
 4.0.11 [COLOR darkorange] 26 de Septiembre de 2024[/COLOR]
     Correcciones: Errores detectados
     Generos: Re-configurados
