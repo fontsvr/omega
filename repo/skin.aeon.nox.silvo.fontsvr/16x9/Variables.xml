@@ -11,7 +11,7 @@
 	   <value condition="System.AddonIsEnabled(repository.rebase)+System.HasAddon(repository.rebase)">• [COLOR=snow]repository.rebase[/COLOR] $INFO[System.AddonVersion(repository.rebase),(,)] [COLOR=FF00991F]√[/COLOR]</value>
     </variable>
 	<variable name="Instalado-script.skinshortcuts">
-	   <value condition="!System.AddonIsEnabled(script.skinshortcuts) + System.HasAddon(script.skinshortcuts)">• script.skinshorcuts $INFO[System.AddonVersion(script.skinshortcuts),(,)] [COLOR pink]!![/COLOR]</value>
+	   <value condition="!System.AddonIsEnabled(script.skinshortcuts) + System.HasAddon(script.skinshortcuts)">• script.skinshorcuts $INFO[System.AddonVersion(script.skinshorcuts),(,)] [COLOR pink]!![/COLOR]</value>
 	   <value condition="!System.HasAddon(script.skinshortcuts)">• script.skinshorcuts [COLOR invalid]×[/COLOR] </value>
 	   <value condition="System.AddonIsEnabled(script.skinshortcuts) + System.HasAddon(script.skinshortcuts)">• [COLOR=snow]script.skinshorcuts[/COLOR]  $INFO[System.AddonVersion(script.skinshorcuts),(,)] [COLOR=FF00991F]√[/COLOR]</value>
     </variable>
@@ -39,6 +39,16 @@
 	   <value condition="!System.AddonIsEnabled(pvr.iptvsimple) + System.HasAddon(pvr.iptvsimple)">• pvr.iptvsimple $INFO[System.AddonVersion(pvr.iptvsimple),(,)] [COLOR pink]!![/COLOR]</value>
 	   <value condition="!System.HasAddon(pvr.iptvsimple)">• pvr.iptvsimple [COLOR invalid]×[/COLOR] </value>
 	   <value condition="System.AddonIsEnabled(pvr.iptvsimple)+System.HasAddon(pvr.iptvsimple)">• [COLOR snow]pvr.iptvsimple[/COLOR] $INFO[System.AddonVersion(pvr.iptvsimple),(,)] [COLOR=FF00991F]√[/COLOR]</value>
+    </variable>
+	<variable name="Instalado-repository.michaz">
+	   <value condition="!System.AddonIsEnabled(repository.michaz) + System.HasAddon(repository.michaz)">• repository.michaz $INFO[System.AddonVersion(repository.michaz),(,)] [COLOR pink]!![/COLOR]</value>
+	   <value condition="!System.HasAddon(repository.michaz)">• repository.michaz [COLOR invalid]×[/COLOR] </value>
+	   <value condition="System.AddonIsEnabled(repository.michaz)+System.HasAddon(repository.michaz)">• [COLOR snow]repository.michaz[/COLOR] $INFO[System.AddonVersion(repository.michaz),(,)] [COLOR=FF00991F]√[/COLOR]</value>
+    </variable>
+	<variable name="Instalado-plugin.video.vavooto">
+	   <value condition="!System.AddonIsEnabled(plugin.video.vavooto) + System.HasAddon(plugin.video.vavooto)">• plugin.video.vavooto $INFO[System.AddonVersion(plugin.video.vavooto),(,)] [COLOR pink]!![/COLOR]</value>
+	   <value condition="!System.HasAddon(pvr.iptvsimple)">• repository.michaz [COLOR invalid]×[/COLOR] </value>
+	   <value condition="System.AddonIsEnabled(plugin.video.vavooto)+System.HasAddon(plugin.video.vavooto)">• [COLOR snow]plugin.video.vavooto[/COLOR] $INFO[System.AddonVersion(plugin.video.vavooto),(,)] [COLOR=FF00991F]√[/COLOR]</value>
     </variable>
 
 	<variable name="Status-repo-fontsvr">
