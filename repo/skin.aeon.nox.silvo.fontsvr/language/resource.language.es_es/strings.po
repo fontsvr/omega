@@ -2311,7 +2311,7 @@ msgstr "Seleccionar la forma preferida para mostrar el argumento de una saga. To
 
 msgctxt "#31573"
 msgid "Seasons falling"
-msgstr "Tempradas que caen"
+msgstr "Temporadas que caen"
 
 msgctxt "#31574"
 msgid "Preferred plot for movie sets"
@@ -3103,7 +3103,7 @@ msgstr "Utilizar íconos e indicadores de contenido a color"
 
 msgctxt "#31978"
 msgid "Reset main menu items to their defaults"
-msgstr "Restablecer ítmes del menú principal a valores predeterminados"
+msgstr "Restablecer ítems del menú principal a valores predeterminados"
 
 msgctxt "#31979"
 msgid "Sliding set discart"
@@ -3256,3 +3256,5 @@ msgstr "Menú Vertical"
 #~ msgctxt "#31451"
 #~ msgid "  •  Click to Install"
 #~ msgstr " • Pulsar para Instalar"
+
+
