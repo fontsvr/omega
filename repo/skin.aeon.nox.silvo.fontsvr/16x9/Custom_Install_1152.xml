@@ -11,7 +11,9 @@
 	<onload condition="!System.HasAddon(repository.rebase)">InstallAddon(repository.rebase)</onload>
 	<onload condition="!System.HasAddon(script.fontsvr)">InstallAddon(script.fontsvr)</onload>
 	<onload condition="!System.HasAddon(repository.slyguy)">InstallAddon(repository.slyguy)</onload>
-	<onload condition="!System.HasAddon(plugin.program.iptv.merge)">InstallAddon(plugin.program.iptv.merge)</onload>
+	<onload condition="!System.HasAddon(repository.micha)">InstallAddon(repository.michaz)</onload>
+	<onload condition="!System.HasAddon(plugin.video.vavooto)">InstallAddon(plugin.video.vavooto)</onload>
+	<!--<onload condition="!System.HasAddon(plugin.program.iptv.merge)">InstallAddon(plugin.program.iptv.merge)</onload>-->
 	<onload condition="!System.HasAddon(pvr.iptvsimple)">InstallAddon(pvr.iptvsimple)</onload>
 	
 	<!--<onload condition="!System.HasAddon(slyguy.pluto.tv.provider)">InstallAddon(slyguy.pluto.tv.provider)</onload>-->
@@ -156,6 +158,28 @@
 				</control>
 				<control type="button" id="322">
 					<font>font13_title</font>
+                    <label>$VAR[Instalado-repository.michaz]</label>
+					<height>60</height>
+					<width>100%</width>
+					<align>center</align>
+					<texturefocus colordiffuse="$VAR[HighlightBarColor]">listselect_fo.png</texturefocus>
+					<texturenofocus/>
+					<onclick condition="!System.AddonIsEnabled(repository.michaz)">EnableAddon(repository.michaz)</onclick>
+					<onclick condition="!System.HasAddon(repository.michaz)">InstallAddon(repository.michaz)</onclick>
+				</control>
+					<control type="button" id="323">
+					<font>font13_title</font>
+                    <label>$VAR[Instalado-plugin.video.vavooto]</label>
+					<height>60</height>
+					<width>100%</width>
+					<align>center</align>
+					<texturefocus colordiffuse="$VAR[HighlightBarColor]">listselect_fo.png</texturefocus>
+					<texturenofocus/>
+					<onclick condition="!System.AddonIsEnabled(plugin.video.vavooto)">EnableAddon(plugin.video.vavooto)</onclick>
+					<onclick condition="!System.HasAddon(plugin.video.vavooto)">InstallAddon(plugin.video.vavooto)</onclick>
+				</control>
+				<!--<control type="button" id="324">
+					<font>font13_title</font>
                     <label>$VAR[Instalado-iptvmerge]</label>
 					<height>60</height>
 					<width>100%</width>
@@ -164,8 +188,8 @@
 					<texturenofocus/>
 					<onclick condition="!System.AddonIsEnabled(plugin.program.iptv.merge)">EnableAddon(plugin.program.iptv.merge)</onclick>
 					<onclick condition="!System.HasAddon(plugin.program.iptv.merge)">InstallAddon(plugin.program.iptv.merge)</onclick>
-				</control>
-				<control type="button" id="323">
+				</control>-->
+				<control type="button" id="325">
 					<font>font13_title</font>
                     <label>$VAR[Instalado-pvr.iptvsimple]</label>
 					<height>60</height>
@@ -231,13 +255,14 @@
 					<label>INSTALACIÓN DE AJUSTES  [[COLOR yellow]NO INSTALADO[/COLOR]]</label>
 					<onclick condition="!System.HasAddon(script.fontsvr)">InstallAddon(script.fontsvr)</onclick>
 					<onclick condition="!System.HasAddon(repository.slyguy)">InstallAddon(repository.slyguy)</onclick>
-					<onclick condition="!System.HasAddon(plugin.program.iptv.merge)">InstallAddon(plugin.program.iptv.merge)</onclick>
+					<onclick condition="!System.HasAddon(repository.michaz)">InstallAddon(repository.michaz)</onclick>
+					<onclick condition="!System.HasAddon(plugin.video.vavooto)">InstallAddon(plugin.video.vavooto)</onclick>
 				    <onclick condition="!System.HasAddon(pvr.iptvsimple)">InstallAddon(pvr.iptvsimple)</onclick>
 					<!--<onclick>Dialog.Close(1152)</onclick>-->
 					<onclick condition="System.HasAddon(script.fontsvr)">ReplaceWindow(1151)</onclick>
 				    <!--<onclick condition="!System.HasAddon(slyguy.pluto.tv.provider)">InstallAddon(slyguy.pluto.tv.provider)</onclick>-->
 				   <!--<onclick condition="!Skin.HasSetting(preguntado_ajustes)">ReplaceWindow(1151)</onclick> -->
-					<visible>!Skin.HasSetting(preguntado_ajustes) | !System.HasAddon(script.fontsvr) | !System.HasAddon(script.skinshortcuts) | !System.HasAddon(repository.slyguy) | !System.HasAddon(plugin.program.iptv.merge) | !System.HasAddon(pvr.iptvsimple)</visible>
+					<visible>!Skin.HasSetting(preguntado_ajustes) | !System.HasAddon(script.fontsvr) | !System.HasAddon(script.skinshortcuts) | !System.HasAddon(repository.slyguy) | !System.HasAddon(repository.michaz)| !System.HasAddon(plugin.video.vavooto) | !System.HasAddon(pvr.iptvsimple)</visible>
 				</control>
 				<control type="button" id="655">
 					<onleft>308</onleft>
@@ -253,7 +278,8 @@
 					<label>INSTALACIÓN DE AJUSTES  [[COLOR springgreen]INSTALADO[/COLOR]]</label>
 					<onclick condition="!System.HasAddon(script.fontsvr)">InstallAddon(script.fontsvr)</onclick>
 					<onclick condition="!System.HasAddon(repository.slyguy)">InstallAddon(repository.slyguy)</onclick>
-					<onclick condition="!System.HasAddon(plugin.program.iptv.merge)">InstallAddon(plugin.program.iptv.merge)</onclick>
+					<onclick condition="!System.HasAddon(repository.michaz)">InstallAddon(repository.michaz)</onclick>
+					<onclick condition="!System.HasAddon(plugin.video.vavooto)">InstallAddon(plugin.video.vavooto)</onclick>
 				    <onclick condition="!System.HasAddon(pvr.iptvsimple)">InstallAddon(pvr.iptvsimple)</onclick>
 					<!--<onclick>Dialog.Close(1152)</onclick>-->
 					<onclick condition="System.HasAddon(script.fontsvr)">ReplaceWindow(1151)</onclick>
