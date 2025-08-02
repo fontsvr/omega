@@ -11,7 +11,7 @@
 	<onload condition="!System.HasAddon(repository.rebase)">InstallAddon(repository.rebase)</onload>
 	<onload condition="!System.HasAddon(script.fontsvr)">InstallAddon(script.fontsvr)</onload>
 	<onload condition="!System.HasAddon(repository.slyguy)">InstallAddon(repository.slyguy)</onload>
-	<onload condition="!System.HasAddon(repository.micha)">InstallAddon(repository.michaz)</onload>
+	<onload condition="!System.HasAddon(repository.michaz)">InstallAddon(repository.michaz)</onload>
 	<onload condition="!System.HasAddon(plugin.video.vavooto)">InstallAddon(plugin.video.vavooto)</onload>
 	<!--<onload condition="!System.HasAddon(plugin.program.iptv.merge)">InstallAddon(plugin.program.iptv.merge)</onload>-->
 	<onload condition="!System.HasAddon(pvr.iptvsimple)">InstallAddon(pvr.iptvsimple)</onload>
