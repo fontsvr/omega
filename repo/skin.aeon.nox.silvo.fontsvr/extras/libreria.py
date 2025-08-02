@@ -9,8 +9,10 @@ else:
     translatePath = xbmc.translatePath
 
 id = 'pvr.iptvsimple'
-
+skin="skin.estuary"
 activar = False
+
+
 
 '''if activar: 
     #xbmc.executebuiltin('InstallAddon(%s)' % (id))'''
@@ -41,21 +43,42 @@ def condition(string):
 def pvr(toggle):
     
     id="pvr.iptvsimple"
+    skin="skin.estuary"
 
     if toggle:
-
-        if sys.argv[1]== "pvrtoggle":
+        if sys.argv[1]== "estuary":
+          #xbmcgui.Dialog().notification('a skin', 'Estuary', xbmcgui.NOTIFICATION_INFO)
+          #query1 = xbmc.executeJSONRPC('{{"jsonrpc":"2.0","method":"Addons.GetAddonDetails","params":{{"addonid":"skin.estuary", "properties": ["enabled"]}},"id":1 }}' ) #% id)
+          #query = '{{"jsonrpc":"2.0","method":"Settings.SetSettingValue","params":{{"setting":"lookandfeel.skin","value":{0}}},"id":1}}'.format(skin)  #,"value":"<skin.name>"
+          #if '"enabled":true' in query1:
+          if choice("   Quieres canviar a [COLOR white]"+ str(skin) + "[/COLOR]?"):
+              xbmc.executeJSONRPC('{"jsonrpc":"2.0","method":"Settings.SetSettingValue","params": {"setting":"lookandfeel.skin","value":"skin.estuary"}, "id":1}') #ok  
+        
+        elif sys.argv[1]== "sonidos":
+          if choice("   Apagar los sonidos de la interfaz de Kodi [COLOR white](resource.ui.sounds.kodi)[/COLOR]?"):
+              xbmc.executeJSONRPC('{"jsonrpc":"2.0","method":"Settings.SetSettingValue","params": {"setting":"lookandfeel.soundskin","value":""}, "id":1}')
+              #xbmc.executeJSONRPC('{"jsonrpc": "2.0", "method": "Application.SetMute", "params": {"mute": "true"}, "id": 1}') #no
+              xbmcgui.Dialog().notification('Sonidos Desactivados', '', xbmcgui.NOTIFICATION_INFO)
+          else:
+              xbmc.executeJSONRPC('{"jsonrpc":"2.0","method":"Settings.SetSettingValue","params": {"setting":"lookandfeel.soundskin","value":"resource.ui.sounds.kodi"}, "id":1}')
+              xbmcgui.Dialog().notification('Sonidos Activados', '', xbmcgui.NOTIFICATION_INFO)
+        elif sys.argv[1]== "volumen50":
+          if choice("   Quieres canviar volumen general a 50?"):
+              xbmc.executeJSONRPC('{"jsonrpc":"2.0","method":"Application.SetVolume","params": {"volume": 50}, "id":1}' )
+          else:
+              xbmc.executeJSONRPC('{"jsonrpc":"2.0","method":"Application.SetVolume","params": {"volume": 100}, "id":1}' ) 
+              
+        elif sys.argv[1]== "pvrtoggle":
           if choice("   Quieres desactivar [COLOR white]"+ str(id) + "[/COLOR]?"):
             disableaddon(id)
         else:
           if choice("   Quieres activar [COLOR white]"+ str(id) + "[/COLOR]?"):
             enableaddon(id)
-
+                    
 def disableaddon(id,value='false'):
     query = '{{"jsonrpc":"2.0", "method":"Addons.SetAddonEnabled","params":{{"addonid":"{0}","enabled":{1}}}, "id":1}}'.format(id, value)
     xbmc.executeJSONRPC(query)
     xbmcgui.Dialog().notification('Desactivado', str(id), xbmcgui.NOTIFICATION_INFO)
-    #xbmc.executebuiltin("ReloadSkin()")
 
 def enableaddon(id,value='true'):
     query = '{{"jsonrpc":"2.0", "method":"Addons.SetAddonEnabled","params":{{"addonid":"{0}","enabled":{1}}}, "id":1}}'.format(id, value)
@@ -63,8 +86,38 @@ def enableaddon(id,value='true'):
     xbmcgui.Dialog().notification('Activado', str(id), xbmcgui.NOTIFICATION_INFO)
     #xbmc.executebuiltin("ReloadSkin()")
 
-def desactivaraddon(toggle,ident,value='false'):
-    query = '{{"jsonrpc":"2.0", "method":"Addons.SetAddonEnabled","params":{{"addonid":"{0}","enabled":{1}}}, "id":1}}'.format(ident, value)
+def toogle_PVR(toggle):
+    id="pvr.iptvsimple"
+    if toggle:
+      if sys.argv[1]== "desactivaraddon":
+       if choice("   Quieres desactivar [COLOR $VAR[ThemeLabelColor]]"+ str(id) + "[/COLOR]?"):
+         value='false'
+         query = '{{"jsonrpc":"2.0", "method":"Addons.SetAddonEnabled","params":{{"addonid":"{0}","enabled":{1}}}, "id":1}}'.format(id, value)
+         xbmc.executeJSONRPC(query)
+         xbmcgui.Dialog().notification('Desactivado', str(id), xbmcgui.NOTIFICATION_INFO)
+      elif sys.argv[1]== "activaraddon":
+       if choice("   Quieres activar [COLOR $VAR[ThemeLabelColor]]"+ str(id) + "[/COLOR]?"): #$VAR[HighlightBarColor]
+          value='true'
+          query = '{{"jsonrpc":"2.0", "method":"Addons.SetAddonEnabled","params":{{"addonid":"{0}","enabled":{1}}}, "id":1}}'.format(id, value)
+          xbmc.executeJSONRPC(query)
+          xbmcgui.Dialog().notification('Activado', str(id), xbmcgui.NOTIFICATION_INFO)
+
+def get_global_setting(setting):
+    #Get a Kodi setting
+    result = jsonrpc(method='Settings.GetSettingValue', params=dict(setting=setting))
+    return result.get('result', {}).get('value')
+
+def vol50(toggle):
+    if toggle:
+       if sys.argv[1]== "volumen50":
+         if choice("   Quieres canviar volumen general a 50?"):
+           xbmc.executeJSONRPC('{"jsonrpc":"2.0","method":"Application.SetVolume","params": {"volume": 50}, "id":1}' )
+       else:
+           xbmc.executeJSONRPC('{"jsonrpc":"2.0","method":"Application.SetVolume","params": {"volume": 95}, "id":1}' )
+
+def vol(value): #toggle=True value='true'
+    #jsonrpc(method='Application.SetMute', params=dict(mute=toggle))
+    query = '{{"jsonrpc": "2.0", "method": "Application.SetMute", "params": {{ "mute": "{0}" }}, "id": 1}}'.format(value) #"mute": "toggle"
     xbmc.executeJSONRPC(query)
 
 def download(url, dest, dp = None):
@@ -267,8 +320,16 @@ if __name__ == '__main__':
         pvr(sys.argv[1])
       elif sys.argv[1] == "pvron":
         pvr(sys.argv[1]) 
-      elif sys.argv[1] == "desactivaraddon" and sys.argv[2]!='':
-        desactivaraddon(sys.argv[1],sys.argv[2]) 
+      elif sys.argv[1] == "desactivaraddon":
+        toogle_PVR(sys.argv[1]) 
+      elif sys.argv[1] == "activaraddon":
+        toogle_PVR(sys.argv[1])
+      elif sys.argv[1] == "volumen50":
+        pvr(sys.argv[1]) 
+      elif sys.argv[1] == "estuary":
+        pvr(sys.argv[1])
+      elif sys.argv[1] == "sonidos":
+        pvr(sys.argv[1])
      except:
         pass
 

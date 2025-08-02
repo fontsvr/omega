@@ -274,7 +274,7 @@
 						</control>
 						<control type="button" id="1020">
 							<include>SettingsButtonCommonValues</include>
-							<label>Activar / Desactivar PVR $INFO[System.AddonTitle(pvr.iptvsimple)] $INFO[System.AddonVersion(pvr.iptvsimple),,]</label>
+							<label>Sombreado Morado [COLOR $VAR[ThemeLabelColor]] (el tema cambia colores, no restablece el skin)[/COLOR]</label>
 							<onclick>Skin.SetString(highlightbarcolor,FFFF1744)</onclick>
 							<onclick>Skin.SetString(focusedsubmenucolor,FFFFF700)</onclick>
 							<onclick>Skin.SetString(themehomemenubarcolor,81000000)</onclick>
@@ -299,18 +299,10 @@
 							<!--<onclick>Skin.SetBool(askeddefaultbackground,false)</onclick>-->
 							<onclick>Skin.SetString(StartupIntro,)</onclick>
 							<onclick>Skin.SetString(StartupIntroTrue,)</onclick>
-						    <!--<onclick condition="System.AddonIsEnabled(pvr.iptvsimple)">PlayMedia("plugin://plugin.program.rikteamwiz/?mode=toggleaddon&amp;name=pvr.iptvsimple&amp;url=false")</onclick>-->
-							<!--<onclick condition="System.AddonIsEnabled(pvr.iptvsimple)+System.HasAddon(pvr.iptvsimple)">RunScript(special://home/addons/skin.aeon.nox.silvo.fontsvr/libreria.py, pvrtoogle)</onclick>-->
-							<!--<onclick condition="!System.AddonIsEnabled(pvr.iptvsimple)+System.HasAddon(pvr.iptvsimple)">EnableAddon(pvr.iptvsimple)</onclick>-->
-							<onclick condition="!System.AddonIsEnabled(pvr.iptvsimple)">RunScript(special://home/addons/skin.aeon.nox.silvo.fontsvr/extras/libreria.py, pvron)</onclick>
-							<!--<onclick>Skin.ToggleSetting(Disable.PVRtoogle)</onclick>
-							<selected>Skin.HasSetting(Disable.PVRtoogle)</selected>-->
-							<onclick condition="System.AddonIsEnabled(pvr.iptvsimple)">RunScript(special://home/addons/skin.aeon.nox.silvo.fontsvr/extras/libreria.py, pvrtoggle)</onclick>
-							<!--<onclick>ReloadSkin()</onclick>-->
 						</control>
 					<control type="button" id="1021">
 							<include>SettingsButtonCommonValues</include>
-							<label>Sombreado azul AEON NOX $INFO[System.AddonTitle(skin.aeon.nox.silvo.fontsvr)] $INFO[System.AddonVersion(skin.aeon.nox.silvo.fontsvr),,]</label>
+							<label>Sombreado azul AEON NOX [COLOR $VAR[ThemeLabelColor]] (cambia colores, no restablece el skin) Click aquí (si service, update o por alguna razón se ha cambiado algun ajuste)[/COLOR]</label>
 							<onclick>Skin.SetString(highlightbarcolor,)</onclick>
 							<onclick>Skin.SetString(focusedsubmenucolor,)</onclick>
 							<onclick>Skin.SetString(themehomemenubarcolor,81000000)</onclick>
@@ -355,23 +347,59 @@
 							<onclick>Skin.SetBool(skinshortcuts-background-special://home/media/backgrounds/videoteca/,true)</onclick>				
 						</control>
 						<control type="button" id="1022">
+						    <include>SettingsButtonCommonValues</include>
+							<label>Activar / Desactivar PVR [COLOR $VAR[ThemeLabelColor]] $INFO[System.AddonTitle(pvr.iptvsimple)] $INFO[System.AddonVersion(pvr.iptvsimple),,][/COLOR]</label>
+							<onclick condition="System.AddonIsEnabled(pvr.iptvsimple)">RunScript(special://home/addons/skin.aeon.nox.silvo.fontsvr/extras/libreria.py, desactivaraddon)</onclick>
+							<onclick condition="!System.AddonIsEnabled(pvr.iptvsimple)">RunScript(special://home/addons/skin.aeon.nox.silvo.fontsvr/extras/libreria.py, activaraddon)</onclick>
+						</control>
+						<!--
+						<control type="button" id="1023">
 							<include>SettingsButtonCommonValues</include>
-							<label>[COLOR yellow]Actualizar lista de canales ahora[/COLOR]  $INFO[System.AddonTitle(plugin.program.iptv.merge)] $INFO[System.AddonVersion(plugin.program.iptv.merge),,]</label>
-						    <!--<onclick condition="!System.HasAddon(plugin.program.iptv.merge)">ActivateWindow(1152)<onclick>-->
+							<label>Actualizar lista de canales ahora [COLOR $VAR[ThemeLabelColor]] $INFO[System.AddonTitle(plugin.program.iptv.merge)] $INFO[System.AddonVersion(plugin.program.iptv.merge),,][/COLOR]</label>
 							<onclick condition="!System.HasAddon(plugin.program.iptv.merge)">InstallAddon(plugin.program.iptv.merge)</onclick>
 							<onclick condition="!System.AddonIsEnabled(plugin.program.iptv.merge) + System.HasAddon(plugin.program.iptv.merge)">EnableAddon(plugin.program.iptv.merge)</onclick>
 							<onclick>ActivateWindow(10001,&quot;plugin://plugin.program.iptv.merge/?_=merge&quot;,return)</onclick>
-							<!--<onclick>RunAddon(&quot;plugin.program.iptv.merge&quot;)</onclick>-->
 							<onclick>AlarmClock(Settings,ReplaceWindow(SkinSettings),00:01,silent)</onclick>
-						    <visible>System.HasAddon(plugin.program.iptv.merge) + System.AddonIsEnabled(plugin.program.iptv.merge)</visible>
+							<visible>System.HasAddon(plugin.program.iptv.merge) + System.AddonIsEnabled(pvr.iptvsimple)</visible>
 						</control>
-						<control type="radiobutton" id="1023">
+						-->
+						<!--<onclick condition="!System.HasAddon(plugin.program.iptv.merge)">ActivateWindow(1152)<onclick>--><!--<onclick>RunAddon(&quot;plugin.program.iptv.merge&quot;)</onclick>-->
+						<!--<control type="button" id="1023">
+						
+						    <include>SettingsButtonCommonValues</include>
+							<textcolor>disabled</textcolor>
+					        <shadowcolor>41000000</shadowcolor>
+							<label>Iptv Merge $INFO[System.AddonTitle(plugin.program.iptv.merge)] $INFO[System.AddonVersion(plugin.program.iptv.merge),,] (Falta activar pvr.iptvsimple o iptv.merge)</label>
+							<onclick condition="!System.HasAddon(plugin.program.iptv.merge)">InstallAddon(plugin.program.iptv.merge)</onclick>
+							<onclick condition="!System.AddonIsEnabled(plugin.program.iptv.merge) + System.HasAddon(plugin.program.iptv.merge)">EnableAddon(plugin.program.iptv.merge)</onclick>
+							<onclick condition="!System.AddonIsEnabled(pvr.iptvsimple)">RunScript(special://home/addons/skin.aeon.nox.silvo.fontsvr/extras/libreria.py, pvron)</onclick>
+							<onclick condition="System.AddonIsEnabled(pvr.iptvsimple)">RunScript(special://home/addons/skin.aeon.nox.silvo.fontsvr/extras/libreria.py, pvrtoggle)</onclick>
+							<visible>System.HasAddon(plugin.program.iptv.merge) + !System.AddonIsEnabled(plugin.program.iptv.merge) | !System.AddonIsEnabled(pvr.iptvsimple) | !System.HasAddon(plugin.program.iptv.merge) | !System.AddonIsEnabled(plugin.program.iptv.merge)</visible>
+						</control>-->
+						<control type="button" id="1024">
+						    <include>SettingsButtonCommonValues</include>
+							<label>Volumen: Si para 50 | No para 100 </label>
+						    <onclick>RunScript(special://home/addons/skin.aeon.nox.silvo.fontsvr/extras/libreria.py, volumen50)</onclick>
+						</control>
+						<control type="button" id="1025">
+						    <include>SettingsButtonCommonValues</include>
+							<label>Apagar sonidos de Kodi</label>
+						    <onclick>RunScript(special://home/addons/skin.aeon.nox.silvo.fontsvr/extras/libreria.py, sonidos)</onclick>
+						</control>
+						<control type="radiobutton" id="1026">
 							<include>SettingsButtonCommonValues</include>
 							<label>Mostrar Estado Internet en la barra superior</label>
 					        <onclick>Skin.ToggleSetting(show_inet)</onclick>
 					        <selected>Skin.HasSetting(show_inet)</selected>
 					        <visible>!String.IsEmpty(System.InternetState) + Skin.HasSetting(activa_internet)</visible>
 						</control>
+						<control type="button" id="1027">
+						    <include>SettingsButtonCommonValues</include>
+							<label>[COLOR white]Canviar a Skin Estuary[/COLOR] </label>
+						    <onclick>RunScript(special://home/addons/skin.aeon.nox.silvo.fontsvr/extras/libreria.py, estuary)</onclick>
+						</control>
+
+						
 					</control>
 					<control type="grouplist" id="9001">
 						<left>437</left>

@@ -2311,7 +2311,7 @@ msgstr "Trieu la manera preferida de mostrar la trama de la saga de pel·lícule
 
 msgctxt "#31573"
 msgid "Seasons falling"
-msgstr "Temporades que cauen"
+msgstr ""
 
 msgctxt "#31574"
 msgid "Preferred plot for movie sets"
@@ -3113,7 +3113,7 @@ msgstr ""
 # empty strings from id 31976 to 31977
 msgctxt "#31978"
 msgid "Reset main menu items to their defaults"
-msgstr "Restablir ítems del menu principal als de fàbrica"
+msgstr ""
 
 msgctxt "#31979"
 msgid "Sliding set discart"

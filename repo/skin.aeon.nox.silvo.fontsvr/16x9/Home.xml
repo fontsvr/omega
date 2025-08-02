@@ -7,7 +7,9 @@
 	<onload condition="!Skin.HasSetting(systembarontop)">Skin.SetBool(systembarontop)</onload>
     <onload condition="!Skin.HasSetting(activa_internet)">Skin.SetBool(activa_internet,true)</onload>
     <onload condition="!Skin.HasSetting(activa_internet)">Skin.SetBool(show_inet,true)</onload>
-	
+	<!--<onload condition="!Skin.HasSetting(activa.pvr)">Skin.SetBool(activa.pvr,true)</onload>
+	<onload condition="!Skin.HasSetting(enable.pvr)">Skin.SetBool(enable.pvr,true)</onload>-->
+
 	<!--<onload>ActivateWindow(1126)</onload>-->
 	<!--<onload>Skin.SetBool(systembarontop,true)</onload>
 	<onload condition="!Skin.HasSetting(preguntado_ajustes)">Skin.SetBool(hidesystembars,true)</onload>-->

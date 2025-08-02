@@ -966,8 +966,8 @@
 					</control>
 				</control>
 				<control type="label">
-					<left>1160</left>
-					<width>760</width>
+					<left>1125</left><!--1160-->
+					<width>760</width><!--760-->
 					<height>90</height>
 					<font>font13_title</font>
 					<textoffsetx>10</textoffsetx>
@@ -977,6 +977,28 @@
 					<aligny>top</aligny>
 					<label>$VAR[TopBarRightLabelVar]</label>
 				</control>
+				<!--internet stat-->
+					<control type="image">
+					  <right>10</right>
+						<!--<top>25</top>-->
+						<width>35</width>
+						<height>41</height>
+						<aspectratio aligny="center">keep</aspectratio>
+						<texture>special://skin/extras/buttons/inet_ok.png</texture>
+						<visible>Skin.HasSetting(show_inet) + System.InternetState</visible>
+					  <align>right</align>
+					  <aligny>top</aligny>
+					</control>
+					<control type="image">
+					  <right>10</right>
+						<width>35</width>
+						<height>41</height>
+						<aspectratio aligny="center">keep</aspectratio>
+						<texture>special://skin/extras/buttons/inet_nok.png</texture>
+						<visible>Skin.HasSetting(show_inet) + !System.InternetState + !String.IsEmpty(System.InternetState)</visible>
+					  <align>right</align>
+					  <aligny>top</aligny>
+					</control>
 			</control>
 			<control type="button" id="90022">
 				<left>-27</left>
