@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<addon id="skin.ctouch.fontsvr"  version="9.3.4.3" name="Cristal Touch (fontsVR)" provider-name="fontsVR, STVA">
+	<requires>
+		<import addon="resource.language.es_es" version="0.0.0"/>		
+	</requires>
+	<extension debugging="false" effectslowdown="1" point="xbmc.gui.skin">
+		<res aspect="16:9" default="true" folder="xml" height="1080" width="1920" />
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="es_ES">Skin para Kodi y Forks. Compatible con Kodi Matrix y Nexus</summary>
+		<summary lang="en_GB">Skin para Kodi y Forks. Compatible con Kodi Matrix y Nexus</summary>				
+		<description lang="es_ES">Cristal Touch es un mod del skin AppTV realizado por STVA.[CR]Funciona perfectamente en dispositivos táctiles, pc/portátil, SmartTV o TV Box y raspberrys o similares[CR]Fácil personalización de los items del Inicio desde el menú contextual</description>
+		<description lang="en_GB">Cristal Touch es un mod del skin AppTV realizado por STVA.[CR]Funciona perfectamente en dispositivos táctiles, pc/portátil, SmartTV o TV Box y raspberrys o similares[CR]Fácil personalización de los items del Inicio desde el menú contextual</description>		
+		<disclaimer lang="en_GB">Para dudas, preguntas o sugerencias [CR]Telegram: t.me/stvabuild[CR]Web y Foro: stva.es</disclaimer>
+		<disclaimer lang="es_ES">Para dudas, preguntas o sugerencias [CR]Telegram: t.me/stvabuild[CR]Web y Foro: stva.es</disclaimer>		
+		<platform>all</platform>
+		<license></license>
+		<website />
+		<email />
+		<news>Versión 3.4.1 - 15/5/23
+- Modificado desplazamiento de Ajustes de Addons en Ajustes de Skin
+- Cambiado foco en el reproductor, se había cambiao al stop y se ha vuelto a poner en el pause
+
+Versión 3.4 - 15/5/23
+- Ahora con ratón y dispositivos táctiles se pueden desplazar por los widgets con la barra scroll a la izquierda
+- Cambiada dirección de la web en el startup
+- Corregida dirección de descarga de resolveurl y subido en el repositorio
+- Reparados errores en el menú oculto
+- En Inicio Widgets al subir desde los widgets ahora se posiciona en los items
+- Al seleccionar Botones Táctiles se oculta la opción Ocultar menú
+- Añadida casilla de activación en la opción Auto Actualizar de Información de Addons
+- Corregidos errores en las ventanas de ajustes durante la reproducción
+- Añadido icono del addon en el título de los widgets por defecto
+- Agregado a Ajustes de Skin > Ajustes de Addons, el addon IPTV Simple Client
+- Mejorada la ventana Guia IPTV
+- Mejorada la ventana Canales IPTV
+- Mejorada la ventana de info de Canales IPTV
+- Mejorado el OSD de IPTV
+- Corregido error que no permitia ver todos los addons de Addons del Skin</news>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+			<screenshot>resources/screenshot001.jpg</screenshot>
+			<screenshot>resources/screenshot002.jpg</screenshot>
+			<screenshot>resources/screenshot003.jpg</screenshot>
+			<screenshot>resources/screenshot004.jpg</screenshot>
+			<screenshot>resources/screenshot005.jpg</screenshot>
+		</assets>
+	</extension>
+</addon>

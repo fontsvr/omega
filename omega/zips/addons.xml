@@ -1,0 +1,540 @@
+<?xml version='1.0' encoding='utf-8'?>
+<addons><addon id="plugin.RikTeam_fonts" version="1.2" name="[B][COLOR white]RikTeam_[COLOR aqua]fonts[/COLOR][/B]" provider-name="Rik Team">
+<requires> 
+    <import addon="script.module.requests" />
+    <import addon="script.module.resolveurl" />
+    <import addon="script.module.six" />
+  </requires>
+	<extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>video</provides>
+	</extension>	
+	<extension point="xbmc.addon.metadata">
+                <platform>all</platform>
+		<summary lang="en">RikTeam_fonts</summary>
+		<summary lang="es">RikTeam_fonts</summary>
+		<description lang="en">[B][COLOR white]Añadir fuentes a KODI con las fuentes más recientes.  [COLOR yellow] ** [COLOR violet] RikTeam [COLOR yellow] ** [/COLOR][/B]</description>
+		<website />
+		<license>GPL 2.0</license>
+		<platform>all</platform>
+<assets>
+        <icon>icon.png</icon>
+  <screenshot>resources/screenshots/screenshot1.jpg</screenshot>
+  <screenshot>resources/screenshots/screenshot2.jpg</screenshot>
+  <screenshot>resources/screenshots/screenshot3.jpg</screenshot>
+  <screenshot>resources/screenshots/screenshot4.jpg</screenshot>
+  <screenshot>resources/screenshots/screenshot5.jpg</screenshot>
+        <fanart>fanart.jpg</fanart>
+    </assets>        
+		<language>es</language>
+	</extension>
+</addon><addon id="plugin.program.rikteamwiz" name="[COLOR azure][B]RikTeam[/B][/COLOR] [COLOR violet][B]Wizard[/B][/COLOR]" version="1.0.0" provider-name="Rik Team">
+    <requires>
+		<import addon="script.speedtester" optional="true" version="1.1.2" />
+        <import addon="script.module.requests" optional="true" />
+        <import addon="script.module.six" optional="true" />
+        <import addon="script.kodi.android.update" optional="true" />     
+    </requires>
+    
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.addon.repository" name="fontsVR">		
+		<info>https://raw.githubusercontent.com/fontsvr/omega/master/omega/zips/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/fontsvr/omega/master/omega/zips/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/omega/master/omega/zips/</datadir>
+    </extension>
+    
+    
+    <extension point="xbmc.addon.metadata">
+        <summary lang="es">[COLOR azure]RikTeam[/COLOR] [COLOR violet]Wizard[/COLOR]</summary>
+        <description lang="es">[COLOR azure]RikTeam[/COLOR] [COLOR violet]Wizard [COLOR lightpink] Complementos incluidos: Scripts, Elementum, Luar y fuentes para Kodi[/COLOR]
+		[B]• Developers:[/B] [COLOR gold]Rik Team[/COLOR]
+		</description>
+        <platform>all</platform>
+        <reuselanguageinvoker>false</reuselanguageinvoker>
+        <source>https://github.com/fontsvr/</source>
+		<news>
+• plugin.program.rikteamwiz
+		</news>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.png</fanart>
+        </assets>
+    </extension>
+</addon><addon id="repository.fontsvr" name="Repo [B][COLOR aqua]FONTS[COLOR azure]VR[/COLOR][/B]" version="2.2" provider-name="fontsvr">
+    <extension point="xbmc.addon.repository" name="Repo [B][COLOR aqua]FONTS[COLOR azure]VR[/COLOR][/B]">
+        <dir>
+		<info compressed="false">https://raw.githubusercontent.com/fontsvr/omega/master/omega/zips/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/fontsvr/omega/master/omega/zips/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/fontsvr/omega/master/omega/zips/</datadir>
+		</dir>
+    </extension>
+	
+    <extension point="xbmc.addon.metadata">
+        <summary>Repo [COLOR aqua]FONTS[COLOR azure]VR[/COLOR]</summary>
+        <description>[COLOR azure]Repositorio de addons [COLOR aqua]FONTS[COLOR azure]VR[/COLOR]
+[COLOR azure]Addons para Kodi[/COLOR]</description>
+        <disclaimer>Repositorio de addons.</disclaimer>
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+        </assets>
+		<source>https://fontsvr.github.io/omega/</source>
+    </extension>
+</addon><addon id="repository.rebase" name="Repo Rebase" version="1.0" provider-name="Rik Ream">
+    <requires>
+        <import addon="xbmc.addon" version="12.0.0" />
+    </requires>
+	<extension point="xbmc.addon.repository" name="Repo Rebase">
+        <dir>                         
+            <info compressed="false">https://raw.githubusercontent.com/fontsvr/nexus/master/repo/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/fontsvr/nexus/master/repo/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/fontsvr/nexus/master/repo/zips/</datadir>
+        </dir>
+    </extension>
+	
+    <extension point="xbmc.addon.metadata">
+        <summary>REPO REBASE</summary>
+        <description>first repo</description>
+        <disclaimer />
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+	</addon><addon id="script.fontsvr" name="[COLOR aqua]Script fontsVR[/COLOR]" version="1.7" provider-name="fontsvr">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0" />
+        <import addon="resource.language.es_es" />
+        <import addon="script.module.requests" />
+        <import addon="script.module.six" />
+    </requires>
+    
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>executable</provides>
+    </extension>
+	
+	<extension point="xbmc.addon.repository" name="omega">		
+		<info>https://raw.githubusercontent.com/fontsvr/omega/master/omega/zips/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/fontsvr/omega/master/omega/zips/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/fontsvr/omega/master/omega/zips/</datadir>
+    </extension>
+    
+    
+    
+    <extension point="xbmc.addon.metadata">
+    <summary lang="en">Utilidades para Skins fontsvr</summary>
+    <description lang="en">Utilidades para Skins fontsvr. Ajustes y herramientas para addons.</description>
+        <platform>all</platform>
+        <reuselanguageinvoker>false</reuselanguageinvoker>
+		<assets>
+            <icon>icon.png</icon>
+        </assets>
+    </extension>
+</addon><addon id="script.module.resolveurl" name="ResolveURL" version="5.1.129" provider-name="gujal">
+    <requires>
+        
+        <import addon="script.module.six" />
+        <import addon="script.module.kodi-six" />
+        <import addon="plugin.video.youtube" optional="true" />
+        <import addon="script.module.python.twitch" optional="true" />
+        <import addon="plugin.googledrive" optional="true" />
+    </requires>
+    <extension point="xbmc.python.module" library="lib" />
+    <extension point="xbmc.python.pluginsource" library="lib/default.py" />
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <summary lang="en_GB">Resolve common video host URL's to be playable in XBMC/Kodi.</summary>
+        <summary lang="es_ES">Resolver enlaces a videos de sitios populares para poder reproducirlos en XBMC/Kodi.</summary>
+        <summary lang="hr_HR">Prilagodi najčešće URL-ove video izvora kako bi radili u XBMC/Kodiju.</summary>
+        <summary lang="el_GR">Επίλυση συνδέσμων κοινών εξυπηρετητών σε μορφή βίντεο ικανό για αναπαραγωγή στο XBMC/Kodi.</summary>
+        <description lang="en_GB">Resolve common video host URL's to be playable in XBMC/Kodi, simplify addon development of video plugins requiring multi video hosts.</description>
+        <description lang="el_GR">Επίλυση συνδέσμων κοινών εξυπηρετητών σε μορφή βίντεο ικανό για αναπαραγωγή στο XBMC/Kodi, απλοποίηση της ανάπτυξης των προσθέτων που χρησιμοποιούν πολλαπλούς εξυπηρετητές για υλικό βίντεο</description>
+        <description lang="hr_HR">Prilagodi najčešće URL-ove video izvora kako bi radili u XBMC/Kodiju, pojednostavnjuje razvoj priključaka za video dodatke koji zahtjevaju višestruke video izvore.</description>
+        <disclaimer lang="en_GB">This script only resolves video content from legitimate file lockers without prejudice. If this script is being used by 3rd parties to resolve content that you feel infringes upon your Intellectual Property then please take your complaints to the actual website or developer linking to such content and not here. This script in no way searches for any content whatsoever.</disclaimer>
+        <disclaimer lang="el_GR">Το ανωτέρο σενάριο το μόνο που κάνει είναι να επιλύει οπτικοακουστικό περιεχόμενο από νόμιμες πηγές χωρίς προκατάληψη. Εάν το ανωτέρο σενάριο χρησιμοποιηθεί από τρίτους ώστε να επιλύσει περιεχόμενο το οποίο σας προκαλεί αντίδραση ότι παραβιάζει την πνευματική σας ιδιοκτησία παρακαλώ μεταφέρετε τα παραπονά σας στον ιστότοπο τον οποίο βρίσκεται το εν λόγω περιεχόμενο η τον δημιουργό ο οποίος πραγματοποιεί την σύνδεση και όχι εδω. Το σενάριο αυτό ουδεμία περίπτωση πραγματοποιεί αναζήτηση περιεχομένου.</disclaimer>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon><addon id="script.rikteam" name="[COLOR goldenrod]Script RikTeam[/COLOR]" version="1.6" provider-name="RikTeam">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0" />
+        <import addon="resource.language.es_es" />
+        <import addon="script.module.requests" />
+        <import addon="script.module.six" />
+    </requires>
+    
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>executable</provides>
+    </extension>
+	
+	<extension point="xbmc.addon.repository" name="nexus">		
+		<info>https://raw.githubusercontent.com/fontsvr/nexus/master/repo/zips/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/fontsvr/nexus/master/repo/zips/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/fontsvr/nexus/master/repo/zips/</datadir>
+    </extension>
+    
+    <extension point="xbmc.service" library="startup.py" start="startup" />
+    
+    <extension point="xbmc.addon.metadata">
+    <summary lang="en">Utilidades para Skins RikTeam</summary>
+    <description lang="en">Utilidades para Skins RikTeam. Ajustes y herramientas para addons.</description>
+        <platform>all</platform>
+        <reuselanguageinvoker>false</reuselanguageinvoker>
+		<assets>
+            <icon>icon.png</icon>
+        </assets>
+    </extension>
+</addon><addon id="skin.aeon.nox.5.fontsvr" version="21.0.1" name="Aeon Nox 5 (fontsvr)" provider-name="fontsvr,SKINBASE,BigNoid">
+	<requires>
+		<import addon="xbmc.gui" version="5.17.0" />
+		<import addon="script.skinshortcuts" version="1.0.10" />
+		<import addon="service.library.data.provider" version="0.0.7" />
+		<import addon="resource.images.studios.white" version="0.0.1" />
+		<import addon="resource.images.recordlabels.white" version="0.0.1" />
+	</requires>
+	<extension point="xbmc.gui.skin" debugging="false" effectslowdown="0.75">
+		<res width="1920" height="1080" aspect="16:9" default="true" folder="1080i" />
+		<res width="2560" height="1080" aspect="21:9" default="false" folder="1080i" />
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="de">Aeon Nox 5: Redux</summary>
+		<summary lang="el">Aeon Nox 5: Redux</summary>
+		<summary lang="en_GB">Aeon Nox 5: Redux</summary>
+		<summary lang="en_AU">Aeon Nox 5: Redux</summary>
+		<summary lang="en_NZ">Aeon Nox 5: Redux</summary>
+		<summary lang="en_US">Aeon Nox 5: Redux</summary>
+		<summary lang="es">Aeon Nox 5: Redux</summary>
+		<summary lang="fi">Aeon Nox 5: Redux</summary>
+		<summary lang="fr">Aeon Nox 5 : Redux</summary>
+		<summary lang="fr_CA">Aeon Nox 5 : Redux</summary>
+		<summary lang="gl">Aeon Nox 5: Redux</summary>
+		<summary lang="he">Aeon Nox 5: Redux</summary>
+		<summary lang="hu">Aeon Nox 5: Redux</summary>
+		<summary lang="is">Aeon Nox 5: Redux</summary>
+		<summary lang="it">Aeon Nox 5: Redux</summary>
+		<summary lang="ko">Aeon Nox 5: Redux</summary>
+		<summary lang="lt">Aeon Nox 5: Redux</summary>
+		<summary lang="ms">Aeon Nox 5: Redux</summary>
+		<summary lang="nl">Aeon Nox 5: Redux</summary>
+		<summary lang="no">Aeon Nox 5: Redux</summary>
+		<summary lang="pl">Aeon Nox 5: Redux</summary>
+		<summary lang="pt">Aeon Nox 5: Redux</summary>
+		<summary lang="pt_BR">Aeon Nox 5: Redux</summary>
+		<summary lang="ro">Aeon Nox 5: Reproiectat</summary>
+		<summary lang="ru">Aeon Nox 5: Redux</summary>
+		<summary lang="sk">Aeon Nox 5: Redux</summary>
+		<summary lang="sv">Aeon Nox 5: Redux</summary>
+		<summary lang="th">Aeon Nox 5: Redux</summary>
+		<summary lang="vi">Aeon Nox 5: Redux - Sự trở về</summary>
+		<summary lang="zh">Aeon Nox 5: Redux</summary>
+		<description lang="de">Redux: Komplett neu designed für ein modernes Aussehen und das klassische Aeon-Feeling beizubehalten.</description>
+		<description lang="el">Redux: Πλήρως επανασχεδιασμένο για να προσφέρει μια μοντέρνα αισθητική, διατηρώντας ταυτόχρονα την κλασική ομορφιά του Aeon.</description>
+		<description lang="en_GB">Redux: Completely redesigned to create a modern look, while retaining the classic Aeon feel.</description>
+		<description lang="en_AU">Redux: Completely redesigned to create a modern look, while retaining the classic Aeon feel.</description>
+		<description lang="en_NZ">Redux: Completely redesigned to create a modern look, while retaining the classic Aeon feel.</description>
+		<description lang="en_US">Redux: Completely redesigned to create a modern look, while retaining the classic Aeon feel.</description>
+		<description lang="es">Redux: Completamente rediseñado para crear un aspecto moderno, pero conservando el toque clásico Aeon.</description>
+		<description lang="fi">Redux: Täysin uudelleensuunniteltu moderni ulkoasu, kuitenkin tuntuen klassiselta Aeon:lta.</description>
+		<description lang="fr">Redux : complètement revu pour créer une apparence moderne, en gardant l'impression classique d'Aeon.</description>
+		<description lang="fr_CA">Redux : complètement remanié pour créer une apparence moderne, tout en conservant l'esprit classique d'Aeon.</description>
+		<description lang="he">Redux: עיצוב חדש היוצר מראה מודרני אך משמר את ההרגשה של Aeon הקלאסי.</description>
+		<description lang="hr">Redux: Potpuno preoblikovan moderan izgled, uz zadržani klasični Aeon osjećaj.</description>
+		<description lang="hu">Redux: Teljesen áttervezett modern kinézet, de megtartva a klasszikus Aeon érzetet.</description>
+		<description lang="is">Redux: Endurhannað nútímalegt útlit í anda Aeon.</description>
+		<description lang="it">Redux: Completamente ridisegnato per creare un look moderno, mantenendo la consueta qualità Aeon.</description>
+		<description lang="ko">Redux: 고전적인 Aeon 느낌을 유지하면서 현대적인 모습으로 완전히 다시 디자인하여 만들었습니다.</description>
+		<description lang="lt">Redux: pilnai atnaujinta, kad sukurtų modernią išvaizdą, išlaikant klasikinio Aeon pojūtį.</description>
+		<description lang="ms">Redux: Direka semula sepenuhnya untuk hasilkan penampilan modern, tetapi masih mengekalkan penampilan Aeon klasik.</description>
+		<description lang="nl">Redux: Volledig opnieuw ontworpen om een ​​moderne look te creëren, met behoud van het klassieke Aeon gevoel.</description>
+		<description lang="no">Redux: Helt redesignet for å gi deg en moderne utforming, samtidig som man beholder den klassiske Aeon følelsen.</description>
+		<description lang="pl">Redux: Całkowicie przeprojektowana skóra Aeon, o nowoczesnym wyglądzie, zachowując klasyczny układ skóry Aeon.</description>
+		<description lang="pt">Redux: Completamente redesenhado para criar um visual moderno enquanto retém o toque clássico Aeon.</description>
+		<description lang="pt_BR">Redux: Design completamente novo para criar um look moderno, mantendo o feeling do Aeon Clássico.</description>
+		<description lang="ru">Redux: полностью переделенная, модернизированная классическая обложка Aeon.</description>
+		<description lang="sk">Redux: Kompletne prepracovaný dizajn s moderným vzhľadom pri zachovaní klasického štýlu Aeon.</description>
+		<description lang="sv">Redux: Totalt omarbetad för att skapa ett modernt utseende, samtidigt som man behåller den klassiska Aeon-känslan.</description>
+		<description lang="th">Redux: การออกแบบใหม่หมดจด เพื่อสร้างรูปลักษณ์ทันสมัย, ​​ขณะที่ยังคงความรู้สึกคลาสสิคของ Aeon.</description>
+		<description lang="vi">Redux: Thiết kế lại hoàn toàn để tạo nên một phong cách hiện đại, trong khi đó vẫn duy trì một cảm giác Aeon cổ điển.</description>
+		<disclaimer lang="en_GB">Mouse control is supported, althoug not recommended. It may not work correctly in all cases.</disclaimer>
+		<platform>all</platform>
+		<license>CC BY-NC-SA 4.0</license>
+		<forum>http://forum.kodi.tv/showthread.php?tid=183504</forum>
+		<website>https://github.com/BigNoid/Aeon-Nox</website>
+		<email>big.noid@kodi.tv</email>
+		<source>https://github.com/BigNoid/Aeon-Nox</source>
+		<news>Updated for Kodi v18 "Leia"[CR]For a full list of changes visit https://github.com/BigNoid/Aeon-Nox/commits/master</news>
+		<assets>
+			<icon>resources/icon.png</icon>
+			<fanart>resources/fanart.jpg</fanart>
+			<screenshot>resources/screenshot-01.jpg</screenshot>
+			<screenshot>resources/screenshot-02.jpg</screenshot>
+			<screenshot>resources/screenshot-03.jpg</screenshot>
+			<screenshot>resources/screenshot-04.jpg</screenshot>
+			<screenshot>resources/screenshot-05.jpg</screenshot>
+			<screenshot>resources/screenshot-06.jpg</screenshot>
+			<screenshot>resources/screenshot-07.jpg</screenshot>
+			<screenshot>resources/screenshot-08.jpg</screenshot>
+			<screenshot>resources/screenshot-09.jpg</screenshot>
+		</assets>
+		<size>13266401</size>
+	</extension>
+</addon><addon id="skin.aeon.nox.silvo" version="21.0.1" name="VR21" provider-name="SiLVO">
+	<requires>
+		<import addon="xbmc.gui" version="5.17.0" />
+		<import addon="script.skinshortcuts" version="2.0.1" />
+		<import addon="resource.images.studios.white" version="0.0.1" />
+		<import addon="resource.images.recordlabels.white" version="0.0.1" />
+	</requires>
+	<extension point="xbmc.gui.skin" debugging="false">
+		<res width="1920" height="1080" aspect="16:9" default="true" folder="16x9" />
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="af_ZA">Geskep deur BigNoid, Modded deur SiLVO, en Widgets deur Mr. V</summary>
+		<summary lang="de_DE">Erstellt von BigNoid, modifiziert von SiLVO, Widgets von Mr. V</summary>
+		<summary lang="el_GR">Created by BigNoid, Modded by SiLVO, and Widgets by Mr. V</summary>
+		<summary lang="en_AU">Created by BigNoid, Modded by SiLVO, and Widgets by Mr. V</summary>
+		<summary lang="en_GB">Created by BigNoid, Modded by SiLVO, and Widgets by Mr. V</summary>
+		<summary lang="en_NZ">Created by BigNoid, Modded by SiLVO, and Widgets by Mr. V</summary>
+		<summary lang="en_US">Created by BigNoid, Modded by SiLVO, and Widgets by Mr. V</summary>
+		<summary lang="es_ES">Creada por BigNoid, Modificada por SiLVO, y Widgets por Mr. V</summary>
+		<summary lang="et_EE">Looja: BigNoid, muutja: SiLVO, ja vidinad: Mr. V</summary>
+		<summary lang="fi_FI">BigNoidin tekemä ja SILVOn muokkaama. Widgetit Mr. V:ltä</summary>
+		<summary lang="fr_CA">Créé par BigNoid, modifié by SiLVO, et gadgets logiciels par Mr. V</summary>
+		<summary lang="fr_FR">Créé par BigNoid, Moddé par SiLVO, avec les widgets de M. V</summary>
+		<summary lang="gl_ES">Created by BigNoid, Modded by SiLVO, and Widgets by Mr. V</summary>
+		<summary lang="he_IL">המעטפת נוצרה על ידי BigNoid, Modded by SiLVO, and והיישומונים על ידי Mr. VLO</summary>
+		<summary lang="hu_HU">Created by BigNoid, Modded by SiLVO, and Widgets by Mr. V</summary>
+		<summary lang="is_IS">Útbúið af BigNoid, breytt af SiLVO, viðmótshlutar eftir Mr. V</summary>
+		<summary lang="it_IT">Created by BigNoid, Modded by SiLVO, and Widgets by Mr. V</summary>
+		<summary lang="ko_KR">Created by BigNoid, Modded by SiLVO, and Widgets by Mr. V</summary>
+		<summary lang="lt_LT">Sukūrė BigNoid, modifikavo SiLVO bei valdiklius pridėjo Mr. V</summary>
+		<summary lang="ms_MY">Created by BigNoid, Modded by SiLVO, and Widgets by Mr. V</summary>
+		<summary lang="nb_NO">Laget av BigNoid, modifisert av SiLVO, og miniprogrammer av Mr. V.</summary>
+		<summary lang="nl_NL">Ontwikkeld door BigNoid, aangepast door SiLVO, en Widgets door Mr. V</summary>
+		<summary lang="pl_PL">Stworzona przez BigNoid, zmodyfikowana przez SiLVO, a gadżety autorstwa Mr. V</summary>
+		<summary lang="pt_BR">Criado por BigNoid, Modificado por SiLVO e Widgets por Mr. V</summary>
+		<summary lang="pt_PT">Criado por BigNoid, Modded por SiLVO, e Widgets por Mr. V</summary>
+		<summary lang="ro_RO">Creat de BigNoid, Modificat de SiLVO, și widget-uri deMr. V</summary>
+		<summary lang="ru_RU">Created by BigNoid, Modded by SiLVO, and Widgets by Mr. V</summary>
+		<summary lang="sk_SK">Vytvoril BigNoid, Upravil SiLVO, miniaplikácie vytvoril Mr. V</summary>
+		<summary lang="sv_SE">Created by BigNoid, Modded by SiLVO, and Widgets by Mr. V</summary>
+		<summary lang="th_TH">Created by BigNoid, Modded by SiLVO, and Widgets by Mr. V</summary>
+		<summary lang="tr_TR">BigNoid tarafından oluşturuldu; Modlar SILVO'dan, Widget'lar Mr. V'den.</summary>
+		<summary lang="vi_VN">Created by BigNoid, Modded by SiLVO, and Widgets by Mr. V - Sự trở về</summary>
+		<summary lang="zh_CN">Created by BigNoid, Modded by SiLVO, and Widgets by Mr. V</summary>
+		<summary lang="zh_TW">由BigNoid原創，SiLVO進行改造，以及由Mr. V製作的小工具</summary>
+		<description lang="af_ZA">Heeltemal oor ontwerp om 'n moderne aansig te skep, terwyl die klassieke Aeon gevoel behou word.</description>
+		<description lang="de_DE">Komplett neu designed für ein modernes Aussehen und das klassische Aeon-Feeling beizubehalten.</description>
+		<description lang="el_GR">Πλήρως επανασχεδιασμένο για να προσφέρει μια μοντέρνα αισθητική, διατηρώντας ταυτόχρονα την κλασική ομορφιά του Aeon.</description>
+		<description lang="en_AU">Completely redesigned to create a modern look, while retaining the classic Aeon feel.</description>
+		<description lang="en_GB">Completely redesigned to create a modern look, while retaining the classic Aeon feel.</description>
+		<description lang="en_NZ">Completely redesigned to create a modern look, while retaining the classic Aeon feel.</description>
+		<description lang="en_US">Completely redesigned to create a modern look, while retaining the classic Aeon feel.</description>
+		<description lang="es_ES">Completamente rediseñado para crear un aspecto moderno, pero conservando el toque clásico Aeon.</description>
+		<description lang="et_EE">Täielikult uuesti disainitud, et luua tänapäevane välimus samas säilitades klassikaline Aeoni tunnetus.</description>
+		<description lang="fi_FI">Täysin uudelleensuunniteltu moderni ulkoasu, kuitenkin tuntuen klassiselta Aeonilta.</description>
+		<description lang="fr_CA">Complètement remanié pour créer une apparence moderne, tout en conservant l’esprit classique d’Aeon.</description>
+		<description lang="fr_FR">Totalement revu pour créer un look moderne, en gardant l'expérience Aeon.</description>
+		<description lang="gl_ES">Redeseñado completamente para crear unha aparencia moderna ao tempo que mantén a sensación do clásico Aeon.</description>
+		<description lang="he_IL">עיצוב חדש היוצר מראה מודרני אך משמר את ההרגשה של Aeon הקלאסי.</description>
+		<description lang="hr_HR">Potpuno preoblikovan moderan izgled, uz zadržani klasični Aeon osjećaj.</description>
+		<description lang="hu_HU">Teljesen áttervezett modern kinézet, de megtartva a klasszikus Aeon érzetet.</description>
+		<description lang="is_IS">Endurhannað nútímalegt útlit í anda Aeon.</description>
+		<description lang="it_IT">Completamente ridisegnato per creare un look moderno, mantenendo la consueta qualità Aeon.</description>
+		<description lang="ko_KR">고전적인 Aeon 느낌을 유지하면서 현대적인 모습으로 완전히 다시 디자인하여 만들었습니다.</description>
+		<description lang="lt_LT">Pilnai atnaujinta, kad sukurtų modernią išvaizdą, išlaikant klasikinio Aeon pojūtį.</description>
+		<description lang="ms_MY">Direka semula sepenuhnya untuk hasilkan penampilan modern, tetapi masih mengekalkan penampilan Aeon klasik.</description>
+		<description lang="nb_NO">Helt redesignet for å tilby en moderne utforming, samtidig som den klassiske Aeon-følelsen er beholdt.</description>
+		<description lang="nl_NL">Volledig opnieuw ontworpen om een ​​moderne look te creëren, met behoud van het klassieke Aeon-gevoel.</description>
+		<description lang="pl_PL">Całkowicie przeprojektowana skóra Aeon, o nowoczesnym wyglądzie, zachowując klasyczny układ skóry Aeon.</description>
+		<description lang="pt_BR">Design completamente novo para criar um look moderno, mantendo o feeling do Aeon Clássico.</description>
+		<description lang="pt_PT">Completamente redesenhado para criar um visual moderno enquanto retém o toque clássico Aeon.</description>
+		<description lang="ro_RO">Complet reproiectat pentru a crea o înfățișare modernă, dar totuși păstrând atmosfera clasică Aeon.</description>
+		<description lang="ru_RU">Полностью переработан, чтобы создать современный облик, сохраняя при этом классическое чувство Aeon.</description>
+		<description lang="sk_SK">Kompletne prepracovaný dizajn s moderným vzhľadom pri zachovaní klasického štýlu Aeon.</description>
+		<description lang="sv_SE">Totalt omarbetad för att skapa ett modernt utseende, samtidigt som man behåller den klassiska Aeon-känslan.</description>
+		<description lang="th_TH">การออกแบบใหม่หมดจด เพื่อสร้างรูปลักษณ์ทันสมัย, ​​ขณะที่ยังคงความรู้สึกคลาสสิคของ Aeon.</description>
+		<description lang="tr_TR">Modern görünüme kavuşturmak için baştan tasarlandı, klasik Aeon hissi korundu</description>
+		<description lang="vi_VN">Thiết kế lại hoàn toàn để tạo nên một phong cách hiện đại, trong khi đó vẫn duy trì một cảm giác Aeon cổ điển.</description>
+		<description lang="zh_TW">完全的翻新設計以創造現代化的視覺感受，同時仍維持Aeon的經典外觀。</description>
+		<platform>all</platform>
+		<license>CC BY-NC-SA 4.0</license>
+		<forum>https://forum.kodi.tv/showthread.php?tid=210069</forum>
+		<website>https://github.com/MikeSiLVO/skin.aeon.nox.silvo</website>
+		<source>https://github.com/MikeSiLVO/skin.aeon.nox.silvo</source>
+		<assets>
+			<icon>resources/icon.png</icon>
+			<fanart>resources/fanart.jpg</fanart>
+			<screenshot>resources/screenshots/screenshot-01.jpg</screenshot>
+			<screenshot>resources/screenshots/screenshot-02.jpg</screenshot>
+			<screenshot>resources/screenshots/screenshot-03.jpg</screenshot>
+			<screenshot>resources/screenshots/screenshot-04.jpg</screenshot>
+			<screenshot>resources/screenshots/screenshot-05.jpg</screenshot>
+			<screenshot>resources/screenshots/screenshot-06.jpg</screenshot>
+			<screenshot>resources/screenshots/screenshot-07.jpg</screenshot>
+			<screenshot>resources/screenshots/screenshot-08.jpg</screenshot>
+			<screenshot>resources/screenshots/screenshot-09.jpg</screenshot>
+			<screenshot>resources/screenshots/screenshot-10.jpg</screenshot>
+			<screenshot>resources/screenshots/screenshot-11.jpg</screenshot>
+			<screenshot>resources/screenshots/screenshot-12.jpg</screenshot>
+		</assets>
+		<news>[I][COLOR FFFF9800]v10.0.1[/COLOR][/I][CR]- Vertical menu mouse fix[CR]- Fix playlist statistics infoline being empty[CR][TABS]1[/TABS][LIGHT](still needs Embuary Helper installed and enabled)[/LIGHT][CR][I][COLOR FFFF9800]v10.0.0[/COLOR][/I][CR]- Fix navigation issue in Music OSD settings[CR]- Add SceneMarkers, Cuts, &amp; Editlist markers to seekbar[CR]- Add trakt comments to recommendations dialog[CR]- Add music video icon to default List view for music and a button to play "Video links" in DialogMusicInfo[CR]- Tweaks to channel Wall for PVR[CR]- Some Live Background fixes thx davewuk[CR][CR][B]All updates may contain various changes and/or improvements[/B][CR]For a more complete list visit:[CR][I][COLOR FFFF9800]https://github.com/MikeSiLVO/skin.aeon.nox.silvo/commits/master[/COLOR][/I]</news>
+	</extension>
+	<extension point="xbmc.service" library="extras/libreria.py" start="login|startup" />
+</addon><addon id="skin.aeon.nox.silvo.fontsvr" version="21.0.1" name="VR21 fontsvr" provider-name="fontsvr, SiLVO">
+	<requires>
+		<import addon="xbmc.gui" version="5.17.0" />
+		<import addon="script.skinshortcuts" version="2.0.1" />
+		<import addon="resource.images.studios.white" version="0.0.1" />
+		<import addon="resource.images.recordlabels.white" version="0.0.1" />
+	</requires>
+	<extension point="xbmc.gui.skin" debugging="false">
+		<res width="1920" height="1080" aspect="16:9" default="true" folder="16x9" />
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="af_ZA">Geskep deur BigNoid, Modded deur SiLVO, en Widgets deur Mr. V</summary>
+		<summary lang="de_DE">Erstellt von BigNoid, modifiziert von SiLVO, Widgets von Mr. V</summary>
+		<summary lang="el_GR">Created by BigNoid, Modded by SiLVO, and Widgets by Mr. V</summary>
+		<summary lang="en_AU">Created by BigNoid, Modded by SiLVO, and Widgets by Mr. V</summary>
+		<summary lang="en_GB">Created by BigNoid, Modded by SiLVO, and Widgets by Mr. V</summary>
+		<summary lang="en_NZ">Created by BigNoid, Modded by SiLVO, and Widgets by Mr. V</summary>
+		<summary lang="en_US">Created by BigNoid, Modded by SiLVO, and Widgets by Mr. V</summary>
+		<summary lang="es_ES">Creada por BigNoid, Modificada por SiLVO, y Widgets por Mr. V</summary>
+		<summary lang="et_EE">Looja: BigNoid, muutja: SiLVO, ja vidinad: Mr. V</summary>
+		<summary lang="fi_FI">BigNoidin tekemä ja SILVOn muokkaama. Widgetit Mr. V:ltä</summary>
+		<summary lang="fr_CA">Créé par BigNoid, modifié by SiLVO, et gadgets logiciels par Mr. V</summary>
+		<summary lang="fr_FR">Créé par BigNoid, Moddé par SiLVO, avec les widgets de M. V</summary>
+		<summary lang="gl_ES">Created by BigNoid, Modded by SiLVO, and Widgets by Mr. V</summary>
+		<summary lang="he_IL">המעטפת נוצרה על ידי BigNoid, Modded by SiLVO, and והיישומונים על ידי Mr. VLO</summary>
+		<summary lang="hu_HU">Created by BigNoid, Modded by SiLVO, and Widgets by Mr. V</summary>
+		<summary lang="is_IS">Útbúið af BigNoid, breytt af SiLVO, viðmótshlutar eftir Mr. V</summary>
+		<summary lang="it_IT">Created by BigNoid, Modded by SiLVO, and Widgets by Mr. V</summary>
+		<summary lang="ko_KR">Created by BigNoid, Modded by SiLVO, and Widgets by Mr. V</summary>
+		<summary lang="lt_LT">Sukūrė BigNoid, modifikavo SiLVO bei valdiklius pridėjo Mr. V</summary>
+		<summary lang="ms_MY">Created by BigNoid, Modded by SiLVO, and Widgets by Mr. V</summary>
+		<summary lang="nb_NO">Laget av BigNoid, modifisert av SiLVO, og miniprogrammer av Mr. V.</summary>
+		<summary lang="nl_NL">Ontwikkeld door BigNoid, aangepast door SiLVO, en Widgets door Mr. V</summary>
+		<summary lang="pl_PL">Stworzona przez BigNoid, zmodyfikowana przez SiLVO, a gadżety autorstwa Mr. V</summary>
+		<summary lang="pt_BR">Criado por BigNoid, Modificado por SiLVO e Widgets por Mr. V</summary>
+		<summary lang="pt_PT">Criado por BigNoid, Modded por SiLVO, e Widgets por Mr. V</summary>
+		<summary lang="ro_RO">Creat de BigNoid, Modificat de SiLVO, și widget-uri deMr. V</summary>
+		<summary lang="ru_RU">Created by BigNoid, Modded by SiLVO, and Widgets by Mr. V</summary>
+		<summary lang="sk_SK">Vytvoril BigNoid, Upravil SiLVO, miniaplikácie vytvoril Mr. V</summary>
+		<summary lang="sv_SE">Created by BigNoid, Modded by SiLVO, and Widgets by Mr. V</summary>
+		<summary lang="th_TH">Created by BigNoid, Modded by SiLVO, and Widgets by Mr. V</summary>
+		<summary lang="tr_TR">BigNoid tarafından oluşturuldu; Modlar SILVO'dan, Widget'lar Mr. V'den.</summary>
+		<summary lang="vi_VN">Created by BigNoid, Modded by SiLVO, and Widgets by Mr. V - Sự trở về</summary>
+		<summary lang="zh_CN">Created by BigNoid, Modded by SiLVO, and Widgets by Mr. V</summary>
+		<summary lang="zh_TW">由BigNoid原創，SiLVO進行改造，以及由Mr. V製作的小工具</summary>
+		<description lang="af_ZA">Heeltemal oor ontwerp om 'n moderne aansig te skep, terwyl die klassieke Aeon gevoel behou word.</description>
+		<description lang="de_DE">Komplett neu designed für ein modernes Aussehen und das klassische Aeon-Feeling beizubehalten.</description>
+		<description lang="el_GR">Πλήρως επανασχεδιασμένο για να προσφέρει μια μοντέρνα αισθητική, διατηρώντας ταυτόχρονα την κλασική ομορφιά του Aeon.</description>
+		<description lang="en_AU">Completely redesigned to create a modern look, while retaining the classic Aeon feel.</description>
+		<description lang="en_GB">Completely redesigned to create a modern look, while retaining the classic Aeon feel.</description>
+		<description lang="en_NZ">Completely redesigned to create a modern look, while retaining the classic Aeon feel.</description>
+		<description lang="en_US">Completely redesigned to create a modern look, while retaining the classic Aeon feel.</description>
+		<description lang="es_ES">Completamente rediseñado para crear un aspecto moderno, pero conservando el toque clásico Aeon.</description>
+		<description lang="et_EE">Täielikult uuesti disainitud, et luua tänapäevane välimus samas säilitades klassikaline Aeoni tunnetus.</description>
+		<description lang="fi_FI">Täysin uudelleensuunniteltu moderni ulkoasu, kuitenkin tuntuen klassiselta Aeonilta.</description>
+		<description lang="fr_CA">Complètement remanié pour créer une apparence moderne, tout en conservant l’esprit classique d’Aeon.</description>
+		<description lang="fr_FR">Totalement revu pour créer un look moderne, en gardant l'expérience Aeon.</description>
+		<description lang="gl_ES">Redeseñado completamente para crear unha aparencia moderna ao tempo que mantén a sensación do clásico Aeon.</description>
+		<description lang="he_IL">עיצוב חדש היוצר מראה מודרני אך משמר את ההרגשה של Aeon הקלאסי.</description>
+		<description lang="hr_HR">Potpuno preoblikovan moderan izgled, uz zadržani klasični Aeon osjećaj.</description>
+		<description lang="hu_HU">Teljesen áttervezett modern kinézet, de megtartva a klasszikus Aeon érzetet.</description>
+		<description lang="is_IS">Endurhannað nútímalegt útlit í anda Aeon.</description>
+		<description lang="it_IT">Completamente ridisegnato per creare un look moderno, mantenendo la consueta qualità Aeon.</description>
+		<description lang="ko_KR">고전적인 Aeon 느낌을 유지하면서 현대적인 모습으로 완전히 다시 디자인하여 만들었습니다.</description>
+		<description lang="lt_LT">Pilnai atnaujinta, kad sukurtų modernią išvaizdą, išlaikant klasikinio Aeon pojūtį.</description>
+		<description lang="ms_MY">Direka semula sepenuhnya untuk hasilkan penampilan modern, tetapi masih mengekalkan penampilan Aeon klasik.</description>
+		<description lang="nb_NO">Helt redesignet for å tilby en moderne utforming, samtidig som den klassiske Aeon-følelsen er beholdt.</description>
+		<description lang="nl_NL">Volledig opnieuw ontworpen om een ​​moderne look te creëren, met behoud van het klassieke Aeon-gevoel.</description>
+		<description lang="pl_PL">Całkowicie przeprojektowana skóra Aeon, o nowoczesnym wyglądzie, zachowując klasyczny układ skóry Aeon.</description>
+		<description lang="pt_BR">Design completamente novo para criar um look moderno, mantendo o feeling do Aeon Clássico.</description>
+		<description lang="pt_PT">Completamente redesenhado para criar um visual moderno enquanto retém o toque clássico Aeon.</description>
+		<description lang="ro_RO">Complet reproiectat pentru a crea o înfățișare modernă, dar totuși păstrând atmosfera clasică Aeon.</description>
+		<description lang="ru_RU">Полностью переработан, чтобы создать современный облик, сохраняя при этом классическое чувство Aeon.</description>
+		<description lang="sk_SK">Kompletne prepracovaný dizajn s moderným vzhľadom pri zachovaní klasického štýlu Aeon.</description>
+		<description lang="sv_SE">Totalt omarbetad för att skapa ett modernt utseende, samtidigt som man behåller den klassiska Aeon-känslan.</description>
+		<description lang="th_TH">การออกแบบใหม่หมดจด เพื่อสร้างรูปลักษณ์ทันสมัย, ​​ขณะที่ยังคงความรู้สึกคลาสสิคของ Aeon.</description>
+		<description lang="tr_TR">Modern görünüme kavuşturmak için baştan tasarlandı, klasik Aeon hissi korundu</description>
+		<description lang="vi_VN">Thiết kế lại hoàn toàn để tạo nên một phong cách hiện đại, trong khi đó vẫn duy trì một cảm giác Aeon cổ điển.</description>
+		<description lang="zh_TW">完全的翻新設計以創造現代化的視覺感受，同時仍維持Aeon的經典外觀。</description>
+		<platform>all</platform>
+		<license>CC BY-NC-SA 4.0</license>
+		<forum>https://forum.kodi.tv/showthread.php?tid=210069</forum>
+		<website>https://github.com/MikeSiLVO/skin.aeon.nox.silvo</website>
+		<source>https://github.com/MikeSiLVO/skin.aeon.nox.silvo</source>
+		<assets>
+			<icon>resources/icon.png</icon>
+			<fanart>resources/fanart.jpg</fanart>
+			<screenshot>resources/screenshots/screenshot-01.jpg</screenshot>
+			<screenshot>resources/screenshots/screenshot-02.jpg</screenshot>
+			<screenshot>resources/screenshots/screenshot-03.jpg</screenshot>
+			<screenshot>resources/screenshots/screenshot-04.jpg</screenshot>
+			<screenshot>resources/screenshots/screenshot-05.jpg</screenshot>
+			<screenshot>resources/screenshots/screenshot-06.jpg</screenshot>
+			<screenshot>resources/screenshots/screenshot-07.jpg</screenshot>
+			<screenshot>resources/screenshots/screenshot-08.jpg</screenshot>
+			<screenshot>resources/screenshots/screenshot-09.jpg</screenshot>
+			<screenshot>resources/screenshots/screenshot-10.jpg</screenshot>
+			<screenshot>resources/screenshots/screenshot-11.jpg</screenshot>
+			<screenshot>resources/screenshots/screenshot-12.jpg</screenshot>
+		</assets>
+		<news>[I][COLOR FFFF9800]v10.0.1[/COLOR][/I][CR]- Vertical menu mouse fix[CR]- Fix playlist statistics infoline being empty[CR][TABS]1[/TABS][LIGHT](still needs Embuary Helper installed and enabled)[/LIGHT][CR][I][COLOR FFFF9800]v10.0.0[/COLOR][/I][CR]- Fix navigation issue in Music OSD settings[CR]- Add SceneMarkers, Cuts, &amp; Editlist markers to seekbar[CR]- Add trakt comments to recommendations dialog[CR]- Add music video icon to default List view for music and a button to play "Video links" in DialogMusicInfo[CR]- Tweaks to channel Wall for PVR[CR]- Some Live Background fixes thx davewuk[CR][CR][B]All updates may contain various changes and/or improvements[/B][CR]For a more complete list visit:[CR][I][COLOR FFFF9800]https://github.com/MikeSiLVO/skin.aeon.nox.silvo/commits/master[/COLOR][/I]</news>
+	</extension>
+	<extension point="xbmc.service" library="extras/libreria.py" start="login|startup" />
+</addon><addon id="skin.ctouch.fontsvr" version="9.3.4.3" name="Cristal Touch (fontsVR)" provider-name="fontsVR, STVA">
+	<requires>
+		<import addon="resource.language.es_es" version="0.0.0" />		
+	</requires>
+	<extension debugging="false" effectslowdown="1" point="xbmc.gui.skin">
+		<res aspect="16:9" default="true" folder="xml" height="1080" width="1920" />
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="es_ES">Skin para Kodi y Forks. Compatible con Kodi Matrix y Nexus</summary>
+		<summary lang="en_GB">Skin para Kodi y Forks. Compatible con Kodi Matrix y Nexus</summary>				
+		<description lang="es_ES">Cristal Touch es un mod del skin AppTV realizado por STVA.[CR]Funciona perfectamente en dispositivos táctiles, pc/portátil, SmartTV o TV Box y raspberrys o similares[CR]Fácil personalización de los items del Inicio desde el menú contextual</description>
+		<description lang="en_GB">Cristal Touch es un mod del skin AppTV realizado por STVA.[CR]Funciona perfectamente en dispositivos táctiles, pc/portátil, SmartTV o TV Box y raspberrys o similares[CR]Fácil personalización de los items del Inicio desde el menú contextual</description>		
+		<disclaimer lang="en_GB">Para dudas, preguntas o sugerencias [CR]Telegram: t.me/stvabuild[CR]Web y Foro: stva.es</disclaimer>
+		<disclaimer lang="es_ES">Para dudas, preguntas o sugerencias [CR]Telegram: t.me/stvabuild[CR]Web y Foro: stva.es</disclaimer>		
+		<platform>all</platform>
+		<license />
+		<website />
+		<email />
+		<news>Versión 3.4.1 - 15/5/23
+- Modificado desplazamiento de Ajustes de Addons en Ajustes de Skin
+- Cambiado foco en el reproductor, se había cambiao al stop y se ha vuelto a poner en el pause
+
+Versión 3.4 - 15/5/23
+- Ahora con ratón y dispositivos táctiles se pueden desplazar por los widgets con la barra scroll a la izquierda
+- Cambiada dirección de la web en el startup
+- Corregida dirección de descarga de resolveurl y subido en el repositorio
+- Reparados errores en el menú oculto
+- En Inicio Widgets al subir desde los widgets ahora se posiciona en los items
+- Al seleccionar Botones Táctiles se oculta la opción Ocultar menú
+- Añadida casilla de activación en la opción Auto Actualizar de Información de Addons
+- Corregidos errores en las ventanas de ajustes durante la reproducción
+- Añadido icono del addon en el título de los widgets por defecto
+- Agregado a Ajustes de Skin &gt; Ajustes de Addons, el addon IPTV Simple Client
+- Mejorada la ventana Guia IPTV
+- Mejorada la ventana Canales IPTV
+- Mejorada la ventana de info de Canales IPTV
+- Mejorado el OSD de IPTV
+- Corregido error que no permitia ver todos los addons de Addons del Skin</news>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+			<screenshot>resources/screenshot001.jpg</screenshot>
+			<screenshot>resources/screenshot002.jpg</screenshot>
+			<screenshot>resources/screenshot003.jpg</screenshot>
+			<screenshot>resources/screenshot004.jpg</screenshot>
+			<screenshot>resources/screenshot005.jpg</screenshot>
+		</assets>
+	</extension>
+</addon></addons>

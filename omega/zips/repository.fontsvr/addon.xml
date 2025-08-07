@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="repository.fontsvr" name="Repo [B][COLOR aqua]FONTS[COLOR azure]VR[/COLOR][/B]" version="2.2" provider-name="fontsvr">
+    <extension point="xbmc.addon.repository" name="Repo [B][COLOR aqua]FONTS[COLOR azure]VR[/COLOR][/B]">
+        <dir>
+		<info compressed="false">https://raw.githubusercontent.com/fontsvr/omega/master/omega/zips/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/fontsvr/omega/master/omega/zips/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/fontsvr/omega/master/omega/zips/</datadir>
+		</dir>
+    </extension>
+	
+    <extension point="xbmc.addon.metadata">
+        <summary>Repo [COLOR aqua]FONTS[COLOR azure]VR[/COLOR]</summary>
+        <description>[COLOR azure]Repositorio de addons [COLOR aqua]FONTS[COLOR azure]VR[/COLOR]
+[COLOR azure]Addons para Kodi[/COLOR]</description>
+        <disclaimer>Repositorio de addons.</disclaimer>
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+        </assets>
+		<source>https://fontsvr.github.io/omega/</source>
+    </extension>
+</addon>
