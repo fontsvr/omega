@@ -1,0 +1,5 @@
+# Ignora el directori d'origen
+/addons_src/
+# Ignorar l’script de generació
+/_repo_generator.py
+
