@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac68f0e9-b428-45aa-b477-6993f9823480" name="Changes" comment="" />
+    <list default="true" id="ac68f0e9-b428-45aa-b477-6993f9823480" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/omega/zips/addons.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/omega/zips/addons.xml.md5" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
